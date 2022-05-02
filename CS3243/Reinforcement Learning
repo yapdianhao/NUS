@@ -1,0 +1,23 @@
+Reinforcement Learning
+- Assumptions: 
+    - Markov Decision Problem: s_t + 1 = T(s_t, a_t) -> future state only depends on current state
+    - Things we do not know: transition model(do not see all state), rewards?
+- Objectives: 
+    - learn optimal policy π by inferring Vπ (value function)
+    - policy π: π(s_t) = a_t
+    - value function: Vπ(s_t) = r_t(s_t, at_t) + ........... (from lecture notes), where gamma is the discount rate
+
+Q-Learning
+- value function needs transition model, but we assume transition model not known
+- learn Q* and T(transition model)
+- optimal policy π*(s) = argmax(......) 
+
+Value Iteration Algorithm
+- init Q^(s, a) <- 0 for all s, a
+- start at s0
+- for t = 0 to unlimited:
+    - select action a_t
+    - receive reward r(s_t, a_t)
+    - set s_t + 1 <- delta(s_t, a_t) // environment tells us the reward and the next state
+    - set Q^(s_t, n_t) <- r(s_t, a_t) + .... // weighted version: (1 - alpha_t........) 
+
