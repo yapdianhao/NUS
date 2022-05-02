@@ -1,0 +1,13 @@
+Open Addressing: 
+    -Linear Probing: modulo M, if occupied, move to next one
+    -Quadratic Probing: insert same as LP. Collison ? h(x) + (steps) ** 2
+                        Load factor < 0.5
+    -Double Hashing: (h(v) + step * h2(v)) modulo M // secondary hash function
+
+Close Addresing:
+    -Separate Chaining: Linked List in every value. Simple to implement. Used when unknown number of keys. 
+
+
+Robin Hood Hashing:
+    -Insertion:
+        
