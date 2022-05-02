@@ -1,0 +1,60 @@
+procedure one {
+    print a;
+    read b;
+    call two;
+    a = b + c;
+    if (1 == 2) then {
+        call two;
+        read c;
+        b = c * a;
+        print b;
+        while (4 > 5) {
+            a = b + a;
+            b = a - b;
+            a = a - b;
+        }
+    } else {
+        while (2 > 5) {
+            print a;
+            print b;
+            print c;
+        }
+        while (3 < 1) {
+            read b;
+            read a;
+            read c;
+        }
+    }
+    more = more;
+}
+
+procedure two {
+    print x;
+    while (2 <= 2) {
+        if (2 >= 2) then {
+            a = 2 + 2;
+            while (2 <= 2) {
+                b = 2 - 2;
+            }
+        } else {
+            while (2 >= 2) {
+                read a;
+                while (2 < 2) {
+                    call three;
+                    if (3 > 3) then {
+                        print a;
+                        call three;
+                    } else {
+                        read a;
+                        call three;
+                    }
+                }
+            }
+        }
+    }
+    read more;
+}
+
+procedure three {
+    read three;
+}

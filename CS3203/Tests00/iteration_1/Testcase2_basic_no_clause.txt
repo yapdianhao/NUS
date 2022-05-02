@@ -1,0 +1,50 @@
+1 - select assign
+assign a;
+Select a
+8, 5, 12, 10, 13, 2, 7
+5000
+2 - select read
+read x;
+Select x
+1
+5000
+3 - select print
+print Select;
+Select Select
+4
+5000
+4 - select call
+call call;
+Select call
+3
+5000
+5 - select while
+while w2;
+Select w2
+9
+5000
+6 - select if
+if if;
+Select if
+11, 6
+5000
+7 - select statement
+stmt s;
+Select s
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+5000
+8 - select variable
+variable v;
+Select v
+a, b, c
+5000
+9 - select procedure
+procedure p;
+Select p
+procA, procB
+5000
+10 - select constant
+constant c;
+Select c
+10, 100, 3, 20
+5000

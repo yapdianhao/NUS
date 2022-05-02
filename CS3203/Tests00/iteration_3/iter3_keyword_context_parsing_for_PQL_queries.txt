@@ -1,0 +1,175 @@
+1 - query keyword: Select
+stmt Select;
+Select Select
+1, 2, 3, 4, 5, 6, 7
+5000
+2 - query keyword: Select
+assign Select;
+Select Select pattern Select (_, _)
+2, 7
+5000
+3 - query keyword: pattern
+assign pattern;
+Select pattern pattern pattern(_, _)
+2, 7
+5000
+4 - query keyword: Select and pattern
+assign pattern; variable Select;
+Select Select pattern pattern (Select, _)
+x, y
+5000
+5 - entity keyword: assign - same entity type
+assign assign;
+Select assign
+2, 7
+5000
+6 - entity keyword: assign - different entity type
+constant assign;
+Select assign
+0, 1, 2, 3
+5000
+8 - entity keyword: call - different entity type
+constant call;
+Select call
+0, 1, 2, 3
+5000
+9 - entity keyword: constant - same entity type
+constant constant;
+Select constant
+0, 1, 2, 3
+5000
+10 - entity keyword: constant - different entity type
+if constant;
+Select constant
+3
+5000
+11 - entity keyword: if - same entity type
+if if;
+Select if
+3
+5000
+12 - entity keyword: if - different entity type
+print if;
+Select if
+4, 5
+5000
+13 - entity keyword: print - same entity type
+print print;
+Select print
+4, 5
+5000
+14 - entity keyword: print - different entity type
+procedure print;
+Select print
+main
+5000
+15 - entity keyword: procedure - same entity type
+procedure procedure;
+Select procedure
+main
+5000
+16 - entity keyword: procedure - different entity type
+read procedure;
+Select procedure
+1
+5000
+17 - entity keyword: read
+read read;
+Select read
+1
+5000
+18 - entity keyword: read
+stmt read;
+Select read
+1, 2, 3, 4, 5, 6, 7
+5000
+19 - entity keyword: stmt
+stmt stmt;
+Select stmt
+1, 2, 3, 4, 5, 6, 7
+5000
+20 - entity keyword: stmt
+variable stmt;
+Select stmt
+x, y, a, b, c
+5000
+21 - entity keyword: variable
+variable variable;
+Select variable
+x, y, a, b, c
+5000
+22 - entity keyword: variable
+while variable;
+Select variable
+6
+5000
+23 - entity keyword: while
+while while;
+Select while
+6
+5000
+24 - entity keyword: while
+assign while;
+Select while
+2, 7
+5000
+25 - relationship keyword: Uses
+assign Uses, a; variable v;
+Select Uses such that Uses(Uses, v) pattern Uses(_, _"a"_)
+2
+5000
+26 - relationship keyword: Uses
+read Uses;
+Select Uses such that Modifies(Uses, _)
+1
+5000
+27 - relationship keyword: Modifies
+assign Modifies, a; variable v;
+Select Modifies such that Modifies(Modifies, v) pattern Modifies(_, _"a"_)
+2
+5000
+28 - relationship keyword: Modifies
+print Modifies;
+Select Modifies such that Uses(Modifies, "a")
+4
+5000
+29 - relationship keyword: Parent
+if Parent;
+Select Parent such that Parent(Parent, _)
+3
+5000
+30 - relationship keyword: Parent
+while Parent;
+Select Parent such that Parent*(Parent, _)
+6
+5000
+31 - relationship keyword: Parent*
+stmt Parent*, s;
+Select s
+none
+5000
+32 - relationship keyword: Parent*
+stmt s; assign Parent*;
+Select s
+none
+5000
+33 - relationship keyword: Follows
+stmt Follows; assign a;
+Select Follows such that Follows(Follows, a)
+1
+5000
+34 - relationship keyword: Follows
+stmt Follows; read r;
+Select Follows such that Follows*(r, Follows)
+2, 3, 6
+5000
+35 - relationship keyword: Follows*
+stmt Follows*, s;
+Select s such that Follows*(Follows*, s)
+none
+5000
+36 - relationship keyword: Follows*
+stmt Follows*;
+Select Follows*
+none
+5000

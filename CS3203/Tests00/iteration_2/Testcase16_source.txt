@@ -1,0 +1,10 @@
+procedure noModifies {
+    while(1 == 0) {
+        print a;
+        if (a != 10) then {
+            print c;
+        } else {
+            print b; 
+        }
+    }
+}

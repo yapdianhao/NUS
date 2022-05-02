@@ -1,0 +1,41 @@
+1 - Pattern 1
+assign a;
+Select a pattern a("target",_"(lo *9"_)
+none
+5000
+
+2 - Pattern 2
+assign a;
+Select a pattern a("target",_"(lo *9 + high * 1)"_)
+3
+5000
+3 - Pattern 3
+assign a;
+Select a pattern a("target",_"attempt"_)
+none
+5000
+4 - Pattern 4
+assign a;
+Select a pattern a("attempt",_"(lo *9 + high"_)
+none
+5000
+5 - Pattern 5
+assign a;
+Select a pattern a("attempt",_"(lo *9 + high * 1)"_)
+none
+5000
+6 - Pattern 6
+assign a;
+Select a pattern a("attempt",_"attempt"_)
+20
+5000
+7 - Pattern 7
+assign a;
+Select a pattern a("error",_"34404"_)
+6
+5000
+8 - Pattern 8
+assign a;
+Select a pattern a("error",_"attempt"_)
+none
+5000

@@ -1,0 +1,7 @@
+procedure ReadAndPrint {
+    read x;  \\1
+        read y; 	\\2
+    print       y; 			\\3
+    \\ read x;
+    print x;\\4 
+}

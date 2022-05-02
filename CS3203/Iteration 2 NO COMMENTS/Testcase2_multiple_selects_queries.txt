@@ -1,0 +1,65 @@
+1 - stmt, stmt
+stmt x, y;
+Select <x, y> such that Follows*(x, y)
+1 2, 1 3, 1 4, 2 3, 2 4, 3 4, 5 6, 7 8, 10 11
+5000
+2 - stmt, stmt same
+stmt x, y;
+Select <x, x, x, y, y, y> such that Follows*(x, y)
+1 1 1 2 2 2, 1 1 1 3 3 3, 1 1 1 4 4 4, 2 2 2 3 3 3, 2 2 2 4 4 4, 3 3 3 4 4 4, 5 5 5 6 6 6, 7 7 7 8 8 8, 10 10 10 11 11 11
+5000
+3 - assign, assign
+assign a1, a2;
+Select <a1, a2> such that Follows(a1, a2)
+7 8
+5000
+4 - variable, variable
+variable v1, v2; assign a;
+Select <v1, v2> such that Modifies(a, v1) and Uses(a, v2)
+a a, a b, a c, c b, c c
+5000
+5 - print, read
+print pn; read r; variable v;
+Select <pn, r> such that Uses(pn, v) such that Modifies(r, v)
+4 1
+5000
+6 - prog_line, constant
+prog_line pl; constant c;
+Select <pl, c> with c.value = pl
+10 10, 3 3
+5000
+7 - ifs, w, ifs
+if ifs1, ifs2; while w;
+Select <ifs1, w, ifs2> such that Parent*(ifs1, ifs2)
+6 9 11
+5000
+8 - p, p
+procedure p1, p2;
+Select <p1, p2> such that Uses(p1, "a") and Uses(p2, "a")
+procA procA, procA procB, procB procA, procB procB
+5000
+9 - variable, prog_line
+variable v; assign a; prog_line pl;
+Select <v, pl> with a.stmt# = pl such that Uses(a, v)
+a 2, a 8, b 8, a 10, c 10, c 12, b 12, c 13, b 13
+5000
+10 - empty table
+procedure p1, p2;
+Select <p1, p2> with 1 = 0
+none
+5000
+11 - select not in intermediate table
+variable v; assign a; procedure p;
+Select <a> such that Uses(p, v)
+2, 5, 7, 8, 10, 12, 13
+5000
+12 - select more than 1 not in intermediate table
+variable v1, v2; assign a; procedure p;
+Select <v1, a> such that Uses(p, v2)
+a 2, a 5, a 7, a 8, a 10, a 12, a 13, b 2, b 5, b 7, b 8, b 10, b 12, b 13, c 2, c 5, c 7, c 8, c 10, c 12, c 13
+5000
+13 - select with both from same table
+procedure p1, p2;
+Select <p1, p2> with p1.procName = "procA"
+procA procA, procA procB
+5000

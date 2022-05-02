@@ -1,0 +1,55 @@
+1 - invalid
+stmt 1s;
+Select 1s
+none
+5000
+2 - invalid
+stmt \\s;
+Select \\s
+none
+5000
+3 - invalid
+stmt /%/;
+Select s
+none
+5000
+4 - invalid
+stmt s;
+Select $s
+none
+5000
+5 - invalid
+statement s, stmt, s1;
+Select s1
+none
+5000
+6 - invalid
+stmt s, 1s, 2s;
+Select s
+none
+5000
+7 - invalid
+stmt s;
+Select s such that Modifies(_, _)
+none
+5000
+8 - invalid
+stmt s;
+Select s such that Modifies(_, "x")
+none
+5000
+9 - invalid
+stmt s; variable v;
+Select s such that Modifies(_, v)
+none
+5000
+10 - invalid
+variable v1;
+Select v1 such that Modifies("ReadAndPrint", v1)
+x,y
+5000
+11 - invalid
+assign a;
+Select a pattern a(v, _)
+none
+5000

@@ -1,0 +1,490 @@
+1 - syntactically and semantically valid: wildcard + wildcard: Parent(_, _)
+
+Select BOOLEAN such that Parent(_,_)
+true
+5000
+2 - syntactically and semantically valid: wildcard + wildcard: Parent*(_, _)
+
+Select BOOLEAN such that Parent*(_,_)
+true
+5000
+3 - syntactically and semantically valid: wildcard + fixed value: Parent(_, 1), stmt num (in place of 1) exists in src program
+
+Select BOOLEAN such that Parent(_,6)
+true
+5000
+4 - syntactically and semantically valid: wildcard + fixed value: Parent(_, 1), stmt num (in place of 1) exists in src program
+
+Select BOOLEAN such that Parent*(_,11)
+true
+5000
+5 - syntactically and semantically valid: wildcard + fixed value: Parent(_, 1), stmt num not exists in src program
+
+Select BOOLEAN such that Parent(_,40)
+false
+5000
+6 - syntactically and semantically valid: wildcard + fixed value: Parent(_, 1), stmt num not exists in src program
+
+Select BOOLEAN such that Parent*(_,0)
+false
+5000
+7 - syntactically and semantically valid: wildcard + fixed value: Parent(_, 1), stmt num exists and relationship holds in src program
+
+Select BOOLEAN such that Parent(_,14)
+true
+5000
+8 - syntactically and semantically valid: wildcard + fixed value: Parent(_, 1), stmt num exists and relationship holds in src program
+
+Select BOOLEAN such that Parent*(_,20)
+true
+5000
+9 - syntactically and semantically valid: wildcard + fixed value: Parent(_, 1), stmt num exists but relationship doesn’t hold in src program
+
+Select BOOLEAN such that Parent(_,22)
+false
+5000
+10 - syntactically and semantically valid: wildcard + fixed value: Parent(_, 1), stmt num exists but relationship doesn’t hold in src program
+
+Select BOOLEAN such that Parent*(_,24)
+false
+5000
+11 - syntactically and semantically valid, wild card + synonym: Parent(_, stmt)
+stmt s;
+Select s such that Parent(_,s)
+6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37
+5000
+12 - syntactically and semantically valid, wild card + synonym: Parent(_, stmt)
+stmt s;
+Select s such that Parent*(_,s)
+6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37
+5000
+13 - syntactically and semantically valid, wild card + synonym: Parent(_, print)
+print p;
+Select p such that Parent(_,p)
+9, 15, 16, 17, 34
+5000
+14 - syntactically and semantically valid, wild card + synonym: Parent(_, print)
+print p;
+Select p such that Parent*(_,p)
+9, 15, 16, 17, 34
+9, 16, 17
+15 - syntactically and semantically valid, wild card + synonym: Parent(_, assign)
+assign a;
+Select a such that Parent(_,a)
+8, 11, 12, 13, 26, 28
+5000
+16 - syntactically and semantically valid, wild card + synonym: Parent(_, assign)
+assign a;
+Select a such that Parent*(_,a)
+8, 11, 12, 13, 26, 28
+5000
+17 - syntactically and semantically valid, wild card + synonym: Parent(_, call)
+call c;
+Select c such that Parent(_,c)
+6, 32, 35, 37
+5000
+18 - syntactically and semantically valid, wild card + synonym: Parent(_, call)
+call c;
+Select c such that Parent*(_,c)
+6, 32, 35, 37
+5000
+19 - syntactically and semantically valid, wild card + synonym: Parent(_, while)
+while w;
+Select w such that Parent(_,w)
+10, 14, 18, 27, 29, 31
+5000
+20 - syntactically and semantically valid, wild card + synonym: Parent(_, while)
+while w;
+Select w such that Parent*(_,w)
+10, 14, 18, 27, 29, 31
+5000
+21 - syntactically and semantically valid, wild card + synonym: Parent(_, if)
+if ifs;
+Select ifs such that Parent(_,ifs)
+25, 33
+5000
+22 - syntactically and semantically valid, wild card + synonym: Parent(_, if)
+if ifs;
+Select ifs such that Parent*(_,ifs)
+25, 33
+5000
+23 - syntactically and semantically valid, wild card + synonym: Parent(_, read)
+read r;
+Select r such that Parent(_,r)
+7, 19, 20, 21, 30, 36
+5000
+24 - syntactically and semantically valid, wild card + synonym: Parent(_, read)
+read r;
+Select r such that Parent*(_,r)
+7, 19, 20, 21, 30, 36
+5000
+25 - syntactically and semantically valid, wild card + synonym: Parent(_, prog_line)
+prog_line pl;
+Select pl such that Parent(_,pl)
+6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37
+5000
+26 - syntactically and semantically valid, wild card + synonym: Parent(_, prog_line)
+prog_line pl;
+Select pl such that Parent*(_,pl)
+6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37
+5000
+27 - syntactically and semantically valid: fixed value + wildcard: Parent(1, _),stmt num (in place of 1) exists in src program
+
+Select BOOLEAN such that Parent(5,_)
+true
+5000
+28 - syntactically and semantically valid: fixed value + wildcard: Parent(1, _), stmt num (in place of 1) exists in src program
+
+Select BOOLEAN such that Parent*(38,_)
+false
+5000
+29 - syntactically and semantically valid: fixed value + wildcard: Parent(1, _), stmt num not exists in src program
+
+Select BOOLEAN such that Parent(42,_)
+false
+5000
+30 - syntactically and semantically valid: fixed value + wildcard: Parent(1, _), stmt num not exists in src program
+
+Select BOOLEAN such that Parent*(43,_)
+false
+5000
+31 - syntactically and semantically valid: fixed value + wildcard: Parent(1, _), stmt num exists and relationship holds in src program
+
+Select BOOLEAN such that Parent(33,_)
+true
+5000
+32 - syntactically and semantically valid: fixed value + wildcard: Parent(1, _), stmt num exists and relationship holds in src program
+
+Select BOOLEAN such that Parent*(25,_)
+true
+5000
+33 - syntactically and semantically valid: fixed value + wildcard: Parent(1, _), stmt num exists but relationship doesn’t hold in src program
+
+Select BOOLEAN such that Parent(30,_)
+false
+5000
+34 - syntactically and semantically valid: fixed value + wildcard: Parent(1, _), stmt num exists but relationship doesn’t hold in src program
+
+Select BOOLEAN such that Parent*(37,_)
+false
+5000
+35 - syntactically and semantically valid: fixed value + fixed value, stmt num (in place of 2) exists in src program
+
+Select BOOLEAN such that Parent(5,6)
+true
+5000
+36 - syntactically and semantically valid: fixed value + fixed value, stmt num (in place of 2) exists in src program
+
+Select BOOLEAN such that Parent*(24,34)
+true
+5000
+37 - syntactically and semantically valid: fixed value + fixed value, stmt num not exists in src program
+
+Select BOOLEAN such that Parent(0,1)
+false
+5000
+38 - syntactically and semantically valid: fixed value + fixed value, stmt num not exists in src program
+
+Select BOOLEAN such that Parent*(39,41)
+false
+5000
+39 - syntactically and semantically valid: fixed value + fixed value, stmt num exists and relationship holds in src program
+
+Select BOOLEAN such that Parent(24,25)
+true
+5000
+40 - syntactically and semantically valid: fixed value + fixed value, stmt num exists and relationship holds in src program
+
+Select BOOLEAN such that Parent*(24,28)
+true
+5000
+41 - syntactically and semantically valid: fixed value + fixed value, stmt num exists but relationship doesn’t hold in src program
+
+Select BOOLEAN such that Parent(25,24)
+false
+5000
+42 - syntactically and semantically valid: fixed value + fixed value, stmt num exists but relationship doesn’t hold in src program
+
+Select BOOLEAN such that Parent*(28,24)
+false
+5000
+43 - syntactically and semantically valid: fixed value + fixed value, same stmt nums
+
+Select BOOLEAN such that Parent(18,18)
+false
+5000
+44 - syntactically and semantically valid: fixed value + fixed value, same stmt nums
+
+Select BOOLEAN such that Parent*(25,25)
+false
+5000
+45 - syntactically and semantically valid: fixed value + syn: Parent(1, stmt), stmt num (in place of 1) exists in src program
+stmt s;
+Select s such that Parent(18,s)
+19, 20, 21
+5000
+46 - syntactically and semantically valid: fixed value + syn: Parent(1, stmt), stmt num (in place of 1) exists in src program
+stmt s;
+Select s such that Parent*(29,s)
+30, 31, 32, 33, 34, 35, 36, 37
+5000
+47 - syntactically and semantically valid: fixed value + syn: Parent(1,print), stmt num (in place of 1) exists in src program
+print p;
+Select p such that Parent(5,p)
+9
+5000
+48 - syntactically and semantically valid: fixed value + syn: Parent(1,print), stmt num (in place of 1) exists in src program
+print p;
+Select p such that Parent*(5,p)
+9, 15, 16, 17
+5000
+49 - syntactically and semantically valid: fixed value + syn: Parent(1,assign), stmt num (in place of 1) exists in src program
+assign a;
+Select a such that Parent(10,a)
+11, 12, 13
+5000
+50 - syntactically and semantically valid: fixed value + syn: Parent(1,assign), stmt num (in place of 1) exists in src program
+assign a;
+Select a such that Parent*(5,a)
+8, 11, 12, 13
+5000
+51 - syntactically and semantically valid: fixed value + syn: Parent(1,call), stmt num (in place of 1) exists in src program
+call c;
+Select c such that Parent(31,c)
+32
+5000
+52 - syntactically and semantically valid: fixed value + syn: Parent(1,call), stmt num (in place of 1) exists in src program
+call c;
+Select c such that Parent*(31,c)
+32, 35, 37
+5000
+53 - syntactically and semantically valid: fixed value + syn: Parent(1,while), stmt num (in place of 1) exists in src program
+while w;
+Select w such that Parent(5,w)
+10, 14, 18
+5000
+54 - syntactically and semantically valid: fixed value + syn: Parent(1,while), stmt num (in place of 1) exists in src program
+while w;
+Select w such that Parent*(24,w)
+27, 29, 31
+5000
+55 - syntactically and semantically valid: fixed value + syn: Parent(1,if), stmt num (in place of 1) exists in src program
+if ifs;
+Select ifs such that Parent(24,ifs)
+25
+5000
+56 - syntactically and semantically valid: fixed value + syn: Parent(1,if), stmt num (in place of 1) exists in src program
+if ifs;
+Select ifs such that Parent*(24,ifs)
+25, 33
+5000
+57 - syntactically and semantically valid: fixed value + syn: Parent(1,read), stmt num (in place of 1) exists in src program
+read r;
+Select r such that Parent(29,r)
+30
+5000
+58 - syntactically and semantically valid: fixed value + syn: Parent(1,read), stmt num (in place of 1) exists in src program
+read r;
+Select r such that Parent*(24,r)
+30, 36
+5000
+59 - syntactically and semantically valid: fixed value + syn: Parent(1, stmt), stmt num not exists in src program
+stmt s;
+Select s such that Parent(0,s)
+none
+5000
+60 - syntactically and semantically valid: fixed value + syn: Parent(1, stmt), stmt num not exists in src program
+stmt s;
+Select s such that Parent*(50,s)
+none
+5000
+87 - syntactically and semantically valid: fixed value + syn: Parent(1, stmt), stmt num exists but relationship doesn’t hold in src program (empty table)
+stmt s;
+Select s such that Parent(15,s)
+none
+5000
+88 - syntactically and semantically valid: fixed value + syn: Parent(1, stmt), stmt num exists but relationship doesn’t hold in src program (empty table)
+stmt s;
+Select s such that Parent*(22,s)
+none
+5000
+89 - syntactically and semantically valid: fixed value + syn: Parent(1,print), stmt num exists but relationship doesn’t hold in src program (empty table)
+print p;
+Select p such that Parent(18,p)
+none
+5000
+90 - syntactically and semantically valid: fixed value + syn: Parent(1,print), stmt num exists but relationship doesn’t hold in src program (empty table)
+print p;
+Select p such that Parent*(10,p)
+none
+5000
+91 - syntactically and semantically valid: fixed value + syn: Parent(1,assign), stmt num exists but relationship doesn’t hold in src program (empty table)
+assign a;
+Select a such that Parent(14,a)
+none
+5000
+92 - syntactically and semantically valid: fixed value + syn: Parent(1,assign), stmt num exists but relationship doesn’t hold in src program (empty table)
+assign a;
+Select a such that Parent*(29,a)
+none
+5000
+93 - syntactically and semantically valid: fixed value + syn: Parent(1,call), stmt num exists but relationship doesn’t hold in src program (empty table)
+call c;
+Select c such that Parent(27,c)
+none
+5000
+94 - syntactically and semantically valid: fixed value + syn: Parent(1,call), stmt num exists but relationship doesn’t hold in src program (empty table)
+call c;
+Select c such that Parent*(14,c)
+none
+5000
+95 - syntactically and semantically valid: fixed value + syn: Parent(1,while), stmt num exists but relationship doesn’t hold in src program (empty table)
+while w;
+Select w such that Parent(10,w)
+none
+5000
+96 - syntactically and semantically valid: fixed value + syn: Parent(1,while), stmt num exists but relationship doesn’t hold in src program (empty table)
+while w;
+Select w such that Parent*(33,w)
+none
+5000
+97 - syntactically and semantically valid: fixed value + syn: Parent(1,if), stmt num exists but relationship doesn’t hold in src program (empty table)
+if ifs;
+Select ifs such that Parent(5,ifs)
+none
+5000
+98 - syntactically and semantically valid: fixed value + syn: Parent(1,if), stmt num exists but relationship doesn’t hold in src program (empty table)
+if ifs;
+Select ifs such that Parent*(18,ifs)
+none
+5000
+99 - syntactically and semantically valid: fixed value + syn: Parent(1,read), stmt num exists but relationship doesn’t hold in src program (empty table)
+read r;
+Select r such that Parent(14,r)
+none
+5000
+100 - syntactically and semantically valid: fixed value + syn: Parent(1,read), stmt num exists but relationship doesn’t hold in src program (empty table)
+read r;
+Select r such that Parent*(27,r)
+none
+5000
+101 - syntactically and semantically valid: syn + wildcard: Parent(stmt, _)
+stmt s;
+Select s such that Parent(s,_)
+5, 10, 14, 18, 24, 25, 27, 29, 31, 33
+5000
+105 - syntactically and semantically valid: syn + wildcard: Parent(assign, _) (empty)
+assign a;
+Select a such that Parent(a, _)
+none
+5000
+109 - syntactically and semantically valid: syn + wildcard: Parent(while, _)
+while w;
+Select w such that Parent(w,_)
+10, 14, 18, 24, 27, 29, 31
+5000
+111 - syntactically and semantically valid: syn + wildcard: Parent(if, _)
+if ifs;
+Select ifs such that Parent(ifs, _)
+5, 25, 33
+5000
+129 - syntactically and semantically valid: syn + syn: Parent(stmt, stmt)
+stmt s1; stmt s2;
+Select <s1, s2> such that Parent(s1,s2)
+5 6, 5 7, 5 8, 5 9, 5 10, 5 14, 5 18, 10 11, 10 12, 10 13, 14 15, 14 16, 14 17, 18 19, 18 20, 18 21, 24 25, 25 26, 25 27, 25 29, 27 28, 29 30, 29 31, 31 32, 31 33, 33 34, 33 35, 33 36, 33 37
+5000
+130 - syntactically and semantically valid: syn + syn: Parent(stmt, stmt)
+stmt s1; stmt s2;
+Select <s1, s2> such that Parent*(s1,s2)
+5 6, 5 7, 5 8, 5 9, 5 10, 5 11, 5 12, 5 13, 5 14, 5 15, 5 16, 5 17, 5 18, 5 19, 5 20, 5 21, 10 11, 10 12, 10 13, 14 15, 14 16, 14 17, 18 19, 18 20, 18 21, 24 25, 24 26, 24 27, 24 28, 24 29, 24 30, 24 31, 24 32, 24 33, 24 34, 24 35, 24 36, 24 37, 25 26, 25 27, 25 28, 25 29, 25 30, 25 31, 25 32, 25 33, 25 34, 25 35, 25 36, 25 37, 27 28, 29 30, 29 31, 29 32, 29 33, 29 34, 29 35, 29 36, 29 37, 31 32, 31 33, 31 34, 31 35, 31 36, 31 37, 33 34, 33 35, 33 36, 33 37
+5000
+145 - syntactically and semantically valid: syn + syn: Parent(if, if)
+if ifs1, ifs2;
+Select <ifs1, ifs2> such that Parent*(ifs1, ifs2)
+25 33
+5000
+146 - syntactically and semantically valid: syn + syn: Parent(if, while)
+if ifs; while w;
+Select <ifs, w> such that Parent*(ifs, w)
+5 10, 5 14, 5 18, 25 27, 25 29, 25 31
+5000
+161 - syntactically and semantically valid: syn + syn: Parent(while, while)
+while w1, w2;
+Select <w1, w2> such that Parent*(w1,w2)
+24 27, 24 29, 24 31, 29 31
+5000
+162 - syntactically and semantically valid: syn + syn: Parent(while, if)
+while w; if ifs;
+Select <w, ifs> such that Parent*(w,ifs)
+24 25, 24 33, 31 33, 29 33
+5000
+257 - syntactically and semantically valid: syn + syn: Parent(stmt, stmt)
+stmt s;
+Select BOOLEAN such that Parent(s,s)
+false
+5000
+258 - syntactically and semantically valid: syn + syn: Parent(stmt, stmt)
+stmt s;
+Select BOOLEAN such that Parent*(s,s)
+false
+5000
+273 - syntactically valid but semantically invalid: Parent(variable/procedure/constant, _)
+variable v;
+Select BOOLEAN such that Parent(v,_)
+false
+5000
+274 - syntactically valid but semantically invalid: Parent(variable/procedure/constant, _)
+procedure pr;
+Select BOOLEAN such that Parent*(pr,_)
+false
+5000
+275 - syntactically valid but semantically invalid: Parent(variable/procedure/constant, _)
+constant c;
+Select BOOLEAN such that Parent(c,_)
+false
+5000
+279 - syntactically valid but semantically invalid: Parent(_, variable/procedure/constant)
+variable v;
+Select BOOLEAN such that Parent*(_,v)
+false
+5000
+280 - syntactically valid but semantically invalid: Parent(_, variable/procedure/constant)
+procedure pr;
+Select BOOLEAN such that Parent(_,pr)
+false
+5000
+281 - syntactically valid but semantically invalid: Parent(_, variable/procedure/constant)
+constant c;
+Select BOOLEAN such that Parent*(_,c)
+false
+5000
+285 - syntactically invalid: Parent(_, “x”)
+
+Select BOOLEAN such that Parent(_, "x")
+none
+5000
+286 - syntactically invalid: Parent(_, “x”)
+
+Select BOOLEAN such that Parent(_,"x")
+none
+5000
+287 - syntactically invalid: Parent(“x”, _)
+
+Select BOOLEAN such that Parent("x",_)
+none
+5000
+288 - syntactically invalid: Parent(“x”, _)
+
+Select BOOLEAN such that Parent("x",_)
+none
+5000
+289 - syntactically invalid: Parent(syn.attr, _)
+stmt s;
+Select BOOLEAN such that Parent(s.stmt#, _)
+none
+5000
+291 - syntactically invalid: Parent(_, syn.attr)
+stmt s;
+Select BOOLEAN such that Parent(_, s.stmt#)
+none
+5000

@@ -1,0 +1,260 @@
+1 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = int)
+
+Select BOOLEAN such that Next*(57, 61)
+TRUE
+5000
+2 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = int)
+
+Select BOOLEAN such that Next*(51, 50)
+TRUE
+5000
+3 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = int)
+
+Select BOOLEAN such that Next*(59, 60)
+FALSE
+5000
+4 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = int)
+
+Select BOOLEAN such that Next*(56, 57)
+FALSE
+5000
+5 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = int)
+
+Select BOOLEAN such that Next*(64, 65)
+FALSE
+5000
+6 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = int)
+
+Select BOOLEAN such that Next*(64, 61)
+TRUE
+5000
+7 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = _)
+
+Select BOOLEAN such that Next*(45, _)
+TRUE
+5000
+8 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = _)
+
+Select BOOLEAN such that Next*(56, _)
+FALSE
+5000
+9 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = _)
+
+Select BOOLEAN such that Next*(59, _)
+FALSE
+5000
+10 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = _)
+
+Select BOOLEAN such that Next*(64, _)
+TRUE
+5000
+11 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = synonym)
+prog_line n;
+Select n such that Next*(45, n)
+46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64
+5000
+12 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = synonym)
+prog_line n;
+Select n such that Next*(46, n)
+47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64
+5000
+13 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = synonym)
+prog_line n;
+Select n such that Next*(47, n)
+48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64
+5000
+14 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = synonym)
+prog_line n;
+Select n such that Next*(48, n)
+49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64
+5000
+15 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = synonym)
+prog_line n;
+Select n such that Next*(49, n)
+50, 51, 52, 53, 54, 55, 56
+5000
+16 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = synonym)
+prog_line n;
+Select n such that Next*(50, n)
+50, 51, 52, 53, 54, 55, 56
+5000
+17 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = synonym)
+prog_line n;
+Select n such that Next*(51, n)
+50, 51, 52, 53, 54, 55, 56
+5000
+18 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = synonym)
+prog_line n;
+Select n such that Next*(52, n)
+50, 51, 52, 53, 54, 55, 56
+5000
+19 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = synonym)
+prog_line n;
+Select n such that Next*(53, n)
+50, 51, 52, 53, 54, 55, 56
+5000
+20 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = synonym)
+prog_line n;
+Select n such that Next*(54, n)
+55, 56
+5000
+21 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = synonym)
+prog_line n;
+Select n such that Next*(55, n)
+56
+5000
+22 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = synonym)
+prog_line n;
+Select n such that Next*(56, n)
+none
+5000
+23 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = synonym)
+prog_line n;
+Select n such that Next*(57, n)
+58, 59, 60, 61, 62, 63, 64
+5000
+24 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = synonym)
+prog_line n;
+Select n such that Next*(58, n)
+59
+5000
+25 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = synonym)
+prog_line n;
+Select n such that Next*(59, n)
+none
+5000
+26 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = synonym)
+prog_line n;
+Select n such that Next*(60, n)
+60, 61, 62, 63, 64
+5000
+27 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = synonym)
+prog_line n;
+Select n such that Next*(61, n)
+60, 61, 62, 63, 64
+5000
+28 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = synonym)
+prog_line n;
+Select n such that Next*(62, n)
+60, 61, 62, 63, 64
+5000
+29 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = synonym)
+prog_line n;
+Select n such that Next*(63, n)
+60, 61, 62, 63, 64
+5000
+30 - valid query (1 Next* clause, procedure THREE, lineRef 1 = int, lineRef 2 = synonym)
+prog_line n;
+Select n such that Next*(64, n)
+60, 61, 62, 63, 64
+5000
+31 - valid query (1 Next* clause, procedure THREE, lineRef 1 = _, lineRef 2 = int)
+
+Select BOOLEAN such that Next*(_, 45)
+FALSE
+5000
+32 - valid query (1 Next* clause, procedure THREE, lineRef 1 = _, lineRef 2 = int)
+
+Select BOOLEAN such that Next*(_, 56)
+TRUE
+5000
+33 - valid query (1 Next* clause, procedure THREE, lineRef 1 = synonym, lineRef 2 = int)
+prog_line n;
+Select n such that Next*(n, 45)
+none
+5000
+34 - valid query (1 Next* clause, procedure THREE, lineRef 1 = synonym, lineRef 2 = int)
+prog_line n;
+Select n such that Next*(n, 46)
+45
+5000
+35 - valid query (1 Next* clause, procedure THREE, lineRef 1 = synonym, lineRef 2 = int)
+prog_line n;
+Select n such that Next*(n, 47)
+45, 46
+5000
+36 - valid query (1 Next* clause, procedure THREE, lineRef 1 = synonym, lineRef 2 = int)
+prog_line n;
+Select n such that Next*(n, 48)
+45, 46, 47
+5000
+37 - valid query (1 Next* clause, procedure THREE, lineRef 1 = synonym, lineRef 2 = int)
+prog_line n;
+Select n such that Next*(n, 49)
+45, 46, 47, 48
+5000
+38 - valid query (1 Next* clause, procedure THREE, lineRef 1 = synonym, lineRef 2 = int)
+prog_line n;
+Select n such that Next*(n, 50)
+45, 46, 47, 48, 49, 50, 51, 52, 53
+5000
+39 - valid query (1 Next* clause, procedure THREE, lineRef 1 = synonym, lineRef 2 = int)
+prog_line n;
+Select n such that Next*(n, 51)
+45, 46, 47, 48, 49, 50, 51, 52, 53
+5000
+40 - valid query (1 Next* clause, procedure THREE, lineRef 1 = synonym, lineRef 2 = int)
+prog_line n;
+Select n such that Next*(n, 52)
+45, 46, 47, 48, 49, 50, 51, 52, 53
+5000
+41 - valid query (1 Next* clause, procedure THREE, lineRef 1 = synonym, lineRef 2 = int)
+prog_line n;
+Select n such that Next*(n, 53)
+45, 46, 47, 48, 49, 50, 51, 52, 53
+5000
+42 - valid query (1 Next* clause, procedure THREE, lineRef 1 = synonym, lineRef 2 = int)
+prog_line n;
+Select n such that Next*(n, 54)
+45, 46, 47, 48, 49, 50, 51, 52, 53
+5000
+43 - valid query (1 Next* clause, procedure THREE, lineRef 1 = synonym, lineRef 2 = int)
+prog_line n;
+Select n such that Next*(n, 55)
+45, 46, 47, 48, 49, 50, 51, 52, 53, 54
+5000
+44 - valid query (1 Next* clause, procedure THREE, lineRef 1 = synonym, lineRef 2 = int)
+prog_line n;
+Select n such that Next*(n, 56)
+45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55
+5000
+45 - valid query (1 Next* clause, procedure THREE, lineRef 1 = synonym, lineRef 2 = int)
+prog_line n;
+Select n such that Next*(n, 57)
+45, 46, 47, 48
+5000
+46 - valid query (1 Next* clause, procedure THREE, lineRef 1 = synonym, lineRef 2 = int)
+prog_line n;
+Select n such that Next*(n, 58)
+45, 46, 47, 48, 57
+5000
+47 - valid query (1 Next* clause, procedure THREE, lineRef 1 = synonym, lineRef 2 = int)
+prog_line n;
+Select n such that Next*(n, 59)
+45, 46, 47, 48, 57, 58
+5000
+48 - valid query (1 Next* clause, procedure THREE, lineRef 1 = synonym, lineRef 2 = int)
+prog_line n;
+Select n such that Next*(n, 60)
+45, 46, 47, 48, 57, 60, 61, 62, 63, 64
+5000
+49 - valid query (1 Next* clause, procedure THREE, lineRef 1 = synonym, lineRef 2 = int)
+prog_line n;
+Select n such that Next*(n, 61)
+45, 46, 47, 48, 57, 60, 61, 62, 63, 64
+5000
+50 - valid query (1 Next* clause, procedure THREE, lineRef 1 = synonym, lineRef 2 = int)
+prog_line n;
+Select n such that Next*(n, 62)
+45, 46, 47, 48, 57, 60, 61, 62, 63, 64
+5000
+51 - valid query (1 Next* clause, procedure THREE, lineRef 1 = synonym, lineRef 2 = int)
+prog_line n;
+Select n such that Next*(n, 63)
+45, 46, 47, 48, 57, 60, 61, 62, 63, 64
+5000
+52 - valid query (1 Next* clause, procedure THREE, lineRef 1 = synonym, lineRef 2 = int)
+prog_line n;
+Select n such that Next*(n, 64)
+45, 46, 47, 48, 57, 60, 61, 62, 63, 64
+5000

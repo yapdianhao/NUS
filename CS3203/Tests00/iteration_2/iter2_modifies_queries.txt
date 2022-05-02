@@ -1,0 +1,140 @@
+1 - valid query (entRef1 = pr, entRef2 = _)
+procedure pr; stmt s;
+Select s such that Modifies (pr, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+5000
+2 - valid query (entRef1 = pr, entRef2 = v)
+procedure pr; variable v; 
+Select v such that Modifies (pr, v)
+am, bm1, bm2, cm1, cm2, m, procedure
+5000
+3 - valid query (entRef1 = pr, entRef2 = varName)
+procedure pr; read r;
+Select r such that Modifies (pr, "am")
+2, 9, 10, 15, 18
+5000
+4 - valid query (entRef1 = pr, entRef2 = _)
+procedure pr; print p;
+Select p such that Modifies (pr, _)
+3, 7, 11, 17, 20
+5000
+5 - valid query (entRef1 = pr, entRef2 = v)
+procedure pr; variable v; assign a;
+Select a such that Modifies (pr, v)
+12, 14, 19
+5000
+6 - valid query (entRef1 = pr, entRef2 = varName)
+procedure pr; if ifs;
+Select ifs such that Modifies (pr, "cm2")
+5
+5000
+7 - valid query (entRef1 = pr, entRef2 = _)
+procedure pr; while w;
+Select w such that Modifies (pr, _)
+13
+5000
+8 - valid query (entRef1 = pr, entRef2 = v)
+procedure pr; variable v; call ca;
+Select ca such that Modifies (pr, v)
+1, 4, 6, 8, 16
+5000
+9 - valid query (entRef1 = pr, entRef2 = varName)
+procedure pr; constant c;
+Select c such that Modifies (pr, "bm1")
+10, 1, 28
+5000
+10 - valid query (entRef1 = pr, entRef2 = _)
+procedure pr; prog_line prog;
+Select prog such that Modifies (pr, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+5000
+11 - valid query (entRef1 = pr, entRef2 = v)
+procedure pr; variable v; 
+Select pr such that Modifies (pr, v)
+a, b, c, procName, B, procedure
+5000
+12 - valid query (entRef1 = pr, entRef2 = varName)
+procedure pr; if ifs;
+Select ifs.stmt# such that Modifies (pr, "bm1")
+5
+5000
+13 - valid query (entRef1 = procName, entRef2 = _)
+while w;
+Select w.stmt# such that Modifies ("a", _)
+13
+5000
+14 - valid query (entRef1 = procName, entRef2 = v)
+variable v; stmt s;
+Select s.stmt# such that Modifies ("b", v)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+5000
+15 - valid query (entRef1 = procName, entRef2 = varName)
+assign a;
+Select a.stmt# such that Modifies ("c", "cm1")
+12, 14, 19
+5000
+16 - valid query (entRef1 = procName, entRef2 = _)
+read r;
+Select r.stmt# such that Modifies ("procName", _)
+2, 9, 10, 15, 18
+5000
+17 - valid query (entRef1 = procName, entRef2 = v)
+variable v; print p;
+Select p.stmt# such that Modifies ("procName", v)
+3, 7, 11, 17, 20
+5000
+18 - valid query (entRef1 = procName, entRef2 = varName)
+call ca;
+Select ca.stmt# such that Modifies ("B", "m")
+1, 4, 6, 8, 16
+5000
+19 - valid query (entRef1 = procName, entRef2 = _)
+procedure pr;
+Select pr.procName such that Modifies ("procName", _)
+a, b, c, procedure, procName, B
+5000
+20 - valid query (entRef1 = procName, entRef2 = v)
+variable v; call ca;
+Select ca.procName such that Modifies ("c", v)
+b, c, procedure
+5000
+21 - valid query (entRef1 = procName, entRef2 = varName)
+constant c;
+Select c.value such that Modifies ("b", "bm2")
+10, 1, 28
+5000
+22 - valid query (entRef1 = procName, entRef2 = _)
+
+Select BOOLEAN such that Modifies ("a", _)
+true
+5000
+23 - valid query (entRef1 = procName, entRef2 = v)
+variable v; procedure pr; 
+Select <v, pr> such that Modifies ("b", v)
+bm1 a, bm1 b, bm1 c, bm1 procedure, bm1 procName, bm1 B, bm2 a, bm2 b, bm2 c, bm2 procedure, bm2 procName, bm2 B, cm1 a, cm1 b, cm1 c, cm1 procedure, cm1 procName, cm1 B, cm2 a, cm2 b, cm2 c, cm2 procedure, cm2 procName, cm2 B, procedure a, procedure b, procedure c, procedure procedure, procedure procName, procedure B
+5000
+24 - valid query (entRef1 = procName, entRef2 = varName)
+assign a; constant c;
+Select <a.stmt#, c.value> such that Modifies ("c", "cm1")
+12 1, 14 1, 19 1, 12 10, 14 10, 19 10, 12 28, 14 28, 19 28
+5000
+25 - valid query (dependent synonym, entRef1 = pr, entRef2 = _)
+procedure pr;
+Select pr such that Modifies (pr, _)
+a, b, c, procName, B, procedure
+5000
+26 - valid query (dependent synonym, entRef1 = pr, entRef2 = v)
+procedure pr; variable v; 
+Select pr such that Modifies (pr, v)
+a, b, c, procName, B, procedure
+5000
+27 - valid query (dependent synonym, entRef1 = pr, entRef2 = varName)
+procedure pr;
+Select <pr> such that Modifies (pr, "am")
+a
+5000
+28 - valid query (dependent synonym, entRef1 = procName, entRef2 = v)
+variable v; 
+Select v such that Modifies ("procName", v)
+procedure
+5000

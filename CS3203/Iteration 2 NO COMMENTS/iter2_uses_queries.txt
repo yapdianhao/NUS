@@ -1,0 +1,160 @@
+1 - valid query (entRef1 = pr, entRef2 = _)
+procedure pr; stmt s;
+Select s such that Uses (pr, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+5000
+2 - valid query (entRef1 = pr, entRef2 = v)
+procedure pr; variable v; 
+Select v such that Uses (pr, v)
+au, bu1, bu2, cu1, cu2, cu3, u, procName
+5000
+3 - valid query (entRef1 = pr, entRef2 = varName)
+procedure pr; read r;
+Select r such that Uses (pr, "au")
+2, 9, 10, 15, 18
+5000
+4 - valid query (entRef1 = pr, entRef2 = _)
+procedure pr; print p;
+Select p such that Uses (pr, _)
+3, 7, 11, 17, 20
+5000
+5 - valid query (entRef1 = pr, entRef2 = v)
+procedure pr; variable v; assign a;
+Select a such that Uses (pr, v)
+12, 14, 19
+5000
+6 - valid query (entRef1 = pr, entRef2 = varName)
+procedure pr; if ifs;
+Select ifs such that Uses (pr, "u")
+5
+5000
+7 - valid query (entRef1 = pr, entRef2 = _)
+procedure pr; while w;
+Select w such that Uses (pr, _)
+13
+5000
+8 - valid query (entRef1 = pr, entRef2 = v)
+procedure pr; variable v; call ca;
+Select ca such that Uses (pr, v)
+1, 4, 6, 8, 16
+5000
+9 - valid query (entRef1 = pr, entRef2 = varName)
+procedure pr; constant c;
+Select c such that Uses (pr, "bu1")
+10, 1, 28
+5000
+10 - valid query (entRef1 = pr, entRef2 = _)
+procedure pr; prog_line prog;
+Select prog such that Uses (pr, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+5000
+11 - valid query (entRef1 = pr, entRef2 = v)
+procedure pr; variable v; 
+Select pr such that Uses (pr, v)
+a, b, c, procName, B
+5000
+12 - valid query (entRef1 = pr, entRef2 = varName)
+procedure pr; if ifs;
+Select ifs.stmt# such that Uses (pr, "bu1")
+5
+5000
+13 - valid query (entRef1 = procName, entRef2 = _)
+while w;
+Select w.stmt# such that Uses ("a", _)
+13
+5000
+14 - valid query (entRef1 = procName, entRef2 = v)
+variable v; stmt s;
+Select s.stmt# such that Uses ("b", v)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+5000
+15 - valid query (entRef1 = procName, entRef2 = varName)
+assign a;
+Select a.stmt# such that Uses ("c", "cu1")
+12, 14, 19
+5000
+16 - valid query (entRef1 = procName, entRef2 = _)
+read r;
+Select r.stmt# such that Uses ("procName", _)
+2, 9, 10, 15, 18
+5000
+17 - valid query (entRef1 = procName, entRef2 = v)
+variable v; print p;
+Select p.stmt# such that Uses ("procName", v)
+3, 7, 11, 17, 20
+5000
+18 - valid query (entRef1 = procName, entRef2 = varName)
+call ca;
+Select ca.stmt# such that Uses ("B", "u")
+1, 4, 6, 8, 16
+5000
+19 - valid query (entRef1 = procName, entRef2 = _)
+procedure pr;
+Select pr.procName such that Uses ("procName", _)
+a, b, c, procedure, procName, B
+5000
+20 - valid query (entRef1 = procName, entRef2 = v)
+variable v; call ca;
+Select ca.procName such that Uses ("c", v)
+b, c, procedure
+5000
+21 - valid query (entRef1 = procName, entRef2 = varName)
+constant c;
+Select c.value such that Uses ("b", "bu2")
+10, 1, 28
+5000
+22 - valid query (entRef1 = procName, entRef2 = _)
+
+Select BOOLEAN such that Uses ("a", _)
+TRUE
+5000
+23 - valid query (entRef1 = procName, entRef2 = v)
+variable v; procedure pr; 
+Select <v, pr> such that Uses ("b", v)
+bu1 a, bu1 b, bu1 c, bu1 procedure, bu1 procName, bu1 B, bu2 a, bu2 b, bu2 c, bu2 procedure, bu2 procName, bu2 B, cu1 a, cu1 b, cu1 c, cu1 procedure, cu1 procName, cu1 B, cu2 a, cu2 b, cu2 c, cu2 procedure, cu2 procName, cu2 B, cu3 a, cu3 b, cu3 c, cu3 procedure, cu3 procName, cu3 B
+5000
+24 - valid query (entRef1 = procName, entRef2 = varName)
+assign a; constant c;
+Select <a.stmt#, c.value> such that Uses ("c", "cu1")
+12 1, 14 1, 19 1, 12 10, 14 10, 19 10, 12 28, 14 28, 19 28
+5000
+25 - valid query (dependent synonym, entRef1 = pr, entRef2 = _)
+procedure pr;
+Select pr such that Uses (pr, _)
+a, b, c, procName, B
+5000
+26 - valid query (dependent synonym, entRef1 = pr, entRef2 = v)
+procedure pr; variable v; 
+Select pr such that Uses (pr, v)
+a, b, c, procName, B
+5000
+27 - valid query (dependent synonym, entRef1 = pr, entRef2 = varName)
+procedure pr;
+Select <pr> such that Uses (pr, "au")
+a
+5000
+26 - valid query (dependent synonym, entRef1 = procName, entRef2 = v)
+variable v; 
+Select v such that Uses ("b", v)
+bu1, bu2, cu1, cu2, cu3
+5000
+27 - invalid query (dependent synonym, entRef1 = pr, entRef2 = varName)
+procedure pr;
+Select pr such that Uses (pr, "am")
+none
+5000
+28 - invalid query (dependent synonym, entRef1 = procName, entRef2 = v)
+variable v; 
+Select v such that Uses ("procedure", v)
+none
+5000
+29 - invalid query (dependent synonym, entRef1 = procName, entRef2 = v)
+variable v; 
+Select <v> such that Uses ("procedure", v)
+none
+5000
+30 - invalid query (dependent synonym, entRef1 = procName, entRef2 = v)
+variable v; 
+Select BOOLEAN such that Uses ("procedure", v)
+FALSE
+5000

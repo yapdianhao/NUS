@@ -1,0 +1,35 @@
+1 - modifies(p, v), query p
+procedure p; variable v;
+Select p such that Modifies(p, v)
+procA, procB
+5000
+2 - modifies(p, v), query v
+procedure p; variable v;
+Select v such that Modifies(p, v)
+a, b, c
+5000
+3 - modifies(s, v), query s
+stmt s; variable v;
+Select s such that Modifies(s, v)
+1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13
+5000
+4 - modifies(s, v), query v
+stmt s; variable v;
+Select v such that Modifies(s, v)
+a, b, c
+5000
+5 - modifies(const p, v), query v
+variable v;
+Select v such that Modifies("procA", v)
+a, b, c
+5000
+6 - modifies(p, const v), query p
+procedure p;
+Select p such that Modifies(p, "c")
+procA, procB
+5000
+7 - modifies(s, const v), query s
+if i;
+Select i such that Modifies(i, "b")
+6
+5000

@@ -1,0 +1,35 @@
+1 - follows + pattern
+assign a1, a2;
+Select a1 such that Follows(a1, a2) pattern a1("error", _)
+6
+5000
+2 - followsT + pattern
+assign a; read r;
+Select r such that Follows*(r, a) pattern a(_,_"0"_)
+1, 2
+5000
+3 - parent + pattern
+assign a; stmt s;
+Select a such that Parent(s, a) pattern a(_, _"guess"_)
+17, 18
+5000
+4 - parentT + pattern
+assign a; while w;
+Select a such that Parent*(w, a) pattern a("attempt", _)
+11, 20
+5000
+5 - Uses + pattern
+assign a; if ifs; variable v;
+Select a such that Uses(ifs, v) pattern a(_, _"guess"_)
+17, 18
+5000
+6 - Modifies + pattern
+assign a; variable v; if ifs;
+Select a such that Uses(ifs, v) pattern a("attempt", _"attempt"_)
+20
+5000
+7 - _const_ on RHS
+assign a1, a2;
+Select a1 pattern a1(_, _"1"_) such that Follows(a1, a2)
+3
+5000

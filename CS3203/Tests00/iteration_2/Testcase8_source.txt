@@ -1,0 +1,29 @@
+procedure strassen {
+	det = 1;            //1
+	while (det != 0) {  //2
+		read a11;       //3
+		read a12;       //4
+		read a21;       //5
+		read a22;       //6
+		read b11;       //7
+		read b12;       //8
+		read b21;       //9
+		read b22;       //10
+
+		m1 =(a11 + a22)* (b11 + b22);   //11
+		m2 = (a21 + a22)* b11;          //12
+		m3 = a11 * (b12 - b22);         //13
+		m4 = a22 * (b21- b11);          //14
+		m5 = (a11 + a12)*b22;           //15
+		m6 = (a21 - a11)* (b11 + b12);  //16
+		m7 = (a12 - a22)* (b21 + b22);  //17
+		c11 = m1 + m4 - m5 + m7;        //18
+		c12 = m3 + m5;                  //19
+		c21 = m2 + m4;                  //20
+		c22 = (m1 - m2) + m3 + m6;        //21
+		det = c11 * c22 - c12 * c21;    //22
+		stressen = (a11 + a22) * b11 + b22 / ((a21 + a22) * b22 * b21); //23
+                samePrecedence = c11 * c12 * c13 * c14 * c15 * c16;   //24
+                bracketPrecedence = d11 / (d12 / d13 / d14) / d15 / d16;    //25 
+	}
+}

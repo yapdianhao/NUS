@@ -1,0 +1,42 @@
+procedure powerAndSeries {
+    read exp;
+    x = 0;
+    call computePow;
+}
+
+procedure computePow {
+    sum  = 0;
+    isPow = 1;
+    factor = 1;
+    while (exp != 1) {
+        result = 0;
+        if (exp % 2 == 0) then {
+            exp = factor / 2;
+            sum = x * x;
+        } else {
+            isPow = 0;
+            call computeSeries;
+            x = exp;
+            exp  = 1+ factor;
+        }
+    }
+    print sum;
+    exp = exp -1;
+    factor = exp/factor*sum - sum;
+    factor  = factor - exp;
+    if (factor == 1) then {
+        factor = factor * sum -sum;
+    } else {
+        print factor;
+    }
+}
+
+procedure computeSeries {
+    read factor;
+    factor = 1;
+    read exp;
+    while ((x <= 7) && (x > 1)) {
+        result  = result + x * factor;
+        x = x -1;
+    }
+}

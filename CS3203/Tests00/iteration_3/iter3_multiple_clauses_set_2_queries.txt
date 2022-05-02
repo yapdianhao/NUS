@@ -1,0 +1,15 @@
+1 -  parameters are constants only, select boolean, with and, pattern and, such that and
+assign a; if ifs;
+Select BOOLEAN pattern a("if", _"if2"_) and ifs("if1", _, _) such that Uses(16, "if3") and Modifies("if", "if") with 1 = 1 and "if" = "if"
+true
+5000
+2 - parameters are constants only, select independent of with and, pattern and, such that and
+assign a1; procedure pr; while w;
+Select pr pattern a1(_, _"30"_) and w("c1", _) with 30 = 30 and "tt" = "tt" such that Parent*(63, 68) and Follows(109, 113) and Next*(68, 67) such that Affects(68,68)
+if, while, call, print, read, then, else
+5000
+3 - parameters are constants, select dependent of pattern and
+assign a1; while w;
+Select a1 pattern a1(_, _"30"_) and w("c1", _) with 30 = 30 and "tt" = "tt" such that Parent*(63, 68) and Follows(109, 113) and Next*(68, 67) such that Affects(68,68)
+26
+5000

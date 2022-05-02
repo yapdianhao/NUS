@@ -1,0 +1,44 @@
+procedure proc1 {
+  call proc2;
+}
+procedure proc2 {
+  if (x != 1) then {
+    call proc3;
+  } else {
+    x = x + 1;
+  }
+}
+procedure proc3 {
+  while (y != 1) {
+    call proc4;
+  }
+}
+procedure proc4 {
+  if (z != 1) then {
+    while (z != 1) {
+      while (z != 1) {
+        call proc5;
+      }
+    }
+  } else {
+    call proc6;
+  }
+}
+procedure proc5 {
+  call proc7;
+}
+procedure proc6 {
+  call proc7;
+}
+procedure proc7 {
+  call proc8;
+}
+procedure proc8 {
+  call proc9;
+}
+procedure proc9 {
+  call proc10;
+}
+procedure proc10 {
+  print ok;
+}

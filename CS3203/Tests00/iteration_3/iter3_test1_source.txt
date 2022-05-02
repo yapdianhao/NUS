@@ -1,0 +1,36 @@
+procedure main {
+    read x;        
+    count = 0;     
+    call computation;   
+}
+
+procedure getRange {
+  if ((x > 10) && (x < 99)) then {   
+  x = x % 10;   
+ } else { 
+  x = 5; }   
+  print sum; }   
+
+procedure computation {
+   read y;    
+   x = y;     
+   sum = sum * sum + f + x;      
+   z = 1;    
+   f = 0;    
+   y = 1;    
+   count = count + 1;   
+   sum = 0;      
+   call getRange;   
+   while (count <= x) {   
+   sum = sum + y;   
+   m = y + z;   
+   y = z;   
+   z = m;    
+   if (sum > 10) then {   
+   f = 1; }   
+ else {
+   f = 0; }   
+   count = count + 1; }   
+   print sum;   
+   a = f + y + z + sum * sum / f + x;   
+   print a; }    

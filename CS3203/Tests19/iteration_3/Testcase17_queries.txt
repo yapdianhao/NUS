@@ -1,0 +1,90 @@
+1 - Test 1 Qn 3a
+stmt s, s1; assign a, a1; while w; if ifs; variable v, v1; procedure p, q; constant c; prog_line n; call cl; read re; print pn;
+Select a pattern a (_,_"y/f"_)
+21, 22
+5000
+2 - Test 1 Qn 3b
+stmt s, s1; assign a, a1; while w; if ifs; variable v, v1; procedure p, q; constant c; prog_line n; call cl; read re; print pn;
+Select v such that Uses (20, v)
+f, d, x, y
+5000
+3 - Test 1 Qn 3c
+stmt s, s1; assign a, a1; while w; if ifs; variable v, v1; procedure p, q; constant c; prog_line n; call cl; read re; print pn;
+Select pattern a (_, _"a"_)
+none
+5000
+4 - Test 1 Qn 3d
+stmt s, s1; assign a, a1; while w; if ifs; variable v, v1; procedure p, q; constant c; prog_line n; call cl; read re; print pn;
+Select v such that Modifies (s, v) and Parent* (s, 13)
+p, x, first, count
+5000
+5 - Test 1 Qn 3e
+stmt s, s1; assign a, a1; while w; if ifs; variable v, v1; procedure p, q; constant c; prog_line n; call cl; read re; print pn;
+Select q such that Calls* (p, q) with p.procName="computeSeq"
+computeLimit
+5000
+6 - Test 1 Qn 3f
+stmt s, s1; assign a, a1; while w; if ifs; variable v, v1; procedure p, q; constant c; prog_line n; call cl; read re; print pn;
+Select <s, s1> such that Next (10, s) and Next (s, s1)
+11 12, 11 17, 16 17
+5000
+7 - Test 1 Qn 3g
+stmt s, s1; assign a, a1; while w; if ifs; variable v, v1; procedure p, q; constant c; prog_line n; call cl; read re; print pn;
+Select a such that Affects (a, 9)
+none
+5000
+8 - Test 1 Qn 3h
+stmt s, s1; assign a, a1; while w; if ifs; variable v, v1; procedure p, q; constant c; prog_line n; call cl; read re; print pn;
+Select s such that Follows* (s, a) pattern a (_,_"a+b"_)
+none
+5000
+9 - Test 1 Qn 3i
+stmt s, s1; assign a, a1; while w; if ifs; variable v, v1; procedure p, q; constant c; prog_line n; call cl; read re; print pn;
+Select a such that Next* (7, a)
+9, 12, 13, 14, 15, 16
+5000
+10 - Test 1 Qn 3j
+stmt s, s1; assign a, a1; while w; if ifs; variable v, v1; procedure p, q; constant c; prog_line n; call cl; read re; print pn;
+Select a such that Affects (a, a1) with a1.stmt# = c.value
+9
+5000
+11 - Test 1 Qn 3k
+stmt s, s1; assign a, a1; while w; if ifs; variable v, v1; procedure p, q; constant c; prog_line n; call cl; read re; print pn;
+Select a such that Follows* (a, s) and Next (14, s) and pattern a ("p", _)
+none
+5000
+12 - Test 1 Qn 3l
+stmt s, s1; assign a, a1; while w; if ifs; variable v, v1; procedure p, q; constant c; prog_line n; call cl; read re; print pn;
+Select v such that Follows* (s, s1) and Next (cl, s1) and Modifies (s, v)
+first, d, b, count, x, limit
+5000
+13 - Test 1 Qn 3m
+stmt s, s1; assign a, a1; while w; if ifs; variable v, v1; procedure p, q; constant c; prog_line n; call cl; read re; print pn;
+Select v such that Follows (ifs, s) and Uses (s, v) pattern ifs (v, _, _)
+none
+5000
+14 - Test 1 Qn 3n
+stmt s, s1; assign a, a1; while w; if ifs; variable v, v1; procedure p, q; constant c; prog_line n; call cl; read re; print pn;
+Select re such that Modifies (re, v) and Uses (p, v) with p.procName = cl.procName such that Next* (cl, pn)
+1, 2
+5000
+15 - Test 1 Qn 3o
+stmt s, s1; assign a, a1; while w; if ifs; variable v, v1; procedure p, q; constant c; prog_line n; call cl; read re; print pn;
+Select <ifs, a, v> such that Uses (pn, v) pattern a (v1, _) such that Uses (a, v1)
+10 9 x, 10 9 limit, 10 15 x, 10 15 limit, 20 9 x, 20 9 limit, 20 15 x, 20 15 limit
+5000
+16 - Test 1 Qn 3p
+stmt s, s1; assign a, a1; while w; if ifs; variable v, v1; procedure p, q; constant c; prog_line n; call cl; read re; print pn;
+Select v such that Next* (cl, a) and Affects (a, a1) and Modifies (a1, v)
+first, p, x, count
+5000
+17 - Test 1 Qn 3q
+stmt s, s1; assign a, a1; while w; if ifs; variable v, v1; procedure p, q; constant c; prog_line n; call cl; read re; print pn;
+Select a such that Affects* (12, a) and Affects* (a, 12)
+12, 13, 14
+5000
+18 - Test 1 Qn 3r
+stmt s, s1; assign a, a1; while w; if ifs; variable v, v1; procedure p, q; constant c; prog_line n; call cl; read re; print pn;
+Select s such that Next* (s, a1) and Follows* (a1, a) pattern a (v, _"a"_)
+4, 5, 6
+5000

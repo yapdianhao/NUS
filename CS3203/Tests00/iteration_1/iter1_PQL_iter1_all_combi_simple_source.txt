@@ -1,0 +1,59 @@
+procedure main {
+  a = 1;
+  print b;
+  read c;
+  while (d!=0) {
+    e = e - 2;
+    if (e==1) then {
+      f = 2 * f;}
+    else {
+      g = g + a;}
+    a = b + c + d;
+    b = b - 3; }
+  if (g>4) then {
+    c = c - a * b + 1;
+    while (e<0) {
+      print e;
+      read b;}
+    read d;
+    print d;}
+  else {
+    while (b!=5) {
+      read a;
+      b = c + g;
+      if (g<6) then {
+        g = g + 1;
+        read g;
+        print g;}
+      else {
+        a = a - 1;
+        a = a + 2;}}
+    read c;}
+  h = h;
+  while (h!=h) {
+    print j;
+    while (b<0) {
+      read i;
+      while (g==0) {
+        i = j + k;}}}
+  if (b<=0) then {
+    if (h>=c) then {
+      e = b + 1;
+      if (e<=b) then {
+        a = x - 10;} 
+      else {
+        a1 = a1 + 100;}} 
+    else {
+    a = 1 - 2;}} 
+  else {
+    if (100 == 12) then {
+      if (l == m) then {
+        a = x + 10000;} 
+      else { 
+        print h;}
+      b = a + 1;
+      read x;} 
+    else {
+      read k;}
+    print secondLast;}
+  print last;}

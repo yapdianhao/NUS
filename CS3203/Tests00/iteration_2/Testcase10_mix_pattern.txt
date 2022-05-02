@@ -1,0 +1,75 @@
+1 - pattern a(_, _) + pattern ifs(_, _, _) + pattern w(_, _)
+assign a; if ifs; while w;
+Select ifs pattern a(_, _) pattern ifs(_, _, _) pattern w(_, _)
+8, 11, 13, 27, 34
+5000
+2 - pattern a(v, _) + pattern ifs(v, _, _) + pattern w(_, _)
+assign a; if ifs; while w; variable v;
+Select ifs pattern a(v, _) pattern ifs(v, _, _) pattern w(_, _)
+8, 11, 13, 27, 34
+5000
+3 - pattern a(v, _) + pattern ifs(v, _, _) + pattern w(v, _)
+assign a; if ifs; while w; variable v;
+Select ifs pattern a(v, _) pattern ifs(v, _, _) pattern w(v, _)
+11, 13, 27
+5000
+4 - pattern a(IDENT, _) + pattern ifs(IDENT, _, _) + pattern w(IDENT, _)
+assign a; if ifs; while w;
+Select w pattern a("guess", _) pattern ifs("gameType", _, _) pattern w("answer", _)
+17, 21
+5000
+5 - pattern a(IDENT, _) with no result
+assign a; if ifs; while w;
+Select w pattern a("wrongVar", _) pattern ifs("gameType", _, _) pattern w("answer", _)
+none
+5000
+6 - Invalid pattern w
+assign a; if ifs; while w;
+Select w pattern a(_, _) pattern ifs(_, _, _) pattern w(a, _)
+none
+5000
+7 - such that pattern
+assign a; if ifs; while w;
+Select ifs pattern a(_, _) such that pattern ifs(_, _, _) pattern w(_, _)
+none
+5000
+8 - multiple assign patterns and Follows
+assign a1; stmt s;
+Select a1 pattern a1("guess", _) such that Follows(a1, s) pattern a1(_, _"guess"_)
+18, 22
+5000
+9 - multiple if pattern
+if ifs;
+Select ifs pattern ifs("guess", _, _) pattern ifs("answer", _, _)
+11, 13
+5000
+10 - multiple w pattern 
+while w;
+Select w pattern w("answer", _) pattern w("guess", _)
+17, 21
+5000
+11 - find v in both if and while
+variable v; if ifs; while w;
+Select v pattern ifs(v, _, _) pattern w(v, _)
+guess, answer, dummy
+5000
+12 - multiple patterns and Follows*
+assign a1; if ifs;
+Select a1 pattern a1("useless", _) such that Follows*(a1, ifs) pattern ifs("gameType", _, _)
+7
+5000
+13 - multiple patterns and Parent + Parent*
+while w1, w2; if ifs; variable v;
+Select w1 pattern ifs(_, _, _) pattern w1(_, _) such that Parent(w1, ifs) such that Parent*(w1, w2)
+10
+5000
+14 - multiple patterns and Uses + Modifies
+variable v; assign a; while w;
+Select v such that Parent*(w, a) pattern w(v, _) pattern a(_, _"dummy"_) such that Uses (a, v) such that Modifies(a, v)
+dummy
+5000
+15 - multiple patterns and Next and Next*
+assign a1, a2; if ifs;
+Select a1 such that Next(ifs, a1) and Next*(a1, a2) pattern a1(_, _) and a2("dummy", _)
+9, 12, 14, 15
+5000

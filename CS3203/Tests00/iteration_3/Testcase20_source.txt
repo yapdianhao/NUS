@@ -1,0 +1,11 @@
+procedure ifWhileEdge {
+    if (1 == 2) then {
+     stmt2 = stmt2;
+    } else {
+     stmt3 = stmt3;
+    }
+
+    while (2 == 3) {
+        stmt3 = stmt4;
+    }
+}

@@ -1,0 +1,275 @@
+1 - multiple clauses, parameter only constants, with + and, pattern + and, such that + and
+call c; print p; if ifs; assign a;
+Select BOOLEAN such that Modifies(89, "orange") and Parent*(93, 106) with c.procName = "food" and p.stmt# = 112 pattern ifs("blue", _, _) and a("animals", _"icebear * dog"_)
+true
+5000
+2 - multiple clauses, parameter synonyms and constants, common synonyms: multiple sets 
+while w; variable v, v1; prog_line n; assign a; procedure proc; constant c;
+Select <proc, a> pattern w(v1, _) with n = c.value such that Uses(n, v) and Modifies(proc, v) pattern a(_, _"41 * z"_)
+AST 104,Aragon 104,Bumblebee 104,COLOUR 104,Example 104,Frodo 104,Gandalf 104,PQL 104,SIMPLE 104,SPA 104,animals 104,computation 104,food 104,fruits 104,getRange 104,korea 104,main 104,multipleContainers 104,p 104,q 104,stars 104
+5000
+3 - multiple clauses, parameter synonyms and constants, common synonyms: multiple sets 
+read r; assign a; while w;
+Select <w, r, p> with r.stmt# = 71 such that Affects*(a, a) and Uses(a, "pink") pattern w("green", _)
+none
+5000
+4 - multiple clauses, parameter synonyms and constants, common synonyms: multiple sets
+prog_line n; stmt s, s1; variable v;
+Select s1 such that Affects*(n, 92) pattern n(v, _) with Next*(s, s) such that Uses(s1, v)
+none
+5000
+5 - multiple clauses, parameter synonyms, common synonyms: dependent
+while w; if ifs; variable v;
+Select <w, ifs> such that Next(w, ifs) pattern w(v, _) and ifs(v, _, _)
+333 337
+5000
+6 - multiple clauses, parameter synonyms, common synonyms: dependent
+assign a; if ifs; while w; variable v;
+Select <a, ifs> such that Parent(ifs, a) and Parent*(w, ifs) pattern w(v, _)
+193 191,195 191,196 191,198 191,199 191,217 215,222 221,223 221,23 22,234 233,235 233,24 22,240 233,243 233,245 221,246 221,247 221,256 215,258 257,259 257,266 257,271 268,272 268,273 268,283 282,284 282,338 337,339 337,340 337,353 347,362 361,51 50,56 55,57 55,63 55,66 64,67 64,68 64,74 52,76 75,77 75,81 75,86 50,89 88,92 88
+5000
+7 - multiple clauses, parameter synonyms, common synonyms: dependent
+while w; assign a, a1; constant c;
+Select w such that Next*(a, w) and Affects*(a, a1) with a1.stmt# = c.value
+105,113,122,123,129,136,148,17,342,345,348,349,354,36,363,366,370,46,58,70,82,96
+5000
+8 - 
+prog_line n1, n2; variable v; call c;
+Select c such that Next*(n1, n2) and Modifies(n1, v) and Uses(n2, v) and Modifies(c, v)
+102,116,16,178,194,231,267,286,288,292,3,306,309,31,312,317,319,324,329,35,360,40,44,72
+5000
+9 - 
+assign a1, a2; variable v;
+Select v pattern a1(v, _) such that Affects*(a1, a2) and Uses(a2, v)
+a,a1,a1a,and,animals,apple,b,b1,bb2,black,blue,blueberry,bread,butter,c,c1,candy,cat,ccc,cony,count,d,d1,dD4,dog,f,f1,fff,flour,g1,green,grey,grizz,i,icebear,lost,m,m1,n1,noodles,p,panda,papaya,parent,pear,pineapple,pink,purple,r1,red,rice,ring,s1,shine,soju,stmt,strawberry,suchthat,sum,t1,tiger,uses,w,white,x,x1,y,y1,z,z1
+5000
+10 - 
+stmt s; prog_line n;
+Select s such that Next*(66, n) and Parent*(s, n)
+46,50,52,55,58,64,70,75,82,88
+5000
+11 - 
+if ifs; assign a1, a2; variable v1, v2;
+Select ifs such that Follows*(a1, ifs) and Follows*(ifs, a2) and Modifies(ifs, v1) and Uses(ifs, v2) with v1.varName = v2.varName
+157,282,33
+5000
+12 - 
+procedure p, q; variable v; while w;
+Select BOOLEAN such that Calls(p, q) with q.procName = "animals" such that Modifies(p, v) pattern w(v, _)
+true
+5000
+13 - 
+procedure p, q; variable v; while w;
+Select w such that Calls(p, q) with q.procName = "animals" such that Modifies(p, v) pattern w(v, _)
+105,113,122,129,136,148,158,17,185,201,209,213,218,224,228,236,248,260,274,321,333,36,363,366,370,379,383,386,390,391,46,58,70,82,96
+5000
+14 - 
+procedure p, q; variable v; print pt; read r;
+Select pt such that Modifies(q, v) and Calls(p, q) with pt.varName = v.varName
+127,131,147,156,161,169,170,172,183,214,241,26,28,311,326,369,372,373,380,385,400,42,48,62,7,78,79,91
+5000
+15 -
+stmt s; prog_line n; variable v; stmt s1; if ifs;
+Select v such that Next*(n, n) and Parent*(s, n) pattern ifs(v, _, _) with ifs.stmt# = s.stmt#
+a,a1,a1a,apple,b1,bb2,black,blue,c,ccc,dog,g1,green,grey,k,lost,m1,meow,n1,pink,procedure,purple,q,rice,s1,shine,sum,sweet,t1,uses,velvet,white,x,x1,y,y1,yellow
+5000
+16 -
+stmt s, s1; while w;
+Select <s, s1> such that Affects(s, s1) and Follows*(s, w)
+11 19,11 20,11 27,111 114,111 115,12 27,128 133,128 144,13 18,13 19,13 27,134 151,134 154,135 134,14 25,15 18,15 27,186 190,186 196,187 186,187 187,190 202,208 211,208 220,210 223,212 217,212 220,212 225,212 229,212 264,212 276,217 217,217 237,222 217,222 226,223 223,223 225,223 229,225 211,225 220,225 226,225 229,225 232,226 235,226 246,226 251,226 259,234 211,234 220,234 229,234 232,235 220,235 226,235 243,245 217,245 220,245 225,245 229,245 264,245 276,246 217,246 234,246 243,246 252,246 276,247 273,258 245,258 258,258 264,258 276,259 217,259 234,259 243,259 276,277 281,278 284,278 285,279 285,279 287,332 335,341 343,341 344,341 350,341 356,343 356,343 358,344 350,344 356,353 355,362 364,362 368,377 389,384 387,384 388,43 45,43 51,43 57,43 85,56 63,57 66,57 68,57 89,9 10
+5000
+17 - 
+stmt s; assign a; variable v; procedure p, q; call c; 
+Select <c, q> such that Uses(a, v) with s.stmt# = c.stmt# and p.procName = c.procName pattern a(_, _) such that Calls*(p, q)
+102 animals,231 getRange,288 q,3 getRange,309 AST,317 Aragon,324 Aragon,35 computation,35 getRange,72 animals
+5000
+18 -
+assign a, a1; while w; variable v, v2; print pn; stmt s;
+Select a such that Affects(a, s) and Modifies(s, v) pattern w(v, _) such that Uses(a, v2) and Uses(pn, v2) and Next*(a1, pn)
+100,124,128,149,155,18,19,20,210,217,223,225,226,229,232,245,251,258,276,281,283,294,295,30,32,355,364,365,368,37,371,377,38,381,382,387,43,51,57,66,73,76,84,97,98,99
+5000
+19 -
+stmt s; print p; variable v; 
+Select p such that Affects*(14, s) and Uses(p, v) such that Modifies(s, v)
+none
+5000
+20 - 
+assign a; variable v;
+Select v such that Affects*(70, a) such that Uses(a, v)
+none
+5000
+21 - 
+assign a; variable v; stmt s1; procedure p1, p2; if ifs; 
+Select <a, v> pattern a(v, _) such that Affects*(222, s1) such that Calls*(p1, p2) and Parent*(209, s1) such that Modifies(ifs, v) and Uses(p1, _) and Uses(s1, v) and Modifies(p2, v) pattern ifs("x", _, _)
+100 a,220 a,243 a,27 a,302 a,327 a,332 a,338 a,377 a,389 a,77 a,92 a
+5000
+22 - 
+
+Select BOOLEAN such that Affects(1, 1) with 1 = 1 such that Modifies(1, "x") and Parent*(213, 265)
+false
+5000
+23 - 
+
+Select BOOLEAN such that Uses(268, "g1") and Follows*(244, 248) with "value" = "value"
+true
+5000
+24 - 
+read r; prog_line n; assign a; variable v;
+Select v such that Modifies(r, "m1") and Affects(101, 117) and Next*(n, 260) with n = a.stmt# pattern a(v, _)
+a,a1,b1,c1,d1,f1,g1,m1,n1,r1,s1,t1,x1,y1,z1
+5000
+25 - 
+stmt s; variable v; read r;
+Select BOOLEAN such that Follows(256, s) and Uses(s, v) such that Modifies(r, v)
+true
+5000
+26 - 
+prog_line n1, n2; print p; variable v;
+Select BOOLEAN such that Next*(n1, n2) with n1 = p.stmt# such that Uses(p, v)
+true
+5000
+27 - 
+prog_line n; stmt s; while w; if ifs; variable v;
+Select BOOLEAN such that Affects(n, 188) with s.stmt# = 5 such that Parent(w, ifs) pattern ifs(v, _, _)
+false 
+5000
+28 - 
+prog_line n;
+Select BOOLEAN such that Affects*(n, 186) with n = 205 and n = 187
+false
+5000
+29 - 
+prog_line n; variable v; procedure p, q;
+Select <p, q> such that Affects*(n, 57) and Modifies(n, v) and Modifies(p, v) such that Calls*(p, q)
+COLOUR SPA,COLOUR animals,PQL AST,SIMPLE AST,SIMPLE PQL,SPA animals,food animals,fruits animals,fruits food,korea stars,multipleContainers animals,multipleContainers computation,multipleContainers getRange
+5000
+30 - 
+stmt s; prog_line n; variable v; procedure proc; assign a;
+Select BOOLEAN such that Affects*(128, s) and Uses(n, v) and Modifies(proc, v) pattern a(_, _"41 * z"_)
+true
+5000
+31 - 
+stmt s; assign a; prog_line n; constant c;
+Select BOOLEAN such that Affects*(83, s) pattern a(_, _"g1 * 2"_) with n = c.value
+false
+5000
+32 - 
+stmt s; variable v; read r;
+Select r such that Follows(256, s) and Uses(s, v) such that Modifies(r, v)
+125,132,140,145,206,219,227,239,250,253,261,263,269
+5000
+33 - 
+prog_line n1, n2; print p; variable v;
+Select <p, v> such that Next*(n1, n2) with n1 = p.stmt# such that Uses(p, v)
+103 apple,112 grape,119 strawberry,127 tiger,131 lion,137 brown,156 butter,161 noodles,169 chocolate,170 candy,172 sugar,183 bread,188 pattern,197 pattern,207 b1,214 a,216 t1,230 b1,238 a1,241 a,244 f1,254 f1,255 d1,26 sum,265 x1,351 e33,357 fff,369 y,372 y,373 x,380 b,385 d,48 pink,53 white,61 yellow,62 blue,65 red,78 c,79 orange,91 pink
+5000
+34 - 
+stmt s; prog_line n; variable v; procedure proc; assign a;
+Select <a, proc> such that Affects*(128, s) and Uses(n, v) and Modifies(proc, v) pattern a(_, _"41 * z"_)
+104 AST,104 Aragon,104 Bumblebee,104 COLOUR,104 Example,104 Frodo,104 Gandalf,104 PQL,104 SIMPLE,104 SPA,104 animals,104 computation,104 food,104 fruits,104 getRange,104 korea,104 main,104 multipleContainers,104 p,104 q,104 stars
+5000
+35 -  
+stmt s, s1; assign a, a1; while w; if ifs; variable v; procedure p, q; constant c; prog_line n; call cl; read re; print pn; 
+Select v pattern w (v, _) such that Parent* (w, a) and Modifies (a, v) 
+a,a1,and,b,bread,c,count,d,dog,f,f1,fff,i,icebear,lost,n1,pear,shine,t1,w,x,x1,y,y1,z,z1
+5000
+36 - 
+stmt s, s1; assign a; 
+Select a such that Next (s1, s) and Follows* (a, s1) with s.stmt# = 15 
+10,11,12,13,9
+5000
+37 -
+call c; print p; if ifs; assign a;
+Select <ifs, a> such that Modifies(89, "orange") and Parent*(93, 106) with c.procName = "food" and p.stmt# = 112 pattern ifs("blue", _, _) and a("animals", _"icebear * dog"_)
+75 134
+5000
+38 - 
+while w; variable v, v1; prog_line n; assign a; procedure proc; constant c;
+Select BOOLEAN pattern w(v1, _) with n = c.value such that Uses(n, v) and Modifies(proc, v) pattern a(_, _"41 * z"_)
+true
+5000
+39 - 
+read r; assign a; while w;
+Select BOOLEAN with r.stmt# = 71 such that Affects*(a, a) and Uses(a, "pink") pattern w("green", _)
+false
+5000
+40 -
+while w; if ifs; variable v;
+Select BOOLEAN such that Next(w, ifs) pattern w(v, _) and ifs(v, _, _)
+true
+5000
+41 -
+read r; assign a; while w;
+Select BOOLEAN  pattern w("green", _) with r.stmt# = 71 such that Affects*(a, a) such that Uses(a, "pink")
+false
+5000
+42 - 
+assign a; if ifs; while w; variable v;
+Select v pattern w(v, _) such that Parent(ifs, a) and Parent*(w, ifs) 
+a,a1,a1a,and,bb2,c,count,f1,i,n1,shine,x,x1,y1,z1
+5000
+43 - 
+stmt s; prog_line n; variable v; stmt s1; if ifs;
+Select BOOLEAN pattern ifs(v, _, _) such that Next*(n, n) with ifs.stmt# = s.stmt# such that Parent*(s, n) 
+true
+5000
+44 - 
+assign a; variable v; stmt s1; procedure p1, p2; if ifs; 
+Select <s1, p2> pattern a(v, _) and ifs("x", _, _) such that Affects*(222, s1) and Calls*(p1, p2) and Parent*(209, s1) such that Modifies(ifs, v) and Uses(p1, _) and Uses(s1, v) and Modifies(p2, v) 
+243 Aragon,243 Frodo,243 computation,243 main,243 stars
+5000
+45 - 
+if ifs; variable v; read r; stmt s; stmt s1; 
+Select BOOLEAN pattern ifs(v, _, _) with v.varName = r.varName such that Follows*(s, r) and Parent(ifs, s1)
+true
+5000
+46 - 
+if ifs; variable v; read r; stmt s; stmt s1; 
+Select <ifs, r> pattern ifs(v, _, _) such that Follows*(s, r) with v.varName = r.varName such that Parent(ifs, s1)
+171 174,215 227,221 239,221 250,233 263,257 250,268 250,282 242,282 359,289 242,289 359,298 242,298 359,303 90,318 316,328 49,33 398,337 49,347 352,361 242,361 359,374 399,378 49,4 242,4 359,50 242,50 359,50 54,50 60,50 80,50 87,88 87,93 109,93 118
+5000
+47 -
+while w; if ifs; variable v; stmt s; prog_line n;
+Select BOOLEAN such that Follows(w, ifs) pattern ifs(v, _, _) such that Parent*(w, s) with s.stmt# = n
+true
+5000
+48 -
+while w; if ifs; variable v; stmt s; prog_line n;
+Select w with s.stmt# = n such that Follows(w, ifs) pattern ifs(v, _, _) such that Parent*(w, s) 
+122,158,333,345
+5000
+49 - 
+procedure proc, proc1; variable v; assign a;
+Select BOOLEAN such that Uses(proc, v) and Calls(proc1, proc) pattern a(v, _) such that Modifies(proc1, v) 
+true
+5000
+50 - 
+procedure proc, proc1; variable v; assign a;
+Select v such that Uses(proc, v) such that Modifies(proc1, v) and Calls(proc1, proc) pattern a(v, _) 
+a,and,animals,b,bread,butter,c,candy,cat,chocolate,cony,count,d,dog,f,flour,grizz,i,icebear,lion,lost,love,m,meow,noodles,p,panda,parent,pink,rat,rice,ring,russia,shine,stmt,suchthat,sugar,sum,tiger,uses,x,y,z
+5000
+51 -
+procedure proc, proc1; variable v; assign a;
+Select v such that Uses(proc, v) such that Modifies(proc1, v) and Calls(proc1, proc) and pattern a(v, _) 
+none
+5000
+52 - 
+assign a; stmt s; 
+Select s pattern a(_, _) and pattern a("x", _)
+none
+5000
+53 - 
+stmt s; variable v; read r;
+Select BOOLEAN such that Follows(256, s) Uses(s, v) such that Modifies(r, v)
+none
+5000
+54 - 
+read r; prog_line n; assign a; variable v;
+Select v such that Modifies(r, "m1") and Affects(101, 117) and Next*(n, 260) with n = a.stmt# and pattern a(v, _)
+none
+5000
+55 - 
+
+Select BOOLEAN such that Uses(268, "g1") and Follows*(244, 248) with "value" = "value
+none
+5000

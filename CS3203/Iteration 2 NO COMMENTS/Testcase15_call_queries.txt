@@ -1,0 +1,90 @@
+1 - Simple call
+call ca;
+Select ca
+1, 2, 4, 5, 7, 8, 10, 11
+5000
+2 - Calls(_, _)
+procedure p;
+Select p such that Calls(_, _)
+procA, procB, procC, procD, procE, procF, procG, procH, procI
+5000
+3 - Calls(IDENT, _)
+
+Select BOOLEAN such that Calls("procA", _)
+TRUE
+5000
+4 - Calls(IDENT, IDENT)
+
+Select BOOLEAN such that Calls("procB","procD")
+TRUE
+5000
+5 - Calls(p, _)
+procedure p;
+Select p such that Calls(p, _)
+procA, procB,procC, procD
+5000
+6 - Calls(p, p)
+procedure p1, p2;
+Select p1 such that Calls(p1, p2)
+procA, procB, procC, procD
+5000
+7 - Calls(_, p)
+procedure p;
+Select p such that Calls(_, p)
+procB, procC, procD, procE, procF,procG, procH, procI
+5000
+8 - Calls and with cl
+procedure p; call ca; variable v;
+Select ca with v.varName = p.procName
+1, 2, 4, 5, 7, 8, 10, 11
+5000
+9 - Multiple Calls statement
+procedure p1, p2, p3;
+Select p2 such that Calls(p1, p2) and Calls(p2, p3)
+procB, procC, procD
+5000
+10 - Calls and with cl
+call ca; constant c;
+Select ca with ca.stmt# = c.value
+1, 4
+5000
+11 - Calls*(_, _)
+procedure p;
+Select p such that Calls*(_, _)
+procA, procB, procC, procD, procE, procF, procG, procH, procI
+5000
+11 - Calls*(_, p)
+procedure p;
+Select p such that Calls*(_, p)
+procB, procC, procD, procE, procF, procG, procH, procI
+5000
+12 - Calls*(p, _)
+procedure p;
+Select p such that Calls*(_, p)
+procB, procC, procD, procE, procF, procG, procH, procI 
+5000
+13 - Calls*(p, p) and Calls(p, p)
+procedure p1, p2, p3;
+Select p3 such that Calls(p1, p2) such that Calls*(p2,p3)
+procD, procE, procF, procG, procH, procI
+5000
+14 - Calls(_, _, _)
+procedure p;
+Select p such that Calls(_, _, _)
+none
+5000
+15 - Calls(_)
+procedure p;
+Select p such that Calls(_)
+none
+5000
+16 - Calls*(_, _, _)
+procedure p;
+Select p such that Calls*(_, _, _)
+none
+5000
+17 - Calls*(_)
+procedure p;
+Select p such that Calls*(_)
+none
+5000

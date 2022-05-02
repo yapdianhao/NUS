@@ -1,0 +1,40 @@
+1 - Uses(p, IDENT)
+procedure p;
+Select p such that Uses(p, "a")
+procA, procB, procC
+5000
+2 - Uses(p, v)
+procedure p; variable v;
+Select v such that Uses(p, v)
+a, b, c, d, e, a11, a12, a21, a22, b11, b12, b21, b22,m1, m2, m3, m4, m5, m6, m7, c11, c12, c21, c22, det
+5000
+3 - Uses(IDENT, v)
+variable v;
+Select v such that Uses("procB", v)
+a, b, c
+5000
+4 - Uses(p, IDENT) across procedures
+procedure p;
+Select p such that Uses(p, "c")
+procA, procB, procC
+5000
+5 - Uses(IDENT, IDENT)
+procedure p;
+Select p such that Uses("procA", "b")
+strassen, procA, procB, procC
+5000
+6 - Select Boolean with Uses(p, IDENT) no results
+procedure p;
+Select BOOLEAN such that Uses(p, "soemthingElse")
+FALSE
+5000
+7 - Select boolean with Modifies semantic error
+
+Select BOOLEAN such that Uses(_, _)
+FALSE
+5000
+8 - Select boolean with Modifies syntax error
+procedure p; stmt s;
+Select BOOLEAN such that Uses(p, 7)
+none
+5000

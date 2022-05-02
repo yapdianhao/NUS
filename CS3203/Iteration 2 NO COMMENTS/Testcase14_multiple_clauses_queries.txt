@@ -1,0 +1,25 @@
+1 - Follows, Parent, Uses, Modifies
+assign a; if ifs; while w; variable v;
+Select w such that Parent(w, a) and Uses(w, v) and Follows(w, ifs) and Modifies(ifs, v)
+21
+5000
+2 - Follows, Parent, Uses, Modifies variant
+assign a; if ifs; while w; variable v;
+Select w such that Parent(w, a) and Uses(w, v) such that Follows(w, ifs) and Modifies(ifs, v)
+21
+5000
+3 - Calls, Parent*, Follows*, with-cl
+procedure p1, p2; call ca; assign a; if ifs;
+Select <p1, ca> with ca.procName = p2.procName such that Parent*(ifs, ca) and Follows*(ca, a) and Calls(p1, p2)
+Frodo 7, Shire 7, Gandalf 7
+5000
+4 - Next*, Parent*, Uses, with-cl, pattern a
+assign a; call ca; procedure p; if ifs;
+Select ifs such that Parent*(ifs, a) pattern a("f", _) such that Next*(ifs, ca) with ca.procName = p.procName 
+6, 16
+5000
+5 - Calls*, Call, Modifies, Uses
+procedure p1, p2, p3; variable v; read r;
+Select p1 such that Calls(p1, p2) such that Modifies(p1, v) and Modifies(r, v) such that Uses(p1, v) such that Calls*(p2, p3)
+Gandalf
+5000

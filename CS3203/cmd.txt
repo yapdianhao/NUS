@@ -1,0 +1,1 @@
+ make build && make autotester 1="../Tests07/test_dianhao_source.txt" 2="../Tests07/test_dianhao_queries.txt" 3="../Tests07/out.xml"

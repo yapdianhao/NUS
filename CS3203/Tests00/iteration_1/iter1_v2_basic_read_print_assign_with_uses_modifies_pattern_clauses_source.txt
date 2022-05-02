@@ -1,0 +1,16 @@
+procedure highlight {
+    x = (y * 2 +1000 ) - z; \\ 1
+
+    read y; \\ 2 modify
+    read x; \\ 3 modify
+    print z; \\ 4 use
+    read twice; \\ 5 modify
+
+    z = (x + y + 1) * 40231 - twice; \\ 6 assign
+
+    y = 10; \\ 7
+
+    gg = g; \\ 8
+
+    print gg; \\ 9 uses
+}

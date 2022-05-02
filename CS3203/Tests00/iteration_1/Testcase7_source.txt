@@ -1,0 +1,29 @@
+procedure binarySearch {
+	read lo; read high;                 //1,2
+	target = (lo *9 + high * 1) /10;    //3
+	attempt = 0;                        //4
+	read guess;                         //5
+	error = 34404;                      //6
+	yes = 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111;
+	while (attempt < 100) {             //8
+		if (target == guess) then {       //9
+			print yes;                      //10
+			attempt = 100;                  //11
+		} else {
+			if ((guess < lo) 
+       || (guess > high)) then {      //12
+				print error;                  //13
+				print lo;                     //14
+				print high;                   //15
+			} else {
+				if (guess < target) then {    //16
+					lo = guess;                 //17
+				} else {
+					high = guess;               //18
+				}
+			}
+			read guess;                     //19 
+			attempt = attempt + 1;          //20
+		}
+	}
+}

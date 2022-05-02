@@ -1,0 +1,490 @@
+1 - Select tuple UsesP with two synonyms and ModifiesS with two synonyms (stmt and var)
+procedure p; variable v; stmt s;
+Select <p, v> such that Uses(p, v) and Modifies(s, v)
+kir c, kir e, nar e
+5000
+2 - Select tuple UsesP with two synonyms and ModifiesS with two synonyms (if and var)
+procedure p; variable v; if ifs;
+Select <p, v> such that Uses(p, v) and Modifies(ifs, v)
+kir c, kir e, nar e
+5000
+3 - Select tuple UsesP with two synonyms and ModifiesS with two synonyms (while and var)
+procedure p; variable v; while w;
+Select <p, v> such that Uses(p, v) and Modifies(w, v)
+none
+5000
+4 - Select tuple UsesP with two synonyms and ModifiesS with two synonyms (assign and var)
+procedure p; variable v; assign a;
+Select <p, v> such that Uses(p, v) and Modifies(a, v)
+kir c, kir e, nar e
+5000
+5 - Select tuple UsesP with synonym first dash second and ModifiesS with two synonyms
+procedure p; variable v; stmt s;
+Select <p, v> such that Uses(p, _) and Modifies(s, v)
+kir c, kir a, kir e, kir f, kir g, nar c, nar a, nar e, nar f, nar g
+5000
+6 - Select tuple UsesP with synonym first string second and ModifiesS with two synonyms
+procedure p; stmt s; variable v;
+Select <s, p> such that Uses(p, "c") and Modifies(s, v)
+1 kir, 2 kir, 3 kir, 4 kir, 5 kir, 6 kir, 7 kir, 8 kir, 9 kir, 10 kir, 11 kir, 12 kir
+5000
+7 - Select tuple UsesP with string first synonym second and ModifiesS with two synonyms
+variable v; stmt s;
+Select <s, v> such that Uses("nar", v) and Modifies(s, v)
+5 e, 7 e
+5000
+8 - Select tuple UsesP with string first dash second and ModifiesS with two synonyms
+stmt s; variable v;
+Select <s, v> such that Uses("kir", _) and Modifies(s, v)
+1 c, 2 a, 3 a, 4 a, 5 c, 5 e, 5 f, 6 c, 7 e, 8 f, 9 g, 10 f, 10 g, 11 f, 12 g
+5000
+9 - Select tuple UsesP with two strings and ModifiesS with two synonyms (stmt and var)
+stmt s; variable v;
+Select <s, v> such that Uses("kir", "b") and Modifies(s, v)
+1 c, 2 a, 3 a, 4 a, 5 c, 5 e, 5 f, 6 c, 7 e, 8 f, 9 g, 10 f, 10 g, 11 f, 12 g
+5000
+10 - Select tuple UsesP with two strings and ModifiesS with two synonyms (if and var)
+if ifs; variable v;
+Select <ifs, v> such that Uses("kir", "b") and Modifies(ifs, v)
+5 c, 5 e, 5 f
+5000
+11 - Select tuple UsesP with two strings and ModifiesS with two synonyms (while and var)
+while w; variable v;
+Select <w, v> such that Uses("nar", "e") and Modifies(w, v)
+3 a
+5000
+12 - Select tuple UsesP with two strings and ModifiesS with two synonyms (assign and var)
+assign a; variable v;
+Select <a, v> such that Uses("kir", "a") and Modifies(a, v)
+none
+5000
+13 - Select tuple UsesP with two synonyms and ModifiesS with synonym first dash second
+procedure p; variable v; stmt s;
+Select <p, s> such that Uses(p, v) and Modifies(s, _)
+kir 1, kir 2, kir 3, kir 4, kir 5, kir 6, kir 7, kir 8, kir 9, kir 10, kir 11, kir 12, nar 1, nar 2, nar 3, nar 4, nar 5, nar 6, nar 7, nar 8, nar 9, nar 10, nar 11, nar 12
+5000
+14 - Select tuple UsesP with two synonyms and ModifiesS with synonym first string second
+procedure p; variable v; stmt s;
+Select <p, v> such that Uses(p, v) and Modifies(s, "g")
+kir b, kir c, kir d, kir e, nar d, nar e
+5000
+15 - Select tuple UsesP with two synonyms and ModifiesS with integer first synonym second
+procedure p; variable v;
+Select <p, v> such that Uses(p, v) and Modifies(3, v)
+none
+5000
+16 - Select tuple UsesP with two synonyms and ModifiesS with integer first dash second
+procedure p; variable v;
+Select <p, v> such that Uses(p, v) and Modifies(4, _)
+kir b, kir c, kir d, kir e, nar d, nar e
+5000
+17 - Select tuple UsesP with two synonyms and ModifiesS with integer first string second
+procedure p; variable v;
+Select <p, v> such that Uses(p, v) and Modifies(7, "h")
+none
+5000
+18 - Select tuple UsesP with two synonyms and ModifiesP with two synonyms
+procedure p1, p2; variable v;
+Select <p1, p2, v> such that Uses(p1, v) and Modifies(p2, v)
+kir kir c, kir kir e, nar kir e
+5000
+19 - Select tuple UsesP with synonym first string second and ModifiesP with two synonyms
+variable v1, v2; procedure p1, p2;
+Select <p1, p2, v1, v2> such that Uses(p1, "h") and Modifies(p2, v)
+none
+5000
+20 - Select tuple UsesP with string first synonym second and ModifiesP with two synonyms
+variable v1, v2; procedure p;
+Select <p, v1, v2> such that Uses("kir", v1) and Modifies(p, v2)
+kir b a, kir b c, kir b e, kir b f, kir b g, nar b f, nar b g, kir c a, kir c c, kir c e, kir c f, kir c g, nar c f,nar c g, kir d a, kir d c, kir d e, kir d f, kir d g, nar d f, nar d g, kir e a, kir e c,kir e e, kir e f, kir e g, nar e f, nar e g
+5000
+21 - Select tuple UsesP with string first dash second and ModifiesP with two synonyms
+procedure p; variable v;
+Select <p, v> such that Uses("nar", _) and Modifies(p, v)
+kir a, kir c, kir e, kir f, kir g, nar f, nar g
+5000
+22 - Select tuple UsesP with two strings and ModifiesP with two synonyms
+procedure p; variable v;
+Select <p, v> such that Uses("kir", "e") and Modifies(p, v)
+kir a, kir c, kir e, kir f, kir g, nar f, nar g
+5000
+23 - Select tuple UsesP with two synonyms and ModifiesP with synonym first and dash second
+procedure p1, p2; variable v;
+Select <p1, v, p2> such that Uses(p1, v) and Modifies(p2, _)
+kir b kir, kir b nar, kir c kir, kir c nar, kir d kir, kir d nar, kir e kir, kir e nar, nar d kir, nar d nar, nar e kir, nar e nar
+5000
+24 - Select tuple UsesP with two synonyms and ModifiesP with synonym first and string second
+procedure p1, p2; variable v;
+Select <p1, v, p2> such that Uses(p1, v) and Modifies(p2, "a")
+kir b kir, kir c kir, kir d kir, kir e kir, nar d kir, nar e kir
+5000
+25 - Select tuple UsesP with two synonyms and ModifiesP with string first and synonym second
+procedure p; variable v1, v2;
+Select <p, v1, v2> such that Uses(p, v1) and Modifies("kir",  v2)
+kir b a, kir b c, kir b e, kir b f, kir b g, kir c a, kir c c, kir c e, kir c f, kir c g, kir d a, kir d c, kir d e, kir d f, kir d g, kir e a, kir e c, kir e e, kir e f, kir e g, nar d a, nar d c, nar d e, nar d f, nar d g, nar e a, nar e c, nar e e, nar e f, nar e g
+5000
+26 - Select tuple UsesP with two synonyms and ModifiesP with string first and dash second
+procedure p;  variable v;
+Select <p, v> such that Uses(p, v) and Modifies("nar", _)
+kir b, kir c, kir d, kir e, nar d, nar e
+5000
+27 - Select tuple UsesP with two synonyms and ModifiesP with two strings
+procedure p; variable v;
+Select <p, v> such that Uses(p, v) and Modifies("kir", "b")
+none
+5000
+28 - Select tuple UsesS with two synonyms and ModifiesP with two synonyms
+stmt s; variable v1, v2; procedure p;
+Select <s, v1, p, v2> such that Uses(s, v1) and Modifies(p, v2)
+3 b kir a, 3 b kir c, 3 b kir e, 3 b kir f, 3 b kir g, 3 b nar f, 3 b nar g, 4 b kir a, 4 b kir c, 4 b kir e, 4 b kir f, 4 b kir g, 4 b nar f, 4 b nar g, 5 c kir a, 5 c kir c, 5 c kir e, 5 c kir f, 5 c kir g, 5 c nar f, 5 c nar g, 5 d kir a, 5 d kir c, 5 d kir e, 5 d kir f, 5 d kir g, 5 d nar f, 5 d nar g, 6 c kir a, 6 c kir c, 6 c kir e, 6 c kir f, 6 c kir g, 6 c nar f, 6 c nar g, 7 d kir a, 7 d kir c, 7 d kir e, 7 d kir f, 7 d kir g, 7 d nar f, 7 d nar g, 9 d kir a, 9 d kir c, 9 d kir e, 9 d kir f, 9 d kir g, 9 d nar f, 9 d nar g, 10 d kir a, 10 d kir c, 10 d kir e, 10 d kir f, 10 d kir g, 10 d nar f, 10 d nar g, 10 e kir a, 10 e kir c, 10 e kir e, 10 e kir f, 10 e kir g, 10 e nar f, 10 e nar g, 11 d kir a, 11 d kir c, 11 d kir e, 11 d kir f, 11 d kir g, 11 d nar f, 11 d nar g, 12 e kir a, 12 e kir c, 12 e kir e, 12 e kir f, 12 e kir g, 12 e nar f, 12 e nar g
+5000
+29 - Select tuple UsesS with synonym first dash second and ModifiesP with two synonyms
+stmt s; procedure p; variable v;
+Select <s, p, v> such that Uses(s, _) and Modifies(p, v)
+3 kir a, 3 kir c, 3 kir e, 3 kir f, 3 kir g, 3 nar f, 3 nar g, 4 kir a, 4 kir c, 4 kir e, 4 kir f, 4 kir g, 4 nar f, 4 nar g, 5 kir a, 5 kir c, 5 kir e, 5 kir f, 5 kir g, 5 nar f, 5 nar g, 6 kir a, 6 kir c, 6 kir e, 6 kir f, 6 kir g, 6 nar f, 6 nar g, 7 kir a, 7 kir c, 7 kir e, 7 kir f, 7 kir g, 7 nar f, 7 nar g, 9 kir a, 9 kir c, 9 kir e, 9 kir f, 9 kir g, 9 nar f, 9 nar g, 10 kir a, 10 kir c, 10 kir e, 10 kir f, 10 kir g, 10 nar f, 10 nar g, 11 kir a, 11 kir c, 11 kir e, 11 kir f, 11 kir g, 11 nar f, 11 nar g, 12 kir a, 12 kir c, 12 kir e, 12 kir f, 12 kir g, 12 nar f, 12 nar g
+5000
+30 - Select tuple UsesS with synonym first string second and ModifiesP with two synonyms
+stmt s; procedure p; variable v;
+Select <s, p, v> such that Uses(s, "c") and Modifies(p, v)
+5 kir a, 5 kir c, 5 kir e, 5 kir f, 5 kir g, 5 nar f, 5 nar g, 6 kir a, 6 kir c, 6 kir e, 6 kir f, 6 kir g, 6 nar f, 6 nar g
+5000
+31 - Select tuple UsesS with integer first synonym second and ModifiesP with two synonyms
+variable v1, v2; procedure p;
+Select <v1, p, v2> such that Uses(4, v1) and Modifies(p, v2)
+b kir a, b kir c, b kir e, b kir f, b kir g, b nar f, b nar g
+5000
+32 - Select tuple UsesS with integer first dash second and ModifiesP with two synonyms
+procedure p; variable v;
+Select <p, v> such that Uses(5, _) and Modifies(p, v)
+kir a, kir c, kir e, kir f, kir g, nar f, nar g
+5000
+33 - Select tuple UsesS with integer first string second and ModifiesP with two synonyms
+procedure p; variable v;
+Select <p, v> such that Uses(2, "e") and Modifies(p, v)
+none
+5000
+34 - Select tuple UsesS with two synonyms and ModifiesP with synonym first dash second
+stmt s; variable v; procedure p;
+Select <s, v, p> such that Uses(s, v) and Modifies(p, _)
+3 b kir, 3 b nar, 4 b kir, 4 b nar, 5 c kir, 5 c nar, 5 d kir, 5 d nar, 6 c kir, 6 c nar, 7 d kir, 7 d nar, 9 d kir, 9 d nar, 10 d kir, 10 d nar, 10 e kir, 10 e nar, 11 d kir, 11 d nar, 12 e kir, 12 e nar
+5000
+35 - Select tuple UsesS with two synonyms and ModifiesP with synonym first string second
+stmt s; variable v; procedure p;
+Select <s, v, p> such that Uses(s, v) and Modifies(p, "g")
+3 b kir, 3 b nar, 4 b kir, 4 b nar, 5 c kir, 5 c nar, 5 d kir, 5 d nar, 6 c kir, 6 c nar, 7 d kir, 7 d nar, 9 d kir, 9 d nar, 10 d kir, 10 d nar, 10 e kir, 10 e nar, 11 d kir, 11 d nar, 12 e kir, 12 e nar
+5000
+36 - Select tuple UsesS with two synonyms and ModifiesP with string first synonym second
+stmt s; variable v1, v2;
+Select <s, v1, v2> such that Uses(s, v1) and Modifies("nar", v2)
+3 b f, 3 b g, 4 b f, 4 b g, 5 c f, 5 c g, 5 d f, 5 d g, 6 c f, 6 c g, 7 d f, 7 d g, 9 d f, 9 d g, 10 d f, 10 d g, 10 e f, 10 e g, 11 d f, 11 d g, 12 e f, 12 e g
+5000
+37 - Select tuple UsesS with two synonyms and ModifiesP with string first dash second
+stmt s; variable v;
+Select <s, v> such that Uses(s, v) and Modifies("kir", _)
+3 b, 4 b, 5 c, 5 d, 6 c, 7 d, 9 d, 10 d, 10 e, 11 d, 12 e
+5000
+38 - Select tuple UsesS with two synonyms and ModifiesP with two strings
+stmt s; variable v;
+Select <s, v> such that Uses(s, v) and Modifies("nar", "a")
+none
+5000
+39 - Select tuple UsesS with two synonyms and ModifiesS with two synonyms
+stmt s1, s2; variable v1, v2;
+Select <s1, v1, s2, v2> such that Uses(s1, v1) and Modifies(s2, v2)
+3 b 1 c, 3 b 2 a, 3 b 3 a, 3 b 4 a, 3 b 5 c, 3 b 5 e, 3 b 5 f, 3 b 6 c, 3 b 7 e, 3 b 8 f, 3 b 9 g, 3 b 10 f, 3 b 10 g, 3 b 11 f, 3 b 12 g, 4 b 1 c, 4 b 2 a, 4 b 3 a, 4 b 4 a, 4 b 5 c, 4 b 5 e, 4 b 5 f, 4 b 6 c, 4 b 7 e, 4 b 8 f, 4 b 9 g, 4 b 10 f, 4 b 10 g, 4 b 11 f, 4 b 12 g, 5 c 1 c, 5 c 2 a, 5 c 3 a, 5 c 4 a, 5 c 5 c, 5 c 5 e, 5 c 5 f, 5 c 6 c, 5 c 7 e, 5 c 8 f, 5 c 9 g, 5 c 10 f, 5 c 10 g, 5 c 11 f, 5 c 12 g, 5 d 1 c, 5 d 2 a, 5 d 3 a, 5 d 4 a, 5 d 5 c, 5 d 5 e, 5 d 5 f, 5 d 6 c, 5 d 7 e, 5 d 8 f, 5 d 9 g, 5 d 10 f, 5 d 10 g, 5 d 11 f, 5 d 12 g, 6 c 1 c, 6 c 2 a, 6 c 3 a, 6 c 4 a, 6 c 5 c, 6 c 5 e, 6 c 5 f, 6 c 6 c, 6 c 7 e, 6 c 8 f, 6 c 9 g, 6 c 10 f, 6 c 10 g, 6 c 11 f, 6 c 12 g, 7 d 1 c, 7 d 2 a, 7 d 3 a, 7 d 4 a, 7 d 5 c, 7 d 5 e, 7 d 5 f, 7 d 6 c, 7 d 7 e, 7 d 8 f, 7 d 9 g, 7 d 10 f, 7 d 10 g, 7 d 11 f, 7 d 12 g, 9 d 1 c, 9 d 2 a, 9 d 3 a, 9 d 4 a, 9 d 5 c, 9 d 5 e, 9 d 5 f, 9 d 6 c, 9 d 7 e, 9 d 8 f, 9 d 9 g, 9 d 10 f, 9 d 10 g, 9 d 11 f, 9 d 12 g, 10 d 1 c, 10 d 2 a, 10 d 3 a, 10 d 4 a, 10 d 5 c, 10 d 5 e, 10 d 5 f, 10 d 6 c, 10 d 7 e, 10 d 8 f, 10 d 9 g, 10 d 10 f, 10 d 10 g, 10 d 11 f, 10 d 12 g, 10 e 1 c, 10 e 2 a, 10 e 3 a, 10 e 4 a, 10 e 5 c, 10 e 5 e, 10 e 5 f, 10 e 6 c, 10 e 7 e, 10 e 8 f, 10 e 9 g, 10 e 10 f, 10 e 10 g, 10 e 11 f, 10 e 12 g, 11 d 1 c, 11 d 2 a, 11 d 3 a, 11 d 4 a, 11 d 5 c, 11 d 5 e, 11 d 5 f, 11 d 6 c, 11 d 7 e, 11 d 8 f, 11 d 9 g, 11 d 10 f, 11 d 10 g, 11 d 11 f, 11 d 12 g, 12 e 1 c, 12 e 2 a, 12 e 3 a, 12 e 4 a, 12 e 5 c, 12 e 5 e, 12 e 5 f, 12 e 6 c, 12 e 7 e, 12 e 8 f, 12 e 9 g, 12 e 10 f, 12 e 10 g, 12 e 11 f, 12 e 12 g
+5000
+40 - Select tuple UsesS with synonym first dash second and ModifiesS with two synonyms
+stmt s1, s2; variable v;
+Select <s1, s2, v> such that Uses(s1, v) and Modifies(s2, v)
+5 1 c, 5 5 c, 5 6 c, 6 1 c, 6 5 c, 6 6 c, 10 5 e, 10 7 e, 12 5 e, 12 7 e
+5000
+41 - Select tuple UsesS with synonym first string second and ModifiesS with synonym first string second
+stmt s1, s2;
+Select <s1, s2> such that Uses(s1, "a") and Modifies(s2, "b")
+none
+5000
+42 - Select tuple UsesS with integer first dash second and ModifiesS with integer first synonym second
+variable v;
+Select <v, v> such that Uses(3, _) and Modifies(4, v)
+a a
+5000
+43 - Select tuple UsesS with integer first string second and ModifiesS with integer first dash second
+call c;
+Select <c, c> such that Uses(5, "c") and Modifies(2, _)
+10 10
+5000
+44 - Select tuple UsesS with two synonyms and ModifiesS with synonym first dash second
+stmt s1, s2; variable v;
+Select <s1, v, s2> such that Uses(s1, v) and Modifies(s2, _)
+3 b 1, 3 b 2, 3 b 3, 3 b 4, 3 b 5, 3 b 6, 3 b 7, 3 b 8, 3 b 9, 3 b 10, 3 b 11, 3 b 12, 4 b 1, 4 b 2, 4 b 3, 4 b 4, 4 b 5, 4 b 6, 4 b 7, 4 b 8, 4 b 9, 4 b 10, 4 b 11, 4 b 12, 5 c 1, 5 c 2, 5 c 3, 5 c 4, 5 c 5, 5 c 6, 5 c 7, 5 c 8, 5 c 9, 5 c 10, 5 c 11, 5 c 12, 5 d 1, 5 d 2, 5 d 3, 5 d 4, 5 d 5, 5 d 6, 5 d 7, 5 d 8, 5 d 9, 5 d 10, 5 d 11, 5 d 12, 6 c 1, 6 c 2, 6 c 3, 6 c 4, 6 c 5, 6 c 6, 6 c 7, 6 c 8, 6 c 9, 6 c 10, 6 c 11, 6 c 12, 7 d 1, 7 d 2, 7 d 3, 7 d 4, 7 d 5, 7 d 6, 7 d 7, 7 d 8, 7 d 9, 7 d 10, 7 d 11, 7 d 12, 9 d 1, 9 d 2, 9 d 3, 9 d 4, 9 d 5, 9 d 6, 9 d 7, 9 d 8, 9 d 9, 9 d 10, 9 d 11, 9 d 12, 10 d 1, 10 d 2, 10 d 3, 10 d 4, 10 d 5, 10 d 6, 10 d 7, 10 d 8, 10 d 9, 10 d 10, 10 d 11, 10 d 12, 10 e 1, 10 e 2, 10 e 3, 10 e 4, 10 e 5, 10 e 6, 10 e 7, 10 e 8, 10 e 9, 10 e 10, 10 e 11, 10 e 12, 11 d 1, 11 d 2, 11 d 3, 11 d 4, 11 d 5, 11 d 6, 11 d 7, 11 d 8, 11 d 9, 11 d 10, 11 d 11, 11 d 12, 12 e 1, 12 e 2, 12 e 3, 12 e 4, 12 e 5, 12 e 6, 12 e 7, 12 e 8, 12 e 9, 12 e 10, 12 e 11, 12 e 12
+5000
+45 - Select tuple UsesS with two synonyms and ModifiesS with synonym first string second
+stmt s1, s2; variable v;
+Select <s1, v, s2> such that Uses(s1, v) and Modifies(s2, "c")
+3 b 1, 3 b 5, 3 b 6, 4 b 1, 4 b 5, 4 b 6, 5 c 1, 5 c 5, 5 c 6, 5 d 1, 5 d 5, 5 d 6, 6 c 1, 6 c 5, 6 c 6, 7 d 1, 7 d 5, 7 d 6, 9 d 1, 9 d 5, 9 d 6, 10 d 1, 10 d 5, 10 d 6, 10 e 1, 10 e 5, 10 e 6, 11 d 1, 11 d 5, 11 d 6, 12 e 1, 12 e 5, 12 e 6
+5000
+46 - Select tuple UsesS with synonym first string second and ModifiesS with string first synonym second
+stmt s1, s2; variable v;
+Select <s1, s2> such that Uses(s1, "c") and Modifies(s2, v)
+5 1, 5 2, 5 3, 5 4, 5 5, 5 6, 5 7, 5 8, 5 9, 5 10, 5 11, 5 12, 6 1, 6 2, 6 3, 6 4, 6 5, 6 6, 6 7, 6 8, 6 9, 6 10, 6 11, 6 12
+5000
+47 - Select tuple UsesS with synonym first dash second and ModifiesS with synonym first dash second
+stmt s1, s2;
+Select <s1, s2> such that Uses(s1, _) and Modifies(s2, _)
+3 1, 3 2, 3 3, 3 4, 3 5, 3 6, 3 7, 3 8, 3 9, 3 10, 3 11, 3 12, 4 1, 4 2, 4 3, 4 4, 4 5, 4 6, 4 7, 4 8, 4 9, 4 10, 4 11, 4 12, 5 1, 5 2, 5 3, 5 4, 5 5, 5 6, 5 7, 5 8, 5 9, 5 10, 5 11, 5 12, 6 1, 6 2, 6 3, 6 4, 6 5, 6 6, 6 7, 6 8, 6 9, 6 10, 6 11, 6 12, 7 1, 7 2, 7 3, 7 4, 7 5, 7 6, 7 7, 7 8, 7 9, 7 10, 7 11, 7 12, 9 1, 9 2, 9 3, 9 4, 9 5, 9 6, 9 7, 9 8, 9 9, 9 10, 9 11, 9 12, 10 1, 10 2, 10 3, 10 4, 10 5, 10 6, 10 7, 10 8, 10 9, 10 10, 10 11, 10 12, 11 1, 11 2, 11 3, 11 4, 11 5, 11 6, 11 7, 11 8, 11 9, 11 10, 11 11, 11 12, 12 1, 12 2, 12 3, 12 4, 12 5, 12 6, 12 7, 12 8, 12 9, 12 10, 12 11, 12 12
+5000
+48 - Select tuple UsesS with two synonyms and ModifiesS with integer first synonym second
+stmt s; variable v1, v2;
+Select <s, v1, v2> such that Uses(s, v1) and Modifies(3, v2)
+3 b a, 4 b a, 5 c a, 5 d a, 6 c a, 7 d a, 9 d a, 10 d a, 10 e a, 11 d a, 12 e a
+5000
+49 - Select tuple UsesS with integer first dash second and ModifiesS with integer first dash second
+stmt s1, s2;
+Select <s1, s2> such that Uses(3, _) and Modifies(4, _)
+1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 1 7, 1 8, 1 9, 1 10, 1 11, 1 12, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 2 7, 2 8, 2 9, 2 10, 2 11, 2 12, 3 1, 3 2, 3 3, 3 4, 3 5, 3 6, 3 7, 3 8, 3 9, 3 10, 3 11, 3 12, 4 1, 4 2, 4 3, 4 4, 4 5, 4 6, 4 7, 4 8, 4 9, 4 10, 4 11, 4 12, 5 1, 5 2, 5 3, 5 4, 5 5, 5 6, 5 7, 5 8, 5 9, 5 10, 5 11, 5 12, 6 1, 6 2, 6 3, 6 4, 6 5, 6 6, 6 7, 6 8, 6 9, 6 10, 6 11, 6 12, 7 1, 7 2, 7 3, 7 4, 7 5, 7 6, 7 7, 7 8, 7 9, 7 10, 7 11, 7 12, 8 1, 8 2, 8 3, 8 4, 8 5, 8 6, 8 7, 8 8, 8 9, 8 10, 8 11, 8 12, 9 1, 9 2, 9 3, 9 4, 9 5, 9 6, 9 7, 9 8, 9 9, 9 10, 9 11, 9 12, 10 1, 10 2, 10 3, 10 4, 10 5, 10 6, 10 7, 10 8, 10 9, 10 10, 10 11, 10 12, 11 1, 11 2, 11 3, 11 4, 11 5, 11 6, 11 7, 11 8, 11 9, 11 10, 11 11, 11 12, 12 1, 12 2, 12 3, 12 4, 12 5, 12 6, 12 7, 12 8, 12 9, 12 10, 12 11, 12 12
+5000
+50 - Select tuple UsesS with integer first synonym second and ModifiesS with integer first string second
+variable v;
+Select <v, v> such that Uses(2, v) and Modifies(3, "h")
+none
+5000
+51 - Select BOOLEAN UsesP with two synonyms and ModifiesS with two synonyms
+procedure p; stmt s; variable v1, v2;
+Select BOOLEAN such that Uses(p, v2) and Modifies(s, v1)
+true
+5000
+52 - Select BOOLEAN UsesP with synonym first dash second and ModifiesS with two synonyms
+procedure p; variable v; stmt s;
+Select BOOLEAN such that Uses(p, _) and Modifies(s, v)
+true
+5000
+53  - Select BOOLEAN UsesP with synonym first string second and ModifiesS with two synonyms
+procedure p; stmt s; variable v;
+Select BOOLEAN such that Uses(p, "b") and Modifies(s, v)
+true
+5000
+54 - Select BOOLEAN UsesP with string first synonym second and ModifiesS with two synonyms
+stmt s; variable v;
+Select BOOLEAN such that Uses("nar", v) and Modifies(s, v)
+true
+5000
+55 - Select BOOLEAN UsesP with string first dash second and ModifiesS with two synonyms
+stmt s; variable v;
+Select BOOLEAN such that Uses("nar", _) and Modifies(s, v)
+true
+5000
+56 - Select BOOLEAN UsesP with two strings and ModifiesS with two synonyms
+stmt s; variable v;
+Select BOOLEAN such that Uses("kir", "g") and Modifies(s, v)
+false
+5000
+57 - Select BOOLEAN UsesP with two synonyms and ModifiesS with synonym first dash second
+procedure p; stmt s; variable v1, v2;
+Select BOOLEAN such that Uses(p, v1) and Modifies(s, v2)
+true
+5000
+58 - Select BOOLEAN UsesP with two synonyms and ModifiesS with synonym first string second
+procedure p; stmt s; variable v;
+Select BOOLEAN such that Uses(p, v) and Modifies(s, "c")
+true
+5000
+59 - Select BOOLEAN UsesP with two synonyms and ModifiesS with dash first synonym second
+procedure p; stmt s; variable v;
+Select BOOLEAN such that Uses(p, v) and Modifies(s, _)
+true
+5000
+60 - Select BOOLEAN UsesP with two synonyms and ModifiesS with integer first synonym second
+procedure p; variable v; stmt s;
+Select BOOLEAN such that Uses(p, v) and Modifies(3, "c")
+false
+5000
+61 - Select BOOLEAN UsesP with two synonyms and ModifiesS with integer first dash second
+procedure p; variable v;
+Select BOOLEAN such that Uses(p, v) and Modifies(2, _)
+true
+5000
+62 - Select BOOLEAN UsesP with two synonyms and ModifiesS with integer first string second
+procedure p; variable v;
+Select BOOLEAN such that Uses(p, v) and Modifies(5, _)
+true
+5000
+63 - Select BOOLEAN UsesP with two synonyms and ModifiesP with two synonyms
+procedure p1, p2; variable v1, v2;
+Select BOOLEAN such that Uses(p1, v1) and Modifies(p2, v2)
+true
+5000
+64 - Select BOOLEAN UsesP with synonym first dash second and ModifiesP with two synonyms
+procedure p; variable v;
+Select BOOLEAN such that Uses(p, v) and Modifies(p, v)
+true
+5000
+65 - Select BOOLEAN UsesP with synonym first string second and ModifiesP with two synonyms
+procedure p1, p2; variable v;
+Select BOOLEAN such that Uses(p1, v) and Modifies(p2, v)
+true
+5000
+66 - Select BOOLEAN UsesP with string first synonym second and ModifiesP with two synonyms
+variable v1, v2; procedure p;
+Select BOOLEAN such that Uses("nar", v1) and Modifies(p, v2)
+true
+5000
+69 - Select BOOLEAN UsesP with string first dash second and ModifiesP with two synonyms
+procedure p; variable v;
+Select BOOLEAN such that Uses("kir", _) and Modifies(p, v)
+true
+5000
+70 - Select BOOLEAN UsesP with two strings and ModifiesP with two synonyms
+procedure p; variable v;
+Select BOOLEAN such that Uses("nar", "c") and Modifies(p, v)
+false
+5000
+71 - Select BOOLEAN UsesP with two synonyms and ModifiesP with synonym first and dash second
+procedure p; variable v;
+Select BOOLEAN such that Uses(p, v) and Modifies(p, _)
+true
+5000
+72 - Select BOOLEAN UsesP with two synonyms and ModifiesP with synonym first and string second
+procedure p1, p2; variable v;
+Select BOOLEAN such that Uses(p1, v) and Modifies(p2, "g")
+true
+5000
+73 - Select BOOLEAN UsesP with two synonyms and ModifiesP with string first and synonym second
+procedure p; variable v;
+Select BOOLEAN such that Uses(p, v) and Modifies("kir", v)
+true
+5000
+74 - Select BOOLEAN UsesP with two synonyms and ModifiesP with string first and dash second
+procedure p; variable v;
+Select BOOLEAN such that Uses(p, v) and Modifies("kir", _)
+true
+5000
+75 - Select BOOLEAN UsesP with two synonyms and ModifiesP with two strings
+procedure p; variable v;
+Select BOOLEAN such that Uses(p, v) and Modifies("kir", "c")
+true
+5000
+76 - Select BOOLEAN UsesS with two synonyms and ModifiesP with two synonyms
+stmt s; variable v; procedure p;
+Select BOOLEAN such that Uses(s, v) and Modifies(p, v)
+true
+5000
+77 - Select BOOLEAN UsesS with synonym first dash second and ModifiesP with two synonyms
+stmt s; procedure p; variable v;
+Select BOOLEAN such that Uses(s, _) and Modifies(p, v)
+true
+5000
+78 - Select BOOLEAN UsesS with synonym first string second and ModifiesP with two synonyms
+stmt s; procedure p; variable v;
+Select BOOLEAN such that Uses(s, "c") and Modifies(p, v)
+true
+5000
+79 - Select BOOLEAN UsesS with integer first synonym second and ModifiesP with two synonyms
+variable v; procedure p;
+Select BOOLEAN such that Uses(p, v) and Modifies(p, v)
+true
+5000
+80 - Select BOOLEAN UsesS with integer first dash second and ModifiesP with two synonyms
+procedure p; variable v;
+Select BOOLEAN such that Uses(3, _) and Modifies(p, v)
+true
+5000
+81 - Select BOOLEAN UsesS with integer first string second and ModifiesP with two synonyms
+procedure p; variable v;
+Select BOOLEAN such that Uses(3, "c") and Modifies(p, v)
+false
+5000
+82 - Select BOOLEAN UsesS with two synonyms and ModifiesP with synonym first dash second
+stmt s; variable v; procedure p;
+Select BOOLEAN such that Uses(s, v) and Modifies(p, _)
+true
+5000
+83 - Select BOOLEAN UsesS with two synonyms and ModifiesP with synonym first string second
+stmt s; variable v; procedure p;
+Select BOOLEAN such that Uses(s, v) and Modifies(p,"e")
+true
+5000
+84 - Select BOOLEAN UsesS with synonym first dash second and ModifiesP with synonym first dash second
+stmt s; procedure p;
+Select BOOLEAN such that Uses(s, _) and Modifies(p, _)
+true
+5000
+85 - Select BOOLEAN UsesS with synonym first string second and ModifiesP with string first synonym second
+stmt s; variable v;
+Select BOOLEAN such that Uses(s, "g") and Modifies("nar", v)
+false
+5000
+86 - Select BOOLEAN UsesS with synonym first string second and ModifiesP with synonym first string second
+stmt s; variable v;
+Select BOOLEAN such that Uses(s, "c") and Modifies("kir", v)
+true
+5000
+87 - Select BOOLEAN UsesS with two synonyms and ModifiesP with string first synonym second
+stmt s; variable v;
+Select BOOLEAN such that Uses(s, v) and Modifies("nar", v)
+false
+5000
+88 - Select BOOLEAN UsesS with two synonyms and ModifiesP with string first dash second
+stmt s; variable v;
+Select BOOLEAN such that Uses(s, v) and Modifies("kir", _)
+true
+5000
+89 - Select BOOLEAN UsesS with two synonyms and ModifiesP with two strings
+stmt s; variable v;
+Select BOOLEAN such that Uses(s, v) and Modifies("nar", "h")
+false
+5000
+90 - Select BOOLEAN UsesS with two synonyms and ModifiesS with two synonyms
+stmt s; variable v;
+Select BOOLEAN such that Uses(s, v) and Modifies(s, v)
+true
+5000
+91 - Select BOOLEAN UsesS with synonym first dash second and ModifiesS with two synonyms
+stmt s1, s2; variable v;
+Select BOOLEAN such that Uses(s1, _) and Modifies(s2, v)
+true
+5000
+92 - Select BOOLEAN UsesS with synonym first string second and ModifiesS with synonym first string second
+stmt s;
+Select BOOLEAN such that Uses(s, "a") and Modifies(s, "b")
+false
+5000
+93 - Select BOOLEAN UsesS with integer first synonym second and ModifiesS with integer first dash second
+
+Select BOOLEAN such that Uses(4, "b") and Modifies(5, _)
+true
+5000
+94 - Select BOOLEAN UsesS with integer first dash second and ModifiesS with integer first synonym second
+variable b;
+Select BOOLEAN such that Uses(3, _) and Modifies(2, "b")
+false
+5000
+95 - Select BOOLEAN UsesS with integer first string second and ModifiesS with integer first dash second
+
+Select BOOLEAN such that Uses(6, "e") and Modifies(3, _)
+false
+5000
+96 - Select BOOLEAN UsesS with two synonyms and ModifiesS with synonym first dash second
+stmt s; variable v;
+Select BOOLEAN such that Uses(s, v) and Modifies(s, _)
+true
+5000
+97 - Select BOOLEAN UsesS with two synonyms and ModifiesS with synonym first string second
+stmt s1, s2; variable v;
+Select BOOLEAN such that Uses(s1, v) and Modifies(s2, "d")
+false
+5000
+98 - Select BOOLEAN UsesS with two synonyms and ModifiesS with synonym first dash second
+stmt s1, s2; variable v;
+Select BOOLEAN such that Uses(s1, v) and Modifies(s2, _)
+true
+5000
+99 - Select BOOLEAN UsesS with synonym first string second and ModifiesS with string first synonym second
+stmt s; variable v;
+Select BOOLEAN such that Uses(s, v) and Modifies("kir", v)
+true
+5000
+100 - Select BOOLEAN UsesS with two synonyms and ModifiesS with string first dash second
+stmt s; variable v;
+Select BOOLEAN such that Uses(s, v) and Modifies(11, _)
+true
+5000

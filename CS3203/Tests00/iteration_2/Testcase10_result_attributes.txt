@@ -1,0 +1,25 @@
+1 - print stmt#, varName
+print p;
+Select <p, p.stmt#, p.varName>
+29 29 dummy,35 35 favouriteNumber,23 23 buffer,24 24 gameType
+5000
+2 - call stmt#, procName
+call c;
+Select <c, c.procName, c.stmt#>
+none
+5000
+3 - read stmt#, varName
+read r;
+Select <r, r.stmt#, r.varName>
+28 28 someNumber,31 31 gameType,25 25 dummy,30 30 someNumber,37 37 someNumber,19 19 useless
+5000
+4 - print, read
+print p; read r;
+Select <p.varName, r.varName> such that Follows*(p, r)
+gameType dummy
+5000
+5 - read, print
+print p; read r;
+Select <r.varName, p.varName> such that Follows*(r, p)
+someNumber dummy
+5000

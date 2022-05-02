@@ -1,0 +1,490 @@
+1 - select p
+procedure p;
+Select p
+binarySearch
+5000
+2 - Parent(a, a) Select p
+procedure p; assign a;
+Select p such that Parent(a, a)
+none
+5000
+3 - Parent(s, a) Select s
+stmt s; assign a; 
+Select s such that Parent(s, a)
+9, 16
+5000
+4 - Parent(s, a) Select a
+stmt s; assign a; 
+Select a such that Parent(s, a)
+11, 17, 18, 20
+5000
+5 - Parent(s, s) Select s
+stmt s, s1; 
+Select s such that Parent(s, s)
+none
+5000
+6 - Parent(s1, s) Select s1
+stmt s, s1; 
+Select s1 such that Parent(s1, s)
+8, 9, 12, 16
+5000
+7 - Parent(s, s1) Select s1
+stmt s, s1; 
+Select s1 such that Parent(s, s1)
+9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+5000
+8 - Parent(s, r) Select s
+stmt s; read r;
+Select s such that Parent(s, r)
+9
+5000
+9 - Parent(s, pr) Select s
+stmt s; print pr;
+Select s such that Parent(s, pr)
+12, 9 
+5000
+10 - Parent(ifs, ifs2) Select ifs2
+if ifs, ifs2; 
+Select ifs2 such that Parent(ifs, ifs2)
+12, 16
+5000
+11 - Parent(id, id) select r
+read r;
+Select r such that Parent(16, 18)
+1,2,5,19
+5000
+12 - Parent(id, id) select r
+read r;
+Select r such that Parent(8, 17)
+none
+5000
+13 - Parent(s, id) select s
+stmt s;
+Select s such that Parent(s, 18)
+16
+5000
+14 - Parent(id, s) select s
+stmt s;
+Select s such that Parent(9, s)
+10, 11, 12, 19, 20
+5000
+15 - Parent(_,_) select if
+if ifs;
+Select ifs such that Parent(_, _)
+9, 12, 16
+5000
+16 - Parent(s, _) select s
+stmt s;
+Select s such that Parent(s, _)
+8, 9, 12, 16
+5000
+17 - Parent(_, w) select s
+stmt s; while w;
+Select s such that Parent(_, w)
+none
+5000
+18 - Parent(_, 15) select c
+stmt s; constant c;
+Select c such that Parent(_, 15)
+0, 1, 9, 10, 100, 34404, 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+5000
+19 - Parent(7, _) select c
+stmt s; constant c;
+Select c such that Parent(7, _)
+none
+5000
+20 - Parent*(s, a) Select s
+stmt s; assign a; 
+Select s such that Parent*(s, a)
+8, 9, 12, 16
+5000
+21 - Parent*(s, a) Select a
+stmt s; assign a; 
+Select a such that Parent*(s, a)
+11, 17, 18, 20
+5000
+22 - Parent*(s, s) Select s
+stmt s, s1; 
+Select s such that Parent*(s, s)
+none
+5000
+23 - Parent*(s1, s) Select s1
+stmt s, s1; 
+Select s1 such that Parent*(s1, s)
+8, 9, 12, 16
+5000
+24 - Parent*(s, s1) Select s1
+stmt s, s1; 
+Select s1 such that Parent*(s, s1)
+9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+5000
+25 - Parent*(s, r) Select s
+stmt s; read r;
+Select s such that Parent*(s, r)
+8, 9
+5000
+26 - Parent*(s, pr) Select s
+stmt s; print pr;
+Select s such that Parent*(s, pr)
+8, 12, 9 
+5000
+27 - Parent*(id, id) select pr
+print pr;
+Select pr such that Parent*(16, 18)
+10, 13, 14, 15
+5000
+28 - Parent*(id, id) select pr
+print pr;
+Select pr such that Parent*(8, 17)
+10, 13, 14,15
+5000
+29 - Parent*(s, id) select s
+stmt s;
+Select s such that Parent*(s, 18)
+8, 9, 12, 16
+5000
+30 - Parent(id, s) select s
+stmt s;
+Select s such that Parent* (9, s)
+10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+5000
+31 - Parent*(w, r) select r
+read r; while w;
+Select r such that Parent*(w, r)
+19
+5000
+32 - Parent*(_, 15) select c
+stmt s; constant c;
+Select c such that Parent*(_, 15)
+0, 1, 9, 10, 100, 34404, 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+5000
+33 - Parent*(7, _) select c
+stmt s; constant c;
+Select c such that Parent*(7, _)
+none
+5000
+34 - Follows(_, _) select v
+variable v;
+Select v such that Follows(_, _)
+lo, high, target, attempt, guess, error, yes
+5000
+35 - Follows(ifs1, ifs2) select v
+variable v; if ifs1, ifs2;
+Select v such that Follows(ifs1, ifs2)
+none
+5000
+36 - Follows(a, w) select a
+assign a; while w;
+Select a such that Follows(a, w)
+7
+5000
+37 - Follows(r, w) select r
+read r; while w;
+Select r such that Follows(r, w)
+none
+5000
+38 - Follows(r, a) select a
+read r; assign a;
+Select a such that Follows(r, a)
+3, 6, 20
+5000
+39 - Follows(c, _) select c
+call c;
+Select c such that Follows(c, _)
+none
+5000
+40 - Follows(a, _) select a
+assign a;
+Select a such that Follows(a, _)
+3, 4, 6, 7
+5000
+41 - Follows(_, a) select a
+assign a;
+Select a such that Follows(_, a)
+3, 4, 6, 7, 11, 20
+5000
+42 - Follows(12, 13) select pr
+print pr;
+Select pr such that Follows(12, 13)
+none
+5000
+43 - Follows(10, 11) select pr
+print pr;
+Select pr such that Follows(10, 11)
+10, 13, 14, 15
+5000
+44 - Follows(20, _) select r
+read r;
+Select pr such that Follows(20, _)
+none
+5000
+45 - Follows(19, _) select r;
+read r;
+Select r such that Follows(19, _)
+1, 2, 5, 19
+5000
+46 - Follows(_, 1) select r;
+read r;
+Select r such that Follows(_, 1)
+none
+5000
+47 - Follows(a, 8) select a;
+assign a;
+Select a such that Follows(a, 8)
+7
+5000
+48 - Follows(12, r) select r;
+read r;
+Select r such that Follows(12, r)
+19
+5000
+49 - Follows*(_, _) select v
+variable v;
+Select v such that Follows*(_, _)
+lo, high, target, attempt, guess, error, yes
+5000
+50 - Follows*(ifs1, ifs2) select v
+variable v; if ifs1, ifs2;
+Select v such that Follows*(ifs1, ifs2)
+none
+5000
+51 - Follows*(a, w) select a
+assign a; while w;
+Select a such that Follows*(a, w)
+3, 4, 6, 7
+5000
+52 - Follows*(r, w) select r
+read r; while w;
+Select r such that Follows*(r, w)
+1, 2, 5
+5000
+53 - Follows(r, a) select a
+read r; assign a;
+Select a such that Follows*(r, a)
+3, 4, 6, 7, 20
+5000
+54 - Follows*(c, _) select c
+call c;
+Select c such that Follows*(c, _)
+none
+5000
+55 - Follows*(a, _) select a
+assign a;
+Select a such that Follows*(a, _)
+3, 4, 6, 7
+5000
+56 - Follows*(_, a) select a
+assign a;
+Select a such that Follows*(_, a)
+3, 4, 6, 7, 11, 20
+5000
+57 - Follows*(12, 13) select pr
+print pr;
+Select pr such that Follows*(1, 13)
+none
+5000
+58 - Follows*(10, 11) select pr
+print pr;
+Select pr such that Follows*(12, 20)
+10, 13, 14, 15
+5000
+59 - Follows*(20, _) select r
+read r;
+Select pr such that Follows*(20, _)
+none
+5000
+60 - Follows*(19, _) select r;
+read r;
+Select r such that Follows*(19, _)
+1, 2, 5, 19
+5000
+61 - Follows*(_, 1) select r;
+read r;
+Select r such that Follows*(_, 1)
+none
+5000
+62 - Follows*(a, 8) select a;
+assign a;
+Select a such that Follows*(a, 8)
+3, 4, 6, 7
+5000
+63 - Follows*(1, w) select w;
+while w;
+Select w such that Follows*(1, w)
+8
+5000
+64 - Modifies(s, _) select s;
+stmt s;
+Select s such that Modifies(s, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 16, 17, 18, 19, 20
+5000
+65 - Modifies(r, v) select v;
+variable v; read r;
+Select v such that Modifies(r, v)
+lo, high, guess
+5000
+65 - Modifies(a, v) select v;
+variable v; assign a;
+Select v such that Modifies(a, v)
+target, attempt, error, yes, lo, high
+5000
+65 - Modifies(ifs, v) select ifs;
+variable v; if ifs;
+Select ifs such that Modifies(ifs, v)
+9, 12, 16
+5000
+65 - Modifies(w, v) select v;
+variable v; while w;
+Select v such that Modifies(w, v)
+attempt, lo, high, guess
+5000
+65 - Modifies(ifs, var attempt) select ifs;
+if ifs;
+Select ifs such that Modifies(ifs, "attempt")
+9
+5000
+65 - Modifies(ifs, var low) select ifs;
+if ifs;
+Select ifs such that Modifies(ifs, "low")
+none
+5000
+65 - Modifies(ifs, var lo) select ifs;
+if ifs;
+Select ifs such that Modifies(ifs, "lo")
+9, 12, 16
+5000
+65 - Modifies(r, var guess) select r;
+read r;
+Select r such that Modifies(r, "guess")
+5, 19
+5000
+65 - Modifies(pr, var attempt) select pr;
+print pr;
+Select pr such that Modifies(pr, "attempt")
+none
+5000
+65 - Modifies(1, _) select pr;
+print pr;
+Select pr such that Modifies(1, _)
+10, 13, 14, 15
+5000
+65 - Modifies(10, _) select pr;
+print pr;
+Select pr such that Modifies(10, _)
+none
+5000
+65 - Modifies(17, v) select v;
+variable v;
+Select v such that Modifies(17, v)
+lo
+5000
+65 - Modifies(11, var lo) select v;
+variable v;
+Select v such that Modifies(11, "lo")
+none
+5000
+65 - Modifies(20, var attempt) select v;
+variable v;
+Select v such that Modifies(20, "attempt")
+lo, high, target, attempt, guess, error, yes
+5000
+65 - Modifies(-1, var attempt) select v;
+variable v;
+Select v such that Modifies(-1, "attempt")
+none
+5000
+64 - Uses(s, _) select s;
+stmt s;
+Select s such that Uses(s, _)
+3, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 20
+5000
+65 - Uses(pr, v) select v;
+variable v; print pr;
+Select v such that Uses(pr, v)
+yes, error, lo, high
+5000
+65 - Uses(a, v) select v;
+variable v; assign a;
+Select v such that Uses(a, v)
+lo, high, guess, attempt
+5000
+65 - Uses(ifs, v) select ifs;
+variable v; if ifs;
+Select ifs such that Uses(ifs, v)
+9, 12, 16
+5000
+65 - Uses(w, v) select v;
+variable v; while w;
+Select v such that Uses(w, v)
+yes, error, lo, high, guess, attempt, target
+5000
+65 - Uses(ifs, var attempt) select ifs;
+if ifs;
+Select ifs such that Uses(ifs, "attempt")
+9
+5000
+65 - Uses(s, var attempt) select ifs;
+stmt s;
+Select s such that Uses(s, "attempt")
+8, 9, 20
+5000
+65 - Uses(ifs, var low) select ifs;
+if ifs;
+Select ifs such that Uses(ifs, "low")
+none
+5000
+65 - Uses(ifs, var lo) select ifs;
+if ifs;
+Select ifs such that Uses(ifs, "lo")
+9, 12
+5000
+65 - Uses(pr, var guess) select pr;
+print pr;
+Select pr such that Uses(pr, "guess")
+none
+5000
+65 - Uses(pr, var attempt) select pr;
+print pr;
+Select pr such that Uses(pr, "attempt")
+none
+5000
+65 - Uses(1, _) select pr;
+print pr;
+Select pr such that Uses(10, _)
+10, 13, 14, 15
+5000
+65 - Uses(10, _) select pr;
+print pr;
+Select pr such that Uses(1, _)
+none
+5000
+65 - Uses(17, v) select v;
+variable v;
+Select v such that Uses(17, v)
+guess
+5000
+65 - Uses(3, v) select v;
+variable v;
+Select v such that Uses(3, v)
+lo, high
+5000
+65 - Uses(11, var lo) select v;
+variable v;
+Select v such that Uses(17, "lo")
+none
+5000
+65 - Uses(20, var attempt) select v;
+variable v;
+Select v such that Uses(20, "attempt")
+lo, high, target, attempt, guess, error, yes
+5000
+65 - Uses(-1, var attempt) select v;
+variable v;
+Select v such that Uses(-1, "attempt")
+none
+5000
+9 - invalid synonym syntax (does not start with a letter)
+stmt 1s;
+Select 1s
+none
+5000

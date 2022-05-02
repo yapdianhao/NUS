@@ -1,0 +1,200 @@
+1 - With v.varName
+variable v;
+Select v with v.varName = "ring"
+ring
+5000
+2 - With v.varName not exists
+variable v;
+Select v with v.varName = "notExists"
+none
+5000
+3 - With p.procName
+procedure p;
+Select p with p.procName = "Frodo"
+Frodo
+5000
+4 - With p.procName not exists
+procedure p;
+Select p with p.procName = "shine"
+none
+5000
+5 - With constant.value
+constant c;
+Select c with c.value = 4
+4
+5000
+6 - With constant.value not exists
+constant c;
+Select c with c.value = 123352
+none
+5000
+7 - With a.stmt#
+assign a;
+Select a with a.stmt# = 8
+8
+5000
+8 - With s.stmt# not exists
+stmt s;
+Select s with stmt# = 39
+none
+5000
+9 - With s.stmt# = prog_line
+prog_line pl; stmt s;
+Select s with s.stmt# = pl and pl = 29
+29
+5000
+10 - With v.varName = p.procName
+variable v; procedure p;
+Select v with v.varName = p.procName
+Frodo, Shire
+5000
+11 - With c.value = s.stmt#
+constant c; stmt s;
+Select c.value with c.value = s.stmt#
+1, 2, 3, 4, 8, 10, 12, 13, 19
+5000
+12 - With r.stmt# = c1.value
+read r; constant c1;
+Select r with r.stmt# = c1.value
+1, 4, 10
+5000
+13 - With s.stmt# = c1
+stmt s; constant c1;
+Select s with s.stmt# = c1
+none
+5000
+14 - With p.procName = identifier and v.varName = identifier
+variable v; procedure p;
+Select v with v.varName = "Frodo" with p.procName = "Frodo" with v.varName = p.procName
+Frodo
+5000
+15 - With c.value = LITERAL and with s.stmt# = LITERAL
+constant c; stmt s;
+Select s with s.stmt# = 2 with c.value = 2 with s.stmt# = c.value
+2
+5000
+16 - With c.value/s.stmt# and Follows
+constant c; stmt s; assign a;
+Select a such that Follows(s, a) with c.value = s.stmt#
+2, 3, 11
+5000
+17 - With c.value/s.stmt# and FollowsT
+constant c; stmt s; assign a;
+Select s such that Follows*(s, a) with c.value = s.stmt#
+1, 2, 10
+5000
+18 - with c.value/s.stmt# and Parent
+constant c; stmt s; assign a;
+Select c such that Parent(s, a) with c.value = s.stmt#
+19
+5000
+19 - with c.value/s.stmt# and ParentT
+constant c; stmt s1; assign a;
+Select c such that Parent*(s1, a) with c.value = a.stmt#
+8, 13
+5000
+20 - with p.procName/v.varName and Uses
+procedure p; variable v;
+Select v such that Uses(p, v) with p.procName = v.varName
+Shire
+5000
+21 - with p.procName/v.varName and Modifies
+procedure p; variable v;
+Select p such that Modifies(p, _) with p.procName = v.varName
+Shire, Frodo
+5000
+22 - with p.procName = LITERAL
+procedure p;
+Select p with p.procName = 1
+none
+5000
+23 - with v.varName = LITERAL
+variable v;
+Select v with v.varName = 1
+none
+5000
+24 - with c.value = IDENT
+constant c;
+Select c with c.value = "1"
+none
+5000
+25 - with s.stmt# = IDENT
+stmt s;
+Select s with s.stmt# = "2"
+none
+5000
+26 - with p.procName = call.procName
+procedure p; call ca;
+Select p with p.procName = ca.procName
+Frodo, Aragon, Elves
+5000
+27 - with ca.procName = IDENT
+call ca;
+Select ca with ca.procName = "Frodo"
+5, 12
+500
+28 - with ca.stmt# LITERAL
+call ca;
+Select ca.procName with ca.stmt# = 17
+Aragon
+5000
+29 - pl = pl
+prog_line pl1, pl2;
+Select pl1 with pl1 = pl2 and pl1 = 30
+30
+5000
+30 - such that with-cl
+procedure p;
+Select p such that with p.procName = "Elves"
+none
+5000
+31 - with suchThat-cl
+procedure p1, p2;
+Select p1 with Calls(p1, p2)
+none
+5000
+32 - with IDENT = LITERAL
+procedure p;
+Select p with 1 = "1"
+none
+5000
+33 - Select boolean with LITERAL = LITERAL
+
+Select BOOLEAN with -1 = -1
+none
+5000
+34 - Select boolean with IDENT = IDENT
+
+Select BOOLEAN with "not" = "same"
+FALSE
+5000
+35 - Select boolean with syn = IDENT
+stmt ring;
+Select BOOLEAN with ring = "ring"
+FALSE
+5000
+36 - Select boolean with syn = syn
+while w; if ifs;
+Select BOOLEAN with w = ifs
+FALSE
+5000
+37 - Select boolean with TRUE = FALSE
+prog_line TRUE, FALSE;
+Select BOOLEAN with TRUE = FALSE
+TRUE
+5000
+38 - Select boolean with p.procName does not exists
+procedure p;
+Select BOOLEAN with p.procName = "Saruman"
+FALSE
+5000
+39 - Select boolean with s.stmt# that does not exists
+stmt s;
+Select BOOLEAN with s.stmt# = 100
+FALSE
+5000
+40 - Select boolean with s.stmt# = -1
+stmt s1;
+Select BOOLEAN with s1.stmt# = -1
+none
+5000

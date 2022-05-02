@@ -1,0 +1,135 @@
+1 - NextBip(_, _)
+read r;
+Select r such that NextBip(_, _)
+19, 25, 28, 30, 31, 37
+5000
+2 - NextBip(s1, s2)
+stmt s1, s2;
+Select <s1, s2> such that NextBip(s1, s2)
+35 36,34 35,32 33,31 32,30 31,34 37,29 32,28 29,27 30,25 26,37 38,23 21,22 23,21 22,36 38,20 21,18 19,17 18,15 16,14 16,13 14,12 10,38 32,27 28,21 10,16 17,11 12,26 27,10 11,9 10,24 25,8 24,8 9,7 8,6 7,33 34,5 6,17 20,4 5,19 17,3 4,13 15,11 13,2 3,1 2
+5000
+3 - NextBip(s, s)
+stmt s;
+Select s such that NextBip(s, s)
+none
+5000
+4 - NextBip(r, p)
+read r; print p;
+Select <r, p> such that NextBip(r, p)
+28 29
+5000
+5 - NextBip(const, s)
+stmt s, s2;
+Select <s, s2> such that NextBip(10, s) and NextBip(17, s2)
+11 18, 11 20
+5000
+6 - NextBip(const, const)
+read r;
+Select r such that NextBip(17, 20)
+19, 25, 28, 30, 31, 37
+5000
+7 - NextBip(ifs, a)
+if ifs; assign a;
+Select ifs such that NextBip(ifs, a)
+8, 11, 13
+5000
+8 - NextBip(a, w)
+assign a; while w;
+Select w such that NextBip(a, w)
+10, 17, 21, 32
+5000
+9 - NextBip(a, INT)
+assign a;
+Select a such that NextBip(a, 5)
+4
+5000
+10 - NextBip(INT, ifs)
+if ifs;
+Select ifs such that NextBip(10, ifs)
+11
+5000
+11 - NextBip(INT, INT)
+
+Select BOOLEAN such that NextBip(27, 30)
+true
+5000
+12 - Multiple NextBip
+assign a1, a2, a3;
+Select <a1, a2, a3> such that NextBip(a1, a2) and NextBip(a2, a3)
+1 2 3, 2 3 4, 3 4 5, 4 5 6, 5 6 7
+5000
+13 - Multiple NextBip and pattern
+assign a, a2; if ifs; while w; variable v;
+Select a such that NextBip(ifs, a) pattern ifs(v, _, _) pattern w(v, _) pattern a(v, _) such that NextBip(a, a2)
+14, 15
+5000
+14 - NextBip*(_, _)
+read r;
+Select r such that NextBip(_, _)
+19, 25, 28, 30, 31, 37
+5000
+15 - NextBip*(ifs1, ifs2)
+if ifs1, ifs2;
+Select <ifs1, ifs2> such that NextBip*(ifs1, ifs2)
+11 11, 11 13, 13 13,8 27,8 13,8 11,8 34,27 34,13 11,34 34
+5000
+16 - NextBip*(s, s)
+stmt s;
+Select s such that NextBip*(s, s)
+23,22,21,20,19,18,17,16,12,35,13,36,15,38,14,37,34,11,32,33,10
+5000
+17 - NextBip*(r, p)
+read r; print p;
+Select <r, p> such that NextBip*(r, p)
+31 35,28 35,28 29,19 23,30 35,25 35,25 29,37 35
+5000
+18 - NextBip*(const, s)
+stmt s;
+Select s such that NextBip*(14, s) and NextBip*(15, s)
+10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23
+5000
+19 - NextBip*(const, const)
+read r;
+Select r such that NextBip*(17, 20)
+19, 25, 28, 30, 31, 37
+5000
+20 - NextBip*(ifs, a)
+if ifs; assign a;
+Select ifs such that NextBip*(ifs, a)
+34,27,13,8,11
+5000
+21 - NextBip*(a, w)
+assign a; while w;
+Select w such that NextBip*(a, w)
+10, 17, 21, 32
+5000
+22 - NextBip*(a, INT)
+assign a;
+Select a such that NextBip*(a, 5)
+1, 2, 3, 4
+5000
+23 - NextBip*(INT, ifs)
+if ifs;
+Select ifs such that NextBip*(10, ifs)
+11, 13
+5000
+24 - NextBip*(INT, INT)
+
+Select BOOLEAN such that NextBip*(27, 30)
+true
+5000
+25 - NextBip*(INT, ifs) with stmt in if stmt
+if ifs;
+Select ifs such that NextBip*(14, ifs)
+11, 13
+5000
+26 - NextBip(pl, s) - Skip the end of a stmtList
+prog_line pl; stmt s1, s2;
+Select pl such that NextBip(pl, s1) and Parent(s1, s2)
+7, 9, 10, 11, 12, 16, 19, 20, 21, 23, 26, 29, 31, 33, 38
+5000
+27 - NextBip*(pl, s) - Get stmt before a specific statement
+prog_line pl; stmt s1, s2;
+Select pl such that NextBip*(pl, s1) with s1.stmt# = 18
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23
+5000

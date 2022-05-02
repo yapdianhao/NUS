@@ -1,0 +1,25 @@
+1 - pattern i(_, _, _)
+if i;
+Select i pattern i(_, _, _)
+6, 11
+5000
+2 - pattern i(synonym, _, _)
+if i; variable v;
+Select v pattern i(v, _, _)
+a
+5000
+3 - pattern i(const, _, _)
+if i;
+Select i pattern i("a", _, _)
+6, 11
+5000
+4 - pattern i(const, _, _) query s
+stmt s; if i;
+Select s pattern i("b", _, _)
+none
+5000
+5 - pattern s(_, _, _) invalid
+stmt s;
+Select s pattern s("a", _, _)
+none
+5000

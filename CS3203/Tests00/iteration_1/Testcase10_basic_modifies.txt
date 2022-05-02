@@ -1,0 +1,80 @@
+1 - Modifies(a, IDENT)
+assign a;
+Select a such that Modifies(a, "guess")
+9, 14, 15, 18, 22
+5000
+2 - Modifies(a, v)
+assign a; variable v;
+Select a such that Modifies(a, v)
+1, 2, 3, 4, 5, 6, 7, 9, 12, 14, 15, 16, 20, 18, 22, 26, 33, 36, 38
+5000
+3 - Modifies(a, _)
+assign a;
+Select a such that Modifies(a, _)
+1, 2, 3, 4, 5, 6, 7, 9, 12, 14, 15, 16, 20, 18, 22, 26, 33, 36, 38
+5000
+4 - Modifies(r, IDENT)
+read r;
+Select r such that Modifies(r, "dummy")
+25
+5000
+5 - Modifies(r, v)
+read r; variable v;
+Select v such that Modifies(r, v)
+dummy, someNumber, useless, gameType
+5000
+6 - Modifies(r, _)
+read r;
+Select r such that Modifies(r, _)
+19, 25, 28, 30, 31, 37
+5000
+7 - Modifies(ifs, IDENT)
+if ifs;
+Select ifs such that Modifies(ifs, "someNumber")
+8, 27, 34
+5000
+8 - Modifies(ifs, IDENT)
+if ifs;
+Select ifs such that Modifies(ifs, "favouriteNumber")
+8, 34
+5000
+9 - Modifies(ifs, v)
+if ifs; variable v;
+Select ifs such that Modifies(ifs, v)
+8, 11, 13, 27, 34
+5000
+10 - Modifies(w, IDENT)
+while w;
+Select w such that Modifies(w, "useless")
+10, 17
+5000
+11 - Modifies(w, v)
+while w; variable v;
+Select w such that Modifies(w, v)
+10, 17, 21, 32
+5000
+12 - Modifies(p, v)
+procedure p; variable v;
+Select p such that Modifies(p, v)
+sourceProc
+5000
+13 - Modifies(_, v)
+variable v;
+Select v such that Modifies(_, v)
+none
+5000
+14 - Modifies(pn, _)
+print pn;
+Select pn such that Modifies(pn, _)
+none
+5000
+15 - Modifies(s)
+stmt s;
+Select s such that Modifies(s)
+none
+5000
+16 - Modifies(s, _, _)
+stmt s;
+Select s such that Modifies(s, _, _)
+none
+5000

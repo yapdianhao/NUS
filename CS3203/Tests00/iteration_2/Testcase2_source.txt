@@ -1,0 +1,22 @@
+procedure procA {
+  read a;         // 1
+  a = a;          // 2
+  call procB;     // 3
+  print a;        // 4
+}
+procedure procB {
+  c = 10;               // 5
+  if (a > 100) then {   // 6
+    b = 3;              // 7
+    a = a * b;          // 8
+  } else {
+    while ( a <= 100) { // 9
+      a = a + c;        // 10
+      if (a < 20) then {// 11
+         c = c - b;     // 12
+      } else {
+         c = c + b;     // 13
+      }
+    }
+  }
+}

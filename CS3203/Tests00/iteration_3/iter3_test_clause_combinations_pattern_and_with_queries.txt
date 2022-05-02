@@ -1,0 +1,50 @@
+1 - Select tuple pattern with 2 clauses each
+assign a; if ifs; read r; print p;
+Select <a, ifs> pattern a("V", _"w % K * b - w + r / L / p / L + Q * g * f"_) pattern ifs("m", _, _) with r.varName = "Y" and p.varName = "F"
+1 5
+5000
+2 - Select tuple pattern with 2 clauses each different ordering
+while w; if ifs; variable v; assign a;
+Select <w, v> pattern w(v, _) with a.stmt# = 1 pattern ifs(v, _ , _) with v.varName = "W"
+9 W
+5000
+3 - Select tuple with 3 clauses each
+assign a; while w; if ifs; read r; call c;
+Select <w, ifs> pattern a("C", _) pattern w("E", _) pattern ifs("m", _ , _) with c.procName = "secondary" and r.stmt# = 3 with ifs.stmt# = 5
+9 5
+5000
+4 - Select tuple with 3 clauses each different ordering
+assign a1; assign a2; while w;
+Select <a1, a2, w> pattern a1(_, _"b"_) with a1.stmt# = 1 pattern w("W", _) pattern a2(_,_"b"_) with w.stmt# = 9
+1 2 9, 1 1 9
+5000
+5 - Select tuple with 4 clauses each
+procedure p; variable v; if ifs; while w; assign a1, a2; print pr; call c;
+Select <p, v> pattern ifs("H", _ , _) with pr.varName = "s" pattern w("Y", _) pattern a1(_, _"r"_) with p.procName = v.varName with c.procName = "secondary" pattern a2(_, _)
+main main, secondary secondary
+5000
+6 - Select BOOLEAN pattern 1 clause with 2 clauses
+while w;
+Select BOOLEAN pattern w("W", _) with 1 = 1 with "cde" = "efg"
+false
+5000
+7 - Select BOOLEAN pattern 2 clauses with 3 clauses
+assign a; while w; call c; print p; read r;
+Select BOOLEAN with 4 = 4 pattern a(_, _) pattern w("E", _) with c.procName = "secondary" with p.varName = "s" and r.varName = "Y"
+true
+5000
+8 - Select BOOLEAN pattern 3 clauses with 4 clauses
+if ifs; assign a; while w; print p1, p2; call c;
+Select BOOLEAN pattern ifs("S", _ , _) pattern a("V", _) with 3 = 3 pattern w("Y", _) with p1.varName = "I" and p2.varName = "F" with c.procName = "secondary"
+true
+5000
+9 - Select SingleElement pattern 2 clauses with one clause
+stmt s1, s2; if ifs; while w;
+Select s1 pattern ifs("c", _, _) pattern w("O", _) with s2.stmt# = 4
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+5000
+10 - Select SingleElement pattern 3 clauses with 2 clause
+assign a; if ifs; while w; call c; stmt s;
+Select a with s.stmt# = 1 pattern ifs(_, _, _) pattern w(_, _) with c.stmt# = 8 pattern a(_, _)
+1, 2
+5000

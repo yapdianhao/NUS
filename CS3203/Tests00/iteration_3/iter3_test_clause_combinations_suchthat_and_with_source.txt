@@ -1,0 +1,33 @@
+procedure proc1 {
+    c = 5;
+    print a;
+    read proc1;
+    call proc3;
+    g = 2 + 3 + 1 - 8 % g;
+    if (k >= k + 2) then {
+        while (c <= 8 * 9) {
+            c = g;
+            b = c;
+            c = b;
+        }
+    } else {
+        while (j == 3 * 8 - k)  {
+            e = e + e;
+            call proc2;
+        }
+    }
+}
+
+procedure proc2 {
+    a = 6 * 7;
+    read proc1;
+    read proc3;
+    print e;
+    print b;
+    read k;
+}
+
+procedure proc3 {
+    v3 = v3 + 1;
+    print proc2;
+}

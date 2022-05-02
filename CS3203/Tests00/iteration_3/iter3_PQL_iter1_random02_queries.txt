@@ -1,0 +1,100 @@
+1 - comment
+while w;
+Select w such that Parent(w, 7)
+none
+5000
+2 - comment
+while w;
+Select w such that Parent(w, 6)
+4
+5000
+3 - comment
+stmt s;
+Select s such that Parent(s, 6)
+4
+5000
+4 - comment
+stmt s;
+Select s such that Parent*(s, 7)
+4, 6
+5000
+5 - comment
+stmt s, s2;
+Select s such that Parent*(s, s2)
+4, 6
+5000
+6 - comment
+stmt s, s2;
+Select s such that Parent*(s, 9)
+4
+5000
+7 - comment
+if ifs;
+Select ifs such that Follows(5, ifs)
+6
+5000
+8 - comment
+if ifs;
+Select ifs such that Follows*(5, ifs)
+6
+5000
+9 - comment
+assign a;
+Select a such that Follows*(6, a)
+9, 10
+5000
+10 - comment
+stmt s;
+Select s such that Follows*(6, s)
+9, 10
+5000
+11 - comment
+assign a;
+Select a such that Follows*(a, 7)
+none
+5000
+12 - comment
+stmt s;
+Select s such that Follows*(s, 4)
+1, 2, 3
+5000
+13 - comment
+stmt s;
+Select s such that Follows(s, 4)
+3
+5000
+14 - comment
+stmt s;
+Select s such that Follows(s, 9)
+6
+5000
+15 - comment
+stmt s;
+Select a such that Follows(s, 9)
+none
+5000
+16 - comment
+if ifs;
+Select ifs such that Follows*(5, ifs)
+6
+5000
+17 - comment
+stmt s;
+Select s
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+5000
+18 - comment
+assign a;
+Select a pattern a(_, _)
+1, 2, 3, 5, 7, 8, 9, 10
+5000
+19 - comment
+assign a;
+Select a pattern a(_, _"z"_)
+8, 9
+5000
+20 - comment
+assign a;
+Select a pattern a("y", _"z"_)
+8
+5000

@@ -1,0 +1,7 @@
+procedure main {
+  read x;
+  x = x + 1;
+  while (x != 0) {
+    x = y + 1;
+  }
+}

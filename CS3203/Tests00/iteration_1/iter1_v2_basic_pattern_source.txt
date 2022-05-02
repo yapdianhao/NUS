@@ -1,0 +1,18 @@
+procedure Earth
+{
+    read tree; \\1
+    print tree; \\2
+    a = 9456789987678987678909; \\3 more than 2.1 bil
+    b = 0; \\4
+    c = 1; \\5
+    d = 0; \\6
+    print f; \\7
+
+    a = 1 +x; \\8 +
+    b = b- 1; \\9 -
+    c = c/ b; \\10 divide
+    d = a *2; \\11 multi
+    f = 8738 * b; \\12
+
+    print bca; \\13
+}

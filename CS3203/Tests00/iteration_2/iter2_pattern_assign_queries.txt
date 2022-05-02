@@ -1,0 +1,250 @@
+1 - valid query (1 pattern assign clause, entRef = _, expression-spec = full match)
+assign a;
+Select a pattern a(_, "1")
+17, 59
+5000
+2 - valid query (1 pattern assign clause, entRef = _, expression-spec = full match)
+assign a;
+Select a.stmt# pattern a(_, "(test + 102 % x * y - 11) / z")
+none
+5000
+3 - valid query (1 pattern assign clause, entRef = _, expression-spec = full match)
+assign a;
+Select a pattern a(_, "(y % 7 + 23 * 11) / (100 - x)")
+22
+5000
+4 - valid query (1 pattern assign clause, entRef = _, expression-spec = full match)
+assign a;
+Select a pattern a(_, "l / btob")
+none
+5000
+5 - valid query (1 pattern assign clause, entRef = _, expression-spec = full match)
+assign a;
+Select a pattern a(_, "(ring + 4) + (g * a * 2 * 1) + shine")
+35
+5000
+6 - valid query (1 pattern assign clause, entRef = _, expression-spec = partial match)
+assign a;
+Select a pattern a(_, _"x * y"_)
+44, 66
+5000
+7 - valid query (1 pattern assign clause, entRef = _, expression-spec = partial match)
+assign a;
+Select a pattern a(_, _"randOM / (8 + (b2st % ydj)) - 11"_)
+1
+5000
+8 - valid query (1 pattern assign clause, entRef = _, expression-spec = partial match)
+assign a;
+Select a pattern a(_, _"randOM / 8"_)
+none
+5000
+9 - valid query (1 pattern assign clause, entRef = _, expression-spec = partial match)
+assign a;
+Select a pattern a(_, _"gg - 6 % randOM"_)
+2
+5000
+10 - valid query (1 pattern assign clause, entRef = _, expression-spec = partial match)
+assign a;
+Select a pattern a(_, _"- 1"_)
+none
+5000
+11 - valid query (1 pattern assign clause, entRef = _, expression-spec = partial match)
+assign a;
+Select a pattern a(_, _"k + helium2 * heart"_)
+8
+5000
+12 - valid query (1 pattern assign clause, entRef = _, expression-spec = partial match)
+assign a;
+Select a pattern a(_, _"23 * 11 / (100 - x)"_)
+none
+5000
+13 - valid query (1 pattern assign clause, entRef = _, expression-spec = partial match)
+assign a;
+Select a pattern a(_, _"y % 7 + 23 * 11"_)
+22
+5000
+14 - valid query (1 pattern assign clause, entRef = _, expression-spec = partial match)
+assign a;
+Select a pattern a(_, _"b - b / 14"_)
+31
+5000
+15 - valid query (1 pattern assign clause, entRef = _, expression-spec = partial match)
+assign a;
+Select a pattern a(_, _"d * (a + c + 21)"_)
+31
+5000
+16 - valid query (1 pattern assign clause, entRef = _, expression-spec = partial match)
+assign a;
+Select a pattern a(_, _"sum * sum / f + x"_)
+none
+5000
+17 - valid query (1 pattern assign clause, entRef = _, expression-spec = partial match)
+assign a;
+Select a pattern a(_, _"f + y + z"_)
+41
+5000
+18 - valid query (1 pattern assign clause, entRef = _, expression-spec = partial match)
+assign a;
+Select a pattern a(_, _"(v + (x * y))"_)
+44
+5000
+19 - valid query (1 pattern assign clause, entRef = _, expression-spec = partial match)
+assign a;
+Select a pattern a(_, _"1"_)
+5, 13, 17, 34, 35, 51, 59, 63, 68, 75
+5000
+20 - valid query (1 pattern assign clause, entRef = _, expression-spec = partial match)
+assign a;
+Select a pattern a(_, _"test + 102 % (x * y)"_)
+66
+5000
+21 - valid query (1 pattern assign clause, entRef = _, expression-spec = _)
+assign a;
+Select a pattern a(_, _)
+1, 2, 5, 8, 13, 17, 18, 22, 24, 26, 31, 34, 35, 38, 41, 43, 44, 46, 51, 52, 53, 54, 58, 59, 63, 66, 68, 75
+5000
+22 - valid query (1 pattern assign clause, entRef = synonym var, expression-spec = full match)
+assign a; variable v;
+Select <a, v> pattern a(v, "a + lost")
+52 w
+5000
+23 - valid query (1 pattern assign clause, entRef = synonym var, expression-spec = full match)
+assign a; variable v;
+Select <a, v> pattern a(v, "(f - (71 * 88))")
+58 f
+5000
+24 - valid query (1 pattern assign clause, entRef = synonym var, expression-spec = full match)
+assign a; variable v;
+Select <a, v> pattern a(v, "x * y")
+none
+5000
+25 - valid query (1 pattern assign clause, entRef = synonym var, expression-spec = full match)
+assign a; variable v;
+Select <a, v> pattern a(v, "y - 1")
+75 y
+5000
+26 - valid query (1 pattern assign clause, entRef = synonym var, expression-spec = partial match)
+assign a; variable v;
+Select <a, v> pattern a(v, _"id - 1"_)
+5 id
+5000
+27 - valid query (1 pattern assign clause, entRef = synonym var, expression-spec = partial match)
+assign a; variable v;
+Select <v, a> pattern a(v, _"d - d * (a + c + 21)"_)
+y 31
+5000
+28 - valid query (1 pattern assign clause, entRef = synonym var, expression-spec = partial match)
+assign a; variable v;
+Select <a, v> pattern a(v, _"(y + z)"_)
+68 y
+5000
+29 - valid query (1 pattern assign clause, entRef = synonym var, expression-spec = partial match)
+assign a; variable v;
+Select <a, v> pattern a(v, _"(z * t)"_)
+44 x
+5000
+30 - valid query (1 pattern assign clause, entRef = synonym var, expression-spec = partial match)
+assign a; variable v;
+Select <a, v> pattern a(v, _"shine"_)
+35 f, 46 ring, 54 d
+5000
+31 - valid query (1 pattern assign clause, entRef = synonym var, expression-spec = _)
+assign a; variable v;
+Select <a, v> pattern a(v, _)
+1 IZone, 2 bb, 5 id, 8 lithium, 13 p, 17 y, 18 one, 22 y, 24 c, 26 bb, 31 y, 34 count, 35 f, 38 x, 41 a, 43 x, 44 x, 46 ring, 51 lost, 52 w, 53 shine, 54 d , 58 f, 59 c, 63 y, 66 x, 68 y, 75 y
+5000
+32 - valid query (1 pattern assign clause, entRef = IDENT, expression-spec = full match)
+assign a;
+Select a pattern a("c", "1")
+59
+5000
+33 - valid query (1 pattern assign clause, entRef = IDENT, expression-spec = full match)
+assign a;
+Select BOOLEAN pattern a("c", "1000")
+true
+5000
+34 - valid query (1 pattern assign clause, entRef = IDENT, expression-spec = full match)
+assign a;
+Select a pattern a("shine", "i + ring")
+53
+5000
+35 - valid query (1 pattern assign clause, entRef = IDENT, expression-spec = full match)
+assign a;
+Select a pattern a("f", "((ring + 4) + (g * a * 2) * 1) + shine")
+35
+5000
+36 - valid query (1 pattern assign clause, entRef = IDENT, expression-spec = full match)
+assign a;
+Select a pattern a("y", "y - 1")
+75
+5000
+37 - valid query (1 pattern assign clause, entRef = IDENT, expression-spec = full match)
+assign a;
+Select BOOLEAN pattern a("zo", "x + 20")
+false
+5000
+38 - valid query (1 pattern assign clause, entRef = IDENT, expression-spec = partial match)
+assign a;
+Select a pattern a("x", _"(x * y)"_)
+44, 66
+5000
+39 - valid query (1 pattern assign clause, entRef = IDENT, expression-spec = partial match)
+assign a;
+Select a pattern a("one", _"one - 2"_)
+18
+5000
+40 - valid query (1 pattern assign clause, entRef = IDENT, expression-spec = partial match)
+assign a;
+Select BOOLEAN pattern a("lithium", _"k + helium2 * heart"_)
+true
+5000
+41 - valid query (1 pattern assign clause, entRef = IDENT, expression-spec = partial match)
+assign a;
+Select a pattern a("x", _"(test + 102 % (x * y))"_)
+66
+5000
+42 - valid query (1 pattern assign clause, entRef = IDENT, expression-spec = partial match)
+assign a;
+Select a pattern a("a", _"y + z + sum * sum"_)
+none
+5000
+43 - valid query (1 pattern assign clause, entRef = IDENT, expression-spec = _)
+assign a;
+Select a pattern a("IZone", _)
+1
+5000
+44 - valid query (1 pattern assign clause, entRef = IDENT, expression-spec = _)
+assign a;
+Select a pattern a("bb", _)
+2, 26
+5000
+45 - valid query (1 pattern assign clause, entRef = IDENT, expression-spec = _)
+assign a;
+Select a pattern a("id", _)
+5
+5000
+46 - valid query (1 pattern assign clause, entRef = IDENT, expression-spec = _)
+assign a;
+Select a pattern a("lithium", _)
+8
+5000
+47 - valid query (1 pattern assign clause, entRef = IDENT, expression-spec = _)
+assign a;
+Select a pattern a("p", _)
+13
+5000
+48 - valid query (1 pattern assign clause, entRef = IDENT, expression-spec = _)
+assign a;
+Select a pattern a("y", _)
+17, 22, 31, 63, 68, 75
+5000
+49 - valid query (1 pattern assign clause, entRef = IDENT, expression-spec = _)
+assign a;
+Select a pattern a("x", _)
+38, 43, 44, 66
+5000
+50 - valid query (1 pattern assign clause, entRef = IDENT, expression-spec = _)
+assign a;
+Select a pattern a("xw", _)
+none
+5000

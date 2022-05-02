@@ -1,0 +1,75 @@
+procedure strassen {
+	det = 1;    // 1
+	while (det != 0) {  // 2
+		read a11;   // 3
+		read a12;   // 4
+		read a21;   // 5
+		read a22;   // 6
+		read b11;   // 7
+		read b12;   // 8
+		read b21;   // 9
+		read b22;   // 10
+
+		m1 =(a11 + a22)* (b11 + b22);   // 11
+		m2 = (a21 + a22)* b11;          // 12
+		m3 = a11 * (b12 - b22);         // 13
+		m4 = a22 * (b21- b11);          // 14
+		m5 = (a11 + a12)*b22;           // 15
+		m6 = (a21 - a11)* (b11 + b12);  // 16
+		m7 = (a12 - a22)* (b21 + b22);  // 17
+		c11 = m1 + m4 - m5 + m7;        // 18
+		c12 = m3 + m5;                  // 19
+		c21 = m2 + m4;                  // 20
+		c22 = m1 - m2 + m3 + m6;        // 21
+		det = c11 * c22 - c12 * c21;    // 22
+	}
+}
+
+procedure procA {
+  read a;         // 23
+  a = a;          // 24
+  call procB;     // 25
+  print a;        // 26
+}
+
+procedure procB {
+  c = 10;               // 27
+  if (a > 100) then {   // 28
+    b = 3;              // 29
+    a = a * b;          // 30
+  } else {
+    while ( a <= 100) { // 31
+      a = a + c;        // 32
+      if (a < 20) then {// 33
+         c = c - b;     // 34
+      } else {
+         c = c + b;     // 35
+      }
+    }
+  }
+}
+
+procedure procC {
+    a = 20;             // 36
+    c = 15;             // 37
+
+    while (a < 30) {    // 38
+        print a;        // 39
+        if (a == 25) then { // 40
+            b = c;          // 41
+            read c;         // 42
+        } else {
+            a = c + b;      // 43
+        }
+        a = a + 1;          // 44
+    }
+
+    d = a + 3;              // 45
+    if (d != 4) then {      // 46
+        print e;            // 47
+    } else {
+        read f;             // 48
+        call procA;         // 49
+    }
+    call strassen;          // 50
+}

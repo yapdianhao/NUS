@@ -1,0 +1,17 @@
+procedure AssignComplex
+{
+    abc = 1;    bin = 2; \\1 2
+    cow=4; dippy = 0; \\3 4
+    abc = bin + 1 * cow - dippy; \\5
+    bin = cow*5/8+abc; \\6
+    
+    ab1 = 2193815460927491200; \\7
+    ab1 = abc +dippy* bin /2; \\8
+    dippy=ab1*cow; \\9
+     abc = cow * bin; \\10
+      cow = ab1 / 6; \\11
+        ab1 = ab1 / 4; \\12
+    b2c = 4; \\13
+    read abc; \\14
+    print bin; \\15
+}

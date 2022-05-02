@@ -1,0 +1,311 @@
+1 - Select all assign
+assign a;
+Select a
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 54, 55, 59, 60, 62, 63, 66, 67
+5000
+2 - Wildcard
+assign a;
+Select a pattern a (_, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 54, 55, 59, 60, 62, 63, 66, 67
+5000
+3 - Match of single IDENT
+assign a;
+Select a pattern a ("x1", _)
+1
+5000
+4 - Match of single IDENT
+assign a;
+Select a pattern a (_, _"a"_)
+1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 54, 55, 59, 60
+5000
+5 - Match of single IDENT full expr
+assign a;
+Select a pattern a (_, "b")
+2
+5000
+6 - Match of single INT
+assign a;
+Select a pattern a (_, _"1"_)
+62, 63, 66, 67
+5000
+7 - Match of single INT expr
+assign a;
+Select a pattern a (_, _"1-0"_)
+66
+5000
+8 - Match of LHS + RHS
+assign a;
+Select a pattern a (_, _"a+b"_)
+4, 6
+5000
+9 - Match of LHS + RHS full expr
+assign a;
+Select a pattern a (_, "a+b")
+4
+5000
+10 - Match of LHS - RHS
+assign a; variable v;
+Select <a, v> pattern a (v, _"a*b"_)
+12 x11, 14 x13, 46 y4, 55 z2
+5000
+11 - Match of LHS * RHS
+assign a; variable v;
+Select v pattern a (v, _"b%c"_) pattern a (_, _"a"_)
+x32
+5000
+12 - Match of LHS / RHS
+assign a; 
+Select a pattern a (_, _"b+c"_) and a ("y2", _)
+44
+5000
+13 - Match of LHS / RHS
+assign a; 
+Select a pattern a (_, _"a+b+c"_)
+6
+5000
+14 - Match of LHS / RHS
+assign a; 
+Select a pattern a (_, _"b-c"_)
+25, 45
+5000
+15 - Match of LHS / RHS full expr
+assign a; 
+Select a pattern a (_, "a*b*c")
+14
+5000
+16 - Match of LHS / RHS
+assign a; 
+Select a pattern a (_, _"a*b+c"_)
+46
+5000
+17 - Match of LHS / RHS
+assign a; 
+Select a pattern a (_, _"a/b-c"_)
+47
+5000
+18 - Match of LHS / RHS with brackets
+assign a; 
+Select a pattern a (_, _"(b-c)"_)
+25, 45
+5000
+19 - Match of LHS / RHS w/o brackets
+assign a; 
+Select a pattern a (_, _"b-c"_)
+25, 45
+5000
+20 - Mutiple pattern clauses
+assign a; variable v;
+Select a pattern a (v, _) and a (_, "b-a")
+21
+5000
+21 - Mutiple pattern clauses
+assign a; variable v;
+Select <a, v> pattern a (v, _"a-b"_) pattern a (_, _"c*d"_)
+22 x21, 59 z3, 60 z4
+5000
+22 - Mutiple pattern clauses
+assign a;
+Select a pattern a (_, _"a"_) pattern a (_, _"b"_) and a (_, _"c"_)
+6, 7, 8, 9, 10, 11, 14, 15, 16, 17, 18, 19, 22, 23, 24, 25, 26, 27, 30, 31, 32, 33, 34, 35, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 55, 59, 60
+5000
+23 - Mutiple pattern clauses
+assign a;
+Select a pattern a (_, _"1"_) and a ("x", _)
+62, 63, 67
+5000
+24 - Select all while
+while w;
+Select w
+50, 51, 52, 56, 57, 65
+5000
+26 - Match while with IDENT
+while w;
+Select w pattern w ("x", _)
+50, 65
+5000
+27 - Match while with IDENT
+while w;
+Select w pattern w ("z", _)
+52, 57
+5000
+28 - Match while with IDENT
+while w;
+Select w pattern w ("z", _) and w ("b", _)
+57
+5000
+29 - Match while with IDENT (test about UsesPL)
+while w;
+Select w pattern w ("a", _)
+51
+5000
+30 - Match while with IDENT (test about UsesPL)
+while w;
+Select w pattern w ("z", _)
+52, 57
+5000
+31 - Match while with syn
+while w; variable v;
+Select <w, v> pattern w (v, _)
+50 x, 51 y, 51 a, 51 b, 52 z, 57 b, 57 z, 65 x
+5000
+32 - Select all if
+if ifs;
+Select ifs
+53, 58, 61, 64
+5000
+34 - Match if with IDENT
+if ifs;
+Select ifs pattern ifs ("y", _, _)
+53, 61
+5000
+35 - Match if with IDENT (tests UsesPL)
+if ifs;
+Select ifs pattern ifs ("a", _, _)
+none
+5000
+36 - Match if with syn
+if ifs; variable v;
+Select <ifs, v> pattern ifs (v, _, _)
+53 x, 53 y, 53 z, 58 y2, 58 y1, 61 y
+5000
+37 - Empty results
+assign a;
+Select BOOLEAN pattern a ("abcde", _)
+false
+5000
+38 - Empty results
+assign a;
+Select BOOLEAN pattern a (_, _"12345"_)
+false
+5000
+39 - Empty results
+assign a;
+Select BOOLEAN pattern a (_, _"abcde"_)
+false
+5000
+40 - Empty results
+if ifs;
+Select BOOLEAN pattern ifs ("abcde", _, _)
+false
+5000
+41 - Empty results
+while w;
+Select BOOLEAN pattern w ("abcde", _)
+false
+5000
+42 - Invalid arguments
+stmt s;
+Select BOOLEAN pattern s (_, _)
+false
+5000
+43 - Invalid arguments
+read r;
+Select BOOLEAN pattern r (_, _)
+false
+5000
+44 - Invalid arguments
+print p;
+Select BOOLEAN pattern p (_, _)
+false
+5000
+45 - Invalid arguments
+call cl;
+Select BOOLEAN pattern cl (_, _)
+false
+5000
+46 - Invalid arguments
+constant c;
+Select BOOLEAN pattern c (_, _)
+false
+5000
+47 - Invalid arguments
+variable v;
+Select BOOLEAN pattern v (_, _)
+false
+5000
+48 - Invalid arguments
+procedure proc;
+Select BOOLEAN pattern proc (_, _)
+false
+5000
+49 - Invalid arguments
+assign a;
+Select BOOLEAN pattern a (_, _, _)
+false
+5000
+50 - Invalid arguments
+assign a;
+Select BOOLEAN pattern a (_, "")
+none
+5000
+51 - Invalid arguments
+assign a;
+Select BOOLEAN pattern a (_, _""_)
+none
+5000
+52 - Invalid arguments
+assign a;
+Select BOOLEAN pattern a (1, _)
+none
+5000
+53 - Invalid arguments
+if ifs;
+Select BOOLEAN pattern ifs (_, _)
+false
+5000
+54 - Invalid arguments
+if ifs;
+Select BOOLEAN pattern ifs (_, _, _, _)
+none
+5000
+55 - Invalid arguments
+if ifs;
+Select BOOLEAN pattern ifs (1, _, _)
+none
+5000
+56 - Invalid arguments
+if ifs;
+Select BOOLEAN pattern ifs ("1", _, _)
+none
+5000
+57 - Invalid arguments
+if ifs;
+Select BOOLEAN pattern ifs (_, _"x"_, _)
+none
+5000
+58 - Invalid arguments
+if ifs;
+Select BOOLEAN pattern ifs (_, _, _"x"_)
+none
+5000
+59 - Invalid arguments
+while w;
+Select BOOLEAN pattern w (_, _, _)
+false
+5000
+60 - Invalid arguments
+while w;
+Select BOOLEAN pattern w (1, _)
+none
+5000
+62 - Syntactic error
+assign a;
+Select BOOLEAN pattern a (_, _""_)
+none
+5000
+61 - Invalid arguments
+while w;
+Select BOOLEAN pattern w (_, _"x"_)
+false
+5000
+
+25 - Match of wildcard of while
+while w;
+Select w pattern w (_, _)
+50, 51, 52, 57, 65
+5000
+33 - Match of wildcard of if
+if ifs;
+Select ifs pattern ifs (_, _, _)
+53, 58, 61
+5000

@@ -1,0 +1,44 @@
+procedure ITERATION1
+{
+    IZone= randOM / (8 + b2st % ydj ) - 11 + bp * bb;  \\ 1 
+
+    bb = gg - 6 % randOM; \\ 2
+
+    while (d < one) { \\ 3
+        if (!( (b2st <= 0) && (a != c) )) then {  \\ 4
+            id = id - 1;  \\ 5
+        } else {
+            print x;  \\ 6
+            while (celebrate != btob) {  \\ 7
+                lithium = I - (k + helium2 * heart); \\ 8
+                read randOM; \\ 9
+            }
+        }
+        while (beta >= 11) {   \\ 10
+            if ( (6 >= ydj) && (!(c == IZone)) ) then {  \\ 11
+                if ( gamma != RAY ) then {  \\ 12
+                    p = a % c1 + 1 ;  \\ 13
+                } else {
+                    print ydj; \\ 14
+                    while ( !(id <= 22) ) { \\ 15
+                        read one;  \\16
+                    }
+                    y = 1; \\ 17
+                }
+                one = one - 2;  \\ 18
+            } else {
+                read x;  \\ 19
+                read y;  \\ 20
+                print x;   \\ 21
+                y = (y % 7 + 23 * 11) / (100 - x); \\ 22
+            }
+        }
+
+        while ((c <= 0) && ((alpha > 11) || (b % ydj + 10 != alpha)) )  {  \\ 23
+            c = 1000; \\ 24
+            print one;  \\ 25
+            bb = beta + l  / btob + RAY; \\ 26
+        }
+    }
+    read bp;   \\ 27
+}

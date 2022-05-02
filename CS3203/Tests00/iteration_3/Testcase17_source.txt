@@ -1,0 +1,29 @@
+// Retrieved from CS3203 Test 1 (AY19/20 Sem 1)
+procedure main {
+  read x;                            
+  read y;                            
+  call computeSeq; }                 
+procedure computeSeq {
+  first = 1;                         
+  d = 7;                             
+  read b;                            
+  count = 0;                         
+  call computeLimit;                 
+  d = a * a + a + b + a * d;         
+  if (d > limit) then {              
+    while (count < limit) {          
+      p = first + x;                 
+      x = first;                     
+      first = p;                     
+      count = count + 1; }}          
+  else {
+    x = 4 * a + b * d; }             
+  print x; }                         
+procedure computeLimit {
+  x = 0;                             
+  d = 16;                            
+  if (f <= d) then {                 
+    limit = x + y / f + y; }         
+  else {
+    limit = y / f + x - y; }         
+  print limit; }                     

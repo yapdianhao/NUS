@@ -1,0 +1,45 @@
+1 - Calls(p1, p2), query p1
+procedure p1, p2;
+Select p1 such that Calls(p1, p2)
+procA
+5000
+2 - Calls(p1, p2), query p2
+procedure p1, p2;
+Select p2 such that Calls(p1, p2)
+procB
+5000
+3 - Calls(_, p), query p
+procedure p;
+Select p such that Calls(_, p)
+procB
+5000
+4 - Calls(p, _), query p
+procedure p;
+Select p such that Calls(p, _)
+procA
+5000
+5 - Calls(_, _), query s
+stmt s;
+Select s such that Calls(_, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+5000
+6 - Calls(const p, p), query p
+procedure p;
+Select p such that Calls("procA", p)
+procB
+5000
+7 - Calls(p, const p), query p
+procedure p;
+Select p such that Calls(p, "procB")
+procA
+5000
+8 - Calls(const p, const p), query s
+if i;
+Select i such that Calls("procA", "procB")
+6, 11
+5000
+9 - Calls(const p, const p), query s
+stmt s;
+Select s such that Calls("procB", "procA")
+none
+5000

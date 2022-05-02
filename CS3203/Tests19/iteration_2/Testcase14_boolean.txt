@@ -1,0 +1,110 @@
+1 - SELECT BOOLEAN NOTHING
+
+Select BOOLEAN
+true
+5000
+2 - SELECT BOOLEAN with INT = INT Expected True
+
+Select BOOLEAN with 1 = 1
+true
+5000
+3 - SELECT BOOLEAN with INT = INT Expected False
+
+Select BOOLEAN with 1 = 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+false
+5000
+4 - SELECT BOOLEAN with IDENT = IDENT Expected True, Appeared in program
+
+Select BOOLEAN with "shine" = "shine"
+true
+5000
+5 - SELECT BOOLEAN with IDENT = IDENT Expected True
+
+Select BOOLEAN with "abcdefgh" = "abcdefgh"
+true
+5000
+6 - SELECT BOOLEAN with IDENT = IDENT Expected False
+
+Select BOOLEAN with "abcdefgh" = "abc"
+false
+5000
+7 - SELECT BOOLEAN Such That Expected True
+stmt s;
+Select BOOLEAN such that Next*(37, s)
+true
+5000
+8 - SELECT BOOLEAN Such That Expected False
+stmt s;
+Select BOOLEAN such that Next*(38, s)
+false
+5000
+9 - SELECT BOOLEAN Such That Expected False
+call ca;
+Select BOOLEAN such that Next*(37, ca)
+false
+5000
+10 - SELECT BOOLEAN Such That Expected False
+print pr;
+Select BOOLEAN such that Next(37, pr)
+false
+5000
+11 - SELECT BOOLEAN Such That Expected True
+print pr;
+Select BOOLEAN such that Next*(37, pr)
+true
+5000
+12 - SELECT BOOLEAN pattern Expected True
+assign a;
+Select BOOLEAN pattern a("f",_"1"_)
+true
+5000
+13 - SELECT BOOLEAN pattern Expected True
+assign a;
+Select BOOLEAN pattern a("f",_"g*a*2"_)
+true
+5000
+14 - SELECT BOOLEAN pattern Expected False
+assign a;
+Select BOOLEAN pattern a("f",_"a*2*1"_)
+false
+5000
+15 - SELECT BOOLEAN pattern Expected False
+assign a;
+Select BOOLEAN pattern a("f","a*2*1")
+false
+5000
+16 - SELECT BOOLEAN pattern Expected False
+assign a;
+Select BOOLEAN pattern a("f","g*a*2")
+false
+5000
+17 - SELECT BOOLEAN pattern Expected True
+assign a; if ifs;
+Select BOOLEAN pattern ifs(_, _, _)
+true
+5000
+18 - SELECT BOOLEAN pattern Expected True
+assign a; if ifs;
+Select BOOLEAN pattern ifs(_, _, _)
+true
+5000
+19 - SELECT BOOLEAN pattern Expected None
+assign a; while wh;
+Select BOOLEAN pattern wh(_, _, _)
+false
+5000
+20 - SELECT BOOLEAN pattern Expected None
+assign a; if ifs;
+Select BOOLEAN pattern ifs(_, _)
+false
+5000
+21 - SELECT BOOLEAN such that Expected False
+
+Select BOOLEAN such that Modifies(_,_)
+false
+5000
+22 - SELECT BOOLEAN such that Expected None
+
+Select BOOLEAN such that Modifies(_,_,_)
+none
+5000

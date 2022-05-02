@@ -1,0 +1,25 @@
+1 - 
+stmt s, s1; assign a, a1, a2; while w; if ifs; variable v; procedure p, q; constant const; call c; read rd; print pn, pn2; 
+Select v such that Parent(_, s) and Modifies(s, v) and Next*(s, c)
+result, exp, sum, isPow, x, factor
+5000
+2 -
+stmt s, s1; assign a, a1, a2; while w; if ifs; variable v; procedure p, q; constant const; call c; read rd; print pn, pn2; 
+Select a such that Uses(s, v) and Follows (a, s) pattern w(v, _) and ifs(v, _, _)
+6, 8, 17, 18, 2
+5000
+3 -
+stmt s, s1; assign a, a1, a2; while w; if ifs; variable v; procedure p, q; constant const; call c; read rd; print pn, pn2; 
+Select <s, a, v, q> such that Uses(a, v) with s.stmt# = c.stmt# and p.procName = c.procName pattern a(_, _"factor*sum"_) such that Calls*(p, q)
+3 21 factor computeSeries, 3 21 sum computeSeries
+5000
+4 -
+stmt s, s1; assign a, a1, a2; while w; if ifs; variable v; procedure p, q; constant const; call c; read rd; print pn, pn2; 
+Select <s, s1> such that Affects(s, s1) and Follows*(s, w)
+4 18, 4 21, 6 10, 6 18, 24 27
+5000
+5 -
+stmt s, s1; assign a, a1, a2; while w; if ifs; variable v; procedure p, q; constant const; call c; read rd; print pn, pn2; 
+Select <a, a1> such that Affects(a, a1) and Affects*(a1, a2) and Follows*(pn2, a2) and Modifies(rd, v) and Uses(pn, v) and Parent(ifs, a) and Affects(a2, 21) pattern a2(v, _)
+15 17, 10 17, 14 11, 11 18
+5000

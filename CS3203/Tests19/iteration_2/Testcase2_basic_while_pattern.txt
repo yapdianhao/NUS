@@ -1,0 +1,50 @@
+1 - pattern w(_, __)
+while w;
+Select w pattern w(_, _)
+9
+5000
+2 - pattern w(synonym, _)
+while w; variable v;
+Select v pattern w(v, _)
+a
+5000
+3 - pattern w(const, _)
+while w;
+Select w pattern w("a", _)
+9
+5000
+4 - pattern w(const, _) query s
+stmt s; while w;
+Select s pattern w("b", _)
+none
+5000
+5 - pattern s(_, _) invalid
+stmt s;
+Select BOOLEAN pattern s("a", _)
+false
+5000
+6 - semantically invalid w pattern with partial match
+while w;
+Select BOOLEAN pattern w (_, _"x"_)
+false
+5000
+7 - semantically invalid w pattern with exact match
+while w;
+Select BOOLEAN pattern w (_, "x")
+false
+5000
+8 -  syntactically invalid w/a pattern with synonym
+while w; variable v;
+Select BOOLEAN pattern w (_, v)
+none
+5000
+9 - syntactically invalid w/a pattern with partial match synonym
+while w; variable v;
+Select BOOLEAN pattern w(_, _v_)
+none
+5000
+10 - semantically invalid w pattern with non-variable synonym
+while w; constant c;
+Select BOOLEAN pattern w(c, _)
+false
+5000

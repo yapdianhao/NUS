@@ -1,0 +1,87 @@
+procedure a {
+	x1 = a;
+	y1 = b;
+	z1 = c;
+	x2 = a + b;
+	x3 = b + a;
+	x4 = a + b + c + d;
+	x5 = a + c + b + d;
+	x6 = b + a + c + d;
+	x7 = b + c + a + d;
+	x8 = c + a + b + d;
+	x9 = c + b + a + d;
+	x11 = a * b;
+	x12 = b * a;
+	x13 = a * b * c;
+	x14 = a * c * b;
+	x15 = b * a * c;
+	x16 = b * c * a;
+	x17 = c * a * b;
+	x18 = c * b * a;
+	x19 = a - b;
+	x20 = b - a;
+	x21 = a - b - c * d;
+	x22 = a - c - b;
+	x23 = b - a - c;
+	x24 = b - c - a;
+	x25 = c - a - b;
+	x26 = c - b - a;
+	x27 = a / b;
+	x28 = b / a;
+	x29 = a / b / c;
+	x30 = a / c / b;
+	x31 = b / a / c;
+	x32 = b / c / a;
+	x33 = c / a / b;
+	x34 = c / b / a;
+	x27 = a % b;
+	x28 = b % a;
+	x29 = a % b % c;
+	x30 = a % c % b;
+	x31 = b % a % c;
+	x32 = b % c % a;
+	x33 = c % a % b;
+	x34 = c % b % a;
+	y2 = a * (b + c);
+	y3 = a / (b - c);
+	y4 = a * b + c;
+	y5 = a / b - c;
+	y6 = a % (c + b);
+	y7 = a % (c - b);
+}
+procedure b {
+	while (x == 1) {
+		while (y <= 1 + a + b) {
+			while (1 * 1 == z) {
+				if (x + y + z == 0) then {
+					z1 = (a * a);
+				} else {
+					z2 = a * b % c;
+				}
+			}
+		}
+	}
+	while (12 > 13) {
+		while (1 * b != z) {
+			if (y2 + y1 + 0 == 1) then {
+				z3 = a - b + c * d;
+			} else {
+				z4 = (a - b) + c * d;
+			}
+		}
+	}
+}
+procedure c {
+	if (y >= 12) then {
+		x = 1;
+	} else {
+		x = 1 + 2 + 3;
+	}
+	if (1 != 2) then {
+		while (x == 0) {
+			z = 1 - 0;
+		}
+	} else {
+		x = x + 1;
+	}
+}

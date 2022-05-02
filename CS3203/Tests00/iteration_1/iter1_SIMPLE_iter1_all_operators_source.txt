@@ -1,0 +1,27 @@
+procedure allOperators {
+    a = 3;
+    b = 4;
+    c = a + b;
+    d = a / b;
+    e = a - b;
+    f = a * b;
+    g = a + b * c - d / e;
+    if ((a <= b) && (c != d)) then {
+        h = a * b + c / d - e;
+    }
+    else {
+        i = a / b - c * d + e - h + g;
+    }
+    if ((c >= d) && (d > e)) then {
+        j = a + b / c - d * e + f - g;
+    }
+    else {
+        k = a - b * c / d - e - f + g;
+    }
+    if ((e < f) || (!(g == 0))) then {
+        l = a * c + b * e * f / g - h;
+    } else {
+        m = a / b - c + d * e - f + g % h;
+    }
+    n = a / b / c * d * e + f + g - h;
+}

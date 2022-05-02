@@ -1,0 +1,23 @@
+procedure procedure1 {
+  read a1;
+  print b1;
+  if (c1 <= 0) then {
+    c1 = a1 + b1 * c1;}
+  else {
+    call procedure3;}
+  call procedure2;
+}
+procedure procedure2 {
+  read a1;
+  print b1;
+  if (c1 >= 0) then {
+    call procedure3;
+    b1 = 1 + b1 * c1;} 
+  else {
+    while (d2 < 0) {
+      d2 = d2 / b1 - d2;}}
+  print d2;
+}
+procedure procedure3 {
+  read a1;
+}

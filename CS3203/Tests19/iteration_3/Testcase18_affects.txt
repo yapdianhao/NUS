@@ -1,0 +1,70 @@
+1 - Simple affects
+assign a1, a2;
+Select a1 such that Affects(a1, a2) such that Modifies(a1, "a1")
+23
+5000
+2 - Affects past an if nesting
+assign a1, a2;
+Select a1 such that Affects(a1, a2) such that Modifies(a1, "a2")
+2
+5000
+3 - Affects(_, _)
+
+Select BOOLEAN such that Affects(_, _)
+true
+5000
+4 - Affects(a, _)
+assign a;
+Select a such that Affects(a, _)
+2, 3, 5, 6, 8, 9, 11, 12, 14, 15, 17, 18, 20, 21, 23, 28, 29, 30, 32, 33, 34, 37, 38, 39, 41, 42, 43, 46, 47, 48, 50, 51, 52
+5000
+5 - Affects(_, a)
+assign a;
+Select a such that Affects(_, a)
+23, 24, 25, 26, 28, 29, 30, 32, 33, 34, 35, 37, 38, 39, 41, 42, 43, 44, 46, 47, 48, 50, 51, 52, 53
+5000
+6 - Affects(a1, a2)
+assign a1, a2;
+Select a1 such that Affects(a1, a2)
+2, 3, 5, 6, 8, 9, 11, 12, 14, 15, 17, 18, 20, 21, 23, 28, 29, 30, 32, 33, 34, 37, 38, 39, 41, 42, 43, 46, 47, 48, 50, 51, 52
+5000
+7 - Multiple Affects
+assign a1, a2, a3;
+Select a1 such that Affects(a1, a2) and Affects(a2, a3) and Affects(a3, a1)
+28, 29, 30, 32, 33, 34, 37, 38, 39, 41, 42, 43, 46, 47, 48, 50, 51, 52
+5000
+8 - Simple Affects*
+assign a1, a2;
+Select a2 such that Affects*(a1, a2) such that Modifies(a1, "a4")
+28, 29, 30
+5000
+9 - Affects*(_, _)
+
+Select BOOLEAN such that Affects*(_, _)
+true
+5000
+10 - Affects*(a, _)
+assign a;
+Select a such that Affects*(a, _)
+2, 3, 5, 6, 8, 9, 11, 12, 14, 15, 17, 18, 20, 21, 23, 28, 29, 30, 32, 33, 34, 37, 38, 39, 41, 42, 43, 46, 47, 48, 50, 51, 52
+5000
+11 - Affects*(_, a)
+assign a;
+Select a such that Affects*(_, a)
+23, 24, 25, 26, 28, 29, 30, 32, 33, 34, 35, 37, 38, 39, 41, 42, 43, 44, 46, 47, 48, 50, 51, 52, 53
+5000
+12 - Affects*(a1, a2)
+assign a1, a2;
+Select a1 such that Affects*(a1, a2)
+2, 3, 5, 6, 8, 9, 11, 12, 14, 15, 17, 18, 20, 21, 23, 28, 29, 30, 32, 33, 34, 37, 38, 39, 41, 42, 43, 46, 47, 48, 50, 51, 52
+5000
+13 - Multiple Affects*
+assign a1, a2, a3;
+Select a1 such that Affects*(a1, a2) and Affects*(a2, a3) and Affects*(a3, a1)
+28, 29, 30, 32, 33, 34, 37, 38, 39, 41, 42, 43, 46, 47, 48, 50, 51, 52
+5000
+14 - Affect and Affects*
+assign a1, a2, a3;
+Select a3 such that Affects(a1, a2) and Affects*(a2, a3)
+25, 28, 29, 30, 32, 33, 34, 35, 37, 38, 39, 41, 42, 43, 44, 46, 47, 48, 50, 51, 52, 53
+5000

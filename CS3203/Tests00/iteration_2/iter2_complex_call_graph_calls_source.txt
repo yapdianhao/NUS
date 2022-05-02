@@ -1,0 +1,24 @@
+procedure e {
+    a = b + c + e + d;  \\1
+}
+
+procedure c {
+    call e;             \\2
+    call d;             \\3
+}
+
+procedure d {
+    call e;             \\4
+}
+
+procedure b {
+    call e;             \\5
+    call c;             \\6
+}
+
+procedure a {
+    call d;             \\7
+    call b;             \\8
+    call e;             \\9
+    call c;             \\10
+}

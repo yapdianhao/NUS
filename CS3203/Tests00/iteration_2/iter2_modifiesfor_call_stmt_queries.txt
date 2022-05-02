@@ -1,0 +1,70 @@
+1 - valid query (entRef1 = s, entRef2 = _)
+stmt s;
+Select s such that Modifies(s, _)
+1, 2, 4, 5, 8, 9, 10, 12, 13, 14, 18, 19
+5000
+2 - valid query (entRef1 = s, entRef2 = v)
+stmt s; variable v;
+Select <s, v> such that Modifies(s,v)
+19 m, 18 m, 14 cm1, 13 cm1, 12 cm2, 10 bm2, 9 bm1, 8 cm1, 8 cm2, 5 bm1, 5 cm1, 5 cm2, 4 cm1, 4 cm2, 2 am, 1 bm1, 1 bm2, 1 cm1, 1 cm2
+5000
+3 - valid query (entRef = s, entRef2 = varName)
+stmt s;
+Select s such that Modifies(s, "bm1")
+1, 5, 9
+5000
+4 - valid query (entRef = ca, entRef2 = _)
+call ca;
+Select ca such that Modifies(ca, _)
+1, 4, 8
+5000
+5 - valid query (entRef = ca, entRef2 = v)
+call ca; variable v;
+Select <v, ca> such that Modifies (ca, v)
+bm1 1, bm2 1, cm1 1, cm2 1, cm1 4, cm2 4, cm1 8, cm2 8
+5000
+6 - valid query (entRef = ca, entRef2 = varName)
+call ca;
+Select ca such that Modifies(ca, "cm1")
+1, 4, 8
+5000
+7 - valid query (entRef = stmt#, entRef2 = _)
+
+Select BOOLEAN such that Modifies(4, _)
+true
+5000
+8 - valid query (entRef = stmt#, entRef2 = v)
+variable v;
+Select v such that Modifies(1, v)
+bm1, bm2, cm1, cm2
+5000
+9 - valid query (entRef = stmt#, entRef2 = varName)
+
+Select BOOLEAN such that Modifies(8, "cm1")
+true
+5000
+10 - valid query (entRef = ca, entRef2 = varName)
+call ca;
+Select ca such that Modifies(ca, "procedure")
+none
+5000
+11 - valid query (entRef = stmt#, entRef2 = _)
+
+Select BOOLEAN such that Modifies(16, _)
+false
+5000
+12 - valid query (entRef = stmt#, entRef2 = v)
+variable v;
+Select v such that Modifies(16, v)
+none
+5000
+13 - valid query (entRef = stmt#, entRef2 = varName)
+
+Select BOOLEAN such that Modifies(16, "cm1")
+false
+5000
+14 - valid query (entRef = stmt#, entRef2 = varName)
+
+Select BOOLEAN such that Modify(16, "cm1")
+none
+5000

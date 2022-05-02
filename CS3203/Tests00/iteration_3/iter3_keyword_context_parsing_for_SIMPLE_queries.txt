@@ -1,0 +1,30 @@
+1 - keywords as procedure name
+procedure proc;
+Select proc
+procedure
+5000
+2 - keywords as variable name
+variable v;
+Select v
+assign, constant, if, print, procedure, read, else, then, while
+5000
+3 - keywords in pattern matching
+assign a;
+Select a pattern a (_, _"assign"_)
+3
+5000
+4 - keywords as identifiers in query
+stmt s;
+Select s such that Uses(s, "procedure")
+1
+5000
+5 - keywords as identifiers in query
+stmt s;
+Select s such that Modifies(s, "read")
+2, 4
+5000
+6 - keywords as identifiers in query
+stmt s;
+Select s such that Uses(s, "if")
+6, 8
+5000

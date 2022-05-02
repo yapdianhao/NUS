@@ -1,0 +1,42 @@
+procedure testwhile {
+
+    a = x + 1;                                  \\1
+
+    if (a == 1) then {                          \\2
+
+        while ( b== (c + 2)){                   \\3
+            print b;                            \\4
+            c = (b - c) * 2;                    \\5
+            b = b + 1; }                        \\6
+
+        while((d % 3) != 0) {                   \\7
+                
+            d = 4;                              \\8
+            print d;                            \\9
+
+            while(d > (b / 40)){                \\10
+                d = d + d / d + d * d; }        \\11
+
+            d = d * 3 / 2; }                    \\12
+
+        a = a + 5;                              \\13
+
+    } else {
+    
+        while ((e <= f) && (f == 9)) {          \\14
+
+            while (f < 20) {                    \\15
+
+                read f;                         \\16
+
+                while ( g>=4) {                 \\17
+                    read g; } } } }             \\18
+
+    while (!(p != p)) {                         \\19
+        read p;                                 \\20
+        q = p + 900;                            \\21
+        read q; }                               \\22
+
+    read y;                                     \\23
+    print z;                                    \\24
+}

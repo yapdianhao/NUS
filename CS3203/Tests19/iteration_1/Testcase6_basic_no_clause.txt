@@ -1,0 +1,15 @@
+1 - select assign
+assign a;
+Select a
+none
+5000
+2 - select read
+read x;
+Select x
+1
+5000
+9 - invalid synonym syntax (does not start with a letter)
+stmt 1s;
+Select 1s
+none
+5000

@@ -1,0 +1,49 @@
+procedure A {                                             
+    a = x; // not affected                              //1
+    while (i < 100) {                                     //2
+        if (i < 100) then {                               //3
+            b = x; // affected                          //4
+            call B;                                       //5
+        } else {                                          
+            c = x; // affected                          //6
+        }                                                 
+    }                                                     
+}                                                         
+procedure B {                                             
+    d = x; // affected                                  //7
+    while (i < 100) {                                     //8
+        if (i < 100) then {                               //9
+            e = x; // affected                          //10
+            call C;                                       //11
+        } else {                                          
+            f = x; // affected                          //12
+        }                                                 
+    }                                                     
+}                                                         
+procedure C {                                             
+    call D;                                               //13
+    while (i < 100) {                                     //14
+        call E;                                           //15
+        x = 1; // modifies x occurs here                 //16
+        if (i < 100) then {                               //17
+            call F;                                       //18
+        } else {                                          
+            print y; // nop, so can backtrack to B        //19
+        }                                                 
+    }                                                     
+}                                                         
+procedure D {                                             
+    t = x; // this is actually affected,                //20
+         // because C modifies, returns to B,             
+         // which calls C, which calls D                  
+}                                                         
+                                                          
+procedure E {                                             
+    u = x; // affected                                  //21
+}                                                         
+
+procedure F {                                             
+    v = x; // affected                                  //22
+    x = x + 1; // use x                                   //23
+    r = x; // not affected                              //24
+}

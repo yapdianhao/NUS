@@ -1,0 +1,220 @@
+1 - valid syntax (synonym contains only letters)
+stmt everyStatement;
+Select everyStatement
+1, 2, 3, 4, 5, 6, 7, 8
+5000
+2 - valid syntax (synonym contains letters and digits)
+stmt stmt1;
+Select stmt1
+1, 2, 3, 4, 5, 6, 7, 8
+5000
+3 - valid syntax (synonym contains letters and digits)
+stmt Statement123;
+Select Statement123
+1, 2, 3, 4, 5, 6, 7, 8
+5000
+4 - valid syntax (with extra whitespaces)
+stmt        s  ;
+Select           s     
+1, 2, 3, 4, 5, 6, 7, 8
+5000
+5 - valid syntax (multiple synonyms declared, extra whitespaces)
+stmt s1, s2,   s3,s4,     s6 ;
+Select   s4
+1, 2, 3, 4, 5, 6, 7, 8
+5000
+6 - valid syntax (select all variables)
+variable v1;
+Select v1
+sun, a1, a2
+5000
+7 - valid syntax (multiple synonyms declared, extra whitespaces)
+stmt s1,   s2, s1223; variable       v1,   v123v;
+Select v1
+sun, a1, a2
+5000
+8 - valid syntax (select all read statements)
+read r;
+Select r
+1, 2, 4, 7
+5000
+9 - valid syntax (select all print statements)
+print p;
+Select p
+3, 5, 6, 8
+5000
+10 - invalid synonym syntax (does not start with a letter)
+print 1s;
+Select 1s
+none
+5000
+11 - invalid synonym syntax (contains special characters)
+print print$#@d1;
+Select print$#@d1
+none
+5000
+12 - invalid design entity 
+readstatement r;
+Select r
+none
+5000
+13 - design entity not all lowercase
+Print p;
+Select p;
+none
+5000
+14 - Select keyword wrong cases
+read r;
+select r;
+none
+5000
+15 - invalid synonym (duplicated synonym) 
+print p; statement p;
+Select p
+none
+5000
+16 - invalid synonym selected (not declared)
+variable v#1;
+Select v1
+none
+5000
+17 - valid query with ONE Uses clause (stmtRef = synonym, entRef = identifier)
+stmt s;
+Select s such that Uses(s, "sun")
+3, 6, 8
+5000
+18 - valid query with ONE Uses clause but has empty results (stmtRef = synonym, entRef = identifier)
+print p;
+Select p such that Uses(p, "none")
+none
+5000
+19 - valid query with ONE Uses clause (stmtRef = synonym, entRef = synonym)
+stmt s; variable var;
+Select s such that Uses(s, var)
+3, 5, 6, 8
+5000
+20 - valid query with ONE Uses clause (stmtRef = synonym, entRef = synonym)
+stmt s; variable var;
+Select var such that Uses(s, var)
+sun, a1
+5000
+21 - valid query with ONE Uses clause (stmtRef = synonym, entRef = _)
+stmt s;
+Select s such that Uses(s, _)
+3, 5, 6, 8
+5000
+22 - valid query with ONE Uses clause but has empty results (stmtRef = synonym, entRef = _)
+read r19;
+Select r19 such that Uses(r19, _)
+none
+5000
+23 - invalid query with ONE Uses clause as stmtRef cannot be _ (stmtRef = _, entRef = identifier)
+print p20;
+Select p20 such that Uses(_, "x")
+none
+5000
+24 - valid query with ONE Uses clause but has empty results (stmtRef = _, entRef = identifier)
+stmt s;
+Select s such that Uses(_, "a")
+none
+5000
+25 - valid query with ONE Uses clause (stmtRef = _, entRef = _)
+read allReadStatements;
+Select allReadStatements such that Uses(_, _)
+none
+5000
+26 - valid query with ONE Uses clause (stmtRef = _, entRef = synonym)
+variable v; 
+Select v such that Uses(_, v)
+none
+5000
+27 - valid query with ONE Uses clause (stmtRef = integer, entRef = identifier)
+stmt s;
+Select s such that Uses(8, "sun")
+1, 2, 3, 4, 5, 6, 7, 8
+5000
+28 - valid query with ONE Uses clause but has empty results (stmtRef = integer, entRef = identifier)
+stmt s;
+Select s such that Uses(3, "x")
+none
+5000
+29 - valid query with ONE Uses clause (stmtRef = integer, entRef = _) 
+print p;
+Select p such that Uses(3, _)
+3, 5, 6, 8
+5000
+30 - valid query with ONE Uses clause (stmtRef = integer, entRef = _) (empty result as stmt 2 is Modifies) 
+read r;
+Select r such that Uses(2, _)
+none
+5000
+31 - valid query with ONE Uses clause (stmtRef = integer, entRef = synonym)
+variable v;
+Select v such that Uses(5, v)
+a1
+5000
+32 - valid query with ONE Modifies clause (stmtRef = synonym, entRef = identifier)
+read r;
+Select r such that Modifies(r, "sun")
+1, 4
+5000
+33 - valid query with ONE Modifies clause but has empty results (stmtRef = synonym, entRef = identifier)
+read r;
+Select r such that Modifies(r, "abc")
+none
+5000
+34 - valid query with ONE Modifies clause (stmtRef = synonym, entRef = _)
+stmt s; read r;
+Select r such that Modifies(s, _)
+1, 2, 4, 7
+5000
+35 - valid query with ONE Modifies clause (stmtRef = synonym, entRef = synonym)
+read r32; variable v32;
+Select v32 such that Modifies(r32, v32)
+sun, a1, a2
+5000
+36 - invalid query with ONE Modifies clause (stmtRef = _, entRef = identifier)
+print p;
+Select p such that Modifies(_, "a1")
+none
+5000
+37 - invalid query with ONE Modifies clause (stmtRef = _, entRef = _)
+read r;
+Select r such that Modifies(_, _)
+none
+5000
+38 - invalid query with ONE Modifies clause (stmtRef = _, entRef = synonym)
+variable v;
+Select v such that Modifies(_, v)
+none
+5000
+39 - valid query with ONE Modifies clause (stmtRef = integer, entRef = identifier)
+stmt s36;
+Select s36 such that Modifies(2, "a1")
+1, 2, 3, 4, 5, 6, 7, 8
+5000
+40 - valid query with ONE Modifies clause (stmtRef = integer, entRef = _)
+variable v;
+Select v such that Modifies(1, _)
+sun, a1, a2
+5000
+41 - valid query with ONE Modifies clause (stmtRef = integer, entRef = synonym)
+variable v; 
+Select v such that Modifies(7, v)
+a2
+5000
+42 - valid query with ONE Modifies clause but has empty results (stmtRef = integer, entRef = synonym)
+variable v; 
+Select v such that Modifies(5, v)
+none
+5000
+43 - invalid query with ONE Modifies clause when stmtRef is out of range (stmtRef = integer, entRef = synonym)
+variable v; 
+Select v such that Modifies(5, v)
+none
+5000
+44 - invalid query with ONE Uses clause when stmtRef is out of range (stmtRef = integer, entRef = synonym)
+variable v; 
+Select v such that Uses(-1, v)
+none
+5000

@@ -1,0 +1,145 @@
+1 - valid syntax (synonym contains letter and digits)
+assign a1; stmt st12;
+Select st12 pattern a1(_, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+5000
+2 - valid syntax (synonym contains letter)
+assign abc; stmt stmtmtmt;
+Select stmtmtmt pattern abc(_, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+5000
+3 - valid syntax (extra whitespaces)
+assign      a; stmt       st;
+  Select st   pattern  a(_, _)   
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+5000
+4 - valid syntax (multiple synonyms)
+assign a, aa, aaa, aaaa; stmt st, stt, sttt; variable v1, v2, v3;
+Select stt   pattern  aa(v3, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+5000
+5 - valid syntax (Select all assign)
+assign a1; stmt st12;
+Select a1
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+5000
+6 - invalid query (assign does not exist)
+assign a1; stmt st12;
+Select a1 pattern a1("abb", _)
+none
+5000
+7 - invalid synonym syntax (contains special characters)
+assign a1%^; stmt st1*(!2;
+Select st1*(!2 pattern a1%^("abb", _)
+none
+5000
+8 - invalid synonym (duplicate synonyms)
+assign s; stmt s;
+Select s pattern s("abb", _)
+none
+5000
+9 - valid syntax (entRef = _ , expression-spec = identifier, Select stmt)
+assign a; stmt s;
+Select s pattern a(_, _"dippy"_)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+5000
+10 - valid syntax (entRef = _ , expression-spec = identifier, Select assign)
+assign a;
+Select a pattern a(_, _"dippy"_)
+5, 8
+5000
+11 - valid syntax (entRef = _ , expression-spec = identifier, Select variable)
+assign a; variable v;
+Select v pattern a(_, _"bin"_)
+abc, bin, cow, dippy, ab1, b2c
+5000
+12 - valid syntax (entRef = synonym , expression-spec = identifier, Select stmt)
+assign a; stmt s; variable v;
+Select s pattern a(v, _"dippy"_)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+5000
+13 - valid syntax (entRef = synonym , expression-spec = identifier, Select assign)
+assign a; variable v;
+Select a pattern a(v, _"cow"_)
+5, 6, 9, 10
+5000
+14 - valid syntax (entRef = synonym , expression-spec = identifier, Select variable)
+assign a; variable v;
+Select v pattern a(v, _"ab1"_)
+dippy, cow, ab1
+5000
+15 - valid syntax (entRef = synonym , expression-spec = synonym, Select stmt)
+assign a; stmt s; variable v;
+Select s pattern a(v, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+5000
+16 - valid syntax (entRef = synonym , expression-spec = _, Select assign)
+assign a; variable v;
+Select a pattern a(v, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+5000
+17 - valid syntax (entRef = synonym , expression-spec = _, Select variable)
+assign a; variable v;
+Select v pattern a(v, _)
+abc, bin, ab1, dippy, cow, b2c
+5000
+18 - valid syntax (entRef = _ , expression-spec = _, Select stmt)
+assign a; stmt s;
+Select s pattern a(_, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+5000
+19 - valid syntax (entRef = _ , expression-spec = _, Select assign)
+assign a;
+Select a pattern a(_, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+5000
+20 - valid syntax (entRef = _ , expression-spec = _, Select variable)
+assign a; variable v;
+Select v pattern a(_, _)
+abc, bin, cow, dippy, ab1, b2c
+5000
+21 - valid syntax (entRef = identifier , expression-spec = _, Select stmt)
+assign a; stmt s;
+Select s pattern a("123", _)
+none
+5000
+22 - valid syntax (entRef = identifier , expression-spec = _, Select assign)
+assign a;
+Select a pattern a("b2c", _)
+13
+5000
+23 - valid syntax (entRef = identifier , expression-spec = _ , Select variable)
+assign a; variable v;
+Select v pattern a("ab1", _)
+ab1, abc, cow, bin, dippy, b2c
+5000
+24 - valid syntax (entRef = identifier , expression-spec = identifier , Select stmt)
+assign a; stmt s;
+Select s pattern a("b2c", _"4"_)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+5000
+25 - valid syntax (entRef = identifier , expression-spec = identifier , Select assign)
+assign a;
+Select a pattern a("ab1", _"4"_)
+12
+5000
+26 - valid syntax (entRef = identifier , expression-spec = identifier , Select variable)
+assign a; variable v;
+Select v pattern a("bin", _"cow"_)
+ab1, abc, cow, bin, dippy, b2c
+5000
+27 - valid syntax (entRef = synonym , expression-spec = _ , Select stmt)
+assign a; stmt s; variable v;
+Select s pattern a(v, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+5000
+28 - valid syntax (entRef = synonym , expression-spec = _ , Select assign)
+assign a; variable v;
+Select a pattern a(v, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+5000
+29 - valid syntax (entRef = synonym , expression-spec = _ , Select variable)
+assign a; variable v;
+Select v pattern a(v, _)
+abc, bin, ab1, dippy, cow, b2c
+5000

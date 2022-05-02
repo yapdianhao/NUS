@@ -1,0 +1,55 @@
+1 - procedure a calling
+procedure p;
+Select p such that Calls*("a", p)
+b, c, d, e
+5000
+2 - procedure b calling
+procedure p;
+Select p such that Calls*("b", p)
+c, d, e
+5000
+3 - procedure c calling
+procedure p;
+Select p such that Calls*("c", p)
+d, e
+5000
+4 - procedure d calling
+procedure p;
+Select p such that Calls*("d", p)
+e
+5000
+5 - procedure e calling
+procedure p;
+Select p such that Calls*("e", p)
+none
+5000
+6 - procedure a called
+procedure p;
+Select p such that Calls*(p, "a")
+none
+5000
+7 - procedure b called
+procedure p;
+Select p such that Calls*(p, "b")
+a
+5000
+8 - procedure c called
+procedure p;
+Select p such that Calls*(p, "c")
+b, a
+5000
+9 - procedure d called
+procedure p;
+Select p such that Calls*(p, "d")
+c, a, b
+5000
+10 - procedure e called
+procedure p;
+Select p such that Calls*(p, "e")
+a, b, c, d
+5000
+11 - get all relationships
+procedure p1, p2;
+Select <p1, p2> such that Calls*(p1, p2)
+a b, a c, a d, a e, b c, b d, b e, c d, c e, d e
+5000

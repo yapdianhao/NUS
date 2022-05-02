@@ -1,0 +1,10 @@
+procedure procedure {
+  procedure = procedure;
+  while (while == constant) {
+    assign = assign + 1;
+    read read;
+    print print;}
+  if (if == then) then {
+    constant = constant + 1;} else {
+    else = if;}
+}

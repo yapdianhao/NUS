@@ -1,0 +1,57 @@
+procedure Gandalf {
+    read shine;     // 1
+    ring = shine * 2;   // 2
+    f = ring + 3;       // 3
+    read lost;          // 4
+    call Frodo;         // 5
+    if (lost == shine) then {   // 6
+        call Aragon;            // 7
+        d = (shine + 12) * (lost + 13);}    // 8
+    else {
+        while (f > 10) {        // 9
+            read g;             // 10
+            f = ring + 4 + g * a * 2 * 1 + shine;   // 11
+            call Frodo;}        // 12
+    d = 2;}                     // 13
+print d;}                       // 14
+
+procedure Frodo {
+    a = f + shine;              // 15
+    if (a < 2) then {           // 16
+    call Aragon;}               // 17
+    else{
+    f = f + 19;}}               // 18
+
+procedure Aragon {
+    while (shine < 3) {         // 19
+    a = 1 * 2 + lost - f;       // 20
+    while (lost == a) {         // 21
+        lost = lost - 1;        // 22
+        w = a + lost;           // 23
+          shine = 1 + ring;}    // 24
+        if (a != shine) then {  // 25
+        a = lost + 1;           // 26
+        w = shine * 2;}         // 27
+    else {
+        w = 1;}}}               // 28
+
+procedure Shire {
+    call Aragon;                // 29
+    Frodo = Frodo + 2;          // 30
+    if (gold == 8) then {       // 31
+        read elves;             // 32
+        print elves;            // 33
+    } else {
+        call Elves;             // 34
+    }
+}
+
+procedure Elves {
+    while (Shire != 3) {        // 35
+        while (1 < 0) {         // 36
+            print TRUE;         // 37
+        }
+    }
+    lost = lost + 1;            // 38
+}
+

@@ -1,0 +1,550 @@
+1 - syntactically and semantically valid: wildcard + wildcard: Follows(_, _)
+
+Select BOOLEAN such that Follows(_,_)
+true
+5000
+2 - syntactically and semantically valid: wildcard + wildcard: Follows*(_, _)
+
+Select BOOLEAN such that Follows*(_,_)
+true
+5000
+3 - syntactically and semantically valid: wildcard + fixed value: Follows(_, 1), stmt num (in place of 1) exists in src program
+
+Select BOOLEAN such that Follows(_,2)
+true
+5000
+4 - syntactically and semantically valid: wildcard + fixed value: Follows(_, 1), stmt num (in place of 1) exists in src program
+
+Select BOOLEAN such that Follows*(_,35)
+true
+5000
+5 - syntactically and semantically valid: wildcard + fixed value: Follows(_, 1), stmt num not exists in src program
+
+Select BOOLEAN such that Follows(_,40)
+false
+5000
+6 - syntactically and semantically valid: wildcard + fixed value: Follows(_, 1), stmt num not exists in src program
+
+Select BOOLEAN such that Follows*(_,0)
+false
+5000
+7 - syntactically and semantically valid: wildcard + fixed value: Follows(_, 1), stmt num exists and relationship holds in src program
+
+Select BOOLEAN such that Follows(_,3)
+true
+5000
+8 - syntactically and semantically valid: wildcard + fixed value: Follows(_, 1), stmt num exists and relationship holds in src program
+
+Select BOOLEAN such that Follows*(_,17)
+true
+5000
+9 - syntactically and semantically valid: wildcard + fixed value: Follows(_, 1), stmt num exists but relationship doesn’t hold in src program
+
+Select BOOLEAN such that Follows(_,39)
+false
+5000
+10 - syntactically and semantically valid: wildcard + fixed value: Follows(_, 1), stmt num exists but relationship doesn’t hold in src program
+
+Select BOOLEAN such that Follows*(_,28)
+false
+5000
+11 - syntactically and semantically valid, wild card + synonym: Follows(_, stmt)
+stmt s;
+Select s such that Follows(_,s)
+2, 3, 4, 5, 7, 8, 9, 10, 12, 13, 16, 17, 18, 20, 21, 22, 24, 27, 31, 33, 35, 37, 38
+5000
+12 - syntactically and semantically valid, wild card + synonym: Follows(_, stmt)
+stmt s;
+Select s such that Follows*(_,s)
+2, 3, 4, 5, 7, 8, 9, 10, 12, 13, 16, 17, 18, 20, 21, 22, 24, 27, 31, 33, 35, 37, 38
+5000
+13 - syntactically and semantically valid, wild card + synonym: Follows(_, print)
+print p;
+Select p such that Follows(_,p)
+9, 16, 17
+5000
+14 - syntactically and semantically valid, wild card + synonym: Follows(_, print)
+print p;
+Select p such that Follows*(_,p)
+9, 16, 17
+5000
+15 - syntactically and semantically valid, wild card + synonym: Follows(_, assign)
+assign a;
+Select a such that Follows(_,a)
+4, 8, 12, 13, 22
+5000
+16 - syntactically and semantically valid, wild card + synonym: Follows(_, assign)
+assign a;
+Select a such that Follows*(_,a)
+4, 8, 12, 13, 22
+5000
+17 - syntactically and semantically valid, wild card + synonym: Follows(_, call)
+call c;
+Select c such that Follows(_,c)
+3, 35, 37
+5000
+18 - syntactically and semantically valid, wild card + synonym: Follows(_, call)
+call c;
+Select c such that Follows*(_,c)
+3, 35, 37
+5000
+19 - syntactically and semantically valid, wild card + synonym: Follows(_, while)
+while w;
+Select w such that Follows(_,w)
+10, 18, 24, 27, 31
+5000
+20 - syntactically and semantically valid, wild card + synonym: Follows(_, while)
+while w;
+Select w such that Follows*(_,w)
+10, 18, 24, 27, 31
+5000
+21 - syntactically and semantically valid, wild card + synonym: Follows(_, if)
+if ifs;
+Select ifs such that Follows(_,ifs)
+5, 33
+5000
+22 - syntactically and semantically valid, wild card + synonym: Follows(_, if)
+if ifs;
+Select ifs such that Follows*(_,ifs)
+5, 33
+5000
+23 - syntactically and semantically valid, wild card + synonym: Follows(_, read)
+read r;
+Select r such that Follows(_,r)
+2, 7, 20, 21, 38
+5000
+24 - syntactically and semantically valid, wild card + synonym: Follows(_, read)
+read r;
+Select r such that Follows*(_,r)
+2, 7, 20, 21, 38
+5000
+25 - syntactically and semantically valid, wild card + synonym: Follows(_, prog_line)
+prog_line pl;
+Select pl such that Follows(_,pl)
+2, 3, 4, 5, 7, 8, 9, 10, 12, 13, 16, 17, 18, 20, 21, 22, 24, 27, 31, 33, 35, 37, 38
+5000
+26 - syntactically and semantically valid, wild card + synonym: Follows(_, prog_line)
+prog_line pl;
+Select pl such that Follows*(_,pl)
+2, 3, 4, 5, 7, 8, 9, 10, 12, 13, 16, 17, 18, 20, 21, 22, 24, 27, 31, 33, 35, 37, 38
+5000
+27 - syntactically and semantically valid: fixed value + wildcard: Follows(1, _),stmt num (in place of 1) exists in src program
+
+Select BOOLEAN such that Follows(1,_)
+true
+5000
+28 - syntactically and semantically valid: fixed value + wildcard: Follows(1, _), stmt num (in place of 1) exists in src program
+
+Select BOOLEAN such that Follows*(38,_)
+false
+5000
+29 - syntactically and semantically valid: fixed value + wildcard: Follows(1, _), stmt num not exists in src program
+
+Select BOOLEAN such that Follows(42,_)
+false
+5000
+30 - syntactically and semantically valid: fixed value + wildcard: Follows(1, _), stmt num not exists in src program
+
+Select BOOLEAN such that Follows*(43,_)
+false
+5000
+31 - syntactically and semantically valid: fixed value + wildcard: Follows(1, _), stmt num exists and relationship holds in src program
+
+Select BOOLEAN such that Follows(34,_)
+true
+5000
+32 - syntactically and semantically valid: fixed value + wildcard: Follows(1, _), stmt num exists and relationship holds in src program
+
+Select BOOLEAN such that Follows*(26,_)
+true
+5000
+33 - syntactically and semantically valid: fixed value + wildcard: Follows(1, _), stmt num exists but relationship doesn’t hold in src program
+
+Select BOOLEAN such that Follows(29,_)
+false
+5000
+34 - syntactically and semantically valid: fixed value + wildcard: Follows(1, _), stmt num exists but relationship doesn’t hold in src program
+
+Select BOOLEAN such that Follows*(27,_)
+false
+5000
+35 - syntactically and semantically valid: fixed value + fixed value, stmt num (in place of 2) exists in src program
+
+Select BOOLEAN such that Follows(1,2)
+true
+5000
+36 - syntactically and semantically valid: fixed value + fixed value, stmt num (in place of 2) exists in src program
+
+Select BOOLEAN such that Follows*(1,3)
+true
+5000
+37 - syntactically and semantically valid: fixed value + fixed value, stmt num not exists in src program
+
+Select BOOLEAN such that Follows(0,1)
+false
+5000
+38 - syntactically and semantically valid: fixed value + fixed value, stmt num not exists in src program
+
+Select BOOLEAN such that Follows*(39,41)
+false
+5000
+39 - syntactically and semantically valid: fixed value + fixed value, stmt num exists and relationship holds in src program
+
+Select BOOLEAN such that Follows(24,38)
+true
+5000
+40 - syntactically and semantically valid: fixed value + fixed value, stmt num exists and relationship holds in src program
+
+Select BOOLEAN such that Follows*(3,22)
+true
+5000
+41 - syntactically and semantically valid: fixed value + fixed value, stmt num exists but relationship doesn’t hold in src program
+
+Select BOOLEAN such that Follows(11,13)
+false
+5000
+42 - syntactically and semantically valid: fixed value + fixed value, stmt num exists but relationship doesn’t hold in src program
+
+Select BOOLEAN such that Follows*(6,14)
+false
+5000
+43 - syntactically and semantically valid: fixed value + fixed value, same stmt nums
+
+Select BOOLEAN such that Follows(18,18)
+false
+5000
+44 - syntactically and semantically valid: fixed value + fixed value, same stmt nums
+
+Select BOOLEAN such that Follows*(25,25)
+false
+5000
+45 - syntactically and semantically valid: fixed value + syn: Follows(1, stmt), stmt num (in place of 1) exists in src program
+stmt s;
+Select s such that Follows(20,s)
+21
+5000
+46 - syntactically and semantically valid: fixed value + syn: Follows(1, stmt), stmt num (in place of 1) exists in src program
+stmt s;
+Select s such that Follows*(15,s)
+16, 17
+5000
+47 - syntactically and semantically valid: fixed value + syn: Follows(1,print), stmt num (in place of 1) exists in src program
+print p;
+Select p such that Follows(8,p)
+9
+5000
+48 - syntactically and semantically valid: fixed value + syn: Follows(1,print), stmt num (in place of 1) exists in src program
+print p;
+Select p such that Follows*(15,p)
+16, 17
+5000
+49 - syntactically and semantically valid: fixed value + syn: Follows(1,assign), stmt num (in place of 1) exists in src program
+assign a;
+Select a such that Follows(5,a)
+22
+5000
+50 - syntactically and semantically valid: fixed value + syn: Follows(1,assign), stmt num (in place of 1) exists in src program
+assign a;
+Select a such that Follows*(11,a)
+12, 13
+5000
+51 - syntactically and semantically valid: fixed value + syn: Follows(1,call), stmt num (in place of 1) exists in src program
+call c;
+Select c such that Follows(34,c)
+35
+5000
+52 - syntactically and semantically valid: fixed value + syn: Follows(1,call), stmt num (in place of 1) exists in src program
+call c;
+Select c such that Follows*(1,c)
+3
+5000
+53 - syntactically and semantically valid: fixed value + syn: Follows(1,while), stmt num (in place of 1) exists in src program
+while w;
+Select w such that Follows(9,w)
+10
+5000
+54 - syntactically and semantically valid: fixed value + syn: Follows(1,while), stmt num (in place of 1) exists in src program
+while w;
+Select w such that Follows*(6,w)
+10
+5000
+55 - syntactically and semantically valid: fixed value + syn: Follows(1,if), stmt num (in place of 1) exists in src program
+if ifs;
+Select ifs such that Follows(32,ifs)
+33
+5000
+56 - syntactically and semantically valid: fixed value + syn: Follows(1,if), stmt num (in place of 1) exists in src program
+if ifs;
+Select ifs such that Follows*(1,ifs)
+5
+5000
+57 - syntactically and semantically valid: fixed value + syn: Follows(1,read), stmt num (in place of 1) exists in src program
+read r;
+Select r such that Follows(19,r)
+20
+5000
+58 - syntactically and semantically valid: fixed value + syn: Follows(1,read), stmt num (in place of 1) exists in src program
+read r;
+Select r such that Follows*(19,r)
+20, 21
+5000
+59 - syntactically and semantically valid: fixed value + syn: Follows(1, stmt), stmt num not exists in src program
+stmt s;
+Select s such that Follows(0,s)
+none
+5000
+60 - syntactically and semantically valid: fixed value + syn: Follows(1, stmt), stmt num not exists in src program
+stmt s;
+Select s such that Follows*(50,s)
+none
+5000
+87 - syntactically and semantically valid: fixed value + syn: Follows(1, stmt), stmt num exists but relationship doesn’t hold in src program (empty table)
+stmt s;
+Select s such that Follows(10,s)
+none
+5000
+88 - syntactically and semantically valid: fixed value + syn: Follows(1, stmt), stmt num exists but relationship doesn’t hold in src program (empty table)
+stmt s;
+Select s such that Follows*(17,s)
+none
+5000
+89 - syntactically and semantically valid: fixed value + syn: Follows(1,print), stmt num exists but relationship doesn’t hold in src program (empty table)
+print p;
+Select p such that Follows(6,p)
+none
+5000
+90 - syntactically and semantically valid: fixed value + syn: Follows(1,print), stmt num exists but relationship doesn’t hold in src program (empty table)
+print p;
+Select p such that Follows*(14,p)
+none
+5000
+91 - syntactically and semantically valid: fixed value + syn: Follows(1,assign), stmt num exists but relationship doesn’t hold in src program (empty table)
+assign a;
+Select a such that Follows(6,a)
+none
+5000
+92 - syntactically and semantically valid: fixed value + syn: Follows(1,assign), stmt num exists but relationship doesn’t hold in src program (empty table)
+assign a;
+Select a such that Follows*(23,a)
+none
+5000
+93 - syntactically and semantically valid: fixed value + syn: Follows(1,call), stmt num exists but relationship doesn’t hold in src program (empty table)
+call c;
+Select c such that Follows(1,c)
+none
+5000
+94 - syntactically and semantically valid: fixed value + syn: Follows(1,call), stmt num exists but relationship doesn’t hold in src program (empty table)
+call c;
+Select c such that Follows*(11,c)
+none
+5000
+95 - syntactically and semantically valid: fixed value + syn: Follows(1,while), stmt num exists but relationship doesn’t hold in src program (empty table)
+while w;
+Select w such that Follows(6,w)
+none
+5000
+96 - syntactically and semantically valid: fixed value + syn: Follows(1,while), stmt num exists but relationship doesn’t hold in src program (empty table)
+while w;
+Select w such that Follows*(1,w)
+none
+5000
+97 - syntactically and semantically valid: fixed value + syn: Follows(1,if), stmt num exists but relationship doesn’t hold in src program (empty table)
+if ifs;
+Select ifs such that Follows(3,ifs)
+none
+5000
+98 - syntactically and semantically valid: fixed value + syn: Follows(1,if), stmt num exists but relationship doesn’t hold in src program (empty table)
+if ifs;
+Select ifs such that Follows*(24,ifs)
+none
+5000
+99 - syntactically and semantically valid: fixed value + syn: Follows(1,read), stmt num exists but relationship doesn’t hold in src program (empty table)
+read r;
+Select r such that Follows(23,r)
+none
+5000
+100 - syntactically and semantically valid: fixed value + syn: Follows(1,read), stmt num exists but relationship doesn’t hold in src program (empty table)
+read r;
+Select r such that Follows*(32,r)
+none
+5000
+101 - syntactically and semantically valid: syn + wildcard: Follows(stmt, _)
+stmt s;
+Select s such that Follows(s,_)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 14, 15, 16, 19, 20, 23, 24, 26, 30, 32, 34, 36
+5000
+102 - syntactically and semantically valid: syn + wildcard: Follows(stmt, _)
+stmt s;
+Select s such that Follows*(s,_)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 14, 15, 16, 19, 20, 23, 24, 26, 30, 32, 34, 36
+5000
+103 - syntactically and semantically valid: syn + wildcard: Follows(print, _)
+print p;
+Select p such that Follows(p,_)
+1, 9, 15, 16, 23, 34
+5000
+104 - syntactically and semantically valid: syn + wildcard: Follows(print, _)
+print p;
+Select p such that Follows*(p,_)
+1, 9, 15, 16, 23, 34
+5000
+105 - syntactically and semantically valid: syn + wildcard: Follows(assign, _)
+assign a;
+Select a such that Follows(a, _)
+4, 8, 11, 12, 26
+5000
+106 - syntactically and semantically valid: syn + wildcard: Follows(assign, _)
+assign a;
+Select a such that Follows*(a, _)
+4, 8, 11, 12, 26
+5000
+107 - syntactically and semantically valid: syn + wildcard: Follows(call, _)
+call c;
+Select c such that Follows(c,_)
+3, 6, 32
+5000
+108 - syntactically and semantically valid: syn + wildcard: Follows(call, _)
+call c;
+Select c such that Follows*(c,_)
+3, 6, 32
+5000
+109 - syntactically and semantically valid: syn + wildcard: Follows(while, _)
+while w;
+Select w such that Follows(w,_)
+14, 24
+5000
+110 - syntactically and semantically valid: syn + wildcard: Follows(while, _)
+while w;
+Select w such that Follows*(w,_)
+14, 24
+5000
+111 - syntactically and semantically valid: syn + wildcard: Follows(if, _)
+if ifs;
+Select ifs such that Follows(ifs, _)
+5
+5000
+112 - syntactically and semantically valid: syn + wildcard: Follows(if, _)
+if ifs;
+Select ifs such that Follows*(ifs,_)
+5
+5000
+113 - syntactically and semantically valid: syn + wildcard: Follows(read, _)
+read r;
+Select r such that Follows(r,_)
+2, 7, 19, 20, 30, 36
+5000
+114 - syntactically and semantically valid: syn + wildcard: Follows(read, _)
+read r;
+Select r such that Follows*(r,_)
+2, 7, 19, 20, 30, 36
+5000
+115 - syntactically and semantically valid: syn + fixed value: Follows(prog_line, 1)
+prog_line pl;
+Select pl such that Follows(pl,_)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 14, 15, 16, 19, 20, 23, 24, 26, 30, 32, 34, 36
+5000
+116 - syntactically and semantically valid: syn + fixed value: Follows(prog_line, 1)
+prog_line pl;
+Select pl such that Follows*(pl,_)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 14, 15, 16, 19, 20, 23, 24, 26, 30, 32, 34, 36
+5000
+129 - syntactically and semantically valid: syn + syn: Follows(stmt, stmt)
+stmt s1; stmt s2;
+Select <s1, s2> such that Follows(s1,s2)
+1 2, 2 3, 3 4, 4 5, 5 22, 6 7, 7 8, 8 9, 9 10, 11 12, 12 13, 14 18, 15 16, 16 17, 19 20, 20 21, 23 24, 24 38, 26 27, 30 31, 32 33, 34 35, 36 37
+5000
+130 - syntactically and semantically valid: syn + syn: Follows(stmt, stmt)
+stmt s1; stmt s2;
+Select <s1, s2> such that Follows*(s1,s2)
+1 2, 1 3, 1 4, 1 5, 1 22, 2 3, 2 4, 2 5, 2 22, 3 4, 3 5, 3 22, 4 5, 4 22, 5 22, 6 7, 6 8, 6 9, 6 10, 7 8, 7 9, 7 10, 8 9, 8 10, 9 10, 11 12, 11 13, 12 13, 14 18, 15 16, 15 17, 16 17, 19 20, 19 21, 20 21, 23 24, 23 38, 24 38, 26 27, 30 31, 32 33, 34 35, 36 37
+5000
+145 - syntactically and semantically valid: syn + syn: Follows(print, print)
+print p1, p2;
+Select <p1, p2> such that Follows(p1,p2)
+15 16, 16 17
+5000
+146 - syntactically and semantically valid: syn + syn: Follows(print, print)
+print p1, p2;
+Select <p1, p2> such that Follows*(p1,p2)
+15 16, 15 17, 16 17
+5000
+161 - syntactically and semantically valid: syn + syn: Follows(assign, assign)
+assign a1, a2;
+Select <a1, a2> such that Follows(a1,a2)
+11 12, 12 13
+5000
+162 - syntactically and semantically valid: syn + syn: Follows(assign, assign)
+assign a1, a2;
+Select <a1, a2> such that Follows*(a1,a2)
+4 22, 11 12, 11 13, 12 13
+5000
+257 - syntactically and semantically valid: syn + syn: Follows(stmt, stmt)
+stmt s;
+Select BOOLEAN such that Follows(s,s)
+false
+5000
+258 - syntactically and semantically valid: syn + syn: Follows(stmt, stmt)
+stmt s;
+Select BOOLEAN such that Follows*(s,s)
+false
+5000
+273 - syntactically valid but semantically invalid: Follows(variable/procedure/constant, _)
+variable v;
+Select BOOLEAN such that Follows(v,_)
+false
+5000
+274 - syntactically valid but semantically invalid: Follows(variable/procedure/constant, _)
+procedure pr;
+Select BOOLEAN such that Follows*(pr,_)
+false
+5000
+275 - syntactically valid but semantically invalid: Follows(variable/procedure/constant, _)
+constant c;
+Select BOOLEAN such that Follows(c,_)
+false
+5000
+279 - syntactically valid but semantically invalid: Follows(_, variable/procedure/constant)
+variable v;
+Select BOOLEAN such that Follows*(_,v)
+false
+5000
+280 - syntactically valid but semantically invalid: Follows(_, variable/procedure/constant)
+procedure pr;
+Select BOOLEAN such that Follows(_,pr)
+false
+5000
+281 - syntactically valid but semantically invalid: Follows(_, variable/procedure/constant)
+constant c;
+Select BOOLEAN such that Follows*(_,c)
+false
+5000
+285 - syntactically invalid: Follows(_, “x”)
+
+Select BOOLEAN such that Follows(_, "x")
+none
+5000
+286 - syntactically invalid: Follows(_, “x”)
+
+Select BOOLEAN such that Follows(_,"x")
+none
+5000
+287 - syntactically invalid: Follows(“x”, _)
+
+Select BOOLEAN such that Follows("x",_)
+none
+5000
+288 - syntactically invalid: Follows(“x”, _)
+
+Select BOOLEAN such that Follows("x",_)
+none
+5000
+289 - syntactically invalid: Follows(syn.attr, _)
+stmt s;
+Select BOOLEAN such that Follows(s.stmt#, _)
+none
+5000
+291 - syntactically invalid: Follows(_, syn.attr)
+stmt s;
+Select BOOLEAN such that Follows(_, s.stmt#)
+none
+5000

@@ -1,0 +1,21 @@
+procedure main {
+     V = w % K * b - w + r / L / p / L + Q * g * f;
+     C = T / H * b + x - K + H;
+     read Y;
+     print F;
+     if (((m == o) && (I >= W)) || ((H < c) && (z != S))) then {
+        print I;
+    } else {
+        read D;
+        call secondary;
+    }
+    while (E == W + G - P % H / t / B / O % T % Y * M) {
+        print s;
+        read G;
+    }
+}
+
+procedure secondary {
+     print secondary;
+     read main;
+}

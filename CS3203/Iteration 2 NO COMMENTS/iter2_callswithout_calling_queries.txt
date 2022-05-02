@@ -1,0 +1,80 @@
+1 - empty query
+
+Select BOOLEAN such that Calls(_, _)
+FALSE
+5000
+2 - empty query
+
+Select BOOLEAN such that Calls*(_, _)
+FALSE
+5000
+3 - empty query
+procedure p;
+Select p such that Calls (_, _)
+none
+5000
+4 - empty query
+procedure p;
+Select p such that Calls* (_, _)
+none
+5000
+5 - empty query
+procedure p;
+Select BOOLEAN such that Calls(p, _)
+FALSE
+5000
+6 - empty query
+procedure p;
+Select BOOLEAN such that Calls*(p, _)
+FALSE
+5000
+7 - empty query
+procedure p;
+Select p such that Calls (p, _)
+none
+5000
+8 - empty query
+procedure p, p1;
+Select p such that Calls* (p, p1)
+none
+5000
+9 - empty query
+procedure p, p1;
+Select BOOLEAN such that Calls(p, p1)
+FALSE
+5000
+10 - empty query
+procedure p, p1;
+Select BOOLEAN such that Calls*(p, p1)
+FALSE
+5000
+11 - empty query
+procedure p, p1;
+Select p such that Calls (p, p1)
+none
+5000
+12 - empty query
+procedure p, p1;
+Select p such that Calls* (p, p1)
+none
+5000
+13 - empty query
+procedure p, p1;
+Select BOOLEAN such that Calls(_, p1)
+FALSE
+5000
+14 - empty query
+procedure p, p1;
+Select BOOLEAN such that Calls*(_, p1)
+FALSE
+5000
+15 - empty query
+procedure p, p1;
+Select p such that Calls (_, p1)
+none
+5000
+16 - empty query
+procedure p, p1;
+Select p such that Calls* (_, p1)
+none
+5000

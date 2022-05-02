@@ -1,0 +1,5 @@
+1 - Assigns
+assign a1, a2, a3, a4, a5, a6;
+Select <a1,a2,a3,a4,a5,a6> such that Affects*(a1,a2) and Affects*(a2,a3) and Affects*(a3,a4) and Affects*(a4,a5) and Affects*(a5,a6) and Follows*(a5,a6) and Follows*(a4,a5) and Follows*(a3,a4) and Follows*(a2,a3) and Follows*(a1,a2)
+none
+5000

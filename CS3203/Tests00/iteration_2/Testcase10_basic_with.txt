@@ -1,0 +1,35 @@
+1 - stmt# = value
+assign a; constant c;
+Select <a, c> with a.stmt# = c.value
+2 2,1 1,20 20,3 3
+5000
+2 - int = int FALSE
+assign a;
+Select a with 3 = 5
+none
+5000
+3 - int = int TRUE
+while w;
+Select w with 05 = 0005
+10,17,21,32
+5000
+4 - string = string FALSE
+while w;
+Select w with "05" = "0005"
+none
+5000
+5 - string = string TRUE
+while w;
+Select w with "abc123" = "abc123"
+10,17,21,32
+5000
+6 - string = int FALSE
+while w;
+Select w with "1" = 1
+none
+5000
+7 - constant that does not exist
+constant c;
+Select c with 1001 = c.value
+none
+5000

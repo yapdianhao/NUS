@@ -1,0 +1,100 @@
+0-Select-only tests
+stmt s;
+Select s
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+5000
+1-Select-only tests
+while w;
+Select w
+4, 5, 18
+5000
+2-Select-only tests (invalid)
+while w;
+Select wa
+none
+5000
+3-Select-only tests
+constant c;
+Select c
+3, 4, 0, 1734, 5, 1, 22, 123, 2, 145
+5000
+4-Immediate tests
+constant c;
+Select c such that Follows(2, 3)
+3, 4, 0, 1734, 5, 1, 22, 123, 2, 145
+5000
+5-Immediate tests
+constant c;
+Select c such that Follows(2, 4)
+none
+5000
+6-Uses tests
+stmt s; variable v;
+Select s such that Uses(s, "f")
+3, 4, 5, 6, 7, 18, 20
+5000
+7-Uses tests
+stmt s; variable v;
+Select s such that Uses(s, v)
+3, 4, 5, 6, 7, 9, 11, 15, 16, 17, 18, 19, 20
+5000
+8-Uses tests
+stmt s; variable v;
+Select v such that Uses(4, v)
+f, z23, q, y, c, x, while, if, read, print
+5000
+9-Uses tests
+stmt s; variable v;
+Select v such that Uses(5, v)
+f, z23, y, c, x, while, if, read, print
+5000
+10-Uses tests
+stmt s; variable v;
+Select s such that Uses(s, _)
+3, 4, 5, 6, 7, 9, 11, 15, 16, 17, 18, 19, 20
+5000
+11-Uses tests
+stmt s; variable v;
+Select s such that Uses(5, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+5000
+12-Uses tests (invalid)
+stmt s; variable v;
+Select s such that Uses(_, _)
+none
+5000
+13-Uses tests
+stmt s; variable v;
+Select s such that Uses(1, _)
+none
+5000
+14-Uses tests
+stmt s; variable v;
+Select s such that Uses(3, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+5000
+15-Uses tests
+stmt s; variable v;
+Select v such that Uses(s, v)
+f, z23, q, y, c, x, while, if, read, print, z
+5000
+16-Uses tests (invalid)
+stmt s; variable v;
+Select v such that Uses(_, v)
+none
+5000
+17-Uses tests
+stmt s; variable v;
+Select v such that Uses(1, "f")
+none
+5000
+18-Uses tests
+stmt s; variable v;
+Select v such that Uses(3, "f")
+f, z23, q, y, c, x, while, if, read, print, z, procedure, z24, z2z
+5000
+19-Uses tests (invalid)
+stmt s; variable v;
+Select v such that Uses(_, "f")
+none
+5000

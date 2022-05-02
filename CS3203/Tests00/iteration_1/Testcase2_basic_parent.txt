@@ -1,0 +1,25 @@
+1 - Parent(s1, s2), query s1
+stmt s1,s2;
+Select s1 such that Parent(s1,s2)
+6, 9, 11
+5000
+2 - Parent(s1, s2), query s2
+stmt s1,s2;
+Select s2 such that Parent(s1,s2)
+7, 8, 9, 10, 11, 12, 13
+5000
+3 - Parent*(s1, s2), query s1
+stmt s1,s2;
+Select s1 such that Parent*(s1,s2)
+6, 9, 11
+5000
+4 - Parent*(s1, s2), query s2
+stmt s1,s2;
+Select s2 such that Parent*(s1,s2)
+7, 8, 9, 10, 11, 12, 13
+5000
+5 - Parent*(stmtId, stmtId), query p
+procedure p; assign a;
+Select p such that Parent(6,7)
+procA, procB
+5000

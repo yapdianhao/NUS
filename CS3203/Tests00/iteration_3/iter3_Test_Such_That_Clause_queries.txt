@@ -1,0 +1,240 @@
+1 - Select BOOLEAN Calls and Next
+procedure p1, p2; prog_line n1, n2;
+Select BOOLEAN such that Calls(p1, p2) and Next(n1, n2)
+true
+5000
+2 - Select BOOLEAN Calls and NextT
+procedure p; prog_line n1, n2;
+Select BOOLEAN such that Calls(p, p) and Next*(n1, n2)
+false
+5000
+3 - Select BOOLEAN CallsT and Next
+procedure p1, p2; prog_line n;
+Select BOOLEAN such that Calls*(p1, p2) and Next(n, n)
+false
+5000
+4 - Select BOOLEAN CallsT and NextT
+procedure p1, p2; prog_line n1, n2;
+Select BOOLEAN such that Calls*(p1, p2) and Next*(n1, n2)
+true
+5000
+5 - Select BOOLEAN Calls and Follows
+procedure p1, p2; stmt s1, s2;
+Select BOOLEAN such that Calls(p1, p2) and Follows(s1, s2)
+true
+5000
+6 - Select BOOLEAN Calls and FollowsT
+procedure p1, p2; stmt s;
+Select BOOLEAN such that Calls(p1, p2) and Follows*(s, s)
+false
+5000
+7 - Select BOOLEAN CallsT and Follows
+procedure p1, p2; assign a1, a2;
+Select BOOLEAN such that Calls*(p1, p2) and Follows(a1, a2)
+true
+5000
+8 - Select BOOLEAN CallsT and FollowsT
+procedure p1, p2; assign a;
+Select BOOLEAN such that Calls*(p1, p2) and Follows*(a, a)
+false
+5000
+9 - Select BOOLEAN Calls and Parent
+procedure p1, p2; if ifs; print p;
+Select BOOLEAN such that Calls(p1, p2) and Parent(ifs, p)
+true
+5000
+10 - Select BOOLEAN Calls and ParentT
+procedure p1, p2; if ifs; assign a;
+Select BOOLEAN such that Calls(p1, p2) and Parent*(ifs, a)
+true
+5000
+11 - Select BOOLEAN CallsT and Parent
+procedure p1, p2; if ifs; call c;
+Select BOOLEAN such that Calls*(p1, p2) and Parent(ifs, c)
+true
+5000
+12 - Select BOOLEAN CallsT and ParentT
+procedure p1, p2; if ifs; read r;
+Select BOOLEAN such that Calls*(p1, p2) such that Parent*(r, ifs)
+false
+5000
+13 - Select BOOLEAN Next and Follows
+stmt s1, s2;
+Select BOOLEAN such that Next(3, 4) such that Follows(s1, s2)
+true
+5000
+14 - Select BOOLEAN Next and FollowsT
+prog_line n; assign a1, a2;
+Select BOOLEAN such that Next(2, n) such that Follows*(a1, a2)
+true
+5000
+15 - Select BOOLEAN NextT and Follows
+prog_line n1, n2; if ifs; read r;
+Select BOOLEAN such that Next*(n1, n2) such that Follows(r, ifs)
+false
+5000
+16 - Select BOOLEAN NextT and FollowsT
+prog_line n; print p; read r;
+Select BOOLEAN such that Next*(n, 4) such that Follows*(r, p)
+false
+5000
+17 - Select BOOLEAN Next and Parent
+prog_line n; if ifs; read r;
+Select BOOLEAN such that Next(n, n) such that Parent(r, ifs)
+false
+5000
+18 - Select BOOLEAN Next and ParentT
+prog_line n; if ifs; read r;
+Select BOOLEAN such that Next(n, _) such that Parent*(ifs, r)
+false
+5000
+19 - Select BOOLEAN NextT and Parent
+prog_line n; if ifs; print p;
+Select BOOLEAN such that Next*(_, n) such that Parent(ifs, p)
+true
+5000
+20 - Select BOOLEAN NextT and ParentT
+if ifs; print p;
+Select BOOLEAN such that Next*(_, 5) such that Parent*(ifs, p)
+true
+5000
+21 - Select BOOLEAN Follows and Parent
+
+Select BOOLEAN such that Follows(4, 5) such that Parent(3, 4)
+true
+5000
+22 - Select BOOLEAN Follows and ParentT
+
+Select BOOLEAN such that Follows(4, _) such that Parent*(3, _)
+true
+5000
+23 - Select BOOLEAN FollowsT and Parent
+
+Select BOOLEAN such that Follows*(_, 5) such that Parent(3, 4)
+true
+5000
+24 - Select BOOLEAN FollowsT and ParentT
+
+Select BOOLEAN such that Follows*(4, 5) such that Parent*(_, 3)
+false
+5000
+25 - Select Tuple Calls and Next
+procedure p1, p2; prog_line n1, n2;
+Select <p1, p2> such that Calls(p1, p2) and Next(n1, n2)
+proc1 proc2, proc2 proc3
+5000
+26 - Select Tuple Calls and NextT
+procedure p; prog_line n1, n2;
+Select <p, n1, n2> such that Calls(p, p) and Next*(n1, n2)
+none
+5000
+27 - Select Tuple CallsT and Next
+procedure p1, p2; prog_line n;
+Select <p1, p2, n> such that Calls*(p1, p2) and Next(n, n)
+none
+5000
+28 - Select Tuple CallsT and NextT
+procedure p1, p2; prog_line n1, n2;
+Select <p1, p2, n1, n2> such that Calls*(p1, p2) and Next*(n1, n2)
+proc1 proc2 1 2, proc1 proc2 1 3, proc1 proc2 1 4, proc1 proc2 1 5, proc1 proc2 2 3, proc1 proc2 2 4, proc1 proc2 2 5, proc1 proc2 1 6, proc1 proc2 2 6, proc1 proc2 4 5, proc1 proc2 7 8, proc1 proc2 9 10, proc1 proc2 3 4, proc1 proc2 3 5, proc1 proc2 3 6, proc2 proc3 1 2, proc2 proc3 1 3, proc2 proc3 1 4, proc2 proc3 1 5, proc2 proc3 2 3, proc2 proc3 2 4, proc2 proc3 2 5, proc2 proc3 1 6, proc2 proc3 2 6, proc2 proc3 4 5, proc2 proc3 7 8, proc2 proc3 9 10, proc2 proc3 3 4, proc2 proc3 3 5, proc2 proc3 3 6, proc1 proc3 1 2, proc1 proc3 1 3, proc1 proc3 1 4, proc1 proc3 1 5, proc1 proc3 2 3, proc1 proc3 2 4, proc1 proc3 2 5, proc1 proc3 1 6, proc1 proc3 2 6, proc1 proc3 4 5, proc1 proc3 7 8, proc1 proc3 9 10, proc1 proc3 3 4, proc1 proc3 3 5, proc1 proc3 3 6
+5000
+29 - Select Tuple Calls and Follows
+procedure p1, p2; stmt s1, s2;
+Select <p1, p2, s1, s2> such that Calls(p1, p2) and Follows(s1, s2)
+proc1 proc2 1 2, proc1 proc2 2 3, proc1 proc2 4 5, proc1 proc2 7 8, proc1 proc2 9 10, proc2 proc3 1 2, proc2 proc3 2 3, proc2 proc3 4 5, proc2 proc3 7 8, proc2 proc3 9 10
+5000
+30 - Select Tuple Calls and FollowsT
+procedure p1, p2; stmt s;
+Select <p1, p2, s> such that Calls(p1, p2) and Follows*(s, s)
+none
+5000
+31 - Select Tuple CallsT and Follows
+procedure p1, p2; assign a1, a2;
+Select <p1, p2, a1, a2> such that Calls*(p1, p2) and Follows(a1, a2)
+proc1 proc2 9 10, proc2 proc3 9 10, proc1 proc3 9 10
+5000
+32 - Select Tuple CallsT and FollowsT
+procedure p1, p2; assign a;
+Select <p1, p2, a> such that Calls*(p1, p2) and Follows*(a, a)
+none
+5000
+33 - Select Tuple Calls and Parent
+procedure p1, p2; if ifs; print pr;
+Select <p2, ifs, pr> such that Calls(p1, p2) and Parent(ifs, pr)
+proc2 3 5, proc3 3 5
+5000
+34 - Select Tuple Calls and ParentT
+procedure p1, p2; if ifs; assign a;
+Select <p1, p2, ifs, a> such that Calls(p1, p2) and Parent*(ifs, a)
+proc1 proc2 3 4, proc2 proc3 3 4
+5000
+35 - Select Tuple CallsT and Parent
+procedure p1, p2; if ifs; call c;
+Select <p1, p2, ifs, c> such that Calls*(p1, p2) and Parent(ifs, c)
+proc1 proc2 3 6, proc2 proc3 3 6, proc1 proc3 3 6
+5000
+36 - Select Tuple CallsT and ParentT
+procedure p1, p2; if ifs; read r;
+Select <r, ifs> such that Calls*(p1, p2) and Parent*(r, ifs)
+none
+5000
+37 - Select Tuple Next and Follows
+stmt s1, s2;
+Select <s1, s2> such that Next(3, 4) such that Follows(s1, s2)
+1 2, 2 3, 4 5, 7 8, 9 10
+5000
+38 - Select Tuple Next and FollowsT
+prog_line n; assign a1, a2;
+Select <n, a2> such that Next(2, n) such that Follows*(n, a2)
+none
+5000
+39 - Select Tuple NextT and Follows
+prog_line n1, n2; if ifs; stmt s;
+Select <n1, n2, ifs> such that Next*(n1, n2) such that Follows(s, ifs)
+1 2 3, 1 3 3, 1 4 3, 1 5 3, 2 3 3, 2 4 3, 2 5 3, 1 6 3, 2 6 3, 4 5 3, 7 8 3, 9 10 3, 3 4 3, 3 5 3, 3 6 3
+5000
+40 - Select Tuple NextT and FollowsT
+prog_line n; print p;
+Select <n, p> such that Next*(n, 4) such that Follows*(n, p)
+none
+5000
+41 - Select Tuple Next and Parent
+prog_line n; print p; read r;
+Select <n, r, p> such that Next(n, n) such that Parent(p, r)
+none
+5000
+42 - Select Tuple Next and ParentT
+prog_line n; if ifs; stmt s;
+Select <n, ifs, s> such that Next(n, _) such that Parent*(ifs, s)
+1 3 4, 1 3 5, 1 3 6, 2 3 4, 2 3 5, 2 3 6, 3 3 4, 3 3 5, 3 3 6, 4 3 4, 4 3 5, 4 3 6, 7 3 4, 7 3 5, 7 3 6, 9 3 4, 9 3 5, 9 3 6
+5000
+43 - Select Tuple NextT and Parent
+prog_line n; stmt s;
+Select <n, s> such that Next*(_, n) such that Parent(s, n)
+4 3, 5 3, 6 3
+5000
+44 - Select Tuple NextT and ParentT
+if ifs; read r;
+Select <r, p> such that Next*(_, 7) such that Parent*(ifs, 4)
+none
+5000
+45 - Select Tuple Follows and Parent
+stmt s;
+Select <s, s> such that Follows(4, 5) such that Parent(3, 4)
+1 1, 2 2, 3 3, 4 4, 5 5, 6 6, 7 7, 8 8, 9 9, 10 10
+5000
+46 - Select Tuple Follows and ParentT
+read r; call c;
+Select <r, c> such that Follows(4, _) such that Parent*(3, _)
+1 6, 1 8
+5000
+47 - Select Tuple FollowsT and Parent
+assign a1, a2;
+Select <a1, a2> such that Follows*(_, 5) such that Parent(3, 4)
+2 2, 2 4, 2 7, 2 9, 2 10, 4 2, 4 4, 4 7, 4 9, 4 10, 7 2, 7 4, 7 7, 7 9, 7 10, 9 2, 9 4, 9 7, 9 9, 9 10, 10 2, 10 4, 10 7, 10 9, 10 10
+5000
+48 - Select Tuple FollowsT and ParentT
+print p; read r;
+Select <p, r> such that Follows*(4, 5) such that Parent*(_, 3)
+none
+5000

@@ -1,0 +1,34 @@
+procedure FIVE {
+    while (i!=0) {          
+        i = i - 10;         
+    }
+    if (y > x % 2) then {   
+        while (j < i + 2) { 
+            z = (z * x - y) / (y + 1);  
+        }
+        read x;     
+        print x;    
+        while (x >= 1) {    
+            x = 0;          
+        }
+    } else {
+        x = 1;              
+        if (z + 2 == y) then {  
+            read i;     
+        } else {    
+            print i;    
+        }
+        y = x;      
+    }
+    if (x > 5) then {   
+        read y;         
+    } else {
+        z = y - 6;      
+        if (6 != z) then {  
+            x = 0;          
+        } else {
+            x = 1;          
+        }
+        y = 4 + x;          
+    }
+}

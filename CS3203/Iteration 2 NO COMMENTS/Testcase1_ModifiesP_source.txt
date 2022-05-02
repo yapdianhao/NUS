@@ -1,0 +1,75 @@
+procedure strassen {
+	det = 1;    
+	while (det != 0) {  
+		read a11;   
+		read a12;   
+		read a21;   
+		read a22;   
+		read b11;   
+		read b12;   
+		read b21;   
+		read b22;   
+
+		m1 =(a11 + a22)* (b11 + b22);   
+		m2 = (a21 + a22)* b11;          
+		m3 = a11 * (b12 - b22);         
+		m4 = a22 * (b21- b11);          
+		m5 = (a11 + a12)*b22;           
+		m6 = (a21 - a11)* (b11 + b12);  
+		m7 = (a12 - a22)* (b21 + b22);  
+		c11 = m1 + m4 - m5 + m7;        
+		c12 = m3 + m5;                  
+		c21 = m2 + m4;                  
+		c22 = m1 - m2 + m3 + m6;        
+		det = c11 * c22 - c12 * c21;    
+	}
+}
+
+procedure procA {
+  read a;         
+  a = a;          
+  call procB;     
+  print a;        
+}
+
+procedure procB {
+  c = 10;               
+  if (a > 100) then {   
+    b = 3;              
+    a = a * b;          
+  } else {
+    while ( a <= 100) { 
+      a = a + c;        
+      if (a < 20) then {
+         c = c - b;     
+      } else {
+         c = c + b;     
+      }
+    }
+  }
+}
+
+procedure procC {
+    a = 20;             
+    c = 15;             
+
+    while (a < 30) {    
+        print a;        
+        if (a == 25) then { 
+            b = c;          
+            read c;         
+        } else {
+            a = c + b;      
+        }
+        a = a + 1;          
+    }
+
+    d = a + 3;              
+    if (d != 4) then {      
+        print e;            
+    } else {
+        read f;             
+        call procA;         
+    }
+    call strassen;          
+}

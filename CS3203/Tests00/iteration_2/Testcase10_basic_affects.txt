@@ -1,0 +1,35 @@
+1 - Affects(_, _)
+read r;
+Select r such that Affects(_, _)
+19, 25, 28, 30, 31, 37
+5000
+2 - Affects(s1, s2)
+stmt s1, s2;
+Select <s1, s2> such that Affects(s1, s2)
+22 22,18 15,22 15,18 22,18 14,6 15,9 14,9 15,14 22,14 15,14 14,22 14,6 9,15 15,18 18,15 22,15 14,14 18,38 33,15 18,38 38
+5000
+3 - Affects(s, s)
+stmt s;
+Select s such that Affects(s, s)
+18,14,38,22,15
+5000
+4 - Affects(p1, p2)
+prog_line p1, p2;
+Select <p1, p2> such that Affects(p2, p1)
+22 22,15 18,15 22,22 18,14 18,15 6,14 9,15 9,22 14,15 14,14 14,14 22,9 6,15 15,18 18,22 15,14 15,18 14,33 38,18 15,38 38
+5000
+5 - Affects(const, s)
+stmt s, s2;
+Select <s, s2> such that Affects(7, s) and Affects(14, s2)
+none
+5000
+6 - Affects(const, const)
+read r;
+Select r such that Affects(14, 18)
+19, 25, 28, 30, 31, 37
+5000
+7 - Affects(const, const)
+read r;
+Select r such that Affects(14, 20)
+none
+5000

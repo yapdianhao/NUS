@@ -1,0 +1,165 @@
+1 - syntactically and semantically valid: fixed value + wildcard: Uses(“proc”, _), proc name (in place of “proc”) exists in src program
+
+Select BOOLEAN such that Uses("one",_)
+true
+5000
+2 - syntactically and semantically valid: fixed value + wildcard: Uses(“proc”, _), proc name not exists in src program
+
+Select BOOLEAN such that Uses("tree",_)
+false
+5000
+3 - syntactically and semantically valid: fixed value + wildcard: Uses(“proc”, _), proc name exists and relationship holds in src program
+
+Select BOOLEAN such that Uses("two",_)
+true
+5000
+5 - syntactically and semantically valid: fixed value + fixed value: Uses(“proc”, “var”), “var” exists in src program
+
+Select BOOLEAN such that Uses("one","a")
+true
+5000
+6 - syntactically and semantically valid: fixed value + fixed value: Uses(“proc”, “var”), “var” not exists in src program
+
+Select BOOLEAN such that Uses("two","u")
+false
+5000
+7 - syntactically and semantically valid: fixed value + fixed value: Uses(“proc”, “var”), “var” exists and relationship holds in src program
+
+Select BOOLEAN such that Uses("three","x")
+true
+5000
+8 - syntactically and semantically valid: fixed value + fixed value: Uses(“proc”, “var”), “var” exists but relationship doesn’t hold in src program
+
+Select BOOLEAN such that Uses("four","y")
+false
+5000
+9 - syntactically and semantically valid: fixed value + syn: Uses(“proc”, variable), proc name (in place of “proc”) exists in src program
+variable v;
+Select v such that Uses("one",v)
+a, x, y, z, h, c, l, m, n, b
+5000
+10 - syntactically and semantically valid: fixed value + syn: Uses(“proc”, variable), proc name not exists in src program
+variable v;
+Select v such that Uses("to",v)
+none
+5000
+11 - syntactically and semantically valid: fixed value + syn: Uses(“proc”, variable), proc name exists and relationship holds in src program
+variable v;
+Select v such that Uses("three",v)
+x, y, z
+5000
+12 - syntactically and semantically valid: fixed value + syn: Uses(“proc”, variable), proc name exists but relationship doesn’t hold in src program
+variable v;
+Select v such that Uses("four",v)
+none
+5000
+13 - syntactically and semantically valid: syn + wildcard: Uses(procedure, _)
+procedure pr;
+Select pr such that Uses(pr,_)
+one, two, three
+5000
+14 - syntactically and semantically valid: syn + fixed value: Uses(procedure, “var”)
+procedure pr;
+Select pr such that Uses(pr,"a")
+one, two
+5000
+15 - syntactically and semantically valid: syn + syn: Uses(procedure, variable)
+procedure pr; variable v;
+Select <pr,v> such that Uses(pr, v)
+one a, one x, one y, one z, one h, one c, one l, one m, one n, one b, two l, two m, two n, two a, two b, two x, two y, two z, three x, three y, three z
+5000
+16 - syntactically valid but semantically invalid: Uses(print, “var”/_/variable)
+print p; variable v
+Select <p, v> such that Uses(p,v)
+none
+5000
+17 - syntactically valid but semantically invalid: Uses(variable, “var”/_/variable)
+variable v1, v2;
+Select BOOLEAN such that Uses(v1,v2)
+false
+5000
+18 - syntactically valid but semantically invalid: Uses(constant, “var”/_/variable)
+constant c; variable v;
+Select BOOLEAN such that Uses(c,v)
+false
+5000
+19 - syntactically valid but semantically invalid: Uses(proc, synonym of any entity else than variable)
+procedure pr; stmt s1;
+Select BOOLEAN such that Uses(pr,s1)
+false
+5000
+20 - syntactically valid but semantically invalid: Uses(proc, synonym of any entity else than variable)
+procedure pr; assign a;
+Select BOOLEAN such that Uses(pr,a)
+false
+5000
+21 - syntactically valid but semantically invalid: Uses(proc, synonym of any entity else than variable)
+procedure pr; read r;
+Select BOOLEAN such that Uses(pr,r)
+false
+5000
+22 - syntactically valid but semantically invalid: Uses(proc, synonym of any entity else than variable)
+procedure pr; call c;
+Select BOOLEAN such that Uses(pr,c)
+false
+5000
+23 - syntactically valid but semantically invalid: Uses(proc, synonym of any entity else than variable)
+procedure pr; print p;
+Select BOOLEAN such that Uses(pr,p)
+false
+5000
+24 - syntactically valid but semantically invalid: Uses(proc, synonym of any entity else than variable)
+procedure pr; if ifs;
+Select BOOLEAN such that Uses(pr,ifs)
+false
+5000
+25 - syntactically valid but semantically invalid: Uses(proc, synonym of any entity else than variable)
+procedure pr; while w;
+Select BOOLEAN such that Uses(pr,w)
+false
+5000
+26 - syntactically valid but semantically invalid: Uses(proc, synonym of any entity else than variable)
+procedure pr; prog_line pl;
+Select BOOLEAN such that Uses(pr,pl)
+false
+5000
+27 - syntactically valid but semantically invalid: Uses(proc, synonym of any entity else than variable)
+procedure pr; constant c;
+Select BOOLEAN such that Uses(pr,c)
+false
+5000
+28 - syntactically valid but semantically invalid: Uses(proc, synonym of any entity else than variable)
+procedure pr; procedure pr;
+Select BOOLEAN such that Uses(pr,pr)
+false
+5000
+29 - syntactically valid but semantically invalid: Uses(_, _)
+
+Select BOOLEAN such that Uses(_,_)
+false
+5000
+30 - syntactically valid but semantically invalid: Uses(_, “x”)
+
+Select BOOLEAN such that Uses(_,"x")
+false
+5000
+31 - syntactically invalid: Uses(proc syn, “1”)
+procedure pr;
+Select BOOLEAN such that Uses(pr, "1")
+none
+5000
+32 - syntactically invalid: Uses(proc syn, 1)
+procedure pr;
+Select such that Uses(pr,1)
+none
+5000
+33 - syntactically invalid: Uses(syn.attr, _)
+procedure pr;
+Select such that Uses(pr.procName,_)
+none
+5000
+4 - syntactically and semantically valid: fixed value + wildcard: Uses(“proc”, _), proc name exists but relationship doesn’t hold in src program
+
+Select BOOLEAN such that Uses("four",_)
+false
+5000

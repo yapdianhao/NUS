@@ -1,0 +1,480 @@
+1 - Test Affects(num, num) across procedures
+
+Select BOOLEAN such that Affects(1, 5)
+false
+5000
+2 - Test Affects*(num, num) across procedures
+
+Select BOOLEAN such that Affects*(1, 6)
+false
+5000
+3 - Test Affects(num, num) in same procedure but not assign
+
+Select BOOLEAN such that Affects(8, 9)
+false
+5000
+4 - Test Affects*(num, num) in same procedure but not assign
+
+Select BOOLEAN such that Affects*(8, 9)
+false
+5000
+5 - Test Affects(num, num) - exists
+
+Select BOOLEAN such that Affects(1, 2)
+true
+5000
+6 - Test Affects*(num, num) - exists
+
+Select BOOLEAN such that Affects*(1, 2)
+true
+5000
+7 - Test Affects(num, num) - not exists
+
+Select BOOLEAN such that Affects(5, 6)
+false
+5000
+8 - Test Affects*(num, num) - exists
+
+Select BOOLEAN such that Affects*(1, 4)
+true
+5000
+9 - Test Affects(num, num) - not exists
+
+Select BOOLEAN such that Affects(2, 1)
+false
+5000
+10 - Test Affects*(num, num) - not exists
+
+Select BOOLEAN such that Affects*(2, 1)
+false
+5000
+11 - Test Affects(num, _) - exists
+
+Select BOOLEAN such that Affects(1, _)
+true
+5000
+12 - Test Affects*(num, _) - exists
+
+Select BOOLEAN such that Affects*(1, _)
+true
+5000
+13 - Test Affects(num, _) - not exists
+
+Select BOOLEAN such that Affects(4, _)
+false
+5000
+14 - Test Affects*(num, _) - not exists
+
+Select BOOLEAN such that Affects*(5, _)
+false
+5000
+15 - Test Affects(num, syn) - exists
+stmt s;
+Select s such that Affects(15, s)
+18, 19
+5000
+16 - Test Affects*(num, syn) - exists
+stmt s;
+Select s such that Affects*(15, s)
+18, 19, 20
+5000
+17 - Test Affects(num, syn) - not exists
+stmt s;
+Select s such that Affects(10, s)
+none
+5000
+18 - Test Affects*(num, syn) - not exists
+stmt s;
+Select s such that Affects*(10, s)
+none
+5000
+19 - Test Affects(_, num) - exists
+
+Select BOOLEAN such that Affects(_, 19)
+true
+5000
+20 - Test Affects*(_, num) - exists
+
+Select BOOLEAN such that Affects*(_, 27)
+true
+5000
+21 - Test Affects(_, num) - not exists
+
+Select BOOLEAN such that Affects(_, 13)
+false
+5000
+22 - Test Affects*(_, num) - not exists
+
+Select BOOLEAN such that Affects*(_, 8)
+false
+5000
+23 - Test Affects(_, _)
+
+Select BOOLEAN such that Affects(_, _)
+true
+5000
+24 - Test Affects*(_, _)
+
+Select BOOLEAN such that Affects*(_, _)
+true
+5000
+25 - Test Affects(syn, num) - exists
+stmt s;
+Select s such that Affects(s, 33)
+24, 25, 27, 29, 31, 32
+5000
+26 - Test Affects*(syn, num) - exists
+stmt s;
+Select s such that Affects*(s, 20)
+15, 16, 18
+5000
+27 - Test Affects(syn, num) - not exists
+stmt s;
+Select s such that Affects(s, 6)
+none
+5000
+28 - Test Affects*(syn, num) - not exists
+stmt s;
+Select s such that Affects*(s, 16)
+none
+5000
+29 - Test Affects(syn, _)
+stmt s;
+Select s such that Affects(s, _)
+1,2,6,11,12,15,16,18,24,25,27,29,31,32,33,34,36
+5000
+30 - Test Affects*(syn, _)
+stmt s;
+Select s such that Affects*(s, _)
+1,2,6,11,12,15,16,18,24,25,27,29,31,32,33,34,36
+5000
+31 - Test Affects(syn, syn)
+stmt s1, s2;
+Select <s1, s2> such that Affects(s1, s2)
+1 2,1 3,2 4,6 7,11 12,12 14,15 18,15 19,16 20,18 20,24 27,24 31,24 33,24 35,25 29,25 33,27 27,27 31,27 33,27 35,29 29,29 33,31 33,31 35,32 33,33 34,33 35,34 35,36 37
+5000
+32 - Test Affects*(syn, syn)
+stmt s1, s2;
+Select <s1, s2> such that Affects*(s1, s2)
+1 2,1 3,1 4,2 4,6 7,11 12,11 14,12 14,15 18,15 19,15 20,16 20,18 20,24 27,24 31,24 33,24 34,24 35,25 29,25 33,25 34,25 35,27 27,27 31,27 33,27 34,27 35,29 29,29 33,29 34,29 35,31 33,31 34,31 35,32 33,32 34,32 35,33 34,33 35,34 35,36 37
+5000
+33 - Test Affects(syn, syn, syn)
+stmt s1, s2, s3;
+Select <s1, s2, s3> such that Affects(s1, s2) such that Affects(s2, s3)
+1 2 4,11 12 14,15 18 20,24 27 27,24 27 31,24 27 33,24 27 35,27 27 27,27 27 31,27 27 33,27 27 35,25 29 29,25 29 33,29 29 29,29 29 33,24 31 33,24 31 35,27 31 33,27 31 35,24 33 34,24 33 35,25 33 34,25 33 35,27 33 34,27 33 35,29 33 34,29 33 35,31 33 34,31 33 35,32 33 34,32 33 35,33 34 35
+5000
+34 - Test Affects(s1, s2) and Affects(s2, s3)
+stmt s1, s2, s3;
+Select <s1, s2, s3> such that Affects(s1, s2) such that Affects(s2, s3)
+1 2 4,11 12 14,15 18 20,24 27 27,24 27 31,24 27 33,24 27 35,27 27 27,27 27 31,27 27 33,27 27 35,25 29 29,25 29 33,29 29 29,29 29 33,24 31 33,24 31 35,27 31 33,27 31 35,24 33 34,24 33 35,25 33 34,25 33 35,27 33 34,27 33 35,29 33 34,29 33 35,31 33 34,31 33 35,32 33 34,32 33 35,33 34 35
+5000
+35 - Test Affects(s1, s2) and Affects*(s2, s3)
+stmt s1, s2, s3;
+Select <s1, s2, s3> such that Affects(s1, s2) such that Affects*(s2, s3)
+1 2 4,11 12 14,15 18 20,24 27 35,24 27 27,24 27 31,24 27 33,24 27 34,27 27 35,27 27 27,27 27 31,27 27 33,27 27 34,25 29 29,25 29 33,25 29 34,25 29 35,29 29 29,29 29 33,29 29 34,29 29 35,24 31 33,24 31 34,24 31 35,27 31 33,27 31 34,27 31 35,24 33 34,24 33 35,25 33 34,25 33 35,27 33 34,27 33 35,29 33 34,29 33 35,31 33 34,31 33 35,32 33 34,32 33 35,33 34 35
+5000
+36 - Test Affects(s1, s2) and Affects(s2, s3) and Affects*(s3, s4)
+stmt s1, s2, s3, s4;
+Select <s1, s2, s3, s4> such that Affects(s1, s2) and Affects(s2, s3) and Affects*(s3, s4)
+24 27 27 27,24 27 27 31,24 27 27 33,24 27 27 34,24 27 27 35,27 27 27 27,27 27 27 31,27 27 27 33,27 27 27 34,27 27 27 35,29 29 29 29,29 29 29 33,29 29 29 34,29 29 29 35,25 29 29 29,25 29 29 33,25 29 29 34,25 29 29 35,24 27 31 33,24 27 31 34,24 27 31 35,27 27 31 33,27 27 31 34,27 27 31 35,27 27 33 34,27 27 33 35,25 29 33 34,25 29 33 35,24 27 33 34,24 27 33 35,29 29 33 34,29 29 33 35,24 31 33 34,24 31 33 35,27 31 33 34,27 31 33 35,24 33 34 35,25 33 34 35,27 33 34 35,29 33 34 35,31 33 34 35,32 33 34 35
+5000
+37 - Test Affects(s1, s2) and Affects*(s2, s3) and Affects(s3, s4)
+stmt s1, s2, s3, s4;
+Select <s1, s2, s3, s4> such that Affects(s1, s2) and Affects*(s2, s3) and Affects(s3, s4)
+24 27 27 27,24 27 27 31,24 27 27 33,24 27 27 35,24 27 31 33,24 27 31 35,24 27 33 34,24 27 33 35,24 27 34 35,27 27 27 27,27 27 27 31,27 27 27 33,27 27 27 35,27 27 31 33,27 27 31 35,27 27 33 34,27 27 33 35,27 27 34 35,25 29 29 29,25 29 29 33,25 29 33 34,25 29 33 35,25 29 34 35,29 29 29 29,29 29 29 33,29 29 33 34,29 29 33 35,29 29 34 35,24 31 33 34,24 31 33 35,24 31 34 35,27 31 33 34,27 31 33 35,27 31 34 35,24 33 34 35,25 33 34 35,27 33 34 35,29 33 34 35,31 33 34 35,32 33 34 35
+5000
+38 - Test Affects(self, self)
+stmt s;
+Select s such that Affects(s, s)
+27, 29
+5000
+39 - Test Affects*(self, self)
+stmt s;
+Select s such that Affects*(s, s)
+27, 29
+5000
+40 - Semantic error should return false
+while w;
+Select BOOLEAN such that Affects(w, w)
+false
+5000
+41 - Semantic error should return false
+if ifs;
+Select BOOLEAN such that Affects(ifs, ifs)
+false
+5000
+42 - Semantic error should return false
+read r;
+Select BOOLEAN such that Affects(r, r)
+false
+5000
+43 - Semantic error should return false
+print p;
+Select BOOLEAN such that Affects(p, p)
+false
+5000
+44 - Semantic error should return false
+call cl;
+Select BOOLEAN such that Affects(cl, cl)
+false
+5000
+45 - Semantic error should return false
+procedure pp;
+Select BOOLEAN such that Affects(pp, pp)
+false
+5000
+46 - Semantic error should return false
+variable v;
+Select BOOLEAN such that Affects(v, v)
+false
+5000
+47 - Semantic error should return false
+constant c;
+Select BOOLEAN such that Affects(c, c)
+false
+5000
+48 - Semantic error should return false
+while w; stmt s;
+Select BOOLEAN such that Affects(w, s)
+false
+5000
+49 - Semantic error should return false
+while w; assign a;
+Select BOOLEAN such that Affects(w, a)
+false
+5000
+50 - Semantic error should return false
+while w; prog_line pl;
+Select BOOLEAN such that Affects(w, pl)
+false
+5000
+51 - Semantic error should return false
+if ifs; stmt s;
+Select BOOLEAN such that Affects(ifs, s)
+false
+5000
+52 - Semantic error should return false
+if ifs; assign a;
+Select BOOLEAN such that Affects(ifs, a)
+false
+5000
+53 - Semantic error should return false
+if ifs; prog_line pl;
+Select BOOLEAN such that Affects(ifs, pl)
+false
+5000
+54 - Semantic error should return false
+read r; stmt s;
+Select BOOLEAN such that Affects(r, s)
+false
+5000
+55 - Semantic error should return false
+read r; assign a;
+Select BOOLEAN such that Affects(r, a)
+false
+5000
+56 - Semantic error should return false
+read r; prog_line pl;
+Select BOOLEAN such that Affects(r, pl)
+false
+5000
+57 - Semantic error should return false
+print p; stmt s;
+Select BOOLEAN such that Affects(p, s)
+false
+5000
+58 - Semantic error should return false
+print p; assign a;
+Select BOOLEAN such that Affects(p, a)
+false
+5000
+59 - Semantic error should return false
+print p; prog_line pl;
+Select BOOLEAN such that Affects(p, pl)
+false
+5000
+60 - Semantic error should return false
+call cl; stmt s;
+Select BOOLEAN such that Affects(cl, s)
+false
+5000
+61 - Semantic error should return false
+call cl; assign a;
+Select BOOLEAN such that Affects(cl, a)
+false
+5000
+62 - Semantic error should return false
+call cl; prog_line pl;
+Select BOOLEAN such that Affects(cl, pl)
+false
+5000
+63 - Semantic error should return false
+procedure pp; stmt s;
+Select BOOLEAN such that Affects(pp, s)
+false
+5000
+64 - Semantic error should return false
+procedure pp; assign a;
+Select BOOLEAN such that Affects(pp, a)
+false
+5000
+65 - Semantic error should return false
+procedure pp; prog_line pl;
+Select BOOLEAN such that Affects(pp, pl)
+false
+5000
+66 - Semantic error should return false
+variable v; stmt s;
+Select BOOLEAN such that Affects(v, s)
+false
+5000
+67 - Semantic error should return false
+variable v; assign a;
+Select BOOLEAN such that Affects(v, a)
+false
+5000
+68 - Semantic error should return false
+variable v; prog_line pl;
+Select BOOLEAN such that Affects(v, pl)
+false
+5000
+69 - Semantic error should return false
+constant c; stmt s;
+Select BOOLEAN such that Affects(c, s)
+false
+5000
+70 - Semantic error should return false
+constant c; assign a;
+Select BOOLEAN such that Affects(c, a)
+false
+5000
+71 - Semantic error should return false
+constant c; prog_line pl;
+Select BOOLEAN such that Affects(c, pl)
+false
+5000
+72 - Semantic error should return false
+stmt s; while w;
+Select BOOLEAN such that Affects(s, w)
+false
+5000
+73 - Semantic error should return false
+assign a; while w;
+Select BOOLEAN such that Affects(a, w)
+false
+5000
+74 - Semantic error should return false
+prog_line pl; while w;
+Select BOOLEAN such that Affects(pl, w)
+false
+5000
+75 - Semantic error should return false
+stmt s; if ifs;
+Select BOOLEAN such that Affects(s, ifs)
+false
+5000
+76 - Semantic error should return false
+assign a; if ifs;
+Select BOOLEAN such that Affects(a, ifs)
+false
+5000
+77 - Semantic error should return false
+prog_line pl; if ifs;
+Select BOOLEAN such that Affects(pl, ifs)
+false
+5000
+78 - Semantic error should return false
+stmt s; read r;
+Select BOOLEAN such that Affects(s, r)
+false
+5000
+79 - Semantic error should return false
+assign a; read r;
+Select BOOLEAN such that Affects(a, r)
+false
+5000
+80 - Semantic error should return false
+prog_line pl; read r;
+Select BOOLEAN such that Affects(pl, r)
+false
+5000
+81 - Semantic error should return false
+stmt s; print p;
+Select BOOLEAN such that Affects(s, p)
+false
+5000
+82 - Semantic error should return false
+assign a; print p;
+Select BOOLEAN such that Affects(a, p)
+false
+5000
+83 - Semantic error should return false
+prog_line pl; print p;
+Select BOOLEAN such that Affects(pl, p)
+false
+5000
+84 - Semantic error should return false
+stmt s; call cl;
+Select BOOLEAN such that Affects(s, cl)
+false
+5000
+85 - Semantic error should return false
+assign a; call cl;
+Select BOOLEAN such that Affects(a, cl)
+false
+5000
+86 - Semantic error should return false
+prog_line pl; call cl;
+Select BOOLEAN such that Affects(pl, cl)
+false
+5000
+87 - Semantic error should return false
+stmt s; procedure pp;
+Select BOOLEAN such that Affects(s, pp)
+false
+5000
+88 - Semantic error should return false
+assign a; procedure pp;
+Select BOOLEAN such that Affects(a, pp)
+false
+5000
+89 - Semantic error should return false
+prog_line pl; procedure pp;
+Select BOOLEAN such that Affects(pl, pp)
+false
+5000
+90 - Semantic error should return false
+stmt s; variable v;
+Select BOOLEAN such that Affects(s, v)
+false
+5000
+91 - Semantic error should return false
+assign a; variable v;
+Select BOOLEAN such that Affects(a, v)
+false
+5000
+92 - Semantic error should return false
+prog_line pl; variable v;
+Select BOOLEAN such that Affects(pl, v)
+false
+5000
+93 - Semantic error should return false
+stmt s; constant c;
+Select BOOLEAN such that Affects(s, c)
+false
+5000
+94 - Semantic error should return false
+assign a; constant c;
+Select BOOLEAN such that Affects(a, c)
+false
+5000
+95 - Semantic error should return false
+prog_line pl; constant c;
+Select BOOLEAN such that Affects(pl, c)
+false
+5000
+96 - Syntatic error should return none
+stmt s;
+Select BOOLEAN such that Affects*("a", "b")
+none
+5000

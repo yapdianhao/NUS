@@ -1,0 +1,14 @@
+procedure Moon 
+{
+    read sun;               read a1; 
+
+    print sun; 
+
+    read sun;
+
+    print a1; 
+    print sun; 
+
+    read a2;                  print sun;        
+
+}

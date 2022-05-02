@@ -1,0 +1,53 @@
+procedure one {
+    print a;
+    call three;
+    read p;
+    while (5 == h) {
+        if (a == c) then {
+            print c;
+        } else {
+            read r;
+            while (h == 5) {
+                call two;
+            }
+        }
+    }
+}
+
+procedure two {
+    if (1 == 0) then {
+        while (l + m > 0) {
+            while (m - n <= 0) {
+                call three;
+            }
+        }
+    } else {
+        if (0 >= 3) then {
+            call three;
+        } else {
+            s = a - b;
+            while (l >= m) {
+                print a;
+                q = a - b;
+                read p;
+            }
+        }
+        call four;
+    }
+}
+
+procedure three {
+    a = x;
+    b = y;
+    c = z;
+}
+
+procedure four {
+    if (1 == 0) then {
+        print a;
+    } else {
+        while (2 + 2 == 5) {
+            print b;
+        }
+    }
+}

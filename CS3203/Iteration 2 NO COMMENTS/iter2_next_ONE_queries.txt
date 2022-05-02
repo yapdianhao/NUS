@@ -1,0 +1,135 @@
+1 - valid query (1 Next clause, procedure ONE, lineRef1 = int, lineRef2 = int)
+
+Select BOOLEAN such that Next(28, 29)
+TRUE
+5000
+2 - valid query (1 Next clause, procedure ONE, lineRef1 = int, lineRef2 = int)
+
+Select BOOLEAN such that Next(30, 31)
+FALSE
+5000
+3 - valid query (1 Next clause, procedure ONE, lineRef1 = int, lineRef2 = int)
+
+Select BOOLEAN such that Next(33, 34)
+FALSE
+5000
+4 - valid query (1 Next clause, procedure ONE, lineRef1 = int, lineRef2 = int)
+
+Select BOOLEAN such that Next(35, 36)
+TRUE
+5000
+5 - valid query (1 Next clause, procedure ONE, lineRef1 = int, lineRef2 = int)
+
+Select BOOLEAN such that Next(31, 36)
+TRUE
+5000
+6 - valid query (1 Next clause, procedure ONE, lineRef1 = int, lineRef2 = _)
+
+Select BOOLEAN such that Next(39, _)
+FALSE
+5000
+7 - valid query (1 Next clause, procedure ONE, lineRef1 = int, lineRef2 = _)
+
+Select BOOLEAN such that Next(31, _)
+TRUE
+5000
+8 - valid query (1 Next clause, procedure ONE, lineRef1 = int, lineRef2 = synonym)
+stmt s;
+Select s such that Next(28, s)
+29, 32
+5000
+9 - valid query (1 Next clause, procedure ONE, lineRef1 = int, lineRef2 = synonym)
+stmt s;
+Select s such that Next(29, s)
+30, 31
+5000
+10 - valid query (1 Next clause, procedure ONE, lineRef1 = int, lineRef2 = synonym)
+stmt s;
+Select s such that Next(30, s)
+36
+5000
+11 - valid query (1 Next clause, procedure ONE, lineRef1 = int, lineRef2 = synonym)
+stmt s;
+Select s such that Next(31, s)
+36
+5000
+12 - valid query (1 Next clause, procedure ONE, lineRef1 = int, lineRef2 = synonym)
+stmt s;
+Select s such that Next(32, s)
+33, 34
+5000
+13 - valid query (1 Next clause, procedure ONE, lineRef1 = int, lineRef2 = synonym)
+stmt s;
+Select s such that Next(33, s)
+36
+5000
+14 - valid query (1 Next clause, procedure ONE, lineRef1 = int, lineRef2 = synonym)
+stmt s;
+Select s such that Next(34, s)
+35
+5000
+15 - valid query (1 Next clause, procedure ONE, lineRef1 = int, lineRef2 = synonym)
+stmt s;
+Select s such that Next(35, s)
+36
+5000
+16 - valid query (1 Next clause, procedure ONE, lineRef1 = int, lineRef2 = synonym)
+stmt s;
+Select s such that Next(36, s)
+37
+5000
+17 - valid query (1 Next clause, procedure ONE, lineRef1 = int, lineRef2 = synonym)
+stmt s;
+Select s such that Next(37, s)
+38
+5000
+18 - valid query (1 Next clause, procedure ONE, lineRef1 = int, lineRef2 = synonym)
+stmt s;
+Select s such that Next(38, s)
+39
+5000
+19 - valid query (1 Next clause, procedure ONE, lineRef1 = int, lineRef2 = synonym)
+stmt s;
+Select s such that Next(39, s)
+none
+5000
+20 - valid query (1 Next clause, procedure ONE, lineRef1 = int, lineRef2 = synonym)
+call c;
+Select c such that Next(29, c)
+30
+5000
+21 - valid query (1 Next clause, procedure ONE, lineRef1 = int, lineRef2 = synonym)
+print p;
+Select p such that Next(32, p)
+33
+5000
+22 - valid query (1 Next clause, procedure ONE, lineRef1 = _, lineRef2 = int)
+
+Select BOOLEAN such that Next(_, 1)
+FALSE
+5000
+23 - valid query (1 Next clause, procedure ONE, lineRef1 = _, lineRef2 = int)
+
+Select BOOLEAN such that Next(_, 39)
+TRUE
+5000
+24 - valid query (1 Next clause, procedure ONE, lineRef1 = synonym, lineRef2 = int)
+prog_line n;
+Select n such that Next(n, 36)
+30, 31, 33, 35
+5000
+25 - valid query (1 Next clause, procedure ONE, lineRef1 = synonym, lineRef2 = int)
+assign a;
+Select a such that Next(a, 36)
+31, 35
+5000
+26 - valid query (1 Next clause, procedure ONE, lineRef1 = synonym, lineRef2 = int)
+stmt s;
+Select s such that Next(s, 32)
+28
+5000
+27 - valid query (1 Next clause, procedure ONE, lineRef1 = synonym, lineRef2 = int)
+stmt s;
+Select s such that Next(s, 34)
+32
+5000

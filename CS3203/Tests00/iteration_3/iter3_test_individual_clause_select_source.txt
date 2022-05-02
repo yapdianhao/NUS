@@ -1,0 +1,37 @@
+procedure proc1 {
+	call proc2;
+	if (v1 == 0) then {
+		print v2;
+		read v3;
+		v3 = v2 + 5;
+		while (v3 != 1) {
+			call proc3;
+			print v7;
+			read v8;
+			v3 = v3 + 4;
+		}
+	} else {
+		if (v4 == 7) then {
+			v5 = v1 * 2;
+		} else {
+			v6 = 3 * 9;
+			call proc2;
+		}
+		read v4;
+	}
+}
+procedure proc2 {
+	while (1 == 1) {
+		if (v1 > 2) then {
+			read v1;
+		} else {
+			v2 = 6 + 7;
+			print v7;
+		}
+	}
+	read v1;
+	print v1;
+}
+procedure proc3 {
+	call proc2;
+}

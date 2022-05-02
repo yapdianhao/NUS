@@ -1,0 +1,170 @@
+1 - Follows(int, int)
+variable v;
+Select v such that Follows(9, 10)
+gameType, i, dummy, answer, buffer, maxRange, useless, guess, someNumber, favouriteNumber, temp
+5000
+2 - Follows(a, a)
+assign a1, a2;
+Select a1 such that Follows(a1,a2)
+1, 2, 3, 4, 5, 6
+5000
+3 - Follows(a, s)
+assign a; stmt s;
+Select a such that Follows(a, s)
+1, 2, 3, 4, 5, 6, 7, 9, 16, 18, 20, 22, 26, 33
+5000
+4 - Follows(a, p)
+assign a; print p;
+Select a such that Follows(a, p)
+22
+5000
+5 - Follows(a, r)
+assign a; read r;
+Select a such that Follows(a, r)
+18
+5000
+6 - Follows(a, w)
+assign a; while w;
+Select a such that Follows(a, w)
+9, 16, 20
+5000
+7 - Follows(a, ifs)
+assign a; if ifs;
+Select a such that Follows(a, ifs)
+7, 26, 33
+5000
+8 - Follows(a,_)
+assign a;
+Select a such that Follows(a, _)
+1, 2, 3, 4, 5, 6, 7, 9, 16, 18, 20, 22, 26, 33
+5000
+9 - Follows(p, s)
+print p; stmt s;
+Select s such that Follows(p, s)
+25, 36
+5000
+10 - Follows(p, int)
+print p;
+Select p such that Follows(p, 36)
+35
+5000
+11 - Follows(p, a)
+print p; assign a;
+Select a such that Follows(p, a)
+36
+5000
+12 - Follows(p, w)
+print p; while w;
+Select p such that Follows(p, w)
+none
+5000
+13 - Follows(p, r)
+print p; read r;
+Select r such that Follows(p,r)
+25
+5000
+14 - Follows(p, ifs)
+print p; if ifs;
+Select ifs such that Follows(p, ifs)
+none
+5000
+15 - Follows(p, _)
+print p;
+Select p such that Follows(p, _)
+24, 35
+5000
+16 - Follows(r, s)
+read r; stmt s;
+Select r such that Follows(r, s)
+25, 28, 30
+5000
+17 - Follows(r, a)
+read r; assign a;
+Select r such that Follows(r, a)
+25
+5000
+18 - Follows(r, p)
+read r; print p;
+Select r such that Follows(r, p)
+28
+5000
+19 - Follows(r, w)
+read r; while w;
+Select r such that Follows(r, w)
+none
+5000
+20 - Follows(r, ifs)
+read r; if ifs;
+Select r such that Follows(r, ifs)
+none
+5000
+21 - Follows(ifs, p)
+print p; if ifs;
+Select ifs such that Folows(ifs, p)
+none
+5000
+22 - Follows(ifs, ifs)
+if ifs1, ifs2;
+Select ifs1 such that Follows(ifs1, ifs2)
+none
+5000
+23 - Follows(ifs, a)
+if ifs; assign a;
+Select ifs such that Follows(ifs, a)
+13, 34
+5000
+24 - Follows(ifs, r)
+if ifs; read r;
+Select ifs such that Follows(ifs, r)
+none
+5000
+25 - Follows(ifs, w)
+if ifs; while w;
+Select ifs such that Follows(ifs, w)
+27
+5000
+26 - Follows(w, w)
+while w1, w2;
+Select w1 such that Follows(w1, w2)
+none
+5000
+27 - Follows(w, ifs)
+while w; if ifs;
+Select w such that Follows(w, ifs)
+none
+5000
+28 - Follows(w, a)
+while w; assign a;
+Select w such that Follows(w, a)
+17
+5000
+29 - Follows(w, _)
+while w;
+Select w such that Follows(w, _)
+17
+5000
+30 - Follows(w, r)
+while w; read r;
+Select w such that Follows(w, r)
+none
+5000
+31 - Follows(0, 1)
+assign a;
+Select a such that Follows(0, 1)
+none
+5000
+32 - Follows(-1, 1)
+assign a;
+Select a such that Follows(-1, 1)
+none
+5000
+33 - Follows(_, _, _)
+assign a;
+Select a such that Follows(_, _, _)
+none
+5000
+34 - Follows(a)
+assign a;
+Select a such that Follows(a)
+none
+5000

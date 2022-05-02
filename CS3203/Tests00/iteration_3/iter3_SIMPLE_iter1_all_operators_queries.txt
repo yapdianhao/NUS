@@ -1,0 +1,505 @@
+1 - comment
+stmt s1, s2;
+Select s1 such that Follows(s1, s2)
+1, 2, 3, 4, 5, 6, 7, 8, 11, 14
+5000
+2 - Follows_assign_assign
+assign a1, a2;
+Select a1 such that Follows(a1, a2)
+1, 2, 3, 4, 5, 6
+5000
+3 - Follows_if_if
+if ifs1, ifs2;
+Select ifs1 such that Follows(ifs1, ifs2)
+8, 11
+5000
+4 - Follows_assign_stmt_Select_stmt
+stmt s; assign a;
+Select s such that Follows(s, a)
+1, 2, 3, 4, 5, 6, 14
+5000
+5 - Follows_assign_stmt_Select_assign
+assign a; stmt s;
+Select a such that Follows(a, s)
+1, 2, 3, 4, 5, 6, 7
+5000
+6 - Follows_assign_stmt_Select_assign
+stmt s; assign a;
+Select a such that Follows(s, a)
+2, 3, 4, 5, 6, 7, 17
+5000
+7 - Follows_assign_stmt_Select_stmt
+assign a; stmt s;
+Select s such that Follows(a, s)
+2, 3, 4, 5, 6, 7, 8
+5000
+8 - Follows_assign_if
+if ifs; assign a;
+Select a such that Follows(a, ifs)
+7
+5000
+9 - Follows
+assign a; if ifs;
+Select ifs such that Follows(ifs, a)
+14
+5000
+10 - Follows
+assign a; if ifs;
+Select ifs such that Follows(a, ifs)
+8
+5000
+11 - Follows
+assign a; if ifs;
+Select a such that Follows(ifs, a)
+17
+5000
+12 - Follows_assign_if
+if ifs; stmt s;
+Select s such that Follows(s, ifs)
+7, 8, 11
+5000
+13 - Follows
+stmt s; if ifs;
+Select ifs such that Follows(ifs, s)
+8, 11, 14
+5000
+14 - Follows
+stmt s; if ifs;
+Select ifs such that Follows(s, ifs)
+8, 11, 14
+5000
+15 - Follows
+if ifs; stmt s;
+Select s such that Follows(ifs, s)
+11, 14, 17
+5000
+16 - Follows
+stmt s;
+Select s such that Follows(3, s)
+4
+5000
+17 - Follows
+stmt s;
+Select s such that Follows(3, 4)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+5000
+18 - Follows
+stmt s;
+Select s such that Follows(_, 2)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+5000
+19 - Follows
+stmt s;
+Select s such that Follows(4, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+5000
+20 - Follows
+assign a;
+Select a such that Follows(3, a)
+4
+5000
+21 - Follows
+assign a;
+Select a such that Follows(3, 4)
+1, 2, 3, 4, 5, 6, 7, 9, 10, 12, 13, 15, 16, 17
+5000
+22 - Follows
+assign a;
+Select a such that Follows(_, a)
+2, 3, 4, 5, 6, 7, 17
+5000
+23 - Follows
+assign a;
+Select a such that Follows(4, _)
+1, 2, 3, 4, 5, 6, 7, 9, 10, 12, 13, 15, 16, 17
+5000
+24 - Follows
+if ifs;
+Select ifs such that Follows(3, ifs)
+none
+5000
+25 - Follows
+if ifs;
+Select ifs such that Follows(3, 4)
+8, 11, 14
+5000
+26 - Follows
+if ifs;
+Select ifs such that Follows(_, ifs)
+8, 11, 14
+5000
+27 - Follows
+if ifs;
+Select ifs such that Follows(7, _)
+8, 11, 14
+5000
+28 - Follows_stmt_stmt
+stmt s1, s2;
+Select s1 such that Follows*(s1, s2)
+1, 2, 3, 4, 5, 6, 7, 8, 11, 14
+5000
+29 - Follows_assign_assign
+stmt s1; assign a1, a2;
+Select s1 such that Follows*(a1, a2)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+5000
+30 - Follows_if_if
+if ifs1, ifs2;
+Select ifs1 such that Follows*(ifs1, ifs2)
+8, 11
+5000
+31 - Follows_assign_stmt_Select_stmt
+stmt s; assign a;
+Select s such that Follows*(s, a)
+1, 2, 3, 4, 5, 6, 7, 8, 11, 14
+5000
+32 - Follows_assign_stmt_Select_assign
+assign a; stmt s;
+Select a such that Follows*(a, s)
+1, 2, 3, 4, 5, 6, 7
+5000
+33 - Follows_assign_stmt_Select_assign
+stmt s; assign a;
+Select a such that Follows*(s, a)
+2, 3, 4, 5, 6, 7, 17
+5000
+34 - Follows_assign_stmt_Select_stmt
+assign a; stmt s;
+Select s such that Follows*(a, s)
+2, 3, 4, 5, 6, 7, 8, 11, 14, 17
+5000
+35 - Follows_assign_if
+if ifs; assign a;
+Select a such that Follows*(a, ifs)
+1, 2, 3, 4, 5, 6, 7
+5000
+36 - Follows
+assign a; if ifs;
+Select ifs such that Follows*(ifs, a)
+8, 11, 14
+5000
+37 - Follows
+assign a; if ifs;
+Select ifs such that Follows*(a, ifs)
+8, 11, 14
+5000
+38 - Follows
+assign a; if ifs;
+Select a such that Follows*(ifs, a)
+17
+5000
+39 - Follows_assign_if
+if ifs; stmt s;
+Select s such that Follows*(s, ifs)
+1, 2, 3, 4, 5, 6, 7, 8, 11
+5000
+40 - Follows
+stmt s; if ifs;
+Select ifs such that Follows*(ifs, s)
+8, 11, 14
+5000
+41 - Follows
+stmt s; if ifs;
+Select ifs such that Follows*(s, ifs)
+8, 11, 14
+5000
+42 - Follows
+if ifs; stmt s;
+Select s such that Follows*(ifs, s)
+11, 14, 17
+5000
+43 - Follows
+stmt s;
+Select s such that Follows*(3, s)
+4, 5, 6, 7, 8, 11, 14, 17
+5000
+44 - Follows
+stmt s;
+Select s such that Follows*(3, 4)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+5000
+45 - Follows
+stmt s;
+Select s such that Follows*(_, 2)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+5000
+46 - Follows
+assign a;
+Select a such that Follows*(4, _)
+1, 2, 3, 4, 5, 6, 7, 9, 10, 12, 13, 15, 16, 17
+5000
+47 - Follows
+assign a;
+Select a such that Follows*(3, a)
+4, 5, 6, 7, 17
+5000
+48 - Follows
+stmt s;
+Select s such that Follows*(3, 4)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+5000
+49 - Follows
+assign a;
+Select a such that Follows*(_, a)
+2, 3, 4, 5, 6, 7, 17
+5000
+50 - Follows
+if ifs;
+Select if such that Follows*(9, _)
+none
+5000
+51 - Follows
+if ifs;
+Select ifs such that Follows*(3, ifs)
+8, 11, 14
+5000
+52 - Follows
+if ifs;
+Select ifs such that Follows*(3, 4)
+8, 11, 14
+5000
+53 - Follows
+if ifs;
+Select ifs such that Follows*(_, ifs)
+8, 11, 14
+5000
+54 - Follows*
+if ifs;
+Select ifs such that Follows*(4, _)
+8, 11, 14
+5000
+55 - Parent
+if ifs; stmt s;
+Select s such that Parent(ifs, s)
+9, 10, 12, 13, 15, 16
+5000
+56 - Parent
+if ifs; assign a;
+Select a such that Parent(ifs, a)
+9, 10, 12, 13, 15, 16
+5000
+57 - Parent
+if ifs1, ifs2;
+Select ifs1 such that Parent(ifs1, ifs2)
+none
+5000
+58 - Parent
+if ifs;
+Select ifs such that Parent(ifs, 9)
+8
+5000
+59 - Parent
+if ifs;
+Select ifs such that Parent(ifs, _)
+8, 11, 14
+5000
+60 - Parent
+if ifs;
+Select ifs such that Parent(_, _)
+8, 11, 14
+5000
+61 - Parent
+if ifs; variable v;
+Select ifs such that Parent(v, _)
+none
+5000
+62 - Parent
+if ifs;
+Select ifs such that Parent(_, 13)
+8, 11, 14
+5000
+63 - Parent
+assign a;
+Select a such that Parent(_, _)
+1, 2, 3, 4, 5, 6, 7, 9, 10, 12, 13, 15, 16, 17
+5000
+64 - Parent
+stmt s; if ifs;
+Select ifs such that Parent(ifs, s)
+8, 11, 14
+5000
+65 - Parent
+assign a;
+Select a such that Parent(_, a)
+9, 10, 12, 13, 15, 16
+5000
+66 - Add synonym for a design entity that does not exist
+while w;
+Select w such that Parent(_, _)
+none
+5000
+67 - Parent* unconnected
+if ifs; assign a;
+Select a such that Parent*(ifs, 9)
+1, 2, 3, 4, 5, 6, 7, 9, 10, 12, 13, 15, 16, 17
+5000
+68 - Parent
+assign a;
+Select a such that Parent*(9, a)
+none
+5000
+69 - Parent
+stmt s;
+Select s such that Parent*(_, s)
+9, 10, 12, 13, 15, 16
+5000
+70 - Invalid Parent relationship
+if ifs;
+Select ifs such that Parent*(a, _)
+none
+5000
+71 - Parent
+if ifs;
+Select ifs such that Parent*(_, _)
+8, 11, 14
+5000
+72 - Parent
+if ifs;
+Select ifs such that Parent*(9, 11)
+none
+5000
+73 - Uses
+variable v; if ifs;
+Select v such that Uses(ifs, v)
+a, b, c, d, e, f, g, h
+5000
+74 - Uses
+if ifs;
+Select ifs such that Uses(ifs, _)
+8, 11, 14
+5000
+75 - Uses
+assign a;
+Select a such that Uses(a, _)
+3, 4, 5, 6, 7, 9, 10, 12, 13, 15, 16, 17
+5000
+76 - Uses
+assign a; variable v;
+Select v such that Uses(a, "a")
+a, b, c, d, e, f, g, h, i, j, k, l, m, n
+5000
+77 - Uses
+stmt s; variable v;
+Select s such that Uses(s, v)
+3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+5000
+78 - Uses
+procedure p; variable v;
+Select p such that Uses(p, v)
+allOperators
+5000
+79 - Uses
+procedure p;
+Select p such that Uses(p, _)
+allOperators
+5000
+80 - Uses
+variable v; if ifs;
+Select v such that Uses(ifs, v)
+a, b, c, d, e, f, g, h
+5000
+81 - Uses
+if ifs;
+Select ifs such that Uses(ifs, _)
+8, 11, 14
+5000
+82 - Modifies
+assign a; variable v;
+Select a such that Modifies(a, v)
+1, 2, 3, 4, 5, 6, 7, 9, 10, 12, 13, 15, 16, 17
+5000
+83 - Modifies
+assign a; variable v;
+Select v such that Modifies(a, _)
+a, b, c, d, e, f, g, h, i, j, k, l, m, n
+5000
+84 - Modifies
+stmt s; variable v;
+Select s such that Modifies(s, v)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+5000
+85 - Modifies
+procedure p;
+Select p such that Modifies(p, _)
+allOperators
+5000
+86 - Modifies
+if ifs; variable v;
+Select ifs such that Modifies(ifs, 12)
+none
+5000
+87 - patternModifies
+if ifs; assign a;
+Select ifs such that Modifies(_, v) pattern a(_, _)
+none
+5000
+88 - patternUses
+assign a; variable v;
+Select v such that Uses(_, v) pattern a("y", _)
+none
+5000
+89 - patternFollows
+stmt s1; assign a1, a2;
+Select a1 such that Follows(s1, a1) pattern a2(_, _"g"_)
+2, 3, 4, 5, 6, 7, 17
+5000
+90 - patternFollows*
+assign a; stmt s;
+Select a such that Follows*(s, a) pattern a(_, _"3"_)
+none
+5000
+91 - patternParent
+assign a; if ifs;
+Select a such that Parent(ifs, a) pattern a("k", _"g"_)
+13
+5000
+92 - patternParent*
+if ifs; assign a;
+Select a pattern a("b", _"4"_)
+2
+5000
+93 - patternUses
+assign a; variable v;
+Select a such that Uses(a, v) pattern a("b", _"4"_)
+none
+5000
+94 - patternModifies
+assign a; variable v;
+Select v such that Modifies(a, v) pattern a("m", _"b"_)
+m
+5000
+95 - patternFollows
+if ifs2, ifs1; assign a;
+Select ifs2 such that Follows(a, ifs1) pattern a("ifs1", _)
+none
+5000
+96 - patternFollows*
+assign a; variable v; if ifs;
+Select v such that Uses(a, v) pattern a("k", _"c"_)
+a, b, c, d, e, f, g
+5000
+97 - patternParent*
+if if; assign a; procedure p;
+Select if such that Parent*(_, _) pattern a(_, _"e"_)
+8, 11, 14
+5000
+98 - patternParent
+stmt s; if ifs; assign a;
+Select s such that Parent(ifs, s) pattern a("b", _"4"_)
+9, 10, 12, 13, 15, 16
+5000
+99 - Uses
+stmt s;
+Select s such that Uses(s, _)
+3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+5000
+100 - Uses
+stmt s;
+Select ifs such that Uses(ifs, _)
+none
+5000
+101 - Uses
+stmt s; assign a;
+Select s pattern a("j", _"b/c"_)
+1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
+5000

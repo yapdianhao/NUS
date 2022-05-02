@@ -1,0 +1,38 @@
+procedure a {
+    call b;                 \\1
+    read am;                \\2
+    print au;               \\3
+    call c; }               \\4
+
+procedure b {
+    if (bu1 == 10) then {   \\5
+        call procedure;     \\6
+        print bu1;          \\7
+    } else {
+        call c;             \\8
+        read bm1; }         \\9
+    read bm2;               \\10
+    print bu2;              \\11
+}
+
+procedure c {
+    cm2 = cu2 + cu3;        \\12
+    while(cu1 == 1) {       \\13
+        cm1 = cu1 + 1; }    \\14
+
+}
+
+procedure procedure {
+    read procedure;         \\15
+}
+
+procedure procName {
+    call procedure;         \\16
+    print procName;         \\17
+}
+
+procedure B {
+    read m;                 \\18
+    m = u + 28;             \\19
+    print u;                \\20
+}

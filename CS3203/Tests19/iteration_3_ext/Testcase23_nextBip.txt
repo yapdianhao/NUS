@@ -1,0 +1,65 @@
+1 - Select NextBip across procedures
+assign a; call ca;
+Select a such that NextBip(ca, a)
+11, 20, 26, 29
+5000
+2 - Select previous sentence in caller across procedures
+stmt s;
+Select s such that NextBip(s, 28)
+29
+5000
+3 - Select previous sentence in callee procedures
+stmt s;
+Select s such that NextBip(s, 29)
+27, 36
+5000
+4 - Select nextBip in end of while loop
+stmt s;
+Select s such that NextBip(23, s)
+22
+5000
+5 - Select nextBip for while loop
+stmt s;
+Select s such that NextBip(22, s)
+23, 25
+5000
+6 - Select nextBip for if
+stmt s;
+Select s such that NextBip(21, s)
+22, 24
+5000
+7 - Select nextBip for end of if
+stmt s;
+Select s such that NextBip(s, 9)
+25, 31
+5000
+8 - Select nextBip* across multiple procedures and does not cut through if
+assign a;
+Select a such that NextBip*(8, a)
+9, 10, 26, 29, 31
+5000
+9 - Select nextBip* across multiple procedures and in while loop
+while w;
+Select w such that NextBip*(5, w)
+4, 12, 22
+5000
+10 - Select nextBip* in callee but not in caller function
+assign a;
+Select a such that NextBip*(23, a)
+9, 10, 23, 25
+5000
+11 - Select nextBip* in notCalled procedure
+stmt s;
+Select s such that NextBip*(32, s)
+none
+5000
+12 - Select nextBip(_, _)
+
+Select BOOLEAN such that NextBip(_,_)
+true
+5000
+13 - Select nextBip*(_, _)
+
+Select BOOLEAN such that NextBip*(_, _)
+true
+5000

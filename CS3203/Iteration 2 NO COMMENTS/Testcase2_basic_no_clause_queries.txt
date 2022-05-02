@@ -1,0 +1,55 @@
+1 - select assign.stmt#
+assign a;
+Select a.stmt#
+8, 5, 12, 10, 13, 2, 7
+5000
+2 - select read.stmt#
+read x;
+Select x.stmt#
+1
+5000
+3 - select print.stmt#
+print Select;
+Select Select.stmt#
+4
+5000
+4 - select call.stmt#
+call call;
+Select call.stmt#
+3
+5000
+5 - select while.stmt#
+while w2;
+Select w2.stmt#
+9
+5000
+6 - select if.stmt#
+if if;
+Select if.stmt#
+11, 6
+5000
+7 - select statement.stmt#
+stmt s;
+Select s.stmt#
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+5000
+8 - select variable.varName
+variable v;
+Select v.varName
+a, b, c
+5000
+9 - select procedure.procName
+procedure p;
+Select p.procName
+procA, procB
+5000
+10 - select constant.value
+constant c;
+Select c.value
+10, 100, 3, 20
+5000
+11 - select prog_line
+prog_line pl;
+Select pl
+1,2,3,4,5,6,7,8,9,10,11,12,13
+5000

@@ -1,0 +1,22 @@
+procedure f {
+  f = 3;
+  y = 4;
+  z23 = f * y;
+  while((f==0)||(z23/f+z23%q>y*y*y)){
+    while(c==f){
+      f = f*3+y*4;
+      if(1734==f) then{
+        x=5;
+        y=x*(x+1); } else{
+        x=4; }
+      z23 = z23 + 22;
+      while = 0;
+      if=123;
+      read=3;
+      print=while-if+read;
+      procedure=print*print; }}
+  z24=z23;
+  while((f==1)&&(y*y>z*z*2)){
+    f=145*y/z; }
+  z2z=f; }
+  

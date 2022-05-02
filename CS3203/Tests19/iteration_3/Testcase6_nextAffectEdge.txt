@@ -1,0 +1,80 @@
+1 - Next(_, _)
+
+Select BOOLEAN such that Next(_, _)
+false
+5000
+2 - Next(s1, s2)
+stmt s1, s2;
+Select BOOLEAN such that Next(s1, s2)
+false
+5000
+3 - Next(pl1, pl2)
+prog_line pl1, pl2;
+Select BOOLEAN such that Next(pl1, pl2)
+false
+5000
+4 - Next(INT, INT)
+
+Select BOOLEAN such that Next(1, 2)
+false
+5000
+5 - Next*(_, _)
+
+Select BOOLEAN such that Next*(_, _)
+false
+5000
+6 - Next*(s1, s2)
+stmt s1, s2;
+Select BOOLEAN such that Next*(s1, s2)
+false
+5000
+7 - Next*(pl1, pl2)
+prog_line pl1, pl2;
+Select BOOLEAN such that Next*(pl1, pl2)
+false
+5000
+8 - Next*(INT, INT)
+
+Select BOOLEAN such that Next*(1, 2)
+false
+5000
+9 - Affects(_, _)
+
+Select BOOLEAN such that Affects(_, _)
+false
+5000
+10 - Affects(s1, s2)
+stmt s1, s2;
+Select BOOLEAN such that Affects(s1, s2)
+false
+5000
+11 - Affects(a1, a2)
+assign a1, a2;
+Select BOOLEAN such that Affects(a1, a2)
+false
+5000
+12 - Affects(INT, INT)
+
+Select BOOLEAN such that Affects(1, 2)
+false
+5000
+13 - Affects*(_, _)
+
+Select BOOLEAN such that Affects*(_, _)
+false
+5000
+14 - Affects*(s1, s2)
+stmt s1, s2;
+Select BOOLEAN such that Affects*(s1, s2)
+false
+5000
+15 - Affects*(a1, a2)
+assign a1, a2;
+Select BOOLEAN such that Affects*(a1, a2)
+false
+5000
+16 - Affects*(INT, INT)
+
+Select BOOLEAN such that Affects*(1, 2)
+false
+5000

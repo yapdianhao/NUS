@@ -1,0 +1,51 @@
+1 - AffectsBip(_, _)
+
+Select BOOLEAN such that AffectsBip(_, _)
+true
+5000
+2 - AffectsBip*(_, _)
+
+Select BOOLEAN such that AffectsBip*(_, _)
+true
+5000
+3 - AffectsBip from caller function to callee function, skip past while loop
+assign a;
+Select a such that AffectsBip(2, a)
+14,24
+5000
+4 - AffectsBip on function in while loop
+assign a1, a2;
+Select a2 such that AffectsBip(a1, a2) pattern a1("varE", _)
+11
+5000
+5 - AffectsBip on same assignment
+assign a;
+Select a such that AffectsBip(a, a)
+23
+5000
+6 - AffectsBip should not affect unreachable varB
+assign a;
+Select a such that AffectsBip(24, a)
+none
+5000
+7 - AffectsBip across procedures
+assign a1, a2;
+Select a2 such that AffectsBip(a1, a2) pattern a1("varI", _)
+29, 31
+5000
+8 - AffectsBip* across procedures
+assign a; variable v;
+Select <a, v> such that AffectsBip*(33, a) and Modifies(a, v)
+26 varI, 29 varJ, 31 varD
+5000
+
+9 - AffectsBip* backwards across procedures
+assign a; variable v;
+Select <a, v> such that AffectsBip*(29, a) and Modifies(a, v)
+37 varK, 39 varI, 41 varI
+5000
+10 - AffectsBip* across 2 consecutive function call
+assign a; variable v;
+Select <a, v> such that AffectsBip*(26, a) and Modifies(a, v)
+29 varJ, 31 varD
+5000

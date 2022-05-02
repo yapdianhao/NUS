@@ -1,0 +1,105 @@
+1 - valid query (1 if pattern clause, entRef = synonym)
+while w; variable v;
+Select BOOLEAN pattern w(v, _)
+true
+5000
+2 - valid query (1 if pattern clause, entRef = synonym)
+while w; variable v;
+Select <w, v> pattern w(v, _)
+3 d, 3 one, 7 celebrate, 7 btob, 10 beta, 15 id, 23 c, 23 alpha, 23 b, 23 ydj, 40 c, 40 alpha, 40 b, 40 y, 50 lost, 50 a, 60 x, 65 x, 65 y, 65 z, 65 test, 73 x, 73 y 
+5000
+3 - valid query (1 if pattern clause, entRef = synonym)
+while w; variable v;
+Select w.stmt# pattern w(v, _)
+3, 7, 10, 15, 23, 40, 50, 60, 65, 73
+5000
+4 - valid query (1 if pattern clause, entRef = synonym)
+while w; variable v;
+Select v.varName pattern w(v, _)
+d, one, celebrate, btob, beta, id, c, alpha, b, ydj, y, lost, a, x, z, test
+5000
+5 - valid query (1 if pattern clause, entRef = _)
+while w;
+Select w pattern w(_, _)
+3, 7, 10, 15, 23, 40, 50, 60, 65, 73
+5000
+6 - valid query (1 if pattern clause, entRef = IDENT)
+while w;
+Select w pattern w("d", _)
+3
+5000
+7 - valid query (1 if pattern clause, entRef = IDENT)
+while w;
+Select w pattern w("one", _)
+3
+5000
+8 - valid query (1 if pattern clause, entRef = IDENT)
+while w;
+Select w pattern w("celebrate", _)
+7
+5000
+9 - valid query (1 if pattern clause, entRef = IDENT)
+while w;
+Select w pattern w("btob", _)
+7
+5000
+10 - valid query (1 if pattern clause, entRef = IDENT)
+while w;
+Select w pattern w("beta", _)
+10
+5000
+11 - valid query (1 if pattern clause, entRef = IDENT)
+while w;
+Select w pattern w("id", _)
+15
+5000
+12 - valid query (1 if pattern clause, entRef = IDENT)
+while w;
+Select w pattern w("c", _)
+23, 40
+5000
+13 - valid query (1 if pattern clause, entRef = IDENT)
+while w;
+Select w pattern w("alpha", _)
+23, 40
+5000
+14 - valid query (1 if pattern clause, entRef = IDENT)
+while w;
+Select w pattern w("b", _)
+23, 40
+5000
+15 - valid query (1 if pattern clause, entRef = IDENT)
+while w;
+Select w pattern w("ydj", _)
+23
+5000
+16 - valid query (1 if pattern clause, entRef = IDENT)
+while w;
+Select w pattern w("y", _)
+40, 65, 73
+5000
+17 - valid query (1 if pattern clause, entRef = IDENT)
+while w;
+Select w pattern w("lost", _)
+50
+5000
+18 - valid query (1 if pattern clause, entRef = IDENT)
+while w;
+Select w pattern w("a", _)
+50
+5000
+19 - valid query (1 if pattern clause, entRef = IDENT)
+while w;
+Select w pattern w("z", _)
+65
+5000
+20 - valid query (1 if pattern clause, entRef = IDENT)
+while w;
+Select w pattern w("x", _)
+60, 65, 73
+5000
+21 - valid query (1 if pattern clause, entRef = IDENT)
+while w;
+Select w pattern w("test", _)
+65
+5000

@@ -1,0 +1,40 @@
+1 - Modifies(p, IDENT)
+procedure p;
+Select p such that Modifies(p, "b")
+procA, procB, procC
+5000
+2 - Modifies(p, v)
+procedure p; variable v;
+Select p such that Modifies(p, v)
+strassen, procA, procB, procC
+5000
+3 - Modifies(IDENT, v)
+variable v;
+Select v such that Modifies("procB", v)
+a, b, c
+5000
+4 - Modifies(p, IDENT) across procedures
+procedure p;
+Select p such that Modifies(p, "det")
+strassen, procC
+5000
+5 - Modifies(IDENT, IDENT)
+procedure p;
+Select p such that Modifies("procC", "m7")
+strassen, procA, procB, procC
+5000
+6 - Select boolean with Modifies(p, IDENT) no results
+procedure p;
+Select BOOLEAN such that Modifies(p, "somethingElse")
+false
+5000
+7 - Select boolean with Modifies semantic error
+
+Select BOOLEAN such that Modifies(_, _)
+false
+5000
+8 - Select boolean with Modifies syntax error
+procedure p; stmt s;
+Select BOOLEAN such that Modifies(p, 7)
+none
+5000

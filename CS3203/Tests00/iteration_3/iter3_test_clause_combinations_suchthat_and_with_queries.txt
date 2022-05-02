@@ -1,0 +1,35 @@
+1 - Select tuple such that with 2 clauses each
+assign a1, a2; procedure p2; constant c; variable v;
+Select <a1, p2> such that Uses(p2, v) with v.varName = "v3" such that Affects(a1, a2) with a1.stmt# = c.value
+5 proc3, 8 proc3, 9 proc3, 5 proc1, 8 proc1, 9 proc1
+5000
+3 - Select tuple with 3 clauses each
+procedure p; if ifs; while w; constant c; statement s; prog_line n; variable v;
+Select <p, ifs, w> such that Modifies(p, v) with v.varName = "c" and p.procName = "proc1" such that Next(s, n) with c.value = 6 such that Parent(ifs, w)
+none
+5000
+5 - Select tuple with 4 clauses each
+assign a; stmt s1, s2; if ifs; call c; read r;
+Select <ifs, s1> such that Follows(a, ifs) with a.stmt# = 5 such that Next(r, c) with ifs.stmt# = 6 and s1.stmt# = 5 such that Affects*(a, s2) and Next*(r, c) with c.stmt# = 4
+6 5
+5000
+7 - Select BOOLEAN such that 2 clauses with 3 clauses
+if ifs; while w; stmt s; read r;
+Select BOOLEAN such that Parent(ifs, 7) with w.stmt# = 7 such that Next*(w, w) with s.stmt# = 2 and r.stmt# = 3
+true
+5000
+8 - Select BOOLEAN such that 3 clauses with 4 clauses
+procedure p; if ifs; while w; constant c1, c2; stmt s; assign a; variable v;
+Select BOOLEAN such that Modifies(p, v) with v.varName = "c" and p.procName = "proc1" such that Next(s, a) with c1.value = 6 such that Parent(ifs, w) with c2.value = 3
+true
+5000
+9 - Select SingleElement such that 2 clauses with one clause
+stmt s1, s2; assign a;
+Select s1 with a.stmt# = 9 such that Affects*(s1, s1) such that Affects(s1, s2)
+12
+5000
+10 - Select SingleElement such that 3 clauses with 2 clause
+procedure p; stmt s; variable v1, v2; constant c; assign a;
+Select p such that Uses(p, v2) and Modifies(p, v1) with p.procName = v1.varName and c.value = a.stmt# such that Modifies(s, v1)
+proc1
+5000

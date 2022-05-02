@@ -1,0 +1,48 @@
+procedure procA {
+    call procB;         // 1
+    call procC;         // 2
+}
+
+procedure procB {
+    if (1 == 1) then {  // 3
+        call procD;     // 4
+    } else {
+        call procE;     // 5
+    }
+}
+
+procedure procC {
+    while (1 != 0) {    // 6
+        call procF;     // 7
+    }
+    call procG;         // 8
+}
+
+procedure procD {
+    procA = 3;              // 9
+    call procH;             // 10
+    call procI;             // 11
+}
+
+procedure procE {
+    print procB;            // 12
+}
+
+procedure procF {
+    read procC;             // 13
+}
+
+procedure procG {
+    procC = 4;              // 14
+}
+
+procedure procH {
+    procA = procB;          // 15
+    procB = procC;          // 16
+    procC = procA;          // 17
+}
+
+procedure procI {
+    print procD;            // 18
+    read procD;             // 19
+}

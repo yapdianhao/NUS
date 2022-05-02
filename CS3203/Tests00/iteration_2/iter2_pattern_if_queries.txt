@@ -1,0 +1,100 @@
+1 - valid query (1 if pattern clause, entRef = synonym)
+if ifs; variable v;
+Select <ifs.stmt#, v> pattern ifs(v, _, _)
+4 b2st, 4 a, 4 c, 11 ydj, 11 c, 11 IZone, 12 gamma, 12 RAY, 28 d, 28 one, 29 count, 29 x, 32 sum, 42 x, 48 a, 48 shine, 57 lost, 57 c, 70 z
+5000
+2 - valid query (1 if pattern clause, entRef = synonym)
+if ifs; variable v;
+Select BOOLEAN pattern ifs(v, _, _)
+true
+5000
+3 - valid query (1 if pattern clause, entRef = synonym)
+if ifs; variable v;
+Select ifs pattern ifs(v, _, _)
+4, 11, 12, 28, 29, 32, 42, 48, 57, 70
+5000
+4 - valid query (1 if pattern clause, entRef = synonym)
+if ifs; variable v;
+Select v pattern ifs(v, _, _)
+b2st, a, c, ydj, IZone, gamma, RAY, d, one, count, x, sum, shine, lost, z
+5000
+5 - valid query (1 if pattern clause, entRef = _)
+if ifs;
+Select ifs pattern ifs(_, _, _)
+4, 11, 12, 28, 29, 32, 42, 48, 57, 70
+5000
+6 - valid query (1 if pattern clause, entRef = IDENT)
+if ifs;
+Select ifs pattern ifs("b2st", _, _)
+4 
+5000
+7 - valid query (1 if pattern clause, entRef = IDENT)
+if ifs;
+Select ifs pattern ifs("a", _, _)
+4, 48
+5000
+8 - valid query (1 if pattern clause, entRef = IDENT)
+if ifs;
+Select ifs pattern ifs("c", _, _)
+4, 11, 57
+5000
+9 - valid query (1 if pattern clause, entRef = IDENT)
+if ifs;
+Select ifs pattern ifs("ydj", _, _)
+11
+5000
+10 - valid query (1 if pattern clause, entRef = IDENT)
+if ifs;
+Select ifs pattern ifs("IZone", _, _)
+11
+5000
+11 - valid query (1 if pattern clause, entRef = IDENT)
+if ifs;
+Select ifs pattern ifs("gamma", _, _)
+12
+5000
+12 - valid query (1 if pattern clause, entRef = IDENT)
+if ifs;
+Select ifs pattern ifs("RAY", _, _)
+12
+5000
+13 - valid query (1 if pattern clause, entRef = IDENT)
+if ifs;
+Select ifs pattern ifs("d", _, _)
+28
+5000
+14 - valid query (1 if pattern clause, entRef = IDENT)
+if ifs;
+Select ifs pattern ifs("one", _, _)
+28
+5000
+15 - valid query (1 if pattern clause, entRef = IDENT)
+if ifs;
+Select ifs pattern ifs("count", _, _)
+29
+5000
+16 - valid query (1 if pattern clause, entRef = IDENT)
+if ifs;
+Select ifs pattern ifs("x", _, _)
+29, 42
+5000
+17 - valid query (1 if pattern clause, entRef = IDENT)
+if ifs;
+Select ifs pattern ifs("sum", _, _)
+32
+5000
+18 - valid query (1 if pattern clause, entRef = IDENT)
+if ifs;
+Select ifs pattern ifs("shine", _, _)
+48
+5000
+19 - valid query (1 if pattern clause, entRef = IDENT)
+if ifs;
+Select ifs pattern ifs("lost", _, _)
+57
+5000
+20 - valid query (1 if pattern clause, entRef = IDENT)
+if ifs;
+Select ifs pattern ifs("z", _, _)
+70
+5000

@@ -1,0 +1,250 @@
+1 - syntactically and semantically valid: fixed value + wildcard, stmt num (in place of 1) exists in src program
+
+Select BOOLEAN such that Uses(4,_)
+true
+5000
+2 - syntactically and semantically valid: fixed value + wildcard, stmt num not exists in src program
+
+Select BOOLEAN such that Uses(31,_)
+false
+5000
+3 - syntactically and semantically valid: fixed value + wildcard, stmt num refers to a read statement in src program
+
+Select BOOLEAN such that Uses(2,_)
+false
+5000
+4 - syntactically and semantically valid: fixed value + wildcard, stmt num exists and relationship holds in src program
+
+Select BOOLEAN such that Uses(20,_)
+true
+5000
+5 - syntactically and semantically valid: fixed value + wildcard, stmt num exists but relationship doesn’t hold in src program
+
+Select BOOLEAN such that Uses(29,_)
+false
+5000
+6 - syntactically and semantically valid: fixed value + fixed value: Uses(1, “var”), “var” exists in src program
+
+Select BOOLEAN such that Uses(5,"k")
+false
+5000
+7 - syntactically and semantically valid: fixed value + fixed value: Uses(1, “var”), “var” not exists in src program
+
+Select BOOLEAN such that Uses(1,"aa")
+false
+5000
+8 - syntactically and semantically valid: fixed value + fixed value: Uses(1, “var”), “var” exists and relationship holds in src program
+
+Select BOOLEAN such that Uses(3,"l")
+true
+5000
+9 - syntactically and semantically valid: fixed value + fixed value: Uses(1, “var”), “var” exists but relationship doesn’t hold in src program
+
+Select BOOLEAN such that Uses(10,"q")
+false
+5000
+10 - syntactically and semantically valid: fixed value + syn: Uses(1, variable), stmt num (in place of 1) exists in src program
+variable v;
+Select v such that Uses(6,v)
+a, b, c, h, j, l, m, n, r
+5000
+11 - syntactically and semantically valid: fixed value + syn: Uses(1, variable), stmt num not exists in src program
+variable v;
+Select v such that Uses(32, v)
+none
+5000
+12 - syntactically and semantically valid: fixed value + syn: Uses(1, variable), stmt num refers to a read statement in src program
+variable v;
+Select v such that Uses(9,v)
+none
+5000
+13 - syntactically and semantically valid: fixed value + syn: Uses(1, variable), stmt num exists and relationship holds in src program
+variable v;
+Select v such that Uses(11,v)
+a, b, c, l, m, n
+5000
+14 - syntactically and semantically valid: fixed value + syn: Uses(1, variable), stmt num exists but relationship doesn’t hold in src program (empty table)
+variable v;
+Select v such that Uses(22,v)
+none
+5000
+15 - syntactically and semantically valid: syn + wildcard: Uses(stmt, _)
+stmt s;
+Select s such that Uses(s,_)
+1, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27
+5000
+16 - syntactically and semantically valid: syn + wildcard: Uses(assign, _)
+assign a;
+Select a such that Uses(a,_)
+4, 5, 13, 15, 16, 23, 27
+5000
+17 - syntactically and semantically valid: syn + wildcard: Uses(print,_)
+print p;
+Select p such that Uses(p,_)
+1, 8, 12, 20, 25, 26
+5000
+18 - syntactically and semantically valid: syn + wildcard: Uses(if, _)
+if ifs;
+Select ifs such that Uses(ifs,_)
+7, 17, 21
+5000
+19 - syntactically and semantically valid: syn + wildcard: Uses(while, _)
+while w;
+Select w such that Uses(w,_)
+6, 10, 18, 19, 24
+5000
+20 - syntactically and semantically valid: syn + wildcard: Uses(call, _)
+call c;
+Select c such that Uses(c,_)
+3, 11, 14
+5000
+21 - syntactically and semantically valid: syn + fixed value: Uses(stmt, “var”), make sure “var” exists in src program and result is empty for each entity
+stmt s;
+Select s such that Uses(s, "p")
+none
+5000
+22 - syntactically and semantically valid: syn + fixed value: Uses(assign, “var”), make sure “var” exists in src program and result is empty for each entity
+assign a;
+Select such that Uses(a,"q")
+none
+5000
+23 - syntactically and semantically valid: syn + fixed value: Uses(print, “var”), make sure “var” exists in src program and result is empty for each entity
+print p;
+Select p such that Uses(p,"e")
+none
+5000
+24 - syntactically and semantically valid: syn + fixed value: Uses(if, “var”), make sure “var” exists in src program and result is empty for each entity
+if ifs;
+Select ifs such that Uses(ifs,"r")
+none
+5000
+25 - syntactically and semantically valid: syn + fixed value: Uses(while, “var”), make sure “var” exists in src program and result is empty for each entity
+while w;
+Select w such that Uses(w,"s")
+none
+5000
+26 - syntactically and semantically valid: syn + fixed value: Uses(call, “var”), make sure “var” exists in src program and result is empty for each entity
+call c;
+Select c such that Uses(c,"f")
+none
+5000
+27 - syntactically and semantically valid: syn + syn: Uses(stmt, variable)
+stmt s; variable v;
+Select <s, v> such that Uses(s,v)
+1 a, 3 a, 3 b, 3 c, 3 l, 3 m, 3 n, 4 c, 4 d, 5 e, 5 f, 5 g, 6 h, 6 a, 6 c, 6 j, 6 r, 6 b, 6 l, 6 m, 6 n, 7 a, 7 c, 7 h, 7 b, 7 l, 7 m, 7 n, 7 j, 8 c, 10 h, 10 a, 10 b, 10 c, 10 l, 10 m, 10 n, 10 j, 11 a, 11 b, 11 c, 11 l, 11 m, 11 n, 12 j, 13 r, 14 a, 14 b, 14 c, 14 l, 14 m, 14 n, 15 a, 15 b, 16 b, 16 c, 17 l, 17 m, 17 n, 17 a, 17 b, 18 l, 18 m, 18 n, 19 m, 19 n, 20 m, 21 a, 21 b, 21 l, 21 m, 23 a, 23 b, 24 l, 24 m, 24 a, 24 b, 25 a, 26 b, 27 a, 27 b
+5000
+28 - syntactically and semantically valid: syn + syn: Uses(assign, variable)
+assign a; variable v;
+Select <a,v> such that Uses(a,v)
+4 c, 4 d, 5 e, 5 f, 5 g, 13 r, 15 a, 15 b, 16 b, 16 c, 23 a, 23 b, 27 a, 27 b
+5000
+29 - syntactically and semantically valid: syn + syn: Uses(print, variable)
+print p; variable v;
+Select <p,v> such that Uses(p,v)
+1 a, 8 c, 12 j, 20 m, 25 a, 26 b
+5000
+30 - syntactically and semantically valid: syn + syn: Uses(if, variable)
+if ifs; variable v;
+Select <ifs,v> such that Uses(ifs,v)
+7 a, 7 c, 7 h, 7 b, 7 l, 7 m, 7 n, 7 j, 17 l, 17 m, 17 n, 17 a, 17 b, 21 a, 21 b, 21 l, 21 m,
+5000
+31 - syntactically and semantically valid: syn + syn: Uses(while, variable)
+while w; variable v;
+Select <w,v> such that Uses(w,v)
+6 h, 6 a, 6 c, 6 j, 6 r, 6 b, 6 l, 6 m, 6 n, 10 h, 10 a, 10 b, 10 c, 10 l, 10 m, 10 n, 10 j, 18 l, 18 m, 18 n, 19 m, 19 n, 24 l, 24 m, 24 a, 24 b,
+5000
+32 - syntactically and semantically valid: syn + syn: Uses(call, variable)
+call c; variable v;
+Select <c,v> such that Uses(c,v)
+3 a, 3 b, 3 c, 3 l, 3 m, 3 n, 11 a, 11 b, 11 c, 11 l, 11 m, 11 n, 14 a, 14 b, 14 c, 14 l, 14 m, 14 n,
+5000
+33 - syntactically valid but semantically invalid: Uses(read, “var”/_/variable)
+read r; variable v
+Select <r,v> such that Uses(r,v)
+none
+5000
+34 - syntactically valid but semantically invalid: Uses(variable, “var”/_/variable)
+variable v1, v2;
+Select BOOLEAN such that Uses(v1,v2)
+false
+5000
+35 - syntactically valid but semantically invalid: Uses(constant, “var”/_/variable)
+constant c; variable v;
+Select BOOLEAN such that Uses(c,v)
+false
+5000
+36 - syntactically valid but semantically invalid: Uses(stmt, synonym of any entity else than variable)
+stmt s; stmt s1;
+Select BOOLEAN such that Uses(s,s1)
+false
+5000
+37 - syntactically valid but semantically invalid: Uses(stmt, synonym of any entity else than variable)
+stmt s; assign a;
+Select BOOLEAN such that Uses(s,a)
+false
+5000
+38 - syntactically valid but semantically invalid: Uses(stmt, synonym of any entity else than variable)
+stmt s; read r;
+Select BOOLEAN such that Uses(s,r)
+false
+5000
+39 - syntactically valid but semantically invalid: Uses(stmt, synonym of any entity else than variable)
+stmt s; call c;
+Select BOOLEAN such that Uses(s,c)
+false
+5000
+40 - syntactically valid but semantically invalid: Uses(stmt, synonym of any entity else than variable)
+stmt s; print p;
+Select BOOLEAN such that Uses(s,p)
+false
+5000
+41 - syntactically valid but semantically invalid: Uses(stmt, synonym of any entity else than variable)
+stmt s; if ifs;
+Select BOOLEAN such that Uses(s,ifs)
+false
+5000
+42 - syntactically valid but semantically invalid: Uses(stmt, synonym of any entity else than variable)
+stmt s; while w;
+Select BOOLEAN such that Uses(s,w)
+false
+5000
+43 - syntactically valid but semantically invalid: Uses(stmt, synonym of any entity else than variable)
+stmt s; prog_line pl;
+Select BOOLEAN such that Uses(s,pl)
+false
+5000
+44 - syntactically valid but semantically invalid: Uses(stmt, synonym of any entity else than variable)
+stmt s; constant c;
+Select BOOLEAN such that Uses(s,c)
+false
+5000
+45 - syntactically valid but semantically invalid: Uses(stmt, synonym of any entity else than variable)
+stmt s; procedure pr;
+Select BOOLEAN such that Uses(s,pr)
+false
+5000
+46 - syntactically valid but semantically invalid: Uses(_, _)
+
+Select BOOLEAN such that Uses(_,_)
+false
+5000
+47 - syntactically valid but semantically invalid: Uses(_, “x”)
+
+Select BOOLEAN such that Uses(_,"x")
+false
+5000
+48 - syntactically invalid: Uses(stmt syn, “1”)
+stmt s;
+Select BOOLEAN such that Uses(s, "1")
+none
+5000
+49 - syntactically invalid: Uses(stmt syn, 1)
+stmt s;
+Select such that Uses(s,1)
+none
+5000
+50 - syntactically invalid: Uses(syn.attr, _)
+stmt s;
+Select such that Uses(stmt.stmt#,_)
+none
+5000

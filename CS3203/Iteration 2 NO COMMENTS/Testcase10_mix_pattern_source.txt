@@ -1,0 +1,58 @@
+procedure sourceProc {
+    gameType = 1;   
+    i = 0;          
+    dummy = 1;      
+    answer = 42;    
+    buffer = 10;    
+    maxRange = 10000;   
+    useless = 19;   
+    if (gameType == 1) then {   
+        guess = maxRange/2;     
+        while(dummy > 0) {      
+            if (guess == answer) then {     
+                dummy = 0;                  
+            } else {
+                if (guess > answer) then {  
+                    guess = guess / 2;      
+                } else {
+                    guess = (maxRange + guess) / 2; 
+                }
+
+                temp = 0;       
+                while ((guess > answer) && (temp < buffer)) {   
+                    guess = guess - 1;      
+                    read useless;           
+                }
+                temp = 20;                  
+                while ((guess < answer) && (temp >= buffer)) {  
+                    guess = guess + 1;      
+                    print buffer;           
+                }
+            }
+        }
+    } else {
+        print gameType;                     
+        read dummy;                         
+        someNumber = 0;                     
+
+        if (dummy == 3) then {              
+            read someNumber;                
+            print dummy;                    
+        } else {
+            read someNumber;                
+            read gameType;                  
+        }
+
+        while (dummy > 0) {                 
+            favouriteNumber = dummy + 8;    
+
+            if (favouriteNumber % 8 == 0) then {    
+                print favouriteNumber;              
+                favouriteNumber = 3;                
+            } else {
+                read someNumber;                    
+            }
+            dummy = dummy - 1;                      
+        }
+    }
+}

@@ -1,0 +1,50 @@
+procedure Pikachu {
+  while (x < 10) {
+    a = a + 1;
+    x = x + a;
+    if (a > 2) then {
+      print a;
+      b = 2 + x * 2 - 3 + 4;
+    } else {
+      c = 7;
+      while (c > 8) {
+        c = c - a;
+      }
+    }
+  }
+  if (x <= x) then {
+    print d;
+  } else {
+    read e; 
+    print x;
+    y = 24601;
+    read z;
+    x = y + 7;
+    z = y + 2;
+    if (e != e) then {
+      z = a + b - c;
+    } else {
+      print z;
+      if (a + b < c + w) then {
+        while (e * f < x % y) {
+          z = z + e - g * x;
+        }
+      } else {
+        while (a < 1) {
+          a = a + b;
+          b = b - c;
+          c = c * d;
+          d = d % e;
+        }
+      }
+    }
+    z = z + z;
+    print a;
+    print g;
+  }
+  if (x == y) then {
+    a = b;
+  } else {
+    c = d;
+  }
+}

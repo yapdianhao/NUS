@@ -1,0 +1,21 @@
+procedure procedureA {
+    i = d + f - g;
+    read k;
+    if (c == d + g % c - h) then {
+        d = 6 + 7 / i * 6;
+    } else {
+        a = 4 + 1;
+    }
+    print v;
+}
+
+procedure procedureB {
+    call procedureA;
+    call procedureC;
+}
+
+procedure procedureC {
+    a = 3 % 5 - v1;
+    print v1;
+    call procedureA;
+}

@@ -1,0 +1,45 @@
+1 - pattern a(_, _)
+assign a;
+Select a pattern a(_, _)
+2, 5, 7, 8, 10, 12, 13
+5000
+2 - pattern a(synonym, _)
+assign a; variable v;
+Select v pattern a(v, _)
+a, b, c
+5000
+3 - pattern a(_, str_const)
+assign a;
+Select a pattern a(_, _"b"_)
+8, 12, 13
+5000
+4 - pattern a(_, num_const)
+assign a;
+Select a pattern a(_, _"3"_)
+7
+5000
+5 - pattern a(synonym, str_const)
+assign a; variable v;
+Select v pattern a(v, _"b"_)
+c, a
+5000
+6 - pattern a(synonym, num_const)
+assign a; variable v;
+Select v pattern a(v, _"10"_)
+c
+5000
+7 - pattern a(const, str_const)
+assign a;
+Select a pattern a("a", _"c"_)
+10
+5000
+8 - pattern a(const, str_const)
+assign a;
+Select a pattern a("a", _"a"_)
+2, 8, 10
+5000
+9 - pattern a(const, num_const)
+assign a;
+Select a pattern a("a", _"3"_)
+none
+5000

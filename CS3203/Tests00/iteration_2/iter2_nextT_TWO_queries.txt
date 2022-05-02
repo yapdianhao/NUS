@@ -1,0 +1,105 @@
+1 - valid query (1 Next* clause, procedure TWO, lineRef1 = int, lineRef2 = int)
+
+Select BOOLEAN such that Next*(40, 40)
+true
+5000
+2 - valid query (1 Next* clause, procedure TWO, lineRef1 = int, lineRef2 = int)
+
+Select BOOLEAN such that Next*(41, 40)
+true
+5000
+3 - valid query (1 Next* clause, procedure TWO, lineRef1 = int, lineRef2 = int)
+
+Select BOOLEAN such that Next*(44, 43)
+true
+5000
+4 - valid query (1 Next* clause, procedure TWO, lineRef1 = int, lineRef2 = int)
+
+Select BOOLEAN such that Next*(42, 40)
+true
+5000
+5 - valid query (1 Next* clause, procedure TWO, lineRef1 = int, lineRef2 = int)
+
+Select BOOLEAN such that Next*(41, 44)
+true
+5000
+6 - valid query (1 Next* clause, procedure TWO, lineRef1 = int, lineRef2 = _)
+
+Select BOOLEAN such that Next*(40, _)
+true
+5000
+7 - valid query (1 Next* clause, procedure TWO, lineRef1 = int, lineRef2 = _)
+
+Select BOOLEAN such that Next*(43, _)
+true
+5000
+8 - valid query (1 Next* clause, procedure TWO, lineRef1 = int, lineRef2 = _)
+
+Select BOOLEAN such that Next*(44, _)
+true
+5000
+9 - valid query (1 Next* clause, procedure TWO, lineRef1 = int, lineRef2 = synonym)
+prog_line n;
+Select n such that Next*(40, n)
+40, 41, 42, 43, 44
+5000
+10 - valid query (1 Next* clause, procedure TWO, lineRef1 = int, lineRef2 = synonym)
+prog_line n;
+Select n such that Next*(41, n)
+40, 41, 42, 43, 44
+5000
+11 - valid query (1 Next* clause, procedure TWO, lineRef1 = int, lineRef2 = synonym)
+prog_line n;
+Select n such that Next*(42, n)
+40, 41, 42, 43, 44
+5000
+12 - valid query (1 Next* clause, procedure TWO, lineRef1 = int, lineRef2 = synonym)
+prog_line n;
+Select n such that Next*(43, n)
+40, 41, 42, 43, 44
+5000
+13 - valid query (1 Next* clause, procedure TWO, lineRef1 = int, lineRef2 = synonym)
+prog_line n;
+Select n such that Next*(44, n)
+40, 41, 42, 43, 44
+5000
+14 - valid query (1 Next* clause, procedure TWO, lineRef1 = _, lineRef2 = int)
+
+Select BOOLEAN such that Next*(_, 40)
+true
+5000
+15 - valid query (1 Next* clause, procedure TWO, lineRef1 = _, lineRef2 = int)
+
+Select BOOLEAN such that Next*(_, 43)
+true
+5000
+16 - valid query (1 Next* clause, procedure TWO, lineRef1 = _, lineRef2 = int)
+
+Select BOOLEAN such that Next*(_, 44)
+true
+5000
+17 - valid query (1 Next* clause, procedure TWO, lineRef1 = synonym, lineRef2 = int)
+stmt s;
+Select s such that Next*(s, 40)
+40, 41, 42, 43, 44
+5000
+18 - valid query (1 Next* clause, procedure TWO, lineRef1 = synonym, lineRef2 = int)
+while w;
+Select w such that Next*(w, 41)
+40
+5000
+19 - valid query (1 Next* clause, procedure TWO, lineRef1 = synonym, lineRef2 = int)
+assign a;
+Select a such that Next*(a, 42)
+41, 43, 44
+5000
+20 - valid query (1 Next* clause, procedure TWO, lineRef1 = synonym, lineRef2 = int)
+stmt s;
+Select s such that Next*(s, 43)
+40, 41, 42, 43, 44
+5000
+21 - valid query (1 Next* clause, procedure TWO, lineRef1 = synonym, lineRef2 = int)
+print p;
+Select p such that Next*(p, 44)
+none
+5000

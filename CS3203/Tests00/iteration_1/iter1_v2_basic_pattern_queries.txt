@@ -1,0 +1,160 @@
+1 - valid syntax (entRef = _ , expression-spec = _ , Select assign)
+assign a;
+Select a pattern a(_, _)
+3, 4, 5, 6, 8, 9, 10, 11, 12
+5000
+2 - valid syntax (entRef = _ , expression-spec = identifier, Select assign)
+assign a;
+Select a pattern a(_, _"1"_)
+5, 8, 9
+5000
+3 - valid syntax (entRef = _ , expression-spec = identifier, Select assign)
+assign a;
+Select a pattern a(_, _"b"_)
+9, 10, 12
+5000
+4 - valid syntax (entRef = identifier , expression-spec = _ , Select assign)
+assign a;
+Select a pattern a("a", _)
+3, 8
+5000
+5 - valid syntax (entRef = identifier , expression-spec = _ , Select assign)
+assign a;
+Select a pattern a("1", _)
+none
+5000
+6 - valid syntax (entRef = synonym , expression-spec = _, Select var)
+assign a; variable v;
+Select v pattern a(v, _)
+a, b, c, d, f
+5000
+7 - valid syntax (entRef = synonym , expression-spec = identifier, Select var)
+assign a; variable v;
+Select v pattern a(v, _"a"_)
+d
+5000
+8 - valid syntax (entRef = synonym , expression-spec = identifier, Select var)
+assign a; variable v;
+Select v pattern a(v, _"2"_)
+d
+5000
+9 - valid syntax (entRef = _ , expression-spec = _, Select var)
+assign a; variable v;
+Select v pattern a(_, _)
+a, b, c, d, f, tree, bca, x
+5000
+10 - valid syntax (entRef = synonym , expression-spec = _, Select var)
+assign a; variable v;
+Select v pattern a(v, _)
+a, b, c, d, f
+5000
+11 - valid syntax (entRef = identifier , expression-spec = _, Select var)
+assign a; variable v;
+Select v pattern a("2", _)
+none
+5000
+12 - valid syntax (entRef = synonym , expression-spec = synonym, Select var)
+assign a; variable v;
+Select a pattern a(v, _)
+3, 4, 5, 6, 8, 9, 10, 11, 12
+5000
+13 - valid syntax (entRef = _ , expression-spec = _ , Select stmt)
+stmt s; assign a;
+Select s pattern a(_, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+5000
+14 - valid syntax (entRef = _ , expression-spec = identifier , Select stmt)
+stmt s; assign a;
+Select s pattern a(_, _"3"_)
+none
+5000
+15 - valid syntax (entRef = _ , expression-spec = identifier , Select stmt)
+stmt s; assign a;
+Select s pattern a(_, _"x"_)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+5000
+16 - valid syntax (entRef = identifier , expression-spec = _ , Select stmt)
+stmt s; assign a;
+Select s pattern a("f", _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+5000
+17 - valid syntax (entRef = identifier , expression-spec = _ , Select stmt)
+stmt s; assign a;
+Select s pattern a("9456789987678987678909", _)
+none
+5000
+18 - valid syntax (entRef = synonym , expression-spec = _ , Select stmt)
+stmt s; assign a; variable v;
+Select s pattern a(v, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+5000
+19 - valid syntax (entRef = synonym , expression-spec = identifier , Select stmt)
+stmt s; assign a; variable v;
+Select s pattern a(v, _"tree"_)
+none
+5000
+20 - valid syntax (entRef = synonym , expression-spec = identifier , Select stmt)
+stmt s; assign a; variable v;
+Select s pattern a(v, _"0"_)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+5000
+21 - valid syntax (entRef = _ , expression-spec = identifier , Select stmt)
+stmt s; assign a; variable v;
+Select s pattern a(_, _"9456789987678987678909"_)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+5000
+22 - valid syntax (entRef = identifier , expression-spec = _ , Select stmt)
+stmt s; assign a; variable v;
+Select s pattern a("d", _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+5000
+23 - valid syntax (entRef = identifier , expression-spec = _ , Select stmt)
+stmt s; assign a; variable v;
+Select s pattern a("8738", _)
+none
+5000
+24 - valid syntax (entRef = synonym , expression-spec = identifier , Select stmt)
+stmt s; assign a; variable v;
+Select s pattern a(v, _"8739"_)
+none
+5000
+25 - invalid syntax (right parameter, missing right underscore)
+assign a;
+Select a pattern a(_, _"1")
+none
+5000
+26 - invalid syntax (right parameter, missing left underscore)
+assign a;
+Select a pattern a(_, "b"_)
+none
+5000
+27 - invalid syntax (left var, right const name but missing left underscore)
+assign a; variable v;
+Select v pattern a(v, "a"_)
+none
+5000
+28 - invalid syntax (left var, right const name but missing right underscore)
+assign a; variable v;
+Select v pattern a(v, _"a")
+none
+5000
+29 - invalid syntax (missing pattern)
+assign a; variable v;
+Select v a(v, _"a"_)
+none
+5000
+30 - invalid syntax (additional and)
+assign a; variable v;
+Select v and pattern a(v, _"a"_)
+none
+5000
+31 - valid syntax (Select all assign)
+assign a;
+Select a
+3, 4, 5, 6, 8, 9, 10, 11, 12
+5000
+32 - invalid syntax (missing parentheses)
+assign a; variable v;
+Select v pattern a(v, "a"_
+none
+5000

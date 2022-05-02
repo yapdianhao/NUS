@@ -1,0 +1,100 @@
+1 - pattern w(_, _)
+while w;
+Select w pattern w(_, _)
+10, 17, 21, 32
+5000
+2 - pattern w(IDENT, _)
+while w;
+Select w pattern w("dummy", _)
+10, 32
+5000
+3 - pattern w(v, _)
+while w; variable v;
+Select w pattern w(v, _)
+10, 17, 21, 32
+5000
+4 - pattern w(c, _)
+while w; constant c;
+Select w pattern w(c, _)
+none
+5000
+5 - patterns w(IDENT in body, _)
+while w;
+Select w pattern w("favouriteNumber", _)
+none
+5000
+6 - pattern w(_)
+while w;
+Select w pattern w(_)
+none
+5000
+7 - pattern w(_, _, _)
+while w;
+Select w pattern w(_, _, _)
+none
+5000
+8 - pattern w(COMPARATOR,  _) 
+while w;
+Select w pattern w(">", _)
+none
+5000
+9 - pattern w(_IDENT_, _)
+while w;
+Select w pattern w(_"answer"_, _)
+none
+5000
+10 - pattern w and Follows
+while w; assign a;
+Select w pattern w(_, _) such that Follows(a, w)
+10, 17, 21
+5000
+11 - pattern w and FollowsT
+while w1, w2; variable v;
+Select w1 pattern w1(v, _) such that Follows*(w1, w2)
+17
+5000
+12 - pattern w and Parent
+while w1; if ifs;
+Select w1 pattern w1("guess", _) such that Parent(ifs, w1)
+17, 21
+5000
+13 - pattern w and ParentT
+while w1; if ifs;
+Select ifs pattern w1("guess", _) such that Parent*(ifs, w1)
+8, 11
+5000
+14 - pattern w and Uses
+while w; assign a; variable v;
+Select w pattern w(v, _) such that Uses(a, v) such that Parent(w, a)
+17, 21, 32
+5000
+15 - pattern w and Modifies
+while w; assign a; variable v;
+Select w pattern w(v, _) such that Modifies(a, v) and Parent(w, a)
+17, 21, 32
+5000
+16 - invalid pattern w and a
+while w; assign a;
+Select w pattern w(a, _)
+none
+5000
+17 - invalid pattern w and pn 
+while w; print pn;
+Select w pattern w(pn, _)
+none
+5000
+18 - invalid pattern w and r
+while w; read r;
+Select w pattern w(r, _)
+none
+5000
+19 - invalid pattern w and c
+while w; constant c;
+Select w pattern w(c, _)
+none
+5000
+20 - Multiple w pattern
+while w1, w2, w3;
+Select <w1, w2, w3> pattern w1("temp", _) pattern w2("answer", _) pattern w3("dummy", _)
+17 21 32, 17 17 32, 21 17 32, 21 21 32, 17 21 10, 17 17 10, 21 17 10, 21 21 10 
+5000

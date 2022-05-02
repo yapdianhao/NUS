@@ -1,0 +1,45 @@
+1 - Test select call
+call cl;
+Select cl
+5, 6, 10
+5000
+2 - Test select procedure
+procedure proc1;
+Select proc1
+procedure1, procedure2, procedure3
+5000
+3 - Test Follows across procedures
+stmt s1, s2;
+Select s1 such that Follows*(s1, s2)
+1, 2, 3, 7, 8, 9, 10
+5000
+4 - Test Parent across procedures
+print p1;
+Select p1 such that Parent*(3, 7)
+none
+5000
+5 - Test Uses on procedure
+variable v1;
+Select v1 such that Uses("procedure2", v1)
+b1, c1, d2
+5000
+6 - Test Modifies on procedure
+variable v1;
+Select v1 such that Modifies("procedure1", v1)
+a1, c1, b1, d2
+5000
+7 - Test pattern matching of expr
+assign a1;
+Select a1 pattern a1(_, _"a1 + b1 * c1"_)
+4
+5000
+8 - Test pattern matching of expr
+assign a1;
+Select a1 pattern a1(_, _"a1 + b1"_)
+none
+5000
+9 - Test pattern matching of expr
+assign a1;
+Select a1 pattern a1(_, _"b1 * c1"_)
+4, 11
+5000

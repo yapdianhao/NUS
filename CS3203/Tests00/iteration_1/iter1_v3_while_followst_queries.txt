@@ -1,0 +1,245 @@
+1 - valid query (independent synonym, stmtRef1 = _, stmtRef2 = _)
+stmt ENT;
+Select ENT such that Follows*(_, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24
+5000
+2 - valid query (independent synonym, stmtRef1 = _, stmtRef2 = s/a/r/p)
+stmt s; assign a;
+Select a such that Follows*(_, s)
+1, 5, 6, 8, 11, 12, 13, 21,
+5000
+3 - valid query (independent synonym, stmtRef1 = _, stmtRef2 = ifs/w)
+stmt s; while w;
+Select s such that Follows*(_,w)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24
+5000
+4 - valid query (independent synonym, stmtRef1 = _, stmtRef2 = stmt#)
+stmt s;
+Select s such that Follows*(_, 10)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24
+5000
+5 - valid query (independent synonym, stmtRef1 = _, stmtRef2 = ifs/w)
+stmt s; if ifs;
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24
+none
+5000
+6 - valid query (independent synonym, stmtRef1 = _, stmtRef2 = stmt#, clause evaluates to false)
+stmt s;
+Select s such that Follows*(_, 18)
+none
+5000
+7 - valid query (independent synonym, stmtRef1 = s/a/r/p, stmtRef2 = _)
+while w; stmt s;
+Select w such that Follows*(s, _)
+3, 7, 10, 14, 15, 17, 19
+5000
+8 - valid query (independent synonym, stmtRef1 = s/a/r/p, stmtRef2 = s/a/r/p)
+prog_line pl; stmt s; read r;
+Select pl such that Follows*(s, r)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24
+5000
+9 - valid query (independent synonym, stmtRef1 = s/a/r/p, stmtRef2 = ifs/w)
+constant c; stmt s; while w;
+Select c such that Follows*(s,w)
+0, 1, 2, 3, 4, 5, 9, 20, 40, 900
+5000
+10 - valid query (independent synonym, stmtRef1 = s/a/r/p, stmtRef2 = stmt#)
+print p; stmt s;
+Select p such that Follows*(s, 21)
+4, 9, 24
+5000
+11 - valid query (independent synonym, stmtRef1 = s/a/r/p, stmtRef2 = ifs/w, clause evaluates to false)
+while w; read r; if ifs;
+Select w such that Follows*(r,ifs)
+none
+5000
+12 - valid query (independent synonym, stmtRef1 = s/a/r/p, stmtRef2 = stmt#, clause evaluates to false)
+stmt s; print p;
+Select s such that Follows*(p, 9)
+none
+5000
+13 - valid query (independent synonym, stmtRef1 = ifs/w, stmtRef2 = _)
+while w; stmt s;
+Select s such that Follows*(w, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24
+5000
+14 - valid query (independent synonym, stmtRef1 = ifs/w, stmtRef2 = s/a/r/p)
+while w; stmt s; read r;
+Select s such that Follows*(w, r)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24
+5000
+15 - valid query (independent synonym, stmtRef1 = ifs/w, stmtRef2 = ifs/w)
+stmt s; while w, w1;
+Select s such that Follows*(w,w1)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24
+5000
+16 - valid query (independent synonym, stmtRef1 = ifs/w, stmtRef2 = stmt#)
+prog_line pr; while w;
+Select pr such that Follows*(w, 12)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24
+5000
+17 - valid query (independent synonym, stmtRef1 = ifs/w, stmtRef2 = ifs/w, clause evaluates to false)
+stmt s; while w;
+Select s such that Follows*(w,w)
+none
+5000
+18 - valid query (independent synonym, stmtRef1 = ifs/w, stmtRef2 = ifs/w, clause evaluates to false)
+stmt s; if ifs; while w;
+Select s such that Follows*(w,ifs)
+none
+5000
+19 - valid query (independent synonym, stmtRef1 = ifs/w, stmtRef2 = stmt#, clause evaluates to false)
+prog_line pr; while w;
+Select pr such that Follows*(w, 19)
+none
+5000
+20 - valid query (independent synonym, stmtRef1 = stmt#, stmtRef2 = _)
+stmt s;
+Select s such that Follows*(19, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24
+5000
+21 - valid query (independent synonym, stmtRef1 = stmt#, stmtRef2 = s/a/r/p)
+stmt s; print p;
+Select s such that Follows*(8, p)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24
+5000
+22 - valid query (independent synonym, stmtRef1 = stmt#, stmtRef2 = ifs/w)
+stmt s; while w;
+Select s such that Follows*(3,w)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24
+5000
+23 - valid query (independent synonym, stmtRef1 = stmt#, stmtRef2 = stmt#)
+prog_line pr; if ifs;
+Select pr such that Follows*(2, 19)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24
+5000
+24 - valid query (independent synonym, stmtRef1 = stmt#, stmtRef2 = _, clause evaluates to false)
+if ifs; stmt s;
+Select s such that Follows*(18, _)
+none
+5000
+25 - valid query (independent synonym, stmtRef1 = stmt#, stmtRef2 = s/a/r/p, clause evaluates to false)
+if ifs; stmt s; read r;
+Select s such that Follows*(14, r)
+none
+5000
+26 - valid query (independent synonym, stmtRef1 = stmt#, stmtRef2 = ifs/w, clause evaluates to false)
+stmt s; while w;
+Select s such that Follows*(19,ifs)
+none
+5000
+27 - valid query (independent synonym, stmtRef1 = stmt#, stmtRef2 = stmt#, clause evaluates to false)
+stmt s;
+Select s such that Follows*(2, 10)
+none
+5000
+28 - valid query (dependent synonym, stmtRef1 = _, stmtRef2 = s/a/r/p)
+stmt s;
+Select s such that Follows*(_, s)
+2, 5, 6, 7, 9, 10, 12, 13, 17, 19, 21, 22, 23, 24
+5000
+29 - valid query (dependent synonym, stmtRef1 = _, stmtRef2 = ifs/w)
+while w;
+Select w such that Follows*(_, w)
+7, 10, 17, 19
+5000
+30 - valid query (dependent synonym, stmtRef1 = _, stmtRef2 = ifs/w, clause evaluates to false)
+if ifs;
+Select w such that Follows* (_, ifs)
+none
+5000
+31 - valid query (dependent synonym, stmtRef1 = s/a/r/p, stmtRef2 = _)
+stmt s;
+Select s such that Follows*(s, _)
+1, 2, 3, 4, 5, 7, 8, 9, 10, 16, 19, 20, 21, 23
+5000
+32 - valid query (dependent synonym, stmtRef1 = s/a/r/p, stmtRef2 = s/a/r/p)
+stmt s; assign a;
+Select a such that Follows*(s, a)
+5, 6, 12, 13, 21
+5000
+33 - valid query (dependent synonym, stmtRef1 = s/a/r/p, stmtRef2 = ifs/w)
+stmt s; while w;
+Select s such that Follows*(s ,w)
+1, 2, 3, 8, 9, 16
+5000
+34 - valid query (dependent synonym, stmtRef1 = s/a/r/p, stmtRef2 = stmt#)
+stmt s;
+Select s such that Follows*(s, 17)
+16
+5000
+35 - valid query (dependent synonym, stmtRef1 = s/a/r/p, stmtRef2 = s/a/r/p, clause evaluates to false)
+assign a;
+Select a such that Follows*(a, a)
+none
+5000
+36 - valid query (dependent synonym, stmtRef1 = s/a/r/p, stmtRef2 = ifs/w, clause evaluates to false)
+read r; if ifs;
+Select r such that Follows*(r , ifs)
+none
+5000
+37 - valid query (dependent synonym, stmtRef1 = s/a/r/p, stmtRef2 = stmt#, clause evaluates to false)
+stmt s;
+Select s such that Follows*(s, 4)
+none
+5000
+38 - valid query (dependent synonym, stmtRef1 = ifs/w, stmtRef2 = _)
+while w;
+Select w such that Follows*(w, _)
+3, 7, 10, 19
+5000
+39 - valid query (dependent synonym, stmtRef1 = ifs/w, stmtRef2 = s/a/r/p)
+while w; assign a;
+Select a such that Follows*(w, a)
+12, 13
+5000
+40 - valid query (dependent synonym, stmtRef1 = ifs/w, stmtRef2 = ifs/w)
+while w1, while;
+Select while such that Follows*(while, w1)
+3
+5000
+41 - valid query (dependent synonym, stmtRef1 = ifs/w, stmtRef2 = stmt#)
+while w;
+Select w such that Follows*(w, 23)
+19
+5000
+42 - valid query (dependent synonym, stmtRef1 = ifs/w, stmtRef2 = ifs/w, clause evaluates to false)
+while w;
+Select w such that  Follows*(w, w)
+none
+5000
+43 - valid query (dependent synonym, stmtRef1 = ifs/w, stmtRef2 = ifs/w, clause evaluates to false)
+if ifs; while w;
+Select ifs such that  Follows*(w,ifs)
+none
+5000
+44 - valid query (dependent synonym, stmtRef1 = ifs/w, stmtRef2 = stmt#, clause evaluates to false)
+while w;
+Select w such that Follows*(w, 18)
+none
+5000
+45 - valid query (dependent synonym, stmtRef1 = stmt#, stmtRef2 = s/a/r/p)
+stmt s;
+Select s such that Follows*(3, s)
+7, 13
+5000
+46 - valid query (dependent synonym, stmtRef1 = stmt#, stmtRef2 = ifs/w)
+while w;
+Select w such that Follows*(2,w)
+19
+5000
+47 - valid query (dependent synonym, stmtRef1 = stmt#, stmtRef2 = s/a/r/p)
+assign a;
+Select a such that Follows*(20, a)
+21
+5000
+48 - valid query (dependent synonym, stmtRef1 = stmt#, stmtRef2 = s/a/r/p, clause evaluates to false)
+stmt s;
+Select s such that Follows*(24, s)
+none
+5000
+49 - valid query (dependent synonym, stmtRef1 = stmt#, stmtRef2 = ifs/w, clause evalutes to false)
+while w;
+Select ifs such that Follows*(19,w)
+none
+5000

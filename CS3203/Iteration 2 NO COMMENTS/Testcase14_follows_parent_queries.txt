@@ -1,0 +1,50 @@
+1 - Follows(ca, _)
+call ca;
+Select ca such that Follows(ca, _)
+5, 7, 29
+5000
+2 - Follows(ca, s)
+call ca; stmt s;
+Select s such that Follows(ca, s)
+6, 8, 30
+5000
+3 - Follows(_, ca)
+call ca;
+Select ca such that Follows(_, ca)
+5, 12 
+5000
+4 - Follows*(ca, pn)
+call ca; print pn;
+Select pn such that Follows*(ca, pn)
+14 
+5000
+5 - Parent(_, ca)
+call ca;
+Select ca such that Parent(_, ca)
+7, 12, 17, 34
+5000
+6 - Parent*(ifs, ca)
+call ca; if ifs;
+Select ifs such that Parent*(ifs, ca)
+6, 16, 31 
+5000
+7 - Select boolean for Parent(s, INT)
+stmt s;
+Select BOOLEAN such that Parent(s, 1)
+FALSE
+5000
+8 - Select boolean for Parent*(s, INT)
+stmt s;
+Select BOOLEAN such that Parent*(s, 16)
+FALSE
+5000
+9 - Select boolean for Follows(INT, s)
+stmt s;
+Select BOOLEAN such that Follows(24, s)
+FALSE
+5000
+10 - Select boolean for Follows*(INT, INT)
+
+Select BOOLEAN such that Follows*(17, 18)
+FALSE
+5000

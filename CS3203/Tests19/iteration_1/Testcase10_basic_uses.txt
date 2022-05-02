@@ -1,0 +1,80 @@
+1 - Uses(a, IDENT)
+assign a;
+Select a such that Uses(a, "guess")
+14, 15, 18, 22
+5000
+2 - Uses(a, v)
+assign a; variable v;
+Select a such that Uses(a, v)
+9, 14, 15, 18, 22, 33, 38
+5000
+3 - Uses(a, _)
+assign a;
+Select a such that Uses(a, _)
+9, 14, 15, 18, 22, 33, 38
+5000
+4 - Uses(pn, IDENT)
+print pn;
+Select pn such that Uses(pn, "buffer")
+23
+5000
+5 - Uses(pn, v)
+print pn; variable v;
+Select v such that Uses(pn, v)
+buffer, dummy, gameType, favouriteNumber
+5000
+6 - Uses(pn, _)
+print pn;
+Select pn such that Uses(pn, _)
+23, 24, 29, 35
+5000
+7 - Uses(ifs, IDENT in condition)
+if ifs;
+Select ifs such that Uses(ifs, "gameType")
+8
+5000
+8 - Uses(ifs, IDENT in body)
+if ifs;
+Select ifs such that Uses(ifs, "maxRange")
+8, 11, 13
+5000
+9 - Uses(ifs, v)
+if ifs; variable v;
+Select ifs such that Uses(ifs, v)
+8, 11, 13, 27, 34
+5000
+10 - Uses(w, IDENT)
+while w;
+Select w such that Uses(w, "buffer")
+10, 17, 21
+5000
+11 - Uses(w, v)
+while w; variable v;
+Select w such that Uses(w, v)
+10, 17, 21, 32
+5000
+12 - Uses(p, v)
+procedure p; variable v;
+Select p such that Uses(p, v)
+sourceProc
+5000
+13 - Uses(_, v)
+variable v;
+Select v such that Uses(_, v)
+none
+5000
+14 - Uses(r, _)
+read r;
+Select r such that Uses(r, _)
+none
+5000
+15 - Uses(s)
+stmt s;
+Select s such that Uses(s)
+none
+5000
+16 - Uses(s, _, _)
+stmt s;
+Select s such that Uses(s, _, _)
+none
+5000

@@ -1,0 +1,88 @@
+procedure rootProc {
+    print varA;         // 1
+    varB = 1;           // 2
+    varC = 2;           // 3
+    while(varD == 0) {  // 4
+        call procB;     // 5
+    }
+    if (2 == 2) then {  // 6
+        call procC;     // 7
+    } else {
+        call procD;     // 8
+    }
+
+    varE = varC + 78 + dummyA;  // 9
+    varK = varJ + 8;            // 10
+}
+
+procedure procB {
+    varF = varE + 90 + dummyA;  // 11
+
+    while(3 == 3) {             // 12
+        if (4 == 4) then {      // 13
+            varG = varB + 91;   // 14
+        } else {
+            dummyB = dummyC * dummyD;   // 15
+            print dummyC;               // 16
+        }
+    }
+    
+    varE = dummyB * dummyC * dummyD;    // 17
+    varB = 2 + 5;                       // 18
+    read dummyE;                        // 19
+}
+
+procedure procC {
+
+    varG = varC * 4;                    // 20
+
+    if (5 == 5) then {                  // 21
+        while(6 == 6) {                 // 22
+            varH = 1 + varH * dummyD;   // 23
+        } 
+    } else {
+        varD = varB * 4;                // 24
+    }
+
+    varH = 3 + 4;                       // 25
+}
+
+procedure procD {
+    varI = varH * 3 / dummyC;           // 26
+    call procE;                         // 27
+    call procF;                         // 28
+}
+
+procedure procE {
+    varJ = 90 * dummyD + dummyE / varI;        // 29
+}
+
+procedure procF {
+    read dummyH;                        // 30
+    varD = dummyD * varJ + varI + varD;      // 31
+}
+
+procedure neverCalled {
+    varY = dummyX * dummyY + dummyA;    // 32
+}
+
+procedure procG {
+    varH = dummyA + dummyB * 3;         // 33
+    call procD;                         // 34
+    varE = varK - 7 / dummyC;           // 35
+}
+
+procedure procH {
+    call procE;                         // 36
+    varK = varJ * 3 + dummyV;           // 37
+}
+
+procedure procI {
+    call procH;                         // 38
+    varI = varK + 8 * 2;                // 39
+}
+
+procedure procJ {
+    call procH;                         // 40
+    varI = varK + 7 * 9;                // 41
+}

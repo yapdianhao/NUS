@@ -1,0 +1,450 @@
+1 - Test 'name' = 'name' - exists
+variable v;
+Select v with "abcd" = "abcd"
+v1, v2, v3, v5, proc3, proc2, proc4, x
+5000
+2 - Test 'name' = 'name' - not exists
+stmt s;
+Select s with "abc" = "a"
+none
+5000
+3 - Test 'name' = 'name'
+assign a;
+Select BOOLEAN with "1" = "1"
+none
+5000
+4 - Test 'name' = proc.procName - exists
+procedure proc;
+Select proc with "proc1" = proc.procName
+proc1
+5000
+5 - Test 'name' = call.procName - exists
+call cl;
+Select cl with "proc4" = cl.procName
+9, 14
+5000
+6 - Test 'name' = procName
+call cl;
+Select cl.procName with "proc4" = cl.procName
+proc4
+5000
+7 - Test 'name' = varName
+variable v;
+Select v with "v1" = v.varName
+v1
+5000
+8 - Test 'name' = varName
+read r;
+Select r with "v2" = r.varName
+10
+5000
+9 - Test 'name' = varName
+print pr;
+Select pr with "proc4" = pr.varName
+15
+5000
+10 - Test procName = 'name'
+procedure proc;
+Select proc.procName with proc.procName = "proc2"
+proc2
+5000
+11 - Test procName = 'name'
+call cl;
+Select cl with cl.procName = "proc3"
+3
+5000
+12 - Test procName = 'name'
+call cl;
+Select <cl, cl.procName> with cl.procName = "proc4"
+9 proc4, 14 proc4
+5000
+13 - Test procName = procName
+call cl; procedure proc;
+Select <cl, proc, proc.procName> with cl.procName = proc.procName
+3 proc3 proc3, 9 proc4 proc4, 14 proc4 proc4
+5000
+14 - Test procName = procName
+call cl1, cl2;
+Select <cl1, cl1.procName, cl2, cl2.procName> with cl1.procName = cl2.procName
+9 proc4 14 proc4, 14 proc4 9 proc4, 9 proc4 9 proc4, 14 proc4 14 proc4, 3 proc3 3 proc3
+5000
+15 - Test procName = procName
+call cl; procedure proc;
+Select <cl.procName, proc> with cl.procName = proc.procName
+proc3 proc3, proc4 proc4
+5000
+16 - Test procName = varName
+call cl; read r;
+Select <cl, cl.procName, r> with cl.procName = r.varName
+3 proc3 6, 9 proc4 17, 14 proc4 17
+5000
+17 - Test procName = varName
+procedure proc; print pr;
+Select <proc, pr> with proc.procName = pr.varName
+proc2 11, proc4 15
+5000
+18 - Test procName = varName
+call cl; print pr; read r;
+Select <cl, pr, r> with cl.procName = pr.varName with cl.procName = r.varName
+9 15 17, 14 15 17
+5000
+19 - Test procName = varName
+call cl; print pr; read r;
+Select <cl, pr, r> with cl.procName = pr.varName and cl.procName = r.varName
+9 15 17, 14 15 17
+5000
+20 - Test varName = 'name'
+read r;
+Select r with r.varName = "proc3"
+6
+5000
+21 - Test varName = 'name'
+print pr; read r;
+Select <pr.stmt#, r.varName> with pr.varName = "proc2" and r.varName = "v1"
+11 v1
+5000
+22 - Test varName = 'name'
+variable v; assign a;
+Select <v.varName, a> with v.varName = "abcd"
+none
+5000
+23 - Test varName = 'name'
+variable v;
+Select BOOLEAN with v.varName = "abcd"
+false
+5000
+24 - Test varName = procName
+variable v; call cl;
+Select <v, cl> with v.varName = cl.procName
+proc3 3, proc4 14, proc4 9
+5000
+25 - Test varName = procName
+print pr; procedure proc;
+Select <pr.stmt#, proc.procName> with pr.varName = proc.procName
+11 proc2, 15 proc4
+5000
+26 - Test varName = procName
+read r; procedure proc; variable v;
+Select <r, proc, v> with r.varName = proc.procName with v.varName = proc.procName
+6 proc3 proc3, 17 proc4 proc4
+5000
+27 - Test varName = varName
+read r; print pr;
+Select <r, r.stmt#, r.varName, pr, pr.stmt#, pr.varName> with r.varName = pr.varName
+1 1 v1 5 5 v1, 10 10 v2 16 16 v2, 17 17 proc4 15 15 proc4
+5000
+28 - Test varName = varName
+variable v1, v2; read r;
+Select <v1, r.varName> with r.varName = v2.varName
+v1 v1, v3 v1, proc3 v1, x v1, v5 v1, v2 v1, proc2 v1, proc4 v1, v1 v3, v3 v3, proc3 v3, x v3, v5 v3, v2 v3, proc2 v3, proc4 v3, v1 proc3, v3 proc3, proc3 proc3, x proc3, v5 proc3, v2 proc3, proc2 proc3, proc4 proc3, v1 v2, v3 v2, proc3 v2, x v2, v5 v2, v2 v2, proc2 v2, proc4 v2, v1 proc4, v3 proc4, proc3 proc4, x proc4, v5 proc4, v2 proc4, proc2 proc4, proc4 proc4 
+5000
+29 - Test varName = varName
+print pr;
+Select <pr.stmt#, pr.varName> with pr.varName = pr.varName
+5 v1, 8 v5, 11 proc2, 15 proc4, 16 v2
+5000
+30 - Test 1 = 1
+stmt s;
+Select BOOLEAN with 1 = 1
+true
+5000
+31 - Test 1 = 1
+stmt s;
+Select s with 123456 = 1987
+none
+5000
+32 - Test 1 = 1
+assign a;
+Select BOOLEAN with 123 = 12
+false
+5000
+33 - Test 1 = value
+constant c;
+Select c with 1 = c.value
+1
+5000
+34 - Test 1 = value
+constant c;
+Select c with 10 = c.value
+none
+5000
+35 - Test 1 = value
+constant c;
+Select c with 1 = c.value and 100 = c.value
+none
+5000
+36 - Test 1 = stmt#
+assign a;
+Select a.stmt# with 1 = a.stmt#
+none
+5000
+37 - Test 1 = stmt#
+if ifs;
+Select ifs.stmt# with 7 = ifs.stmt#
+7
+5000
+38 - Test 1 = stmt#
+while w;
+Select w with 13 = w.stmt#
+13
+5000
+39 - Test 1 = prog_line
+prog_line pl;
+Select pl with 20 = pl
+none
+5000
+40 - Test 1 = prog_line
+prog_line pl;
+Select pl with 14 = pl
+14
+5000
+41 - Test 1 = prog_line
+prog_line pl; assign a;
+Select a with 1 = pl
+4, 12
+5000
+42 - Test value = 1
+constant c; assign a;
+Select a with c.value = 1
+4, 12
+5000
+43 - Test value = 1
+constant c;
+Select c with c.value = 5
+5
+5000
+44 - Test value = 1
+constant c;
+Select c with c.value = 1234
+none
+5000
+45 - Test value = value
+constant c1, c2;
+Select <c1, c2> with c1.value = c2.value
+1 1, 5 5, 6 6
+5000
+46 - Test value = value
+constant c1, c2;
+Select <c1, c2> with c1.value = c1.value
+1 1, 1 5, 1 6, 5 1, 5 5, 5 6, 6 1, 6 5, 6 6
+5000
+47 - Test value = value
+constant c;
+Select c with c.value = c.value
+1, 5, 6
+5000
+48 - Test value = stmt#
+constant c; stmt s;
+Select s with c.value = s.stmt#
+1, 5, 6
+5000
+49 - Test value = stmt#
+constant c; read r;
+Select r with c.value = r.stmt#
+1, 6
+5000
+50 - Test value = stmt#
+constant c; print pr;
+Select c with c.value = pr.stmt#
+5
+5000
+51 - Test value = prog_line
+constant c; prog_line pl;
+Select c with c.value = pl
+1, 5, 6
+5000
+52 - Test stmt# = 1
+stmt s;
+Select s with s.stmt# = 1
+1
+5000
+53 - Test stmt# = 1
+read r;
+Select r with s.stmt# = 100
+none
+5000
+54 - Test stmt# = 1
+call cl;
+Select BOOLEAN with cl.stmt# = 14
+true
+5000
+55 - Test stmt# = value
+constant c; print pr;
+Select <c.value, pr.varName> with pr.stmt# = c.value
+5 v1
+5000
+56 - Test stmt# = stmt#
+read r; print pr;
+Select BOOLEAN with r.stmt# = pr.stmt#
+false
+5000
+57 - Test stmt# = stmt#
+stmt s1; stmt s2;
+Select <s1, s2> with s1.stmt# = s2.stmt#
+1 1, 2 2, 3 3, 4 4, 5 5, 6 6, 7 7, 8 8, 9 9, 10 10, 11 11, 12 12, 13 13, 14 14, 15 15, 16 16, 17 17
+5000
+58 - Test stmt# = stmt#
+call cl;
+Select cl.procName with cl.stmt# = cl.stmt#
+proc3, proc4
+5000
+59 - Test stmt# = prog_line
+stmt s; prog_line pl;
+Select pl with s.stmt# = pl
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+5000
+60 - Test stmt# = prog_line
+prog_line pl; assign a;
+Select a.stmt# with a.stmt# = pl
+4, 12
+5000
+61 - Test prog_line = 1
+prog_line pl;
+Select pl with pl = 1
+1
+5000
+62 - Test prog_line = 1
+prog_line pl;
+Select pl with pl = 100
+none
+5000
+63 - Test prog_line = value
+constant c; prog_line pl;
+Select pl with pl = c.value
+1, 5, 6
+5000
+64 - Test prog_line = value
+constant c; prog_line pl; call cl;
+Select <cl, cl.procName> with pl = c.value
+3 proc3, 9 proc4, 14 proc4
+5000
+65 - Test prog_line = stmt#
+prog_line pl; stmt s;
+Select <pl, s> with pl = s.stmt#
+1 1, 2 2, 3 3, 4 4, 5 5, 6 6, 7 7, 8 8, 9 9, 10 10, 11 11, 12 12, 13 13, 14 14, 15 15, 16 16, 17 17
+5000
+66 - Test prog_line = stmt#
+prog_line pl; while w;
+Select <w.stmt#, pl> with pl = w.stmt#
+13 13
+5000
+67 - Test prog_line = prog_line
+prog_line pl1, pl2;
+Select <pl1, pl2> with pl1 = pl2
+1 1, 2 2, 3 3, 4 4, 5 5, 6 6, 7 7, 8 8, 9 9, 10 10, 11 11, 12 12, 13 13, 14 14, 15 15, 16 16, 17 17
+5000
+68 - Test extra space
+call cl;
+Select cl with        cl.procName = "proc3"
+3
+5000
+69 - Test extra space
+call cl;
+Select cl with        3      =      cl.stmt#
+3
+5000
+70 - Test no space
+call cl;
+Select cl with cl.procName="proc3"
+3
+5000
+71 - Context parsing
+variable varName;
+Select varName with varName.varName = "v1"
+v1
+5000
+72 - Context parsing
+variable procName;
+Select procName with procName.varName = "v1"
+v1
+5000
+73 - Context parsing
+prog_line value;
+Select value with value = 1
+1
+5000
+74 - Context parsing
+constant value;
+Select value.value with value.value = 5
+5
+5000
+75 - Context parsing
+read varName; call procName;
+Select <varName.varName, varName.stmt#> with varName.varName = procName.procName
+proc3 6, proc4 17
+5000
+76 - Invalid comparison
+variable v;
+Select BOOLEAN with v.varName = 1
+false
+5000
+77 - Invalid comparison
+procedure proc;
+Select BOOLEAN with proc.procName = 1
+false
+5000
+78 - Invalid comparison
+stmt s;
+Select BOOLEAN with 1 = "1"
+none
+5000
+79 - Invalid comparison
+stmt s; call cl;
+Select BOOLEAN with s.stmt# = cl.procName
+false
+5000
+80 - Invalid comparison
+stmt s; print pr;
+Select BOOLEAN with s.stmt# = pr.varName
+false
+5000
+81 - Invalid comparison
+prog_line pl;
+Select BOOLEAN with pl = "1"
+none
+5000
+82 - Invalid comparison
+prog_line pl; variable v;
+Select BOOLEAN with v.varName = pl
+false
+5000
+83 - Invalid comparison
+call cl;
+Select BOOLEAN with cl.procName = cl.stmt#
+false
+5000
+84 - Invalid combination of synonyms and attributes
+call cl;
+Select BOOLEAN with cl.varName = "proc2"
+false
+5000
+85 - Invalid combination of synonyms and attributes
+variable v;
+Select BOOLEAN with v.stmt# = 0
+false
+5000
+86 - Invalid combination of synonyms and attributes
+variable v;
+Select BOOLEAN with v.procName = "v1"
+false
+5000
+87 - Invalid combination of synonyms and attributes
+assign a;
+Select BOOLEAN with a.value = 1
+false
+5000
+88 - Invalid attributes
+assign a;
+Select a.stmt
+none
+5000
+89 - Invalid attributes
+read r;
+Select r.varname
+none
+5000
+90 - Invalid attributes
+call cl;
+Select cl with cl.procname = cl.procname
+none
+5000

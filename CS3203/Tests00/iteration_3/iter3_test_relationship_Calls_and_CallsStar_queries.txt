@@ -1,0 +1,180 @@
+1 - Select call only
+call cl;
+Select cl
+1, 3, 6, 10, 11, 12, 13, 14, 15, 16
+5000
+2 - Select procedure only
+procedure proc;
+Select proc
+proc1, proc2, proc3, proc4, proc5, proc6, proc7, proc8, proc9, proc10
+5000
+3 - Test Calls(procName, procName) - exists
+stmt s;
+Select s such that Calls("proc1", "proc2")
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+5000
+4 - Test Calls*(procName, procName) - exists
+stmt s;
+Select s such that Calls*("proc1", "proc2")
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+5000
+5 - Test Calls(procName, procName) - not exists
+stmt s;
+Select BOOLEAN such that Calls("proc1", "proc10")
+false
+5000
+6 - Test Calls*(procName, procName) - exists
+stmt s;
+Select BOOLEAN such that Calls*("proc1", "proc10")
+true
+5000
+7 - Test Calls(procName, _) - exists
+stmt s;
+Select BOOLEAN such that Calls("proc3", _)
+true
+5000
+8 - Test Calls*(procName, _) - exists
+stmt s;
+Select BOOLEAN such that Calls*("proc3", _)
+true
+5000
+9 - Test Calls(procName, _) - not exists
+stmt s;
+Select s such that Calls("proc10", _)
+none
+5000
+10 - Test Calls*(procName, _) - not exists
+stmt s;
+Select s such that Calls*("prco10", _)
+none
+5000
+11 - Test Calls(procName, procSyn) - exists
+procedure proc;
+Select proc such that Calls("proc4", proc)
+proc5, proc6
+5000
+12 - Test Calls*(procName, procSyn) - exists
+procedure proc;
+Select proc such that Calls*("proc4", proc)
+proc5, proc6, proc7, proc8, proc9, proc10
+5000
+13 - Test Calls(procName, procSyn) - not exists
+procedure proc;
+Select proc such that Calls("proc10", proc)
+none
+5000
+14 - Test Calls*(procName, procSyn) - not exists
+procedure proc;
+Select proc such that Calls*("proc10", proc)
+none
+5000
+15 - Test Calls(_, procName) - exists
+procedure proc;
+Select proc such that Calls(_, "proc5")
+proc1, proc2, proc3, proc4, proc5, proc6, proc7, proc8, proc9, proc10
+5000
+16 - Test Calls*(_, procName) - exists
+procedure proc;
+Select proc such that Calls*(_, "proc5")
+proc1, proc2, proc3, proc4, proc5, proc6, proc7, proc8, proc9, proc10
+5000
+17 - Test Calls(_, procName) - not exists
+procedure proc;
+Select proc such that Calls(_, "proc1")
+none
+5000
+18 - Test Calls*(_, procName) - not exists
+procedure proc;
+Select proc such that Calls*(_, "proc1")
+none
+5000
+19 - Test Calls(_, _)
+if ifs;
+Select ifs such that Calls(_, _)
+2, 7
+5000
+20 - Test Calls*(_, _)
+if ifs;
+Select ifs such that Calls*(_, _)
+2, 7
+5000
+21 - Test Calls(_, procSyn)
+procedure proc;
+Select proc such that Calls(_, proc)
+proc2, proc3, proc4, proc5, proc6, proc7, proc8, proc9, proc10
+5000
+22 - Test Calls*(_, procSyn)
+procedure proc;
+Select proc such that Calls*(_, proc)
+proc2, proc3, proc4, proc5, proc6, proc7, proc8, proc9, proc10
+5000
+23 - Test Calls(procSyn, procName) - exists
+procedure proc;
+Select proc such that Calls(proc, "proc6")
+proc4
+5000
+24 - Test Calls*(procSyn, procName) - exists
+procedure proc;
+Select proc such that Calls*(proc, "proc6")
+proc1, proc2, proc3, proc4
+5000
+25 - Test Calls(procSyn, procName) - not exists
+procedure proc;
+Select proc such that Calls(proc, "proc1")
+none
+5000
+26 - Test Calls*(procSyn, procName) - not exists
+procedure proc;
+Select proc such that Calls*(proc, "proc1")
+none
+5000
+27 - Test Calls(procSyn, _)
+procedure proc;
+Select proc such that Calls(proc, _)
+proc1, proc2, proc3, proc4, proc5, proc6, proc7, proc8, proc9
+5000
+28 - Test Calls*(procSyn, _)
+procedure proc;
+Select proc such that Calls*(proc, _)
+proc1, proc2, proc3, proc4, proc5, proc6, proc7, proc8, proc9
+5000
+29 - Test Calls(procSyn, procSyn) - exists
+procedure proc1, proc2;
+Select proc1 such that Calls(proc1, proc2)
+proc1, proc2, proc3, proc4, proc5, proc6, proc7, proc8, proc9
+5000
+30 - Test Calls*(procSyn, procSyn) - exists
+procedure proc1, proc2;
+Select proc1 such that Calls*(proc1, proc2)
+proc1, proc2, proc3, proc4, proc5, proc6, proc7, proc8, proc9
+5000
+31 - Test Calls(procSyn, procSyn) - not exists
+procedure proc1, proc2;
+Select proc1 such that Calls(proc1, proc1)
+none
+5000
+32 - Test Calls*(procSyn, procSyn) - not exists
+procedure proc1, proc2;
+Select proc1 such that Calls*(proc1, proc1)
+none
+5000
+33 - Semantic error should return false
+stmt s;
+Select BOOLEAN such that Calls*(s, s)
+false
+5000
+34 - Semantic error should return false
+assign a;
+Select BOOLEAN such that Calls*(a, a)
+false
+5000
+35 - Semantic error should return false
+variable v;
+Select BOOLEAN such that Calls*(v, v)
+false
+5000
+36 - Syntatic error should return none
+
+Select BOOLEAN such that Calls*(1, 1)
+none
+5000

@@ -1,0 +1,30 @@
+1 - number of clauses in asc order (1, 2, 3, 5)
+stmt s1, s2, s5; if ifs2, ifs5; assign a3; while w3; variable v5; read r3; print p3;
+Select <s1, ifs2, a3, s5> with s1.stmt# = 185 such that Follows(ifs2, s2) with 201 = s2.stmt# such that Follows(r3, p3) and Follows(p3, a3) such that Follows(a3, w3) pattern ifs5("a1a", _, _) and ifs5("ccc", _, _) such that Uses(ifs5, v5) with "bb2" = v5.varName such that Parent (s5, ifs5)
+185 191 208 345
+5000
+2 - number of clauses in desc order (5, 3, 2, 1)
+stmt s1, s2, s5; if ifs2, ifs5; assign a3; while w3; variable v5; read r3; print p3;
+Select <s1, ifs2, a3, s5> pattern ifs5("a1a", _, _) and ifs5("ccc", _, _) such that Uses(ifs5, v5) with "bb2" = v5.varName such that Parent (s5, ifs5) such that Follows(r3, p3) and Follows(p3, a3) such that Follows(a3, w3) such that Follows(ifs2, s2) with 201 = s2.stmt# with s1.stmt# = 185
+185 191 208 345
+5000
+3 - number of clauses in asc order (2(shortcircuit), 7)
+assign a1, a2, a3, a4, a5, b1, b2;
+Select <a1, b1> such that Affects(b1, b2) with b1.stmt# = 0 such that Affects*(a1, a2) and Next*(a2, a3) and Affects*(a3, a4) and Next*(a4, a5) and Next*(a5, a2) and Affects*(a2, a4) and Affects*(a1, a5)
+none
+5000
+4 - number of clauses in desc order (7, 2(shortcircuit))
+assign a1, a2, a3, a4, a5, b1, b2;
+Select <a1, b1> such that Affects*(a1, a2) and Next*(a2, a3) and Affects*(a3, a4) and Next*(a4, a5) and Next*(a5, a2) and Affects*(a2, a4) and Affects*(a1, a5) such that Affects(b1, b2) with b1.stmt# = 0
+none
+5000
+5 - number of clauses in asc order (1(shortcircuit), 4)
+assign a1, a2, a3, a4, a5, b1, b2;
+Select a1 such that Follows(b1, 400) such that Affects*(a1, a2) and Next*(a2, a3) and Affects*(a3, a4) and Next*(a4, a5)
+none
+5000
+6 - number of clauses in desc order (4, 1(shortcircuit))
+assign a1, a2, a3, a4, a5, b1, b2;
+Select a1 such that Affects*(a1, a2) and Next*(a2, a3) and Affects*(a3, a4) and Next*(a4, a5) such that Follows(b1, 400)
+none
+5000

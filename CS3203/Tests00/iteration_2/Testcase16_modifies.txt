@@ -1,0 +1,20 @@
+1 - Modifies(p, v), query p
+procedure p; variable v;
+Select p such that Modifies(p, v)
+none
+5000
+2 - Modifies(p, _), query p
+procedure p;
+Select p such that Modifies(p, _)
+none
+5000
+3 - Modifies(s, _), query s
+stmt s; variable v;
+Select s such that Modifies(s, v)
+none
+5000
+4 - Modifies(s, _), query s
+stmt s;
+Select s such that Modifies(s, _)
+none
+5000

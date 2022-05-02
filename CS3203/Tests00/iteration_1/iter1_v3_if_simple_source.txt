@@ -1,0 +1,46 @@
+procedure testIf {
+
+    while(a == 1) {                                  \\1
+
+        a = b + c;                                   \\2
+
+        if ((b < c) && (c < a)) then {               \\3
+
+            read d;                                  \\4
+
+            if ((d > e) || (e > a)) then {           \\5
+                
+                read a;                              \\6
+                print f;                             \\7
+                a = (g + 3) * f;                     \\8
+
+            } else {
+                if ((h == 3) && (!(i != i))) then {  \\9
+                    h = h / 4;                       \\10
+                } else {
+                    h = i;                           \\11
+                }
+            }
+
+            a = h + h * c;                           \\12
+
+        } else {
+
+            read j;                                  \\13
+            j = j % k;                               \\14
+
+            if ((4 / k + 3) == 5) then {             \\15
+                j = k;                               \\16
+                k = l;                               \\17
+                l = k;                               \\18
+                l = m;                               \\19
+            } else {
+                print n;                             \\20
+            }
+        }
+        
+        read a;                                      \\21
+        b = 3 * c;                                   \\22
+        print d;                                     \\23
+    }
+}

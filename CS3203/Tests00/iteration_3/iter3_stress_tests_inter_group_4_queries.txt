@@ -1,0 +1,80 @@
+1 - boolean clause first (true), select boolean
+if ifs; variable v1; assign a1, a2;
+Select BOOLEAN with 10 = 10 and "procedure" = "procedure" and 1 = 1 with v1.varName = "procedure" pattern ifs("procedure", _, _) such that Affects*(a1, a2) and Follows(a1, a2)
+true
+5000
+2 - boolean clause later (true), select boolean
+if ifs; variable v1; assign a1, a2;
+Select BOOLEAN such that Affects*(a1, a2) and Follows(a1, a2) with v1.varName = "procedure" pattern ifs("procedure", _, _) with 10 = 10 and "procedure" = "procedure" and 1 = 1
+true
+5000
+3 - boolean clause first (false), select boolean
+if ifs; variable v1; assign a1, a2, a3, a4, a5;
+Select BOOLEAN with 10 = 11 and "procedure" = "procedure" and 1 = 1 with v1.varName = "procedure" pattern ifs("procedure", _, _) such that Affects*(a1, a2) and Next*(a2, a3) and Affects*(a3, a4) and Next*(a4, a5) and Next*(a5, a2) and Affects*(a2, a4) and Affects*(a1, a5)
+false
+5000
+4 - boolean clause later (false), select boolean
+if ifs; variable v1; assign a1, a2, a3, a4, a5;
+Select BOOLEAN such that Affects*(a1, a2) and Next*(a2, a3) and Affects*(a3, a4) and Next*(a4, a5) and Next*(a5, a2) and Affects*(a2, a4) and Affects*(a1, a5) with v1.varName = "procedure" pattern ifs("procedure", _, _) with 10 = 11 and "procedure" = "procedure" and 1 = 1
+false
+5000
+5 - boolean clause first (true), select tuple
+if ifs; variable v1; assign a1, a2;
+Select <ifs, v1> with 10 = 10 and "procedure" = "procedure" and 1 = 1 with v1.varName = "procedure" pattern ifs("procedure", _, _) such that Affects*(a1, a2) and Follows(a1, a2)
+191 procedure
+5000
+6 - boolean clause later (true), select tuple
+if ifs; variable v1; assign a1, a2;
+Select <ifs, v1> such that Affects*(a1, a2) and Follows(a1, a2) with v1.varName = "procedure" pattern ifs("procedure", _, _) with 10 = 10 and "procedure" = "procedure" and 1 = 1
+191 procedure
+5000
+7 - boolean clause first (false), select tuple
+if ifs; variable v1; assign a1, a2, a3, a4, a5;
+Select <ifs, v1> with 10 = 11 and "procedure" = "procedure" and 1 = 1 with v1.varName = "procedure" pattern ifs("procedure", _, _) such that Affects*(a1, a2) and Next*(a2, a3) and Affects*(a3, a4) and Next*(a4, a5) and Next*(a5, a2) and Affects*(a2, a4) and Affects*(a1, a5)
+none
+5000
+8 - boolean clause later (false), select tuple
+if ifs; variable v1; assign a1, a2, a3, a4, a5;
+Select <ifs, v1> such that Affects*(a1, a2) and Next*(a2, a3) and Affects*(a3, a4) and Next*(a4, a5) and Next*(a5, a2) and Affects*(a2, a4) and Affects*(a1, a5) with v1.varName = "procedure" pattern ifs("procedure", _, _) with 10 = 11 and "procedure" = "procedure" and 1 = 1
+none
+5000
+9 - boolean clause first (true), select boolean
+assign a1, a2;
+Select BOOLEAN with 10 = 10 and "procedure" = "procedure" and 1 = 1 such that Affects*(a1, a2) and Follows(a1, a2)
+true
+5000
+10 - boolean clause later (true), select boolean
+assign a1, a2;
+Select BOOLEAN such that Affects*(a1, a2) and Follows(a1, a2) with 10 = 10 and "procedure" = "procedure" and 1 = 1
+true
+5000
+11 - boolean clause first (false), select boolean
+assign a1, a2;
+Select BOOLEAN with 10 = 11 and "procedure" = "procedure" and 1 = 1 such that Affects*(a1, a2) and Follows(a1, a2)
+false
+5000
+12 - boolean clause later (false), select boolean
+assign a1, a2;
+Select BOOLEAN such that Affects*(a1, a2) and Follows(a1, a2) with 10 = 11 and "procedure" = "procedure" and 1 = 1
+false
+5000
+13 - boolean clause first (true), select tuple
+assign a1, a2;
+Select <a1, a2> with 10 = 10 and "procedure" = "procedure" and 1 = 1 such that Affects*(a1, a2) and Follows(a1, a2)
+107 108,114 115,120 121,180 181,19 20,20 21,210 211,222 223,225 226,234 235,245 246,251 252,258 259,275 276,294 295,301 302,314 315,334 335,364 365,367 368,56 57,67 68,9 10,97 98,98 99,99 100
+5000
+14 - boolean clause later (true), select tuple
+assign a1, a2;
+Select <a1, a2> such that Affects*(a1, a2) and Follows(a1, a2) with 10 = 10 and "procedure" = "procedure" and 1 = 1
+107 108,114 115,120 121,180 181,19 20,20 21,210 211,222 223,225 226,234 235,245 246,251 252,258 259,275 276,294 295,301 302,314 315,334 335,364 365,367 368,56 57,67 68,9 10,97 98,98 99,99 100
+5000
+15 - boolean clause first (false), select tuple
+assign a1, a2;
+Select <a1, a2> with 10 = 11 and "procedure" = "procedure" and 1 = 1 such that Affects*(a1, a2) and Follows(a1, a2)
+none
+5000
+16 - boolean clause later (false), select tuple
+assign a1, a2;
+Select <a1, a2> such that Affects*(a1, a2) and Follows(a1, a2) with 10 = 11 and "procedure" = "procedure" and 1 = 1
+none
+5000

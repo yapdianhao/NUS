@@ -1,0 +1,61 @@
+procedure testWhile {
+
+    a1a = 4;                                                                       \\1
+
+    while (a1a > 0) {                                                              \\2
+
+        bb2 = a1a * a1a;                                                           \\3
+        ccc = 2 + a1a * 3;                                                         \\4
+
+        while (bb2 < 99) {                                                         \\5
+            
+            read dD4;                                                              \\6
+            if ( ((a1a > 5) && (a1a <= 10)) || ((16 > ccc) && (bb2 < 80)) ) then { \\7
+        
+                while ( !( (!(a1a < ccc)) && (50 < bb2) ) ) {                      \\8
+                
+                    while ( ccc >= dD4 ) {                                         \\9
+                        e33 = ccc + dD4 * a1a;                                     \\10
+                        print e33;                                                 \\11
+                        read ccc;                                                  \\12
+                    }
+                }
+
+            } else {
+                
+                fff = 9827 % 3820;                                                 \\13
+                while (fff != 999 ) {                                              \\14
+                    fff = fff - 1;                                                 \\15
+                    dD4 = (7 + a1a % dD4) / ( (9 * bb2) % ccc ) - 4;               \\16
+                    print fff;                                                     \\17
+                }
+            }
+
+            dD4 = bb2 + 1920;                                                      \\18
+            read x;                                                                \\19
+            print x;                                                               \\20
+        }
+        
+        if ( x != 0 ) then {                                                       \\21
+            
+            y = 5;                                                                 \\22
+            while ( x < 10 ) {                                                     \\23
+                y = y * 2;                                                         \\24
+                x = (((x)) + (((1)))) * y;                                         \\25
+            }
+            
+            while ( !( y != 100) ) {                                               \\26
+                x = 0;                                                             \\27
+                y = ((((y / 2)))) - x;                                             \\28
+            }
+            print y;                                                               \\29
+            while ( x == 0 ) { x = x - 1; print y; }                               \\30 31 32
+        } else { print x; }                                                        \\33
+
+        if (y >= 0) then {                                                         \\34
+            read z;                                                                \\35
+        } else {
+            read pz;                                                               \\36
+        }
+    }
+}

@@ -1,0 +1,706 @@
+procedure stress { 
+	a1 = 1;		//1
+	a2 = 2;		//2
+	a3 = 3;		//3
+	a4 = 4;		//4
+	a5 = 5;		//5
+	a6 = 6;		//6
+	a7 = 7;		//7
+	a8 = 8;		//8
+	a9 = 9;		//9
+	a10 = 10;		//10
+	a11 = 11;		//11
+	a12 = 12;		//12
+	a13 = 13;		//13
+	a14 = 14;		//14
+	a15 = 15;		//15
+	a16 = 16;		//16
+	a17 = 17;		//17
+	a18 = 18;		//18
+	a19 = 19;		//19
+	a20 = 20;		//20
+	a21 = 21;		//21
+	if(a1 == 1) then { 	//22
+		a1 = a2;	//23
+		a2 = a3;	//24
+		a3 = a1;	//25
+	} else {
+		dummy = a3 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//26
+		while(a4 == 4) { 	//27
+			a4 = a5;	//28
+			a5 = a6;	//29
+			a6 = a4;	//30
+			if(a7 == 7) then { 	//31
+				a7 = a8;	//32
+				a8 = a9;	//33
+				a9 = a7;	//34
+			} else {
+				dummy = a9 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//35
+				while(a10 == 10) { 	//36
+					a10 = a11;	//37
+					a11 = a12;	//38
+					a12 = a10;	//39
+					if(a13 == 13) then { 	//40
+						a13 = a14;	//41
+						a14 = a15;	//42
+						a15 = a13;	//43
+					} else {
+						dummy = a15 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//44
+						while(a16 == 16) { 	//45
+							a16 = a17;	//46
+							a17 = a18;	//47
+							a18 = a16;	//48
+							if(a19 == 19) then { 	//49
+								a19 = a20;	//50
+								a20 = a21;	//51
+								a21 = a19;	//52
+							} else {
+								dummy = a21 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//53
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	b1 = 1;		//54
+	b2 = 2;		//55
+	b3 = 3;		//56
+	b4 = 4;		//57
+	b5 = 5;		//58
+	b6 = 6;		//59
+	b7 = 7;		//60
+	b8 = 8;		//61
+	b9 = 9;		//62
+	b10 = 10;		//63
+	b11 = 11;		//64
+	b12 = 12;		//65
+	b13 = 13;		//66
+	b14 = 14;		//67
+	b15 = 15;		//68
+	b16 = 16;		//69
+	b17 = 17;		//70
+	b18 = 18;		//71
+	b19 = 19;		//72
+	b20 = 20;		//73
+	b21 = 21;		//74
+	if(b1 == 1) then { 	//75
+		b1 = b2;	//76
+		b2 = b3;	//77
+		b3 = b1;	//78
+	} else {
+		dummy = b3 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//79
+		while(b4 == 4) { 	//80
+			b4 = b5;	//81
+			b5 = b6;	//82
+			b6 = b4;	//83
+			if(b7 == 7) then { 	//84
+				b7 = b8;	//85
+				b8 = b9;	//86
+				b9 = b7;	//87
+			} else {
+				dummy = b9 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//88
+				while(b10 == 10) { 	//89
+					b10 = b11;	//90
+					b11 = b12;	//91
+					b12 = b10;	//92
+					if(b13 == 13) then { 	//93
+						b13 = b14;	//94
+						b14 = b15;	//95
+						b15 = b13;	//96
+					} else {
+						dummy = b15 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//97
+						while(b16 == 16) { 	//98
+							b16 = b17;	//99
+							b17 = b18;	//100
+							b18 = b16;	//101
+							if(b19 == 19) then { 	//102
+								b19 = b20;	//103
+								b20 = b21;	//104
+								b21 = b19;	//105
+							} else {
+								dummy = b21 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//106
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	c1 = 1;		//107
+	c2 = 2;		//108
+	c3 = 3;		//109
+	c4 = 4;		//110
+	c5 = 5;		//111
+	c6 = 6;		//112
+	c7 = 7;		//113
+	c8 = 8;		//114
+	c9 = 9;		//115
+	c10 = 10;		//116
+	c11 = 11;		//117
+	c12 = 12;		//118
+	c13 = 13;		//119
+	c14 = 14;		//120
+	c15 = 15;		//121
+	c16 = 16;		//122
+	c17 = 17;		//123
+	c18 = 18;		//124
+	c19 = 19;		//125
+	c20 = 20;		//126
+	c21 = 21;		//127
+	if(c1 == 1) then { 	//128
+		c1 = c2;	//129
+		c2 = c3;	//130
+		c3 = c1;	//131
+	} else {
+		dummy = c3 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//132
+		while(c4 == 4) { 	//133
+			c4 = c5;	//134
+			c5 = c6;	//135
+			c6 = c4;	//136
+			if(c7 == 7) then { 	//137
+				c7 = c8;	//138
+				c8 = c9;	//139
+				c9 = c7;	//140
+			} else {
+				dummy = c9 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//141
+				while(c10 == 10) { 	//142
+					c10 = c11;	//143
+					c11 = c12;	//144
+					c12 = c10;	//145
+					if(c13 == 13) then { 	//146
+						c13 = c14;	//147
+						c14 = c15;	//148
+						c15 = c13;	//149
+					} else {
+						dummy = c15 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//150
+						while(c16 == 16) { 	//151
+							c16 = c17;	//152
+							c17 = c18;	//153
+							c18 = c16;	//154
+							if(c19 == 19) then { 	//155
+								c19 = c20;	//156
+								c20 = c21;	//157
+								c21 = c19;	//158
+							} else {
+								dummy = c21 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//159
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	d1 = 1;		//160
+	d2 = 2;		//161
+	d3 = 3;		//162
+	d4 = 4;		//163
+	d5 = 5;		//164
+	d6 = 6;		//165
+	d7 = 7;		//166
+	d8 = 8;		//167
+	d9 = 9;		//168
+	d10 = 10;		//169
+	d11 = 11;		//170
+	d12 = 12;		//171
+	d13 = 13;		//172
+	d14 = 14;		//173
+	d15 = 15;		//174
+	d16 = 16;		//175
+	d17 = 17;		//176
+	d18 = 18;		//177
+	d19 = 19;		//178
+	d20 = 20;		//179
+	d21 = 21;		//180
+	if(d1 == 1) then { 	//181
+		d1 = d2;	//182
+		d2 = d3;	//183
+		d3 = d1;	//184
+	} else {
+		dummy = d3 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//185
+		while(d4 == 4) { 	//186
+			d4 = d5;	//187
+			d5 = d6;	//188
+			d6 = d4;	//189
+			if(d7 == 7) then { 	//190
+				d7 = d8;	//191
+				d8 = d9;	//192
+				d9 = d7;	//193
+			} else {
+				dummy = d9 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//194
+				while(d10 == 10) { 	//195
+					d10 = d11;	//196
+					d11 = d12;	//197
+					d12 = d10;	//198
+					if(d13 == 13) then { 	//199
+						d13 = d14;	//200
+						d14 = d15;	//201
+						d15 = d13;	//202
+					} else {
+						dummy = d15 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//203
+						while(d16 == 16) { 	//204
+							d16 = d17;	//205
+							d17 = d18;	//206
+							d18 = d16;	//207
+							if(d19 == 19) then { 	//208
+								d19 = d20;	//209
+								d20 = d21;	//210
+								d21 = d19;	//211
+							} else {
+								dummy = d21 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//212
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	e1 = 1;		//213
+	e2 = 2;		//214
+	e3 = 3;		//215
+	e4 = 4;		//216
+	e5 = 5;		//217
+	e6 = 6;		//218
+	e7 = 7;		//219
+	e8 = 8;		//220
+	e9 = 9;		//221
+	e10 = 10;		//222
+	e11 = 11;		//223
+	e12 = 12;		//224
+	e13 = 13;		//225
+	e14 = 14;		//226
+	e15 = 15;		//227
+	e16 = 16;		//228
+	e17 = 17;		//229
+	e18 = 18;		//230
+	e19 = 19;		//231
+	e20 = 20;		//232
+	e21 = 21;		//233
+	if(e1 == 1) then { 	//234
+		e1 = e2;	//235
+		e2 = e3;	//236
+		e3 = e1;	//237
+	} else {
+		dummy = e3 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//238
+		while(e4 == 4) { 	//239
+			e4 = e5;	//240
+			e5 = e6;	//241
+			e6 = e4;	//242
+			if(e7 == 7) then { 	//243
+				e7 = e8;	//244
+				e8 = e9;	//245
+				e9 = e7;	//246
+			} else {
+				dummy = e9 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//247
+				while(e10 == 10) { 	//248
+					e10 = e11;	//249
+					e11 = e12;	//250
+					e12 = e10;	//251
+					if(e13 == 13) then { 	//252
+						e13 = e14;	//253
+						e14 = e15;	//254
+						e15 = e13;	//255
+					} else {
+						dummy = e15 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//256
+						while(e16 == 16) { 	//257
+							e16 = e17;	//258
+							e17 = e18;	//259
+							e18 = e16;	//260
+							if(e19 == 19) then { 	//261
+								e19 = e20;	//262
+								e20 = e21;	//263
+								e21 = e19;	//264
+							} else {
+								dummy = e21 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//265
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	f1 = 1;		//266
+	f2 = 2;		//267
+	f3 = 3;		//268
+	f4 = 4;		//269
+	f5 = 5;		//270
+	f6 = 6;		//271
+	f7 = 7;		//272
+	f8 = 8;		//273
+	f9 = 9;		//274
+	f10 = 10;		//275
+	f11 = 11;		//276
+	f12 = 12;		//277
+	f13 = 13;		//278
+	f14 = 14;		//279
+	f15 = 15;		//280
+	f16 = 16;		//281
+	f17 = 17;		//282
+	f18 = 18;		//283
+	f19 = 19;		//284
+	f20 = 20;		//285
+	f21 = 21;		//286
+	if(f1 == 1) then { 	//287
+		f1 = f2;	//288
+		f2 = f3;	//289
+		f3 = f1;	//290
+	} else {
+		dummy = f3 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//291
+		while(f4 == 4) { 	//292
+			f4 = f5;	//293
+			f5 = f6;	//294
+			f6 = f4;	//295
+			if(f7 == 7) then { 	//296
+				f7 = f8;	//297
+				f8 = f9;	//298
+				f9 = f7;	//299
+			} else {
+				dummy = f9 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//300
+				while(f10 == 10) { 	//301
+					f10 = f11;	//302
+					f11 = f12;	//303
+					f12 = f10;	//304
+					if(f13 == 13) then { 	//305
+						f13 = f14;	//306
+						f14 = f15;	//307
+						f15 = f13;	//308
+					} else {
+						dummy = f15 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//309
+						while(f16 == 16) { 	//310
+							f16 = f17;	//311
+							f17 = f18;	//312
+							f18 = f16;	//313
+							if(f19 == 19) then { 	//314
+								f19 = f20;	//315
+								f20 = f21;	//316
+								f21 = f19;	//317
+							} else {
+								dummy = f21 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//318
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	g1 = 1;		//319
+	g2 = 2;		//320
+	g3 = 3;		//321
+	g4 = 4;		//322
+	g5 = 5;		//323
+	g6 = 6;		//324
+	g7 = 7;		//325
+	g8 = 8;		//326
+	g9 = 9;		//327
+	g10 = 10;		//328
+	g11 = 11;		//329
+	g12 = 12;		//330
+	g13 = 13;		//331
+	g14 = 14;		//332
+	g15 = 15;		//333
+	g16 = 16;		//334
+	g17 = 17;		//335
+	g18 = 18;		//336
+	g19 = 19;		//337
+	g20 = 20;		//338
+	g21 = 21;		//339
+	if(g1 == 1) then { 	//340
+		g1 = g2;	//341
+		g2 = g3;	//342
+		g3 = g1;	//343
+	} else {
+		dummy = g3 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//344
+		while(g4 == 4) { 	//345
+			g4 = g5;	//346
+			g5 = g6;	//347
+			g6 = g4;	//348
+			if(g7 == 7) then { 	//349
+				g7 = g8;	//350
+				g8 = g9;	//351
+				g9 = g7;	//352
+			} else {
+				dummy = g9 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//353
+				while(g10 == 10) { 	//354
+					g10 = g11;	//355
+					g11 = g12;	//356
+					g12 = g10;	//357
+					if(g13 == 13) then { 	//358
+						g13 = g14;	//359
+						g14 = g15;	//360
+						g15 = g13;	//361
+					} else {
+						dummy = g15 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//362
+						while(g16 == 16) { 	//363
+							g16 = g17;	//364
+							g17 = g18;	//365
+							g18 = g16;	//366
+							if(g19 == 19) then { 	//367
+								g19 = g20;	//368
+								g20 = g21;	//369
+								g21 = g19;	//370
+							} else {
+								dummy = g21 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//371
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	h1 = 1;		//372
+	h2 = 2;		//373
+	h3 = 3;		//374
+	h4 = 4;		//375
+	h5 = 5;		//376
+	h6 = 6;		//377
+	h7 = 7;		//378
+	h8 = 8;		//379
+	h9 = 9;		//380
+	h10 = 10;		//381
+	h11 = 11;		//382
+	h12 = 12;		//383
+	h13 = 13;		//384
+	h14 = 14;		//385
+	h15 = 15;		//386
+	h16 = 16;		//387
+	h17 = 17;		//388
+	h18 = 18;		//389
+	h19 = 19;		//390
+	h20 = 20;		//391
+	h21 = 21;		//392
+	if(h1 == 1) then { 	//393
+		h1 = h2;	//394
+		h2 = h3;	//395
+		h3 = h1;	//396
+	} else {
+		dummy = h3 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//397
+		while(h4 == 4) { 	//398
+			h4 = h5;	//399
+			h5 = h6;	//400
+			h6 = h4;	//401
+			if(h7 == 7) then { 	//402
+				h7 = h8;	//403
+				h8 = h9;	//404
+				h9 = h7;	//405
+			} else {
+				dummy = h9 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//406
+				while(h10 == 10) { 	//407
+					h10 = h11;	//408
+					h11 = h12;	//409
+					h12 = h10;	//410
+					if(h13 == 13) then { 	//411
+						h13 = h14;	//412
+						h14 = h15;	//413
+						h15 = h13;	//414
+					} else {
+						dummy = h15 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//415
+						while(h16 == 16) { 	//416
+							h16 = h17;	//417
+							h17 = h18;	//418
+							h18 = h16;	//419
+							if(h19 == 19) then { 	//420
+								h19 = h20;	//421
+								h20 = h21;	//422
+								h21 = h19;	//423
+							} else {
+								dummy = h21 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//424
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	i1 = 1;		//425
+	i2 = 2;		//426
+	i3 = 3;		//427
+	i4 = 4;		//428
+	i5 = 5;		//429
+	i6 = 6;		//430
+	i7 = 7;		//431
+	i8 = 8;		//432
+	i9 = 9;		//433
+	i10 = 10;		//434
+	i11 = 11;		//435
+	i12 = 12;		//436
+	i13 = 13;		//437
+	i14 = 14;		//438
+	i15 = 15;		//439
+	i16 = 16;		//440
+	i17 = 17;		//441
+	i18 = 18;		//442
+	i19 = 19;		//443
+	i20 = 20;		//444
+	i21 = 21;		//445
+	if(i1 == 1) then { 	//446
+		i1 = i2;	//447
+		i2 = i3;	//448
+		i3 = i1;	//449
+	} else {
+		dummy = i3 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//450
+		while(i4 == 4) { 	//451
+			i4 = i5;	//452
+			i5 = i6;	//453
+			i6 = i4;	//454
+			if(i7 == 7) then { 	//455
+				i7 = i8;	//456
+				i8 = i9;	//457
+				i9 = i7;	//458
+			} else {
+				dummy = i9 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//459
+				while(i10 == 10) { 	//460
+					i10 = i11;	//461
+					i11 = i12;	//462
+					i12 = i10;	//463
+					if(i13 == 13) then { 	//464
+						i13 = i14;	//465
+						i14 = i15;	//466
+						i15 = i13;	//467
+					} else {
+						dummy = i15 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//468
+						while(i16 == 16) { 	//469
+							i16 = i17;	//470
+							i17 = i18;	//471
+							i18 = i16;	//472
+							if(i19 == 19) then { 	//473
+								i19 = i20;	//474
+								i20 = i21;	//475
+								i21 = i19;	//476
+							} else {
+								dummy = i21 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//477
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	j1 = 1;		//478
+	j2 = 2;		//479
+	j3 = 3;		//480
+	j4 = 4;		//481
+	j5 = 5;		//482
+	j6 = 6;		//483
+	j7 = 7;		//484
+	j8 = 8;		//485
+	j9 = 9;		//486
+	j10 = 10;		//487
+	j11 = 11;		//488
+	j12 = 12;		//489
+	j13 = 13;		//490
+	j14 = 14;		//491
+	j15 = 15;		//492
+	j16 = 16;		//493
+	j17 = 17;		//494
+	j18 = 18;		//495
+	j19 = 19;		//496
+	j20 = 20;		//497
+	j21 = 21;		//498
+	if(j1 == 1) then { 	//499
+		j1 = j2;	//500
+		j2 = j3;	//501
+		j3 = j1;	//502
+	} else {
+		dummy = j3 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//503
+		while(j4 == 4) { 	//504
+			j4 = j5;	//505
+			j5 = j6;	//506
+			j6 = j4;	//507
+			if(j7 == 7) then { 	//508
+				j7 = j8;	//509
+				j8 = j9;	//510
+				j9 = j7;	//511
+			} else {
+				dummy = j9 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//512
+				while(j10 == 10) { 	//513
+					j10 = j11;	//514
+					j11 = j12;	//515
+					j12 = j10;	//516
+					if(j13 == 13) then { 	//517
+						j13 = j14;	//518
+						j14 = j15;	//519
+						j15 = j13;	//520
+					} else {
+						dummy = j15 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//521
+						while(j16 == 16) { 	//522
+							j16 = j17;	//523
+							j17 = j18;	//524
+							j18 = j16;	//525
+							if(j19 == 19) then { 	//526
+								j19 = j20;	//527
+								j20 = j21;	//528
+								j21 = j19;	//529
+							} else {
+								dummy = j21 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//530
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	k1 = 1;		//531
+	k2 = 2;		//532
+	k3 = 3;		//533
+	k4 = 4;		//534
+	k5 = 5;		//535
+	k6 = 6;		//536
+	k7 = 7;		//537
+	k8 = 8;		//538
+	k9 = 9;		//539
+	k10 = 10;		//540
+	k11 = 11;		//541
+	k12 = 12;		//542
+	k13 = 13;		//543
+	k14 = 14;		//544
+	k15 = 15;		//545
+	k16 = 16;		//546
+	k17 = 17;		//547
+	k18 = 18;		//548
+	k19 = 19;		//549
+	k20 = 20;		//550
+	k21 = 21;		//551
+	if(k1 == 1) then { 	//552
+		k1 = k2;	//553
+		k2 = k3;	//554
+		k3 = k1;	//555
+	} else {
+		dummy = k3 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//556
+		while(k4 == 4) { 	//557
+			k4 = k5;	//558
+			k5 = k6;	//559
+			k6 = k4;	//560
+			if(k7 == 7) then { 	//561
+				k7 = k8;	//562
+				k8 = k9;	//563
+				k9 = k7;	//564
+			} else {
+				dummy = k9 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//565
+				while(k10 == 10) { 	//566
+					k10 = k11;	//567
+					k11 = k12;	//568
+					k12 = k10;	//569
+					if(k13 == 13) then { 	//570
+						k13 = k14;	//571
+						k14 = k15;	//572
+						k15 = k13;	//573
+					} else {
+						dummy = k15 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//574
+						while(k16 == 16) { 	//575
+							k16 = k17;	//576
+							k17 = k18;	//577
+							k18 = k16;	//578
+							if(k19 == 19) then { 	//579
+								k19 = k20;	//580
+								k20 = k21;	//581
+								k21 = k19;	//582
+							} else {
+								dummy = k21 + dummy * dummy2 * dummy3 * dummy4 + dummy5 + dummy6 * dummy7 / dummy8 * (dummy9 + dummy10);	//583
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

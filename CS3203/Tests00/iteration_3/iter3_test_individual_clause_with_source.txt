@@ -1,0 +1,28 @@
+procedure proc1 {
+	read v1;
+	read v3;
+	call proc3;
+	v1 = v1 + 1;
+}
+procedure proc2 {
+	print v1;
+	read proc3;
+	if (x + 1 == 5) then {
+		print v5;
+	} else {
+		call proc4;
+	}
+}
+procedure proc3 {
+	read v2;
+	print proc2;
+	v3 = v3 + 5;
+	while (6 != v1) {
+		call proc4;
+	}
+}
+procedure proc4 {
+	print proc4;
+	print v2;
+	read proc4;
+}

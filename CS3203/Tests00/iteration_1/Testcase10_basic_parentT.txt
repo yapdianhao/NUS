@@ -1,0 +1,125 @@
+1 - Parent*(int, int)
+variable v;
+Select v such that Parent*(8, 9)
+gameType, i, dummy, answer, buffer, maxRange, useless, guess, someNumber, favouriteNumber, temp
+5000
+2 - Parent*(a, s)
+assign a; stmt s;
+Select a such that Parent*(a, s)
+none
+5000
+3 - Parent*(p, s)
+print p; stmt s;
+Select s such that Parent*(p, s)
+none
+5000
+4 - Parent*(r, s)
+read r; stmt s;
+Select r such that Parent*(r, s)
+none
+5000
+5 - Parent*(pn, s)
+print pn; stmt s;
+Select pn such that Parent*(pn, s)
+none
+5000
+6 - Parent*(ifs, pn)
+print pn; if ifs;
+Select ifs such that Parent*(ifs, pn)
+8, 11, 27, 34
+5000
+7 - Parent*(ifs, ifs)
+if ifs1, ifs2;
+Select ifs1 such that Parent*(ifs1, ifs2)
+8, 11
+5000
+8 - Parent*(ifs, a)
+if ifs; assign a;
+Select ifs such that Parent*(ifs, a)
+8, 11, 13, 34
+5000
+9 - Parent*(ifs, r)
+if ifs; read r;
+Select ifs such that Parent*(ifs, r)
+8, 11, 27, 34
+5000
+10 - Parent*(ifs, w)
+if ifs; while w;
+Select ifs such that Parent*(ifs, w)
+8, 11
+5000
+11 - Parent*(_, ifs)
+if ifs;
+Select ifs such that Parent*(_, ifs)
+11, 13, 27, 34
+5000
+12 - Parent*(w, w)
+while w1, w2;
+Select w1 such that Parent*(w1, w2)
+10
+5000
+13 - Parent*(w, ifs)
+while w; if ifs;
+Select w such that Parent*(w, ifs)
+10, 32 
+5000
+14 - Parent*(w, pn)
+while w; print pn;
+Select pn such that Parent*(w, pn)
+23, 35
+5000
+15 - Parent*(w, a)
+while w; assign a;
+Select w such that Parent*(w, a)
+10, 17, 21, 32
+5000
+16 - Parent*(w, _)
+while w;
+Select w such that Parent*(w, _)
+10, 17, 21, 32
+5000
+17 - Parent*(w, r)
+while w; read r;
+Select w such that Parent*(w, r)
+10, 17, 32
+5000
+18 - Parent*(0, 1)
+if ifs;
+Select ifs such that Parent*(0, 1)
+none
+5000
+19 - Parent*(-1, 1)
+if ifs;
+Select ifs such that Parent*(-1, 1)
+none
+5000
+20 - Parent*(w, _, _)
+while w;
+Select w such that Parent*(w, _, _)
+none
+5000
+21 - Parent*(ifs)
+if ifs;
+Select ifs such that Parent*(ifs)
+none
+5000
+22 - Parent*(INT, s)
+stmt s;
+Select s such that Parent*(32, s)
+33, 34, 35, 36, 37, 38
+5000
+23 - Parent*(INT, _)
+while w;
+Select w such that Parent*(32, _)
+10, 17, 21, 32
+5000
+24 - Parent*(_, _, _)
+assign a;
+Select a such that Parent*(_, _, _)
+none
+5000
+25 - Parent*(a)
+assign a;
+Select a such that Parent*(a)
+none
+5000

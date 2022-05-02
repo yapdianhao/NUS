@@ -1,0 +1,105 @@
+1 - pattern ifs(_, _, _)
+if ifs;
+Select ifs pattern ifs(_, _, _)
+8, 11, 13, 27, 34
+5000
+2 - pattern ifs(IDENT, _, _)
+if ifs;
+Select ifs pattern ifs("dummy", _, _)
+27
+5000
+3 - pattern ifs(v, _, _)
+if ifs; variable v;
+Select ifs pattern ifs(v, _, _)
+8, 11, 13, 27, 34
+5000
+4 - pattern ifs(c, _, _)
+if ifs; constant c;
+Select c pattern ifs(c, _, _)
+none
+5000
+5 - patterns ifs(IDENT in body, _, _)
+if ifs;
+Select ifs pattern ifs("maxRange", _, _)
+none
+5000
+6 - pattern ifs(_)
+if ifs;
+Select ifs pattern ifs(_)
+none
+5000
+7 - pattern ifs(_, _)
+if ifs;
+Select ifs pattern ifs(_, _)
+none
+5000
+8 - pattern ifs(_, _, _, _)
+if ifs;
+Select ifs pattern ifs(_, _, _, _)
+none
+5000
+9 - pattern ifs(COMPARATOR,  _, _) 
+if ifs;
+Select ifs pattern ifs("==", _, _)
+none
+5000
+10 - pattern ifs(_IDENT_, _, _)
+if ifs;
+Select ifs pattern ifs(_"dummy"_, _, _)
+none
+5000
+11 - pattern ifs(_, IDENT, _)
+if ifs;
+Select ifs pattern ifs(_, "dummy", _)
+none
+5000
+12 - pattern ifs(_, _, IDENT)
+if ifs;
+Select ifs pattern ifs(_, _, "dummy")
+none
+5000
+13 - pattern ifs and Follows
+if ifs; assign a; variable v;
+Select ifs pattern ifs(v, _, _) such that Follows(a, ifs)
+8, 27, 34
+5000
+14 - pattern ifs and FollowsT
+if ifs; print pn;
+Select ifs pattern ifs(_, _, _) such that Follows*(pn, ifs)
+27
+5000
+15 - pattern ifs and Parent
+if ifs1, ifs2;
+Select ifs1 such that Parent(ifs1, ifs2) pattern ifs1("guess", _, _)
+11
+5000
+16 - pattern ifs and ParentT
+if ifs1, ifs2;
+Select ifs1 such that Parent*(ifs1, ifs2) pattern ifs1("gameType", _, _)
+8
+5000
+17 - pattern ifs and Uses
+if ifs; variable v;
+Select ifs pattern ifs("gameType", _, _) such that Uses(ifs, "maxRange")
+8
+5000
+18 - pattern ifs and Modifies
+if ifs; variable v;
+Select ifs pattern ifs(v, _, _) such that Modifies(ifs, v)
+8, 11, 13, 34
+5000
+19 - invalid pattern ifs and s
+if ifs; stmt s;
+Select ifs pattern ifs(s, _)
+none
+5000
+20 - invalid pattern ifs and c
+constant c; if ifs;
+Select ifs pattern ifs(c, _)
+none
+5000
+21 - Multiple if pattern
+if ifs1, ifs2, ifs3, ifs4;
+Select <ifs1, ifs3, ifs4> pattern ifs1("favouriteNumber", _, _) and ifs2("answer", _, _) and ifs3("answer", _, _) and ifs4("guess", _, _)
+34 11 13, 34 13 11, 34 11 11, 34 13 13
+5000 

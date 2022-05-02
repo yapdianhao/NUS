@@ -1,0 +1,58 @@
+procedure sourceProc {
+    gameType = 1;   // 1
+    i = 0;          // 2
+    dummy = 1;      // 3
+    answer = 42;    // 4
+    buffer = 10;    // 5
+    maxRange = 10000;   // 6
+    useless = 19;   // 7
+    if (gameType == 1) then {   // 8
+        guess = maxRange/2;     // 9
+        while(dummy > 0) {      // 10
+            if (guess == answer) then {     // 11
+                dummy = 0;                  // 12
+            } else {
+                if (guess > answer) then {  // 13
+                    guess = guess / 2;      // 14
+                } else {
+                    guess = (maxRange + guess) / 2; // 15
+                }
+
+                temp = 0;       // 16
+                while ((guess > answer) && (temp < buffer)) {   // 17
+                    guess = guess - 1;      // 18
+                    read useless;           // 19
+                }
+                temp = 20;                  // 20
+                while ((guess < answer) && (temp >= buffer)) {  // 21
+                    guess = guess + 1;      // 22
+                    print buffer;           // 23
+                }
+            }
+        }
+    } else {
+        print gameType;                     // 24
+        read dummy;                         // 25
+        someNumber = 0;                     // 26
+
+        if (dummy == 3) then {              // 27
+            read someNumber;                // 28
+            print dummy;                    // 29
+        } else {
+            read someNumber;                // 30
+            read gameType;                  // 31
+        }
+
+        while (dummy > 0) {                 // 32
+            favouriteNumber = dummy + 8;    // 33
+
+            if (favouriteNumber % 8 == 0) then {    // 34
+                print favouriteNumber;              // 35
+                favouriteNumber = 3;                // 36
+            } else {
+                read someNumber;                    // 37
+            }
+            dummy = dummy - 1;                      // 38
+        }
+    }
+}
