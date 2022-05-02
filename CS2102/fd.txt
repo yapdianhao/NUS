@@ -1,0 +1,25 @@
+Rooms
+-----
+rid -> location
+rid -> seating_capacity
+location -> rid
+
+
+Conducts
+--------
+sid, course_id, launch_date -> iid
+sid, course_id, launch_date -> rid
+course_id -> area_name
+
+Courses
+------
+course_id -> area_name
+course_id -> duration
+course_id -> title
+course_id -> description
+
+Course_Packages
+--------------
+package_id -> package_name
+
+
