@@ -1,0 +1,76 @@
+= Yap Dian Hao - UML diagrams
+:toc:
+:toc-title: Table of Contents
+:toc-placement: macro
+:toclevels: 4
+:sectnums:
+:imagesDir: images
+:stylesDir: stylesheets
+:xrefstyle: full
+:icons: font
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+endif::[]
+:repoURL: https://github.com/AY1920S2-CS2103T-F09-2/main
+
+
+=== Storage Class Diagram
+
+.Structure of the Storage Component
+image::Storage.png[width="700"]
+
+`StorageManager` is the main functional class in the `Storage` component, extending the interfaces `JelphaBotStorage`
+and `UserPrefsStorage`. `JsonUserPrefsStorage` can save and read `UserPref` objects in .json format, while `JsonJelphaBotStorage`
+can save `JelphaBot` 's data and read them. `Reminder` and `Task` are converted to the json-friendly `JsonAdaptedTask` and
+`JsonAdaptedReminder`, then saved by `JsonJelphaBotStorage`. +
+This class diagram enables developers to have an overarching view of the `Storage` component and
+its interactions with the json files. It is crucial due to certain aspects
+such as `JsonAdaptedReminder` are not found in the original `Storage` component.
+
+=== Reminder Class Diagram
+
+
+.Reminder Class Diagram in the Model component
+image::Reminderclass.png[width="600"]
+
+`Reminder` is a newly introduced class to the product, and has the same significance of a `Task`.
+`ModelManager` manages the adding and removing of a `Reminder` by calling the `addReminder` method of `JelphaBot`, which adds a
+`Reminder` into its `UniqueReminderList`. A `UniqueReminderList` can store arbitrary amount of `Reminder`, in which
+each `Reminder` has an `Index` of the task that it needs to remind, a `ReminderDay` which refers to the day the `Task`
+will be reminded, and a `ReminderHour`. +
+This class diagram plays a crucial role in summarizing the `Reminder` object and
+its relations with the `Model` component.
+
+=== Reminder Sequence Diagram
+
+[[sequence-addReminder]]
+.Sequence Diagram after running _reminder 2 days/2 hours/1_
+image::AddReminderSequenceDiagram.png[width="700"]
+
+[[reference-getCommandResult]]
+.The reference frame of getting the `CommandResult` in the `Logic` component.
+image::getCommandResultReferenceDiagram.png[width=400"]
+
+[[reference-addReminder]]
+.The reference frame of adding the `Reminder` in the `Model` component.
+image::addReminderReferenceDiagram.png[width="400"]
+
+[[reference-saveJelphaBot]]
+.The reference frame of saving a `Reminder` by the `Storage` component.
+image::saveJelphaBot.png[width="400"]
+
+This sequence diagram provides a summary of the process from the user enters the command to the storing of the
+`Reminder` object. Next, The `Logic` `execute()` method creates a `ReminderCommand` from the input string by parsing the input according to the command word and several other attributes.
+Next, the input string is converted into `Index`, `ReminderDay`, `ReminderHour`,
+and a `Reminder` object with these properties are forwarded to `Model`. The `Model` first checks the validity of the attributes respectively.
+The valid `Reminder` is then added to the `UniqueReminderList`. Lastly, the `Logic` fires the `Storage`
+to save the `Reminder`. +
+
+This diagram is the most important diagram for the `Reminder` feature as it provides a complete picture from
+front-end to back-end. Since the process is not trivial, several reference frames are required for developers to view
+in isolation of components for a clearer picture, and to avoid tiny fonts if all the processes are combined
+in a sequence diagram.
+
+

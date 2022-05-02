@@ -1,0 +1,68 @@
+5. Objects: abstractions, encapsulations
+7. Classes: class level members, enumerations
+8. Associations: navigability, multiplicity, dependencies, composition, aggregation, association classes
+12. Inheritance: overriding, interfaces, abstract classes, substitutability, dynamic and static binding
+15. Polymorphism
+17. Requirements: non-functional requirements, quality of requirements, prioritizing requirements
+19. Gathering Requirements: user surveys, observation, interview, focus group, prototyping, product surveys
+20. Specifying Requirements: prose, feature lists, user stories, use cases, glossary, supplementary requirements
+29. Software Design
+30. Design Fundamentals: abstraction, coupling, cohesion
+32. Modeling: oo structures, class diagrams, object diagrams, oodm, activity diagrams, sequence diagrams, use case diagrams
+41. Software Architecture: architecture diagrams, architecture styles
+45. Software Design Patterns: singleton pattern, facade pattern, command pattern, mvc pattern, observer pattern
+52. Design Approaches: multi-level design, top down bottom up design, agile design
+54. IDE
+54. Debugging
+55. Code quality
+65. Refactoring
+67. Documentation
+72. Exceptions
+72. Assertions
+74. Logging
+74. Defensive Programming
+77. Integration Approaches: late and one time vs early and frequent, big bang vs incremental
+77. Build Automation: continuos integration
+79. Reuse
+79. API
+79. Library
+80. Framework
+80. Platform
+82. Validation vs Verification
+82. Code Reviews
+82. Static Analysis
+83. Formal Verification
+84. Regression Testing
+85. Developer Testing
+85. Unit Testing
+87. Integration Testing
+88. System Testing
+88. Alpha Beta Testing
+88. Dogfooding
+89. Exploratory vs Scripted Testing
+89. Acceptance Testing
+90. Automated Testing of CLI Apps
+91. Test Drivers
+91. Test Automation Tools
+92. Automated Testing of GUI
+92. Test Coverage
+93. Dependency Injection
+94. Test Case Design
+94. Positive vs Negative Test Cases
+94. Black Box vs Glass Box
+95. Equivalence Partitions
+97. Boundary Values Analysis
+98. Combining Test Inputs: combination strategies, heuristics, mix
+105. Revision Control: repositories, saving history, using history, remote repositories, branching, DRCS vs CRCS, forking flow
+109: Project Planning: work breakdown structure, buffers, issue trackers
+111: Team structures
+112: SDLC Process Model: sequential models, iterative models, agile models, XP, scrum
+116: Principles: Single Responsibility Rrinciple, Open-Closed Principle, Liskov Substitution Principle, Separation Concerns Principle, 
+                 Law Of Demeter
+119: Class Diagrams: classes, associations, navigability, roles, labels, multiplicity, dependencies, associations as attributes,
+                    enumerations, class-level members,  association classes, composition, aggregation, inheritance, interfaces, abstract classes
+125: Sequence Diagrams: basic, object creation, object deletion, loops, self invocation, alternative paths, optional paths, parallel 
+                        paths, reference frames, minimal notation, static methods
+131: Object Diagrams: objects, associations
+132: Activity Diagrams: linear paths, alternate paths, parallel paths, rake, swimlanes
+136: Git and Github
