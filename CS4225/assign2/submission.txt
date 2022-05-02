@@ -1,0 +1,47 @@
+====== Part 1 ======
+
+from pyspark.sql.functions import col
+res = df.filter(~col('value').contains('alpha') & ~col('value').contains('beta') & col('value').contains('Invalid user'))
+res.toPandas()
+
+====== Part 2 ======
+
+invalidIP = df.filter(df['day'] % 7 != 0).dropDuplicates(["dst"]).select("dst")
+invalidIP.toPandas()
+df.filter(df['day'] % 7 == 0).dropDuplicates(["src", "dst"]).groupby('dst').count().filter('count == 13').join(invalidIP, 'dst', 'left_anti').toPandas()
+
+## Feedback for assignment 2
+Thank you prof for designing such a fun assignment. Provides hands-on exercise on Spark, not too much coding as I am not very familiar with Spark. This assignment significantly reduce the stress yet I learned a lot from it.
+
+## Approach
+I used python to code the logic without spark, then implement the logic in spark.
+
+### Part 1
+
+import sys
+
+for line in sys.stdin:
+    if 'alpha' not in line and 'beta' not in line and 'Invalid' in line:
+        print(line)
+
+### Part 2
+
+import sys
+import collections
+
+d = collections.defaultdict(int)
+s = set()
+removeFirstRow = 0
+for line in sys.stdin:
+    line = line.split(",")
+    if removeFirstRow == 0:
+        removeFirstRow += 1
+        continue
+    day = int(line[-1].rstrip())
+    if day % 7 == 0:
+        s.add((line[0], line[1]))
+
+for src, dest in s:
+    d[dest] += 1
+
+print([i for i in d if d[i] == 13])
