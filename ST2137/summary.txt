@@ -1,0 +1,65 @@
+- one sample t-test
+	- assumption:
+		- sample come from randomization
+		- sample approximately normal
+	- hypotheses: population mean = mu
+	- code: Lecture 7 slide 16
+- non-parametric one sample test (Wilcoxon signed rank test)
+	- assumption:
+		- sample not normal
+	- hypotheses: population median = m_0
+	- code: Lecture 7 slide 25
+- two independent sample test
+	- assumption: 
+		- independent sample
+		- variance of 2 group if not same, use unequal variance compare means test
+		- each group population distribution approximately normal
+	- hypotheses: population mean 1 mu_1 = population mean 2 mu_2
+	- code: Lecture 7 slide 38
+- non-parametric two independent sample test (Wilcoxon rank sum test / Mann-Whitney U-test)
+	- assumption: 
+		- small sample / not normal distributed
+	- hypotheses: no difference between two groups
+	- code: Lecture 7 slide 52
+- two dependent sample parametric test
+	- assumption:
+		- differences between 2 groups approximately normal
+	- hypotheses: means of 2 groups same
+	- code: Lecture 7 slide 63
+- two dependent sample non-parametric test
+	- assumption:
+		- small sample / difference not normally distributed
+	- hypotheses: no difference between two groups
+	- code: Lecture 7 slide 67
+- anova
+	- assumption:
+		- random samples
+		- all groups equal variance (use Shapiro test normality, if any group is not normal, use Levene, else use Bartlett)
+		- check residual if normally distributed (use Shapiro test / qq plot on residuals)
+	- hypotheses: all means are equal
+	- code: Lecture 8 slide 26
+- kruskal wallis test
+	- assumption:
+		- non-normal data
+		- variances unequal
+	- hypotheses: groups have same distribution
+	- code: Lecture 8 slide 36
+- Bonferroni
+	- used in anova / kruskal
+	- code: Lecture 8 slide 43
+- Tukey
+	- used in anova
+	- code: Lecture 8 slide 50
+- linear regression
+	- assumption:
+		- relationship of X, Y linear (check with scatter plot)
+		- residual constant variance assumption (check with scatter plot with line at 0, check shape and most points within 3)
+		- residual normality assumption (check with qq plot / shapiro test)
+	- steps:
+		- plot X, Y to see if linear
+		- fit model first, use model summary to get beta_0 and beta_1
+		- use anova to see which coefficient most important
+		- get residual from model, convert to standardized residual
+		- check residual qq plot to see if normally distributed
+		- check residual scatterplot to see if constant variance
+		- run predictions
