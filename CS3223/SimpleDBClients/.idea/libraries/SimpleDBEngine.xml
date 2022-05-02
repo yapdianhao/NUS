@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SimpleDBEngine">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../SimpleDBEngine" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../SimpleDBEngine/src" />
+    </SOURCES>
+  </library>
+</component>
